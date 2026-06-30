@@ -1,70 +1,294 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Lo.Krain - Io</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="./css/main.css">
+    <title>Lo.Krain — Io</title>
+
+    <meta name="description" content="Io — an album by Lo.Krain.">
+
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="./assets/icons/site.webmanifest">
+
+    <meta property="og:title" content="Lo.Krain — Io">
+    <meta property="og:image" content="./assets/icons/social-cover.jpg">
+
+    <link rel="stylesheet" href="./css/theme.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+
 </head>
 
-<body>
+<body class="night">
 
-<!-- ENTRY -->
-<div id="entry" class="entry">
-  <div class="entry-title">LO.KRAIN — IO</div>
-  <div class="entry-sub">tap / click / enter</div>
-</div>
+    <!-- INTRO -->
 
-<!-- APP -->
-<div id="app" class="layout hidden">
+    <section id="intro" class="intro">
 
-  <div class="hero">
+        <div class="intro-content">
 
-    <img class="album-cover" src="./cover.jpeg">
+            <h1 class="intro-logo">
+                Lo.Krain — Io
+            </h1>
 
-    <div class="title">Io</div>
-    <div class="subtitle">LO.KRAIN</div>
+            <div class="intro-action">
+                Tap | Click | Enter
+            </div>
 
-    <div class="meta">
-      Release June 21, 2026<br>
-      Artist Lo.Krain
-    </div>
+        </div>
 
-    <div class="artist-block">
-      <img class="artist-avatar" src="./artist.jpg">
-      <div class="meta">Exile Sound Project</div>
-    </div>
+    </section>
 
-    <!-- PLAYER -->
-    <div class="player">
-      <button id="playBtn">PLAY</button>
-      <button id="pauseBtn">PAUSE</button>
-      <button id="skipBtn">SKIP</button>
+    <!-- WORLD -->
 
-      <div class="progress">
-        <div id="progressBar"></div>
-      </div>
+    <main id="world" class="world hidden">
 
-      <div class="time">
-        <span id="currentTime">00:00</span> / <span id="totalTime">00:00</span>
-      </div>
-    </div>
+        <!-- BACKGROUND -->
 
-  </div>
+        <div class="background-layer"></div>
+        <div class="grain-layer"></div>
+        <div class="light-layer"></div>
 
-  <div class="playlist" id="playlist"></div>
+        <div class="ghost-words">
 
-</div>
+            <span>PATH</span>
+            <span>NIGHT</span>
+            <span>DAWN</span>
+            <span>HOME</span>
+            <span>IO</span>
 
-<audio id="audioEngine"></audio>
+        </div>
 
-<script src="./js/storage.js"></script>
-<script src="./js/player.js"></script>
-<script src="./js/world.js"></script>
-<script src="./js/intro.js"></script>
-<script src="./js/app.js"></script>
+        <!-- CONTENT -->
+
+        <section class="edition">
+
+            <!-- COVER -->
+
+            <div class="cover-area">
+
+                <img
+                    src="./assets/images/cover.jpeg"
+                    alt="Io Album Cover"
+                    class="album-cover"
+                    id="albumCover">
+
+            </div>
+
+            <!-- META -->
+
+            <div class="meta-area">
+
+                <div class="language-switch">
+
+                    <button data-lang="en" class="lang-btn active">
+                        EN
+                    </button>
+
+                    <span>|</span>
+
+                    <button data-lang="ru" class="lang-btn">
+                        RU
+                    </button>
+
+                </div>
+
+                <div class="title-row">
+
+                    <h2 class="album-title">
+                        Io
+                    </h2>
+
+                    <span class="meta-label" data-i18n="album">
+                        Album
+                    </span>
+
+                </div>
+
+                <div class="artist-row">
+
+                    <h3 class="artist-name">
+                        Lo.Krain
+                    </h3>
+
+                    <span class="meta-label" data-i18n="artist">
+                        Artist
+                    </span>
+
+                </div>
+
+                <div class="release-row">
+
+                    <span class="release-label">
+                        Release
+                    </span>
+
+                    <span class="release-date">
+                        June 21, 2026
+                    </span>
+
+                </div>
+
+                <div class="album-description" data-i18n="description">
+
+                    An album concluding a fifteen-year journey from Night to Dawn.
+                    Listen from beginning to end.
+                    The path continues beyond the final track.
+
+                </div>
+
+                <!-- ARTIST -->
+
+                <div class="artist-card">
+
+                    <img
+                        src="./assets/images/artist.jpg"
+                        alt="Lo.Krain"
+                        class="artist-photo">
+
+                </div>
+
+                <!-- PLAYER -->
+
+                <section class="player-panel">
+
+                    <div class="player-controls">
+
+                        <button id="playBtn" class="control-link">
+                            Play
+                        </button>
+
+                        <button id="pauseBtn" class="control-link">
+                            Pause
+                        </button>
+
+                        <button id="skipBtn" class="control-link">
+                            Skip
+                        </button>
+
+                    </div>
+
+                    <div class="player-time">
+
+                        <span id="currentTime">
+                            00:00
+                        </span>
+
+                        <span class="time-separator">
+                            /
+                        </span>
+
+                        <span id="totalTime">
+                            00:00
+                        </span>
+
+                    </div>
+
+                    <div class="progress-track">
+
+                        <div id="progressBar" class="progress-fill"></div>
+
+                    </div>
+
+                </section>
+
+                <!-- PLAYLIST -->
+
+                <section class="playlist-section">
+
+                    <div id="playlist" class="playlist"></div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+        <!-- HIDDEN SECTIONS -->
+
+        <section id="aboutSection" class="hidden-section">
+            <h3>About</h3>
+        </section>
+
+        <section id="lyricsSection" class="hidden-section">
+            <h3>Lyrics</h3>
+        </section>
+
+        <section id="communicationSection" class="hidden-section">
+
+            <h3>Communication</h3>
+
+            <form id="contactForm" class="communication-form">
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Name">
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email">
+
+                <textarea
+                    name="message"
+                    rows="5"
+                    placeholder="Message"></textarea>
+
+                <button type="submit">
+                    Send
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- GO DEEPER -->
+
+        <section id="goDeeperScreen" class="go-deeper hidden">
+
+            <button id="goDeeperBtn" class="go-deeper-button">
+
+                Go Deeper?
+
+            </button>
+
+        </section>
+
+        <!-- MYTH PORTAL -->
+
+        <section id="mythPortal" class="myth-portal hidden">
+
+            <div class="myth-title">
+
+                Lo.Krain Myth
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- AUDIO -->
+
+    <audio id="audioEngine"></audio>
+
+    <!-- SCRIPTS -->
+
+    <script src="./js/translations.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/world.js"></script>
+    <script src="./js/intro.js"></script>
+    <script src="./js/app.js"></script>
 
 </body>
+
 </html>
