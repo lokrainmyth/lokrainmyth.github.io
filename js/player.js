@@ -385,40 +385,14 @@ function buildPlaylist(){
 }
 
 /* ==========================================================
-   REFRESH
+   REFRESH PLAYLIST (UPDATED)
 ========================================================== */
 
 function refreshPlaylist(){
 
+    applyTrackState();
+
     journey.forEach(track=>{
-
-        const row=document.querySelector(
-
-            `[data-track="${track.id}"]`
-
-        );
-
-        if(!row){
-
-            return;
-
-        }
-
-        row.classList.toggle(
-
-            "current",
-
-            track.id===currentTrack
-
-        );
-
-        row.classList.toggle(
-
-            "completed",
-
-            track.completed
-
-        );
 
         renderTrackTitle(track.id);
 
@@ -610,6 +584,9 @@ audio.addEventListener("ended",()=>{
 
         completedTracks.add(currentTrack);
 
+       saveJourney();
+applyTrackState();
+
     }
 
     updateJourneyWorld(
@@ -665,5 +642,173 @@ skipButton?.addEventListener("click", ()=>{
         showGoDeeper();
 
     }
+
+});
+
+/* ==========================================================
+   STORAGE
+========================================================== */
+
+const STORAGE_KEY = "dawn_journey_v1";
+
+function saveJourney(){
+
+    const data = {
+
+        currentTrack,
+
+        completed:[...completedTracks],
+
+        skipped:[...skippedTracks]
+
+    };
+
+    localStorage.setItem(
+
+        STORAGE_KEY,
+
+        JSON.stringify(data)
+
+    );
+
+}
+
+function restoreJourney(){
+
+    const raw = localStorage.getItem(STORAGE_KEY);
+
+    if(!raw) return;
+
+    try{
+
+        const data = JSON.parse(raw);
+
+        currentTrack = data.currentTrack || 0;
+
+        completedTracks = new Set(data.completed || []);
+
+        skippedTracks = new Set(data.skipped || []);
+
+        journey.forEach(track=>{
+
+            if(completedTracks.has(track.id)){
+
+                track.completed = true;
+
+            }
+
+            if(skippedTracks.has(track.id)){
+
+                track.skipped = true;
+
+            }
+
+        });
+
+        loadTrack(currentTrack);
+
+    }catch(e){}
+
+}
+
+/* ==========================================================
+   VISUAL STATE UPDATE
+========================================================== */
+
+function applyTrackState(){
+
+    journey.forEach(track=>{
+
+        const row = document.querySelector(
+
+            `[data-track="${track.id}"]`
+
+        );
+
+        if(!row) return;
+
+        if(track.completed){
+
+            row.classList.add("completed");
+
+        }
+
+        if(track.id === currentTrack){
+
+            row.classList.add("current");
+
+        } else {
+
+            row.classList.remove("current");
+
+        }
+
+    });
+
+}
+
+/* ==========================================================
+   SKIP TRACK (UPDATED)
+========================================================== */
+
+function skipTrack(){
+
+    const track = journey[currentTrack];
+
+    if(track){
+
+        track.skipped = true;
+
+        skippedTracks.add(currentTrack);
+
+    }
+
+    saveJourney();
+
+    const next = currentTrack + 1;
+
+    if(next < journey.length){
+
+        loadTrack(next);
+
+    } else {
+
+        showGoDeeper();
+
+    }
+
+}
+
+/* ==========================================================
+   SKIP BUTTON UPDATE
+========================================================== */
+
+skipButton?.addEventListener("click", ()=>{
+
+    const msg = document.documentElement.lang === "ru"
+
+        ? "Путь запоминается.\n\nХотите пропустить шаг?"
+
+        : "The journey remembers.\n\nSkip this step?";
+
+    const ok = confirm(msg);
+
+    if(ok){
+
+        skipTrack();
+
+    }
+
+});
+
+/* ==========================================================
+   AUTO SAVE
+========================================================== */
+
+audio.addEventListener("timeupdate", ()=>{
+
+    updateProgress();
+
+    saveJourney();
 
 });
