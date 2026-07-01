@@ -479,3 +479,191 @@ function showSkipDialog(target){
     loadTrack(target);
 
 }
+
+/* ==========================================================
+   LOAD TRACK
+========================================================== */
+
+function loadTrack(index){
+
+    const track = journey[index];
+
+    if(!track) return;
+
+    currentTrack = index;
+
+    audio.src = "assets/music/" + track.file;
+
+    audio.load();
+
+    isPlaying = false;
+
+    refreshPlaylist();
+
+    stopAirportMasks();
+
+    setTimeout(()=>{
+
+        startAirportMasks();
+
+    },300);
+
+}
+
+/* ==========================================================
+   PLAY
+========================================================== */
+
+function playTrack(){
+
+    if(!audio.src) return;
+
+    audio.play().then(()=>{
+
+        isPlaying = true;
+
+        introFinished = true;
+
+        startAirportMasks();
+
+    }).catch(()=>{});
+
+    if(wind){
+
+        wind.pause();
+
+        wind.currentTime = 0;
+
+    }
+
+}
+
+/* ==========================================================
+   PAUSE
+========================================================== */
+
+function pauseTrack(){
+
+    audio.pause();
+
+    isPlaying = false;
+
+    startAirportMasks();
+
+}
+
+/* ==========================================================
+   PROGRESS
+========================================================== */
+
+function updateProgress(){
+
+    if(!audio.duration) return;
+
+    const percent = audio.currentTime / audio.duration;
+
+    if(progressFill){
+
+        progressFill.style.width = (percent * 100) + "%";
+
+    }
+
+    if(currentTimeElement){
+
+        currentTimeElement.textContent = formatTime(audio.currentTime);
+
+    }
+
+    if(durationElement){
+
+        durationElement.textContent = formatTime(audio.duration);
+
+    }
+
+}
+
+/* ==========================================================
+   TIME FORMAT
+========================================================== */
+
+function formatTime(sec){
+
+    const m = Math.floor(sec / 60);
+
+    const s = Math.floor(sec % 60);
+
+    return `${m}:${s.toString().padStart(2,"0")}`;
+
+}
+
+/* ==========================================================
+   TRACK END
+========================================================== */
+
+audio.addEventListener("ended",()=>{
+
+    const track = journey[currentTrack];
+
+    if(track){
+
+        track.completed = true;
+
+        completedTracks.add(currentTrack);
+
+    }
+
+    updateJourneyWorld(
+
+        completedTracks.size,
+
+        journey.length
+
+    );
+
+    refreshPlaylist();
+
+    stopAirportMasks();
+
+    const next = currentTrack + 1;
+
+    if(next < journey.length){
+
+        loadTrack(next);
+
+    } else {
+
+        showGoDeeper();
+
+    }
+
+});
+
+/* ==========================================================
+   AUDIO EVENTS
+========================================================== */
+
+audio.addEventListener("timeupdate", updateProgress);
+
+/* ==========================================================
+   UI CONTROLS
+========================================================== */
+
+playButton?.addEventListener("click", playTrack);
+
+pauseButton?.addEventListener("click", pauseTrack);
+
+skipButton?.addEventListener("click", ()=>{
+
+    const next = currentTrack + 1;
+
+    if(next < journey.length){
+
+        loadTrack(next);
+
+    } else {
+
+        showGoDeeper();
+
+    }
+
+});
