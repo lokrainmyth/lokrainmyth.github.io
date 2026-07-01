@@ -323,3 +323,159 @@ function renderTrackTitle(id){
         );
 
 }
+
+/* ==========================================================
+   BUILD PLAYLIST
+========================================================== */
+
+function buildPlaylist(){
+
+    if(!playlist){
+
+        return;
+
+    }
+
+    playlist.innerHTML="";
+
+    journey.forEach(track=>{
+
+        const row=document.createElement("div");
+
+        row.className="track";
+
+        row.dataset.track=track.id;
+
+        row.innerHTML=`
+
+            <div class="track-number">
+
+                ${(track.id+1).toString().padStart(2,"0")}
+
+            </div>
+
+            <div class="track-title">
+
+                ${getDisplayedTitle(track)}
+
+            </div>
+
+        `;
+
+        row.addEventListener(
+
+            "click",
+
+            ()=>{
+
+                requestTrack(track.id);
+
+            }
+
+        );
+
+        playlist.appendChild(row);
+
+    });
+
+    startAirportMasks();
+
+    refreshPlaylist();
+
+}
+
+/* ==========================================================
+   REFRESH
+========================================================== */
+
+function refreshPlaylist(){
+
+    journey.forEach(track=>{
+
+        const row=document.querySelector(
+
+            `[data-track="${track.id}"]`
+
+        );
+
+        if(!row){
+
+            return;
+
+        }
+
+        row.classList.toggle(
+
+            "current",
+
+            track.id===currentTrack
+
+        );
+
+        row.classList.toggle(
+
+            "completed",
+
+            track.completed
+
+        );
+
+        renderTrackTitle(track.id);
+
+    });
+
+}
+
+/* ==========================================================
+   REQUEST TRACK
+========================================================== */
+
+function requestTrack(index){
+
+    if(index===currentTrack){
+
+        return;
+
+    }
+
+    if(index>currentTrack){
+
+        showSkipDialog(index);
+
+        return;
+
+    }
+
+    loadTrack(index);
+
+}
+
+/* ==========================================================
+   SKIP DIALOG
+========================================================== */
+
+function showSkipDialog(target){
+
+    const ok=confirm(
+
+        document.documentElement.lang==="ru"
+
+        ? "Путь запоминается.\n\nХотите пропустить шаг?"
+
+        : "The journey remembers.\n\nSkip this step?"
+
+    );
+
+    if(!ok){
+
+        return;
+
+    }
+
+    skippedTracks.add(currentTrack);
+
+    journey[currentTrack].skipped=true;
+
+    loadTrack(target);
+
+}
