@@ -193,3 +193,158 @@ document.addEventListener("DOMContentLoaded", () => {
     World.init();
 
 });
+
+/* ==========================================================
+   WORLD STATES
+========================================================== */
+
+const WORLD_STATES = [
+    "night",
+    "deep-night",
+    "pre-dawn",
+    "dawn",
+    "morning"
+];
+
+function clamp(v,min,max){
+    return Math.min(max,Math.max(min,v));
+}
+
+function setWorldProgress(progress){
+
+    progress = clamp(progress,0,1);
+
+    document.documentElement.style.setProperty(
+        "--world-progress",
+        progress
+    );
+
+    document.documentElement.style.setProperty(
+        "--world-brightness",
+        (0.18 + progress*0.82).toFixed(3)
+    );
+
+    document.documentElement.style.setProperty(
+        "--world-saturation",
+        (0.42 + progress*0.58).toFixed(3)
+    );
+
+    document.documentElement.style.setProperty(
+        "--world-warmth",
+        progress.toFixed(3)
+    );
+
+    document.documentElement.style.setProperty(
+        "--cover-opacity",
+        (.35 + progress*.65).toFixed(3)
+    );
+
+    document.documentElement.style.setProperty(
+        "--cover-scale",
+        (.985 + progress*.015).toFixed(3)
+    );
+
+    updateWorldClass(progress);
+
+}
+
+/* ==========================================================
+   WORLD CLASS
+========================================================== */
+
+function updateWorldClass(progress){
+
+    document.body.classList.remove(
+        "night",
+        "deep-night",
+        "pre-dawn",
+        "dawn",
+        "morning"
+    );
+
+    if(progress<0.15){
+
+        document.body.classList.add("night");
+        return;
+
+    }
+
+    if(progress<0.35){
+
+        document.body.classList.add("deep-night");
+        return;
+
+    }
+
+    if(progress<0.60){
+
+        document.body.classList.add("pre-dawn");
+        return;
+
+    }
+
+    if(progress<0.88){
+
+        document.body.classList.add("dawn");
+        return;
+
+    }
+
+    document.body.classList.add("morning");
+
+}
+
+/* ==========================================================
+   TRACK PROGRESS
+========================================================== */
+
+function updateJourneyWorld(completed,total){
+
+    if(!total)return;
+
+    const progress = completed/total;
+
+    setWorldProgress(progress);
+
+    revealSections(progress);
+
+}
+
+/* ==========================================================
+   REVEAL
+========================================================== */
+
+function revealSections(progress){
+
+    const about=document.getElementById("aboutSection");
+    const lyrics=document.getElementById("lyricsSection");
+    const communication=document.getElementById("communicationSection");
+
+    if(about){
+
+        about.classList.toggle(
+            "visible",
+            progress>=0.30
+        );
+
+    }
+
+    if(lyrics){
+
+        lyrics.classList.toggle(
+            "visible",
+            progress>=0.60
+        );
+
+    }
+
+    if(communication){
+
+        communication.classList.toggle(
+            "visible",
+            progress>=1
+        );
+
+    }
+
+}
