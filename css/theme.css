@@ -1,428 +1,389 @@
-/* =========================
-   theme.css — Io First Light
-   Global state system
-   ========================= */
+/* ==========================================================
+   PROJECT DAWN
+   THEME
+========================================================== */
 
-:root {
+:root{
 
-  /* BASE BACKGROUND STATES */
-  --bg-night: #07060a;
-  --bg-deep-night: #050409;
-  --bg-pre-dawn: #0b0a10;
-  --bg-dawn: #14131a;
-  --bg-morning: #1b1a22;
+    /* ---------- Typography ---------- */
 
-  /* LIGHT LAYERS */
-  --light-soft: rgba(255, 220, 180, 0.08);
-  --light-core: rgba(255, 200, 160, 0.18);
-  --light-glow: rgba(255, 210, 170, 0.25);
+    --font-main:
+        Inter,
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
 
-  /* TEXT */
-  --text-primary: rgba(240, 235, 230, 0.9);
-  --text-muted: rgba(240, 235, 230, 0.4);
-  --text-hidden: rgba(240, 235, 230, 0.08);
+    --font-display:
+        Inter,
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
 
-  /* ACCENTS */
-  --accent-warm: #d6a27a;
-  --accent-cold: #7aa6d6;
+    /* ---------- Timing ---------- */
 
-  /* TRANSITIONS */
-  --t-slow: 1200ms ease;
-  --t-medium: 600ms ease;
-  --t-fast: 300ms ease;
+    --world-transition:4s ease;
+    --slow-transition:2.8s ease;
+    --medium-transition:1.2s ease;
+    --fast-transition:.45s ease;
 
-  /* TYPOGRAPHY */
-  --font-main: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas;
-
-  /* SPACING */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 24px;
-  --space-6: 40px;
-  --space-7: 64px;
-
-  /* RADIUS */
-  --r-soft: 10px;
-  --r-medium: 18px;
-  --r-hard: 28px;
-
-  /* GLOBAL MOTION */
-  --blur-light: 40px;
-  --blur-core: 90px;
 }
 
-/* =========================
-   STATE SYSTEM (BODY)
-   ========================= */
+/* ==========================================================
+   DEFAULT WORLD
+========================================================== */
 
-body.state-night {
-  --bg: var(--bg-night);
-  --light-intensity: 0.15;
-  --interface-opacity: 0.15;
+body{
+
+    --bg:#0d0d0c;
+
+    --bg-2:#141412;
+
+    --paper:#f2efe7;
+
+    --ink:#d8d6cf;
+
+    --muted:#87857d;
+
+    --gold:#d8b15a;
+
+    --light:
+        rgba(255,220,120,.06);
+
+    --grain-opacity:.08;
+
+    --cover-brightness:.55;
+
+    --cover-saturation:.72;
+
+    --cover-contrast:.92;
+
+    --cover-scale:1;
+
+    --cover-rotation:0deg;
+
+    --cover-shadow:
+        0 40px 80px rgba(0,0,0,.45);
+
+    --ghost-opacity:.02;
+
+    --interface-opacity:.86;
+
+    --line-opacity:.18;
+
 }
 
-body.state-deep-night {
-  --bg: var(--bg-deep-night);
-  --light-intensity: 0.08;
-  --interface-opacity: 0.08;
+/* ==========================================================
+   NIGHT
+========================================================== */
+
+body[data-world="night"]{
+
+    --bg:#0b0b0a;
+
+    --bg-2:#131310;
+
+    --paper:#ece8df;
+
+    --ink:#cfcac1;
+
+    --muted:#6f6d68;
+
+    --gold:#b89449;
+
+    --light:
+        rgba(255,200,120,.04);
+
+    --grain-opacity:.11;
+
+    --cover-brightness:.50;
+
+    --cover-saturation:.68;
+
+    --cover-contrast:.88;
+
+    --ghost-opacity:.015;
+
 }
 
-body.state-pre-dawn {
-  --bg: var(--bg-pre-dawn);
-  --light-intensity: 0.25;
-  --interface-opacity: 0.25;
+/* ==========================================================
+   DEEP NIGHT
+========================================================== */
+
+body[data-world="deep-night"]{
+
+    --bg:#080808;
+
+    --bg-2:#10100f;
+
+    --paper:#ece7de;
+
+    --ink:#cbc6bc;
+
+    --muted:#696763;
+
+    --gold:#b58b38;
+
+    --light:
+        rgba(255,180,90,.025);
+
+    --grain-opacity:.13;
+
+    --cover-brightness:.44;
+
+    --cover-saturation:.58;
+
+    --cover-contrast:.84;
+
+    --ghost-opacity:.01;
+
 }
 
-body.state-dawn {
-  --bg: var(--bg-dawn);
-  --light-intensity: 0.45;
-  --interface-opacity: 0.5;
+/* ==========================================================
+   PRE DAWN
+========================================================== */
+
+body[data-world="pre-dawn"]{
+
+    --bg:#121210;
+
+    --bg-2:#1b1a18;
+
+    --paper:#f0ede5;
+
+    --ink:#dad6cd;
+
+    --muted:#8a857d;
+
+    --gold:#d2aa56;
+
+    --light:
+        rgba(255,214,145,.08);
+
+    --grain-opacity:.09;
+
+    --cover-brightness:.72;
+
+    --cover-saturation:.92;
+
+    --cover-contrast:1;
+
+    --ghost-opacity:.03;
+
 }
 
-body.state-morning {
-  --bg: var(--bg-morning);
-  --light-intensity: 0.7;
-  --interface-opacity: 0.85;
+/* ==========================================================
+   DAWN
+========================================================== */
+
+body[data-world="dawn"]{
+
+    --bg:#181713;
+
+    --bg-2:#24221d;
+
+    --paper:#f5f2ea;
+
+    --ink:#ece7dd;
+
+    --muted:#a59c90;
+
+    --gold:#e0bb68;
+
+    --light:
+        rgba(255,224,160,.14);
+
+    --grain-opacity:.06;
+
+    --cover-brightness:.94;
+
+    --cover-saturation:1.08;
+
+    --cover-contrast:1.04;
+
+    --ghost-opacity:.05;
+
 }
 
-/* =========================
-   GLOBAL BASE
-   ========================= */
+/* ==========================================================
+   MORNING
+========================================================== */
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--text-primary);
-  font-family: var(--font-main);
-  overflow-x: hidden;
-  transition: background var(--t-slow);
+body[data-world="morning"]{
+
+    --bg:#24221d;
+
+    --bg-2:#312d26;
+
+    --paper:#faf8f2;
+
+    --ink:#f4f0e8;
+
+    --muted:#b5ab9d;
+
+    --gold:#e8c46d;
+
+    --light:
+        rgba(255,230,175,.18);
+
+    --grain-opacity:.04;
+
+    --cover-brightness:1;
+
+    --cover-saturation:1.15;
+
+    --cover-contrast:1.06;
+
+    --ghost-opacity:.065;
+
 }
 
-* {
-  box-sizing: border-box;
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
 }
 
-/* =========================
-   BACKGROUND LAYERS
-   ========================= */
+body{
 
-.bg-layer {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
+    margin:0;
+
+    background:var(--bg);
+
+    color:var(--paper);
+
+    font-family:var(--font-main);
+
+    transition:
+
+        background var(--world-transition),
+
+        color var(--world-transition);
+
+    overflow-x:hidden;
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
 }
 
-.bg-gradient {
-  background: radial-gradient(
-    circle at 50% 30%,
-    rgba(255, 210, 170, calc(var(--light-intensity) * 0.6)),
-    transparent 60%
-  );
-  filter: blur(var(--blur-core));
-  transition: all var(--t-slow);
+/* ==========================================================
+   LINKS
+========================================================== */
+
+a{
+
+    color:var(--paper);
+
+    text-decoration:none;
+
+    transition:
+        color var(--slow-transition);
+
 }
 
-.bg-texture {
-  background-image: repeating-linear-gradient(
-    0deg,
-    rgba(255,255,255,0.02),
-    rgba(255,255,255,0.02) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-  opacity: 0.25;
-  mix-blend-mode: overlay;
+a:hover{
+
+    color:var(--gold);
+
 }
 
-.bg-light {
-  background: radial-gradient(
-    circle at 60% 40%,
-    rgba(255, 230, 200, calc(var(--light-intensity) * 0.4)),
-    transparent 70%
-  );
-  filter: blur(var(--blur-light));
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+button{
+
+    font:inherit;
+
+    color:var(--paper);
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:
+
+        color var(--slow-transition),
+
+        opacity var(--slow-transition),
+
+        transform var(--slow-transition);
+
 }
 
-/* =========================
-   MIRROR WORDS
-   ========================= */
+button:hover{
 
-.mirror-layer {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.08;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 64px;
-  letter-spacing: 0.4em;
-  transform: rotate(-8deg);
+    color:var(--gold);
+
 }
 
-.mirror-word {
-  font-family: var(--font-mono);
-  color: var(--text-muted);
+button:active{
+
+    transform:scale(.985);
+
 }
 
-/* =========================
-   APP STRUCTURE
-   ========================= */
+/* ==========================================================
+   IMAGES
+========================================================== */
 
-.app {
-  position: relative;
-  min-height: 100vh;
-  padding: var(--space-6);
+img{
+
+    display:block;
+
+    max-width:100%;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
 }
 
-/* =========================
-   TOP BAR
-   ========================= */
+/* ==========================================================
+   SELECTION
+========================================================== */
 
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--space-6);
-  opacity: var(--interface-opacity);
-  transition: opacity var(--t-medium);
+::selection{
+
+    background:var(--gold);
+
+    color:#111;
+
 }
 
-.project-title {
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-size: 12px;
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
 }
 
-.state-indicator {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  opacity: 0.7;
+::-webkit-scrollbar-track{
+
+    background:var(--bg);
+
 }
 
-/* =========================
-   JOURNEY LAYOUT
-   ========================= */
+::-webkit-scrollbar-thumb{
 
-.journey-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: var(--space-6);
+    background:rgba(255,255,255,.12);
+
 }
 
-.journey-column {
-  display: flex;
-  flex-direction: column;
-}
+::-webkit-scrollbar-thumb:hover{
 
-/* =========================
-   TRACK PATH
-   ========================= */
+    background:var(--gold);
 
-.track-path {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.track-item {
-  display: flex;
-  justify-content: space-between;
-  padding: var(--space-3);
-  border-radius: var(--r-soft);
-  border: 1px solid rgba(255,255,255,0.06);
-  transition: all var(--t-medium);
-}
-
-.track-item.locked {
-  opacity: 0.2;
-  filter: blur(1px);
-}
-
-.track-item .track-title.hidden {
-  color: var(--text-hidden);
-}
-
-.track-code {
-  font-family: var(--font-mono);
-}
-
-.track-status {
-  font-size: 10px;
-  letter-spacing: 0.2em;
-}
-
-/* =========================
-   CORE VISUAL
-   ========================= */
-
-.core-visual {
-  height: 260px;
-  position: relative;
-  margin-bottom: var(--space-5);
-}
-
-.light-core {
-  position: absolute;
-  inset: 30%;
-  background: var(--light-core);
-  border-radius: 50%;
-  filter: blur(60px);
-}
-
-.pulse-ring {
-  position: absolute;
-  inset: 20%;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 50%;
-}
-
-.cover-glow {
-  position: absolute;
-  inset: 10%;
-  background: var(--light-soft);
-  border-radius: 50%;
-  filter: blur(30px);
-}
-
-/* =========================
-   PLAYER
-   ========================= */
-
-.player {
-  margin-top: var(--space-5);
-  padding: var(--space-4);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: var(--r-medium);
-}
-
-.player-controls {
-  display: flex;
-  gap: var(--space-3);
-  margin-bottom: var(--space-3);
-}
-
-.btn {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.12);
-  color: var(--text-primary);
-  padding: 8px 12px;
-  border-radius: var(--r-soft);
-  cursor: pointer;
-  transition: all var(--t-fast);
-}
-
-.btn:hover {
-  border-color: rgba(255,255,255,0.25);
-}
-
-.btn.danger {
-  border-color: rgba(214, 80, 80, 0.4);
-}
-
-/* =========================
-   PROGRESS
-   ========================= */
-
-.progress-container {
-  width: 100%;
-  height: 2px;
-  background: rgba(255,255,255,0.08);
-  margin-bottom: var(--space-2);
-}
-
-.progress-bar {
-  height: 100%;
-  width: 0%;
-  background: var(--accent-warm);
-}
-
-.progress-meta {
-  display: flex;
-  justify-content: space-between;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  opacity: 0.6;
-}
-
-/* =========================
-   META SECTIONS
-   ========================= */
-
-.meta-sections {
-  margin-top: var(--space-6);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-}
-
-.meta {
-  padding: var(--space-4);
-  border-radius: var(--r-medium);
-  border: 1px solid rgba(255,255,255,0.06);
-  opacity: var(--interface-opacity);
-  transition: opacity var(--t-slow);
-}
-
-.meta.locked {
-  opacity: 0.05;
-  filter: blur(2px);
-}
-
-.fade-text {
-  color: var(--text-hidden);
-}
-
-/* =========================
-   MYTH LAYER
-   ========================= */
-
-.myth-layer {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(20px);
-}
-
-.myth-question {
-  font-size: 24px;
-  letter-spacing: 0.3em;
-  margin-bottom: var(--space-5);
-}
-
-/* =========================
-   MODALS
-   ========================= */
-
-.modal {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0,0,0,0.7);
-}
-
-.modal-content {
-  padding: var(--space-5);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: var(--r-medium);
-  background: rgba(10,10,12,0.8);
-}
-
-/* =========================
-   UTILITIES
-   ========================= */
-
-.hidden {
-  display: none;
 }
