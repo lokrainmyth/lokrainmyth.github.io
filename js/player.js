@@ -464,6 +464,8 @@ function showSkipDialog(target){
 
 function loadTrack(index){
 
+   console.log("LOAD TRACK", index);
+
     const track = journey[index];
 
     if(!track) return;
@@ -472,8 +474,7 @@ function loadTrack(index){
 
     audio.src = "assets/music/" + track.file;
 
-   console.log(audio.src);
-console.log(track.file);
+   console.log("SRC =", audio.src);
 
     audio.load();
 
