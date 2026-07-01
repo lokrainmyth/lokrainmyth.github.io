@@ -163,3 +163,163 @@ document.addEventListener(
     }
 
 );
+
+/* ==========================================================
+   AIRPORT MASK ENGINE
+========================================================== */
+
+const airportTimers = [];
+
+function createAirportMask(title){
+
+    const chars = [...title];
+
+    const letters = [];
+
+    chars.forEach((c,index)=>{
+
+        if(c!==" "){
+
+            letters.push(index);
+
+        }
+
+    });
+
+    if(!letters.length){
+
+        return title;
+
+    }
+
+    const hidden = Math.max(
+
+        1,
+
+        Math.floor(letters.length*0.35)
+
+    );
+
+    const positions=[...letters];
+
+    positions.sort(()=>Math.random()-0.5);
+
+    const selected=positions.slice(0,hidden);
+
+    const output=[...chars];
+
+    selected.forEach(i=>{
+
+        output[i]="_";
+
+    });
+
+    return output.join("");
+
+}
+
+/* ==========================================================
+   START MASKS
+========================================================== */
+
+function startAirportMasks(){
+
+    stopAirportMasks();
+
+    journey.forEach(track=>{
+
+        if(track.completed){
+
+            return;
+
+        }
+
+        if(track.id===currentTrack && isPlaying){
+
+            return;
+
+        }
+
+        const delay =
+
+            900+
+
+            Math.random()*500;
+
+        const timer=setInterval(()=>{
+
+            renderTrackTitle(track.id);
+
+        },delay);
+
+        airportTimers.push(timer);
+
+    });
+
+}
+
+/* ==========================================================
+   STOP MASKS
+========================================================== */
+
+function stopAirportMasks(){
+
+    airportTimers.forEach(timer=>{
+
+        clearInterval(timer);
+
+    });
+
+    airportTimers.length=0;
+
+}
+
+/* ==========================================================
+   TRACK TITLE
+========================================================== */
+
+function getDisplayedTitle(track){
+
+    if(track.completed){
+
+        return "☼ " + track.title;
+
+    }
+
+    if(track.id===currentTrack && isPlaying){
+
+        return track.title;
+
+    }
+
+    return createAirportMask(track.title);
+
+}
+
+/* ==========================================================
+   RENDER TITLE
+========================================================== */
+
+function renderTrackTitle(id){
+
+    const row=document.querySelector(
+
+        `[data-track="${id}"] .track-title`
+
+    );
+
+    if(!row){
+
+        return;
+
+    }
+
+    row.textContent=
+
+        getDisplayedTitle(
+
+            journey[id]
+
+        );
+
+}
