@@ -472,6 +472,9 @@ function loadTrack(index){
 
     audio.src = "assets/music/" + track.file;
 
+   console.log(audio.src);
+console.log(track.file);
+
     audio.load();
 
     isPlaying = false;
