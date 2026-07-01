@@ -506,3 +506,157 @@ window.addEventListener(
     }
 
 );
+
+/* ==========================================================
+   WORLD LAYERS
+========================================================== */
+
+let currentLayer = "dawn";
+
+const layers = {
+
+    dawn: document.getElementById("mainApp"),
+
+    myth: document.getElementById("mythLayer"),
+
+    theo: document.getElementById("theoLayer")
+
+};
+
+/* ==========================================================
+   SWITCH LAYER
+========================================================== */
+
+function switchLayer(name){
+
+    Object.values(layers).forEach(el=>{
+
+        if(!el) return;
+
+        el.classList.add("hidden");
+
+        el.classList.remove("visible");
+
+    });
+
+    const target = layers[name];
+
+    if(!target) return;
+
+    target.classList.remove("hidden");
+
+    requestAnimationFrame(()=>{
+
+        target.classList.add("visible");
+
+    });
+
+    currentLayer = name;
+
+}
+
+/* ==========================================================
+   MYTH CONTROL
+========================================================== */
+
+function openMyth(){
+
+    switchLayer("myth");
+
+    document.body.classList.add("myth-mode");
+
+}
+
+function closeMyth(){
+
+    switchLayer("dawn");
+
+    document.body.classList.remove("myth-mode");
+
+}
+
+/* ==========================================================
+   THEO CONTROL
+========================================================== */
+
+function openTheo(){
+
+    switchLayer("theo");
+
+    document.body.classList.add("theo-mode");
+
+    // сюда позже подключим three.js / glb loader
+    console.log("Theo layer ready");
+
+}
+
+function closeTheo(){
+
+    switchLayer("dawn");
+
+    document.body.classList.remove("theo-mode");
+
+}
+
+/* ==========================================================
+   ESC HANDLER
+========================================================== */
+
+window.addEventListener("keydown",(e)=>{
+
+    if(e.key !== "Escape") return;
+
+    if(currentLayer === "myth"){
+
+        closeMyth();
+
+    }
+
+    if(currentLayer === "theo"){
+
+        closeTheo();
+
+    }
+
+});
+
+function onGoDeeper(){
+
+    openMyth();
+
+}
+
+document.getElementById("returnToDawn")
+?.addEventListener("click",()=>{
+
+    closeMyth();
+
+});
+
+/* ==========================================================
+   THEO SECRET ENTRY
+========================================================== */
+
+let theoBuffer = "";
+
+window.addEventListener("keydown",(e)=>{
+
+    if(currentLayer !== "dawn") return;
+
+    theoBuffer += e.key.toLowerCase();
+
+    if(theoBuffer.length > 10){
+
+        theoBuffer = theoBuffer.slice(-10);
+
+    }
+
+    if(theoBuffer.includes("theo")){
+
+        openTheo();
+
+        theoBuffer = "";
+
+    }
+
+});
