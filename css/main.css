@@ -1287,3 +1287,431 @@ body{
     }
 
 }
+/* ==========================================================
+   PART 4
+   HIDDEN LAYERS / MYTH / COMMUNICATION
+========================================================== */
+
+/* ==========================================================
+   HIDDEN SECTIONS
+========================================================== */
+
+.hidden-section{
+
+    width:min(980px,92vw);
+
+    margin:180px auto 0;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transform:translateY(30px);
+
+    transition:
+
+        opacity 2.6s ease,
+
+        transform 2.6s ease;
+
+}
+
+.hidden-section.unlocked{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+    transform:translateY(0);
+
+}
+
+.hidden-section h3{
+
+    margin:0 0 42px;
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    font-weight:700;
+
+    letter-spacing:.02em;
+
+    color:var(--paper);
+
+}
+
+/* ==========================================================
+   COMMUNICATION
+========================================================== */
+
+.communication-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    max-width:720px;
+
+}
+
+.communication-form input,
+.communication-form textarea{
+
+    width:100%;
+
+    padding:18px 0;
+
+    background:none;
+
+    border:none;
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+    color:var(--paper);
+
+    font:inherit;
+
+    resize:vertical;
+
+    transition:
+
+        border-color 1s ease,
+
+        color 1s ease;
+
+}
+
+.communication-form input:focus,
+.communication-form textarea:focus{
+
+    outline:none;
+
+    border-color:var(--gold);
+
+}
+
+.communication-form textarea{
+
+    min-height:180px;
+
+}
+
+.communication-form button{
+
+    align-self:flex-start;
+
+    margin-top:18px;
+
+    padding:0;
+
+    font-size:.95rem;
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+    color:var(--paper);
+
+}
+
+.communication-form button:hover{
+
+    color:var(--gold);
+
+}
+
+/* ==========================================================
+   GO DEEPER
+========================================================== */
+
+.go-deeper{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:
+
+        opacity 4s ease;
+
+}
+
+.go-deeper.visible{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+.go-deeper-button{
+
+    font-size:clamp(2rem,5vw,5rem);
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    color:var(--paper);
+
+    transition:
+
+        color 2s ease,
+
+        letter-spacing 2s ease,
+
+        transform 2s ease;
+
+}
+
+.go-deeper-button:hover{
+
+    color:var(--gold);
+
+    letter-spacing:.14em;
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================================
+   MYTH PORTAL
+========================================================== */
+
+.myth-portal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#040404;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:
+
+        opacity 5s ease;
+
+    z-index:300;
+
+}
+
+.myth-portal.visible{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+.myth-title{
+
+    font-size:clamp(2.4rem,7vw,7rem);
+
+    font-weight:700;
+
+    letter-spacing:.24em;
+
+    text-transform:uppercase;
+
+    color:var(--paper);
+
+    animation:
+
+        mythReveal 8s ease forwards;
+
+}
+
+/* ==========================================================
+   DIVIDER
+========================================================== */
+
+.hidden-section::before{
+
+    content:"";
+
+    display:block;
+
+    width:120px;
+
+    height:1px;
+
+    margin-bottom:48px;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(255,255,255,.18),
+
+            transparent
+
+        );
+
+}
+
+/* ==========================================================
+   MATERIALS
+========================================================== */
+
+.album-cover{
+
+    will-change:
+
+        transform,
+
+        filter;
+
+}
+
+.artist-photo{
+
+    will-change:
+
+        transform,
+
+        filter;
+
+}
+
+.ghost-words span{
+
+    will-change:
+
+        transform,
+
+        opacity;
+
+}
+
+.light-layer{
+
+    will-change:
+
+        opacity,
+
+        transform;
+
+}
+
+/* ==========================================================
+   FUTURE LAYERS
+========================================================== */
+
+.world{
+
+    isolation:isolate;
+
+}
+
+.world::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    transition:opacity 6s ease;
+
+}
+
+.world.world-awake::before{
+
+    opacity:1;
+
+}
+
+/* ==========================================================
+   MYTH ANIMATION
+========================================================== */
+
+@keyframes mythReveal{
+
+    0%{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+        letter-spacing:.45em;
+
+    }
+
+    25%{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+    70%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        letter-spacing:.65em;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:640px){
+
+    .hidden-section{
+
+        margin-top:120px;
+
+    }
+
+    .communication-form{
+
+        gap:16px;
+
+    }
+
+    .go-deeper-button{
+
+        font-size:2.4rem;
+
+    }
+
+}
+
+/* ==========================================================
+   END MAIN.CSS
+========================================================== */
