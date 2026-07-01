@@ -873,3 +873,417 @@ body{
 /* ==========================================================
    END PART 2
 ========================================================== */
+/* ==========================================================
+   PART 3
+   PLAYER / PLAYLIST
+========================================================== */
+
+/* ==========================================================
+   PLAYER
+========================================================== */
+
+.player-panel{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+    margin-top:18px;
+
+}
+
+.player-controls{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:28px;
+
+    flex-wrap:wrap;
+
+}
+
+.control-link{
+
+    position:relative;
+
+    padding:0;
+
+    font-size:.96rem;
+
+    font-weight:600;
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+    color:var(--paper);
+
+    opacity:.92;
+
+}
+
+.control-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-6px;
+
+    width:0;
+
+    height:1px;
+
+    background:var(--gold);
+
+    transition:
+        width .8s ease;
+
+}
+
+.control-link:hover{
+
+    color:var(--gold);
+
+}
+
+.control-link:hover::after{
+
+    width:100%;
+
+}
+
+/* ==========================================================
+   TIME
+========================================================== */
+
+.player-time{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:.88rem;
+
+    letter-spacing:.18em;
+
+    color:var(--muted);
+
+}
+
+.time-separator{
+
+    opacity:.35;
+
+}
+
+/* ==========================================================
+   PROGRESS
+========================================================== */
+
+.progress-track{
+
+    position:relative;
+
+    width:100%;
+
+    height:2px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    background:var(--gold);
+
+    transition:width .25s linear;
+
+}
+
+/* ==========================================================
+   PLAYLIST
+========================================================== */
+
+.playlist-section{
+
+    margin-top:28px;
+
+}
+
+.playlist{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+/* ==========================================================
+   TRACK
+========================================================== */
+
+.track{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+
+        52px
+
+        1fr
+
+        auto;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:16px 0;
+
+    border-bottom:
+
+        1px solid rgba(255,255,255,.07);
+
+    transition:
+
+        border-color 1.4s ease,
+
+        opacity 1.4s ease,
+
+        transform 1.4s ease;
+
+}
+
+.track:hover{
+
+    border-color:
+
+        rgba(216,177,90,.28);
+
+}
+
+/* ==========================================================
+   NUMBER
+========================================================== */
+
+.track-number{
+
+    font-size:.84rem;
+
+    letter-spacing:.24em;
+
+    color:var(--muted);
+
+}
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.track-title{
+
+    font-size:1.08rem;
+
+    font-weight:500;
+
+    color:var(--paper);
+
+    letter-spacing:.02em;
+
+    transition:
+
+        color 2s ease,
+
+        opacity 2s ease;
+
+}
+
+/* ==========================================================
+   ENCODED TITLE
+========================================================== */
+
+.track.locked .track-title{
+
+    color:rgba(255,255,255,.34);
+
+    letter-spacing:.18em;
+
+}
+
+.track.current .track-title{
+
+    color:var(--paper);
+
+}
+
+.track.completed .track-title{
+
+    color:var(--paper);
+
+}
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.track-status{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-end;
+
+    gap:10px;
+
+    min-width:70px;
+
+    font-size:.85rem;
+
+    color:var(--muted);
+
+}
+
+/* ==========================================================
+   COMPLETED
+========================================================== */
+
+.track.completed .track-status{
+
+    color:var(--gold);
+
+}
+
+.track.completed .track-status::before{
+
+    content:"☼";
+
+    font-size:1rem;
+
+}
+
+/* ==========================================================
+   SKIPPED
+========================================================== */
+
+.track.skipped{
+
+    opacity:.62;
+
+}
+
+.track.skipped .track-status::before{
+
+    content:"—";
+
+}
+
+/* ==========================================================
+   CURRENT
+========================================================== */
+
+.track.current{
+
+    transform:translateX(10px);
+
+}
+
+.track.current::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-14px;
+
+    top:50%;
+
+    width:6px;
+
+    height:6px;
+
+    margin-top:-3px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+}
+
+/* ==========================================================
+   HIDDEN SECTIONS
+========================================================== */
+
+.hidden-section{
+
+    margin-top:140px;
+
+    opacity:.06;
+
+    pointer-events:none;
+
+    transition:
+
+        opacity 4s ease;
+
+}
+
+.hidden-section.unlocked{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:640px){
+
+    .player-controls{
+
+        justify-content:center;
+
+        gap:22px;
+
+    }
+
+    .track{
+
+        grid-template-columns:
+
+            40px
+
+            1fr
+
+            auto;
+
+        gap:12px;
+
+    }
+
+    .track-title{
+
+        font-size:1rem;
+
+    }
+
+}
