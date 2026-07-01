@@ -408,13 +408,28 @@ function refreshPlaylist(){
 
 function requestTrack(index){
 
-    if(index===currentTrack){
+    // Первый запуск сайта
+    if(!audio.src){
+
+        loadTrack(index);
+
+        playTrack();
 
         return;
 
     }
 
-    if(index>currentTrack){
+    // Нажали текущий трек
+    if(index === currentTrack){
+
+        playTrack();
+
+        return;
+
+    }
+
+    // Попытка перескочить вперёд
+    if(index > currentTrack){
 
         showSkipDialog(index);
 
@@ -422,9 +437,10 @@ function requestTrack(index){
 
     }
 
+    // Возврат к предыдущему треку
     loadTrack(index);
 
-   playTrack();
+    playTrack();
 
 }
 
@@ -464,8 +480,6 @@ function showSkipDialog(target){
 
 function loadTrack(index){
 
-   console.log("LOAD TRACK", index);
-
     const track = journey[index];
 
     if(!track) return;
@@ -473,8 +487,6 @@ function loadTrack(index){
     currentTrack = index;
 
     audio.src = "assets/music/" + track.file;
-
-   console.log("SRC =", audio.src);
 
     audio.load();
 
@@ -509,6 +521,8 @@ function playTrack(){
         isPlaying = true;
 
         introFinished = true;
+
+       saveJourney();
 
         startAirportMasks();
 
