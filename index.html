@@ -4,291 +4,160 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Lo.Krain — Io</title>
 
-    <meta name="description" content="Io — an album by Lo.Krain.">
+    <meta
+        name="description"
+        content="Io — the album by Lo.Krain.">
 
-    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
-    <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
-    <link rel="manifest" href="./assets/icons/site.webmanifest">
+    <meta
+        name="theme-color"
+        content="#0e0d0c">
 
-    <meta property="og:title" content="Lo.Krain — Io">
-    <meta property="og:image" content="./assets/icons/social-cover.jpg">
+    <!-- Icons -->
 
-    <link rel="stylesheet" href="./css/theme.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/animations.css">
-    <link rel="stylesheet" href="./css/responsive.css">
+    <link
+        rel="icon"
+        href="assets/icons/favicon.ico">
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="assets/icons/favicon-32x32.png">
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="assets/icons/favicon-16x16.png">
+
+    <link
+        rel="apple-touch-icon"
+        href="assets/icons/apple-touch-icon.png">
+
+    <link
+        rel="manifest"
+        href="assets/icons/site.webmanifest">
+
+    <!-- Open Graph -->
+
+    <meta
+        property="og:title"
+        content="Lo.Krain — Io">
+
+    <meta
+        property="og:type"
+        content="website">
+
+    <meta
+        property="og:image"
+        content="assets/icons/social-cover.jpg">
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/theme.css">
+
+    <link
+        rel="stylesheet"
+        href="css/animations.css">
+
+    <link
+        rel="stylesheet"
+        href="css/main.css">
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css">
 
 </head>
 
-<body class="night">
+<body>
 
-    <!-- INTRO -->
+<!-- =======================================================
+     INTRO
+======================================================= -->
 
-    <section id="intro" class="intro">
+<div
+    class="intro"
+    id="intro">
 
-        <div class="intro-content">
+    <div class="intro-content">
 
-            <h1 class="intro-logo">
-                Lo.Krain — Io
-            </h1>
+        <h1 class="intro-logo">
 
-            <div class="intro-action">
-                Tap | Click | Enter
-            </div>
+            Lo.Krain — Io
 
-        </div>
+        </h1>
 
-    </section>
+        <p class="intro-action">
 
-    <!-- WORLD -->
+            Tap · Click · Enter
 
-    <main id="world" class="world hidden">
+        </p>
 
-        <!-- BACKGROUND -->
+    </div>
 
-        <div class="background-layer"></div>
-        <div class="grain-layer"></div>
-        <div class="light-layer"></div>
+</div>
 
-        <div class="ghost-words">
+<!-- =======================================================
+     WORLD
+======================================================= -->
 
-            <span>PATH</span>
-            <span>NIGHT</span>
-            <span>DAWN</span>
-            <span>HOME</span>
-            <span>IO</span>
+<div class="world">
 
-        </div>
+    <div class="background-layer"></div>
 
-        <!-- CONTENT -->
+    <div class="grain-layer"></div>
 
-        <section class="edition">
+    <div class="light-layer"></div>
 
-            <!-- COVER -->
+    <div class="ghost-words">
 
-            <div class="cover-area">
+        <span>PATH</span>
 
-                <img
-                    src="./assets/images/cover.jpeg"
-                    alt="Io Album Cover"
-                    class="album-cover"
-                    id="albumCover">
+        <span>NIGHT</span>
 
-            </div>
+        <span>IO</span>
 
-            <!-- META -->
+        <span>DAWN</span>
 
-            <div class="meta-area">
+        <span>HOME</span>
 
-                <div class="language-switch">
+    </div>
 
-                    <button data-lang="en" class="lang-btn active">
-                        EN
-                    </button>
+<!-- =======================================================
+     EDITION
+======================================================= -->
 
-                    <span>|</span>
+<main class="edition">
 
-                    <button data-lang="ru" class="lang-btn">
-                        RU
-                    </button>
+<!-- =======================================================
+     COVER
+======================================================= -->
 
-                </div>
+<section class="cover-area">
 
-                <div class="title-row">
+    <img
 
-                    <h2 class="album-title">
-                        Io
-                    </h2>
+        class="album-cover"
 
-                    <span class="meta-label" data-i18n="album">
-                        Album
-                    </span>
+        src="assets/images/cover.jpeg"
 
-                </div>
+        alt="Io album cover">
 
-                <div class="artist-row">
+</section>
 
-                    <h3 class="artist-name">
-                        Lo.Krain
-                    </h3>
+<!-- =======================================================
+     META
+======================================================= -->
 
-                    <span class="meta-label" data-i18n="artist">
-                        Artist
-                    </span>
-
-                </div>
-
-                <div class="release-row">
-
-                    <span class="release-label">
-                        Release
-                    </span>
-
-                    <span class="release-date">
-                        June 21, 2026
-                    </span>
-
-                </div>
-
-                <div class="album-description" data-i18n="description">
-
-                    An album concluding a fifteen-year journey from Night to Dawn.
-                    Listen from beginning to end.
-                    The path continues beyond the final track.
-
-                </div>
-
-                <!-- ARTIST -->
-
-                <div class="artist-card">
-
-                    <img
-                        src="./assets/images/artist.jpg"
-                        alt="Lo.Krain"
-                        class="artist-photo">
-
-                </div>
-
-                <!-- PLAYER -->
-
-                <section class="player-panel">
-
-                    <div class="player-controls">
-
-                        <button id="playBtn" class="control-link">
-                            Play
-                        </button>
-
-                        <button id="pauseBtn" class="control-link">
-                            Pause
-                        </button>
-
-                        <button id="skipBtn" class="control-link">
-                            Skip
-                        </button>
-
-                    </div>
-
-                    <div class="player-time">
-
-                        <span id="currentTime">
-                            00:00
-                        </span>
-
-                        <span class="time-separator">
-                            /
-                        </span>
-
-                        <span id="totalTime">
-                            00:00
-                        </span>
-
-                    </div>
-
-                    <div class="progress-track">
-
-                        <div id="progressBar" class="progress-fill"></div>
-
-                    </div>
-
-                </section>
-
-                <!-- PLAYLIST -->
-
-                <section class="playlist-section">
-
-                    <div id="playlist" class="playlist"></div>
-
-                </section>
-
-            </div>
-
-        </section>
-
-        <!-- HIDDEN SECTIONS -->
-
-        <section id="aboutSection" class="hidden-section">
-            <h3>About</h3>
-        </section>
-
-        <section id="lyricsSection" class="hidden-section">
-            <h3>Lyrics</h3>
-        </section>
-
-        <section id="communicationSection" class="hidden-section">
-
-            <h3>Communication</h3>
-
-            <form id="contactForm" class="communication-form">
-
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Name">
-
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email">
-
-                <textarea
-                    name="message"
-                    rows="5"
-                    placeholder="Message"></textarea>
-
-                <button type="submit">
-                    Send
-                </button>
-
-            </form>
-
-        </section>
-
-        <!-- GO DEEPER -->
-
-        <section id="goDeeperScreen" class="go-deeper hidden">
-
-            <button id="goDeeperBtn" class="go-deeper-button">
-
-                Go Deeper?
-
-            </button>
-
-        </section>
-
-        <!-- MYTH PORTAL -->
-
-        <section id="mythPortal" class="myth-portal hidden">
-
-            <div class="myth-title">
-
-                Lo.Krain Myth
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- AUDIO -->
-
-    <audio id="audioEngine"></audio>
-
-    <!-- SCRIPTS -->
-
-    <script src="./js/translations.js"></script>
-    <script src="./js/storage.js"></script>
-    <script src="./js/player.js"></script>
-    <script src="./js/world.js"></script>
-    <script src="./js/intro.js"></script>
-    <script src="./js/app.js"></script>
-
-</body>
-
-</html>
+<section class="meta-area">
+    
