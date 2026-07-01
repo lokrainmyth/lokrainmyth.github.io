@@ -422,3 +422,454 @@ body{
 /* ==========================================================
    END PART 1
 ========================================================== */
+/* ==========================================================
+   PART 2
+   TYPOGRAPHY / META / ARTIST
+========================================================== */
+
+/* ==========================================================
+   LANGUAGE
+========================================================== */
+
+.language-switch{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:18px;
+
+    user-select:none;
+
+}
+
+.lang-btn{
+
+    padding:0;
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+    color:var(--muted);
+
+    opacity:.85;
+
+}
+
+.lang-btn.active{
+
+    color:var(--paper);
+
+    opacity:1;
+
+}
+
+.language-switch span{
+
+    color:var(--muted);
+
+}
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.title-row{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+}
+
+.album-title{
+
+    margin:0;
+
+    font-size:clamp(3.4rem,7vw,6.8rem);
+
+    font-weight:800;
+
+    line-height:.95;
+
+    letter-spacing:-.05em;
+
+    color:var(--paper);
+
+}
+
+.meta-label{
+
+    margin-bottom:.7rem;
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+    letter-spacing:.28em;
+
+    text-transform:uppercase;
+
+    color:var(--muted);
+
+    transition:color var(--slow-transition);
+
+}
+
+.title-row:hover .meta-label{
+
+    color:var(--gold);
+
+}
+
+/* ==========================================================
+   ARTIST
+========================================================== */
+
+.artist-row{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+}
+
+.artist-name{
+
+    margin:0;
+
+    font-size:clamp(2rem,3vw,3rem);
+
+    font-weight:700;
+
+    letter-spacing:-.02em;
+
+    color:var(--paper);
+
+}
+
+.artist-row:hover .meta-label{
+
+    color:var(--gold);
+
+}
+
+/* ==========================================================
+   RELEASE
+========================================================== */
+
+.release-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-top:6px;
+
+    font-size:1rem;
+
+    letter-spacing:.08em;
+
+}
+
+.release-label{
+
+    color:var(--muted);
+
+    text-transform:uppercase;
+
+}
+
+.release-date{
+
+    color:var(--paper);
+
+    font-weight:500;
+
+}
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.album-description{
+
+    max-width:640px;
+
+    margin-top:18px;
+
+    font-size:1.18rem;
+
+    line-height:1.85;
+
+    color:var(--ink);
+
+    opacity:.94;
+
+}
+
+/* ==========================================================
+   ARTIST CARD
+========================================================== */
+
+.artist-card{
+
+    margin-top:34px;
+
+    width:160px;
+
+}
+
+.artist-photo{
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    border-radius:4px;
+
+    filter:
+
+        grayscale(.1)
+
+        contrast(1.02)
+
+        brightness(.94);
+
+    box-shadow:
+
+        0 18px 40px rgba(0,0,0,.28);
+
+    transition:
+
+        transform 2s ease,
+
+        filter 2s ease,
+
+        box-shadow 2s ease;
+
+}
+
+.artist-card:hover .artist-photo{
+
+    transform:translateY(-2px);
+
+    filter:
+
+        grayscale(0)
+
+        contrast(1.05)
+
+        brightness(1);
+
+}
+
+/* ==========================================================
+   DIVIDERS
+========================================================== */
+
+.meta-area::after{
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+
+    height:1px;
+
+    margin-top:10px;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(255,255,255,.25),
+
+            transparent
+
+        );
+
+}
+
+/* ==========================================================
+   HOVER ACCENTS
+========================================================== */
+
+.album-title,
+.artist-name,
+.release-date,
+.album-description{
+
+    transition:
+
+        color var(--slow-transition),
+
+        opacity var(--slow-transition);
+
+}
+
+.album-title:hover{
+
+    color:var(--gold);
+
+}
+
+.artist-name:hover{
+
+    color:var(--gold);
+
+}
+
+.release-date:hover{
+
+    color:var(--gold);
+
+}
+
+/* ==========================================================
+   DESKTOP AIR
+========================================================== */
+
+@media (min-width:1200px){
+
+    .meta-area{
+
+        padding-right:40px;
+
+    }
+
+    .album-description{
+
+        max-width:680px;
+
+    }
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:980px){
+
+    .edition{
+
+        grid-template-columns:1fr;
+
+        gap:70px;
+
+        padding-top:80px;
+
+    }
+
+    .cover-area{
+
+        order:1;
+
+    }
+
+    .meta-area{
+
+        order:2;
+
+        align-items:center;
+
+        text-align:center;
+
+    }
+
+    .title-row,
+    .artist-row,
+    .release-row{
+
+        justify-content:center;
+
+    }
+
+    .album-description{
+
+        max-width:680px;
+
+    }
+
+    .artist-card{
+
+        width:190px;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:640px){
+
+    .meta-area{
+
+        gap:22px;
+
+    }
+
+    .album-title{
+
+        font-size:3.4rem;
+
+    }
+
+    .artist-name{
+
+        font-size:2rem;
+
+    }
+
+    .album-description{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+        padding:0 6px;
+
+    }
+
+    .artist-card{
+
+        width:170px;
+
+    }
+
+    .language-switch{
+
+        margin-bottom:10px;
+
+    }
+
+}
+
+/* ==========================================================
+   END PART 2
+========================================================== */
