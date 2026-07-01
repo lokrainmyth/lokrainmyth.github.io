@@ -1,265 +1,424 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+/* ==========================================================
+   PROJECT DAWN
+   MAIN.CSS
+   PART 1
+========================================================== */
 
-body {
-  font-family: "Inter", sans-serif;
-  background: #0b0b0c;
-  color: rgba(255,255,255,0.85);
-  letter-spacing: 0.03em;
+/* ==========================================================
+   RESET
+========================================================== */
+
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
 }
 
-/* ===== BACKGROUND ===== */
-
-.bg-gradient {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at top, #1a1a1a, #0b0b0c 60%);
-  opacity: 1;
+html,
+body{
+    width:100%;
+    min-height:100%;
 }
 
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAEklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg==");
-  opacity: 0.05;
-  pointer-events: none;
+body{
+    position:relative;
+    overflow-x:hidden;
+    background:var(--bg);
+    color:var(--paper);
+    font-family:var(--font-main);
 }
 
-/* ===== LAYOUT ===== */
+/* ==========================================================
+   UTILITIES
+========================================================== */
 
-.layout {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 20px;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 60px;
+.hidden{
+    display:none !important;
 }
 
-/* ===== HERO CARD ===== */
-
-.hero {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.visually-hidden{
+    position:absolute;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    clip:rect(0 0 0 0);
 }
 
-.album-cover {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 6px;
-  filter: contrast(1.05) brightness(0.9);
+/* ==========================================================
+   INTRO
+========================================================== */
+
+.intro{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:var(--bg);
+
+    cursor:pointer;
+
+    transition:
+        opacity 2.6s ease,
+        visibility 2.6s ease,
+        background var(--world-transition);
+
 }
 
-.artist-block {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  margin-top: 20px;
+.intro.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
 }
 
-.artist-avatar {
-  width: 52px;
-  height: 52px;
-  border-radius: 4px; /* квадрат, не круг */
-  object-fit: cover;
+.intro-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:34px;
+
+    text-align:center;
+
+    padding:40px;
+
 }
 
-.meta {
-  font-size: 12px;
-  opacity: 0.7;
-  line-height: 1.6;
+.intro-logo{
+
+    margin:0;
+
+    font-size:clamp(2.2rem,5vw,5.8rem);
+
+    font-weight:700;
+
+    letter-spacing:.18em;
+
+    color:var(--paper);
+
+    text-transform:uppercase;
+
+    transition:
+        color var(--slow-transition),
+        opacity 4s ease;
+
 }
 
-/* ===== TITLE SYSTEM ===== */
+.intro-action{
 
-.title {
-  font-size: 34px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+    font-size:clamp(.95rem,1.6vw,1.15rem);
+
+    letter-spacing:.42em;
+
+    text-transform:uppercase;
+
+    color:var(--muted);
+
+    transition:
+        color var(--slow-transition);
+
 }
 
-.subtitle {
-  font-size: 12px;
-  opacity: 0.6;
-  letter-spacing: 0.2em;
+.intro:hover .intro-action{
+
+    color:var(--gold);
+
 }
 
-/* ===== PLAYLIST ===== */
+/* ==========================================================
+   WORLD
+========================================================== */
 
-.playlist {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.world{
+
+    position:relative;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    opacity:1;
+
+    transition:
+        opacity 2.8s ease;
+
 }
 
-.track {
-  padding: 14px 16px;
-  border: 1px solid rgba(255,255,255,0.08);
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-size: 13px;
-  letter-spacing: 0.12em;
+/* ==========================================================
+   BACKGROUND
+========================================================== */
+
+.background-layer{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-30;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255,225,170,.045),
+            transparent 55%
+        ),
+        linear-gradient(
+            180deg,
+            var(--bg-2),
+            var(--bg)
+        );
+
 }
 
-.track:hover {
-  border-color: rgba(255,255,255,0.2);
-  transform: translateX(4px);
+/* ==========================================================
+   GRAIN
+========================================================== */
+
+.grain-layer{
+
+    position:fixed;
+
+    inset:-200px;
+
+    z-index:-20;
+
+    opacity:var(--grain-opacity);
+
+    pointer-events:none;
+
+    background-image:
+
+        radial-gradient(
+            rgba(255,255,255,.04) .6px,
+            transparent .6px
+        );
+
+    background-size:5px 5px;
+
+    transform:rotate(.35deg);
+
 }
 
-.track.locked {
-  opacity: 0.4;
+/* ==========================================================
+   LIGHT
+========================================================== */
+
+.light-layer{
+
+    position:fixed;
+
+    inset:-25%;
+
+    z-index:-10;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            var(--light),
+
+            transparent 65%
+
+        );
+
+    filter:blur(80px);
+
+    opacity:.75;
+
 }
 
-.track.revealed {
-  opacity: 1;
+/* ==========================================================
+   GHOST WORDS
+========================================================== */
+
+.ghost-words{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:-5;
+
 }
 
-/* ===== PLAYER ===== */
+.ghost-words span{
 
-.player {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.08);
+    position:absolute;
+
+    font-size:clamp(4rem,12vw,13rem);
+
+    font-weight:700;
+
+    letter-spacing:.55em;
+
+    color:rgba(255,255,255,var(--ghost-opacity));
+
+    text-transform:uppercase;
+
+    user-select:none;
+
+    white-space:nowrap;
+
 }
 
-/* ===== RESPONSIVE ===== */
+.ghost-words span:nth-child(1){
 
-@media (max-width: 900px) {
-  .layout {
-    grid-template-columns: 1fr;
-    padding: 40px 16px;
-  }
+    top:8%;
+    left:7%;
 
-  .title {
-    font-size: 26px;
-  }
 }
 
-.entry {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #0b0b0c;
-  color: white;
-  z-index: 10;
-  letter-spacing: 0.3em;
+.ghost-words span:nth-child(2){
+
+    top:30%;
+    right:-6%;
+
 }
 
-.entry-sub {
-  opacity: 0.4;
-  margin-top: 10px;
-  font-size: 12px;
+.ghost-words span:nth-child(3){
+
+    bottom:22%;
+    left:10%;
+
 }
 
-.hidden {
-  display: none;
+.ghost-words span:nth-child(4){
+
+    bottom:8%;
+    right:12%;
+
 }
 
-html {
-  font-size: 16px;
+.ghost-words span:nth-child(5){
+
+    top:48%;
+    left:42%;
+
 }
 
-body {
-  margin: 0;
-  overflow-x: hidden;
+/* ==========================================================
+   EDITION
+========================================================== */
+
+.edition{
+
+    width:min(1380px,92vw);
+
+    margin:0 auto;
+
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template-columns:
+
+        minmax(380px,560px)
+
+        minmax(420px,1fr);
+
+    gap:110px;
+
+    align-items:center;
+
+    padding:
+
+        90px
+
+        0
+
+        120px;
+
 }
 
-/* ===== ENTRY ===== */
+/* ==========================================================
+   COVER AREA
+========================================================== */
 
-.entry {
-  position: fixed;
-  inset: 0;
-  background: #0b0b0c;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.cover-area{
 
-  font-size: clamp(14px, 2vw, 18px);
-  letter-spacing: 0.3em;
+    display:flex;
 
-  transition: opacity 1s ease;
+    justify-content:center;
+
+    align-items:center;
+
 }
 
-.fade-out {
-  opacity: 0;
+.album-cover{
+
+    width:min(100%,540px);
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    filter:
+
+        brightness(var(--cover-brightness))
+
+        saturate(var(--cover-saturation))
+
+        contrast(var(--cover-contrast));
+
+    transform:
+
+        scale(var(--cover-scale))
+
+        rotate(var(--cover-rotation));
+
+    box-shadow:var(--cover-shadow);
+
+    transition:
+
+        filter 4s ease,
+
+        transform 4s ease,
+
+        box-shadow 4s ease;
+
 }
 
-/* ===== RESPONSIVE TYPOGRAPHY ===== */
+/* ==========================================================
+   RIGHT COLUMN
+========================================================== */
 
-.title {
-  font-size: clamp(22px, 4vw, 36px);
-  font-weight: 600;
+.meta-area{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    gap:28px;
+
+    min-width:0;
+
 }
 
-.subtitle {
-  font-size: clamp(10px, 1.2vw, 12px);
-}
-
-/* ===== MOBILE LAYOUT FIX ===== */
-
-@media (max-width: 768px) {
-
-  .layout {
-    grid-template-columns: 1fr;
-    padding: 40px 16px;
-    gap: 30px;
-  }
-
-  .album-cover {
-    width: 100%;
-    height: auto;
-  }
-
-  .artist-avatar {
-    width: 48px;
-    height: 48px;
-  }
-
-  .track {
-    font-size: 12px;
-    padding: 12px;
-  }
-}
-
-/* ===== TOUCH IMPROVEMENT ===== */
-
-button, .track {
-  touch-action: manipulation;
-}
-.entry {
-  position: fixed;
-  inset: 0;
-  background: #0b0b0c;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  color: white;
-  z-index: 999;
-
-  user-select: none;
-  -webkit-user-select: none;
-
-  cursor: pointer;
-}
-
-.entry-sub {
-  opacity: 0.5;
-  font-size: 12px;
-}
-
-.hidden {
-  display: none;
-}
-
-/* критично для мобилок */
-body {
-  touch-action: manipulation;
-}
+/* ==========================================================
+   END PART 1
+========================================================== */
