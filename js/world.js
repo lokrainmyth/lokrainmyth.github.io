@@ -348,3 +348,161 @@ function revealSections(progress){
     }
 
 }
+
+/* ==========================================================
+   GO DEEPER
+========================================================== */
+
+const goDeeperSection =
+    document.getElementById("goDeeper");
+
+const goDeeperButton =
+    document.getElementById("goDeeperButton");
+
+const mythLayer =
+    document.getElementById("mythLayer");
+
+const mythSound =
+    document.getElementById("mythSound");
+
+const returnButton =
+    document.getElementById("returnToDawn");
+
+
+function showGoDeeper(){
+
+    if(!goDeeperSection) return;
+
+    goDeeperSection.classList.remove("hidden");
+
+    requestAnimationFrame(()=>{
+
+        goDeeperSection.classList.add("visible");
+
+    });
+
+}
+
+/* ==========================================================
+   ENTER MYTH
+========================================================== */
+
+function enterMyth(){
+
+    if(!mythLayer) return;
+
+    document.body.classList.add("entering-myth");
+
+    if(mythSound){
+
+        mythSound.currentTime=0;
+
+        mythSound.volume=0;
+
+        mythSound.play().catch(()=>{});
+
+        let v=0;
+
+        const fade=setInterval(()=>{
+
+            v+=0.02;
+
+            mythSound.volume=Math.min(v,.6);
+
+            if(v>=.6){
+
+                clearInterval(fade);
+
+            }
+
+        },120);
+
+    }
+
+    setTimeout(()=>{
+
+        mythLayer.classList.remove("hidden");
+
+        mythLayer.classList.add("visible");
+
+    },2800);
+
+}
+
+/* ==========================================================
+   RETURN
+========================================================== */
+
+function leaveMyth(){
+
+    document.body.classList.remove("entering-myth");
+
+    mythLayer.classList.remove("visible");
+
+    mythLayer.classList.add("hidden");
+
+    if(mythSound){
+
+        const fade=setInterval(()=>{
+
+            mythSound.volume-=0.03;
+
+            if(mythSound.volume<=0){
+
+                clearInterval(fade);
+
+                mythSound.pause();
+
+                mythSound.currentTime=0;
+
+            }
+
+        },80);
+
+    }
+
+}
+
+/* ==========================================================
+   EVENTS
+========================================================== */
+
+goDeeperButton?.addEventListener(
+
+    "click",
+
+    ()=>{
+
+        enterMyth();
+
+    }
+
+);
+
+returnButton?.addEventListener(
+
+    "click",
+
+    ()=>{
+
+        leaveMyth();
+
+    }
+
+);
+
+window.addEventListener(
+
+    "keydown",
+
+    e=>{
+
+        if(e.key==="Escape"){
+
+            leaveMyth();
+
+        }
+
+    }
+
+);
