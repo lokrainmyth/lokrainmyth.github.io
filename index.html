@@ -281,3 +281,159 @@
 ======================================================= -->
 
 <section class="player-panel">
+
+<!-- =======================================================
+     PLAYER
+======================================================= -->
+
+<div class="player-controls">
+
+    <button
+        id="playButton"
+        class="control-link">
+
+        Play
+
+    </button>
+
+    <button
+        id="pauseButton"
+        class="control-link">
+
+        Pause
+
+    </button>
+
+    <button
+        id="skipButton"
+        class="control-link">
+
+        Skip
+
+    </button>
+
+</div>
+
+<div class="player-time">
+
+    <span id="currentTime">
+
+        00:00
+
+    </span>
+
+    <span class="time-separator">
+
+        /
+
+    </span>
+
+    <span id="duration">
+
+        00:00
+
+    </span>
+
+</div>
+
+<div class="progress-track">
+
+    <div
+        class="progress-fill"
+        id="progressFill">
+
+    </div>
+
+</div>
+
+<!-- =======================================================
+     PLAYLIST
+======================================================= -->
+
+<section class="playlist-section">
+
+    <ol
+        class="playlist"
+        id="playlist">
+
+        <!-- Заполняется player.js -->
+
+    </ol>
+
+</section>
+
+</section>
+
+<!-- =======================================================
+     HIDDEN CONTENT
+======================================================= -->
+
+<section
+    class="hidden-section"
+    id="aboutSection">
+
+    <h3>
+
+        About
+
+    </h3>
+
+</section>
+
+<section
+    class="hidden-section"
+    id="lyricsSection">
+
+    <h3>
+
+        Lyrics
+
+    </h3>
+
+</section>
+
+<section
+    class="hidden-section"
+    id="communicationSection">
+
+    <h3>
+
+        Communication
+
+    </h3>
+
+    <form
+        class="communication-form"
+        id="communicationForm">
+
+        <input
+
+            type="text"
+
+            id="senderName"
+
+            placeholder="Name">
+
+        <input
+
+            type="email"
+
+            id="senderEmail"
+
+            placeholder="Email">
+
+        <textarea
+
+            id="message"
+
+            placeholder="Message"></textarea>
+
+        <button type="submit">
+
+            Send
+
+        </button>
+
+    </form>
+
+</section>    
