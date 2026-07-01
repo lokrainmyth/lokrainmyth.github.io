@@ -28,6 +28,22 @@
     --medium-transition:1.2s ease;
     --fast-transition:.45s ease;
 
+ --world-progress:0;
+
+    --world-brightness:.18;
+
+    --world-saturation:.42;
+
+    --world-warmth:0;
+
+    --world-grain-opacity:.08;
+
+    --world-light-opacity:.16;
+
+    --cover-opacity:.35;
+
+    --cover-scale:.985;
+   
 }
 
 /* ==========================================================
