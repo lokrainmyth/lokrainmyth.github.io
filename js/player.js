@@ -148,6 +148,8 @@ document.addEventListener(
 
         buildJourney();
 
+       syncWorld();
+
         buildPlaylist();
 
         restoreJourney();
@@ -586,6 +588,7 @@ audio.addEventListener("ended",()=>{
 
        saveJourney();
 applyTrackState();
+       checkJourneyEnd();
 
     }
 
@@ -812,3 +815,89 @@ audio.addEventListener("timeupdate", ()=>{
     saveJourney();
 
 });
+
+/* ==========================================================
+   FINAL STATE
+========================================================== */
+
+let journeyCompleted = false;
+
+function checkJourneyEnd(){
+
+    const done = completedTracks.size === journey.length;
+
+    if(done && !journeyCompleted){
+
+        journeyCompleted = true;
+
+        triggerGoDeeper();
+
+    }
+
+}
+
+/* ==========================================================
+   GO DEEPER TRIGGER
+========================================================== */
+
+function triggerGoDeeper(){
+
+    stopAirportMasks();
+
+    setTimeout(()=>{
+
+        function showGoDeeper(){
+
+    if(!goDeeperSection) return;
+
+    goDeeperSection.classList.remove("hidden");
+
+    requestAnimationFrame(()=>{
+
+        goDeeperSection.classList.add("visible");
+
+    });
+
+    const button = document.getElementById("goDeeperButton");
+
+    if(button){
+
+        button.textContent = canEnterMyth()
+
+            ? "Go Deeper?"
+
+            : "Go Deeper (fragmented path)";
+
+    }
+
+};
+
+    },5000);
+
+}
+
+/* ==========================================================
+   WORLD SYNC HOOK
+========================================================== */
+
+function syncWorld(){
+
+    syncWorld(
+
+        completedTracks.size,
+
+        journey.length
+
+    );
+
+}
+
+/* ==========================================================
+   MYTH LOCK CONDITION
+========================================================== */
+
+function canEnterMyth(){
+
+    return skippedTracks.size === 0;
+
+}
