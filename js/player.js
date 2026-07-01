@@ -846,31 +846,7 @@ function triggerGoDeeper(){
 
     setTimeout(()=>{
 
-        function showGoDeeper(){
-
-    if(!goDeeperSection) return;
-
-    goDeeperSection.classList.remove("hidden");
-
-    requestAnimationFrame(()=>{
-
-        goDeeperSection.classList.add("visible");
-
-    });
-
-    const button = document.getElementById("goDeeperButton");
-
-    if(button){
-
-        button.textContent = canEnterMyth()
-
-            ? "Go Deeper?"
-
-            : "Go Deeper (fragmented path)";
-
-    }
-
-};
+        showGoDeeper();
 
     },5000);
 
@@ -882,7 +858,7 @@ function triggerGoDeeper(){
 
 function syncWorld(){
 
-    syncWorld(
+    updateJourneyWorld(
 
         completedTracks.size,
 
