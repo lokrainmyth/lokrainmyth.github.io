@@ -424,6 +424,8 @@ function requestTrack(index){
 
     loadTrack(index);
 
+   playTrack();
+
 }
 
 /* ==========================================================
@@ -473,6 +475,10 @@ function loadTrack(index){
     audio.load();
 
     isPlaying = false;
+
+   if (introFinished) {
+    playTrack();
+}
 
     refreshPlaylist();
 
