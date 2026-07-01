@@ -1,77 +1,165 @@
-class IoPlayer {
-  constructor() {
-    this.audio = document.getElementById("audioEngine");
+/* ==========================================================
+   PROJECT DAWN
+   PLAYER ENGINE
+========================================================== */
 
-    this.tracks = [];
-    this.currentIndex = 0;
+"use strict";
 
-    this.onTrackChange = null;
-    this.onFinish = null;
+/* ==========================================================
+   TRACK DATA
+========================================================== */
 
-    this.progressBar = document.getElementById("progressBar");
-    this.currentTimeEl = document.getElementById("currentTime");
-    this.totalTimeEl = document.getElementById("totalTime");
+let journey = [];
 
-    this.bind();
-  }
+let currentTrack = 0;
 
-  bind() {
-    document.getElementById("playBtn").onclick = () => this.play();
-    document.getElementById("pauseBtn").onclick = () => this.pause();
-    document.getElementById("skipBtn").onclick = () => this.next();
+let currentAudio = null;
 
-    this.audio.addEventListener("timeupdate", () => this.update());
-    this.audio.addEventListener("ended", () => this.next());
-  }
+let isPlaying = false;
 
-  load(tracks) {
-    this.tracks = tracks;
-    this.loadTrack(this.currentIndex);
-  }
+let introFinished = false;
 
-  loadTrack(i) {
-    const t = this.tracks[i];
-    if (!t) return;
+let skippedTracks = new Set();
 
-    this.audio.src = `./${t.file}`;
-    this.audio.load();
+let completedTracks = new Set();
 
-    if (this.onTrackChange) this.onTrackChange(i);
-  }
+/* ==========================================================
+   ELEMENTS
+========================================================== */
 
-  play() {
-    this.audio.play();
-  }
+const audio =
+    document.getElementById("player");
 
-  pause() {
-    this.audio.pause();
-  }
+const playButton =
+    document.getElementById("playButton");
 
-  next() {
-    this.currentIndex++;
+const pauseButton =
+    document.getElementById("pauseButton");
 
-    if (this.currentIndex >= this.tracks.length) {
-      if (this.onFinish) this.onFinish();
-      return;
+const skipButton =
+    document.getElementById("skipButton");
+
+const playlist =
+    document.getElementById("playlist");
+
+const progressFill =
+    document.getElementById("progressFill");
+
+const currentTimeElement =
+    document.getElementById("currentTime");
+
+const durationElement =
+    document.getElementById("duration");
+
+const wind =
+    document.getElementById("windSound");
+
+/* ==========================================================
+   TRACK LIST
+========================================================== */
+
+const TRACK_FILES = [
+
+    "01-put.mp3",
+
+    "02-kofe-s-soboy.mp3",
+
+    "03-drug.mp3",
+
+    "04-nebo-temnoe.mp3",
+
+    "05-dogola.mp3",
+
+    "06-grustnaya-muzyka.mp3",
+
+    "07-dekabr.mp3",
+
+    "08-17.mp3",
+
+    "09-krasivo.mp3",
+
+    "10-rassvet.mp3"
+
+];
+
+const TRACK_NAMES = [
+
+    "Путь",
+
+    "Кофе с собой",
+
+    "Друг",
+
+    "Небо тёмное",
+
+    "Догола",
+
+    "Грустная музыка",
+
+    "Декабрь",
+
+    "17",
+
+    "Красиво",
+
+    "Рассвет"
+
+];
+
+/* ==========================================================
+   BUILD JOURNEY
+========================================================== */
+
+function buildJourney(){
+
+    journey=[];
+
+    TRACK_NAMES.forEach((title,index)=>{
+
+        journey.push({
+
+            id:index,
+
+            title,
+
+            file:TRACK_FILES[index],
+
+            completed:false,
+
+            skipped:false,
+
+            unlocked:index===0
+
+        });
+
+    });
+
+}
+
+/* ==========================================================
+   INIT
+========================================================== */
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    ()=>{
+
+        buildJourney();
+
+        buildPlaylist();
+
+        restoreJourney();
+
+        updateJourneyWorld(
+
+            completedTracks.size,
+
+            journey.length
+
+        );
+
     }
 
-    this.loadTrack(this.currentIndex);
-    this.play();
-  }
-
-  update() {
-    if (!this.audio.duration) return;
-
-    const p = (this.audio.currentTime / this.audio.duration) * 100;
-    this.progressBar.style.width = p + "%";
-
-    this.currentTimeEl.textContent = this.format(this.audio.currentTime);
-    this.totalTimeEl.textContent = this.format(this.audio.duration);
-  }
-
-  format(t) {
-    const m = Math.floor(t / 60);
-    const s = Math.floor(t % 60);
-    return `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
-  }
-}
+);
