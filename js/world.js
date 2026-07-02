@@ -33,6 +33,8 @@ const World = {
 
             intro: document.querySelector(".intro"),
 
+           outro: document.getElementById("outro"),
+
             world: document.querySelector(".world"),
 
             cover: document.querySelector(".album-cover"),
