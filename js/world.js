@@ -181,3 +181,414 @@ const World = {
     }
 
 };
+
+/* ==========================================================
+   AUTO START
+========================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    World.init();
+
+});
+
+/* ==========================================================
+   WORLD STATES
+========================================================== */
+
+const WORLD_STATES = [
+    "night",
+    "deep-night",
+    "pre-dawn",
+    "dawn",
+    "morning"
+];
+
+function clamp(v,min,max){
+    return Math.min(max,Math.max(min,v));
+}
+
+function setWorldProgress(progress){
+
+    progress = clamp(progress,0,1);
+
+    document.documentElement.style.setProperty(
+        "--world-progress",
+        progress
+    );
+
+    document.documentElement.style.setProperty(
+        "--world-brightness",
+        (0.18 + progress*0.82).toFixed(3)
+    );
+
+    document.documentElement.style.setProperty(
+        "--world-saturation",
+        (0.42 + progress*0.58).toFixed(3)
+    );
+
+    document.documentElement.style.setProperty(
+        "--world-warmth",
+        progress.toFixed(3)
+    );
+
+    document.documentElement.style.setProperty(
+        "--cover-opacity",
+        (.35 + progress*.65).toFixed(3)
+    );
+
+    document.documentElement.style.setProperty(
+        "--cover-scale",
+        (.985 + progress*.015).toFixed(3)
+    );
+
+    updateWorldClass(progress);
+
+}
+
+/* ==========================================================
+   WORLD CLASS
+========================================================== */
+
+function updateWorldClass(progress){
+
+    document.body.classList.remove(
+        "night",
+        "deep-night",
+        "pre-dawn",
+        "dawn",
+        "morning"
+    );
+
+    if(progress<0.15){
+
+        document.body.classList.add("night");
+        return;
+
+    }
+
+    if(progress<0.35){
+
+        document.body.classList.add("deep-night");
+        return;
+
+    }
+
+    if(progress<0.60){
+
+        document.body.classList.add("pre-dawn");
+        return;
+
+    }
+
+    if(progress<0.88){
+
+        document.body.classList.add("dawn");
+        return;
+
+    }
+
+    document.body.classList.add("morning");
+
+}
+
+/* ==========================================================
+   TRACK PROGRESS
+========================================================== */
+
+function updateJourneyWorld(completed,total){
+
+    if(!total)return;
+
+    const progress = completed/total;
+
+    setWorldProgress(progress);
+
+    revealSections(progress);
+
+}
+
+/* ==========================================================
+   REVEAL
+========================================================== */
+
+function revealSections(progress){
+
+    const about=document.getElementById("aboutSection");
+    const lyrics=document.getElementById("lyricsSection");
+    const communication=document.getElementById("communicationSection");
+
+    if(about){
+
+        about.classList.toggle(
+            "visible",
+            progress>=0.30
+        );
+
+    }
+
+    if(lyrics){
+
+        lyrics.classList.toggle(
+            "visible",
+            progress>=0.60
+        );
+
+    }
+
+    if(communication){
+
+        communication.classList.toggle(
+            "visible",
+            progress>=1
+        );
+
+    }
+
+}
+
+/* ==========================================================
+   OUTRO
+========================================================== */
+
+function showOutro(){
+
+    const outro = World.elements.outro;
+
+    if(!outro) return;
+
+    outro.classList.remove("hidden");
+
+    requestAnimationFrame(()=>{
+
+        outro.classList.add("visible");
+
+    });
+
+}
+
+/* ==========================================================
+   LAYERS
+========================================================== */
+
+function switchLayer(name){
+
+    const layers=[
+
+        World.elements.main,
+
+        World.elements.myth,
+
+        World.elements.theo
+
+    ];
+
+    layers.forEach(layer=>{
+
+        if(!layer) return;
+
+        layer.classList.add("hidden");
+
+        layer.classList.remove("visible");
+
+    });
+
+    let target=null;
+
+    switch(name){
+
+        case "dawn":
+
+            target=World.elements.main;
+
+            break;
+
+        case "myth":
+
+            target=World.elements.myth;
+
+            break;
+
+        case "theo":
+
+            target=World.elements.theo;
+
+            break;
+
+    }
+
+    if(target){
+
+        target.classList.remove("hidden");
+
+        requestAnimationFrame(()=>{
+
+            target.classList.add("visible");
+
+        });
+
+    }
+
+    World.currentLayer=name;
+
+}
+
+/* ==========================================================
+   OPENERS
+========================================================== */
+
+function openTheo(){
+
+    switchLayer("theo");
+
+    document.body.classList.add("theo-mode");
+
+}
+
+function closeTheo(){
+
+    switchLayer("dawn");
+
+    document.body.classList.remove("theo-mode");
+
+}
+
+function openMyth(){
+
+    switchLayer("myth");
+
+    document.body.classList.add("myth-mode");
+
+    const sound=World.elements.mythSound;
+
+    if(sound){
+
+        sound.currentTime=0;
+
+        sound.volume=.6;
+
+        sound.play().catch(()=>{});
+
+    }
+
+}
+
+function closeMyth(){
+
+    switchLayer("dawn");
+
+    document.body.classList.remove("myth-mode");
+
+    World.elements.mythSound?.pause();
+
+}
+
+/* ==========================================================
+   ESCAPE
+========================================================== */
+
+World.escape=function(){
+
+    switch(World.currentLayer){
+
+        case "theo":
+
+            closeTheo();
+
+            return;
+
+        case "myth":
+
+            closeMyth();
+
+            return;
+
+    }
+
+};
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+document
+
+.getElementById("outroGoDeeper")
+
+?.addEventListener(
+
+    "click",
+
+    ()=>{
+
+        World.elements.outro
+
+            ?.classList.remove("visible");
+
+        openTheo();
+
+    }
+
+);
+
+document
+
+.getElementById("returnToDawn")
+
+?.addEventListener(
+
+    "click",
+
+    ()=>{
+
+        closeMyth();
+
+    }
+
+);
+
+document
+
+.querySelector('[data-return="theo"]')
+
+?.addEventListener(
+
+    "click",
+
+    ()=>{
+
+        closeTheo();
+
+    }
+
+);
+
+/* ==========================================================
+   SECRET
+========================================================== */
+
+let theoBuffer="";
+
+window.addEventListener(
+
+    "keydown",
+
+    e=>{
+
+        if(World.currentLayer!=="dawn") return;
+
+        theoBuffer+=e.key.toLowerCase();
+
+        theoBuffer=theoBuffer.slice(-10);
+
+        if(theoBuffer.includes("theo")){
+
+            theoBuffer="";
+
+            openTheo();
+
+        }
+
+    }
+
+);
