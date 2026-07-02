@@ -1715,3 +1715,162 @@ body{
 /* ==========================================================
    END MAIN.CSS
 ========================================================== */
+
+/* ==========================================================
+   POLISH PASS I
+   DAWN COMPOSITION
+========================================================== */
+
+/* ---------- DESKTOP LAYOUT ---------- */
+
+@media (min-width: 1024px){
+
+    .left-column{
+
+        justify-content:flex-start;
+
+        padding-top:2rem;
+
+    }
+
+    .album-cover{
+
+        width:min(360px,100%);
+        margin-bottom:2.8rem;
+
+        align-self:flex-start;
+
+    }
+
+    .artist-card{
+
+        transform:scale(1.08);
+
+        transform-origin:top left;
+
+        margin-top:.5rem;
+
+    }
+
+}
+
+/* ---------- COVER AFTER INTRO ---------- */
+
+.album-cover{
+
+    filter:
+
+        brightness(.88)
+
+        contrast(1.02)
+
+        saturate(.98);
+
+    transition:
+
+        opacity 5s ease,
+
+        filter 6s ease,
+
+        transform 6s ease;
+
+}
+
+.world-awake .album-cover{
+
+    filter:
+
+        brightness(.98)
+
+        contrast(1.03)
+
+        saturate(1);
+
+}
+
+/* ---------- PLAYLIST POSITION ---------- */
+
+.playlist{
+
+    width:100%;
+
+    max-width:720px;
+
+    margin-left:0;
+
+    padding-left:0;
+
+}
+
+.track{
+
+    padding-left:0;
+
+    gap:1.2rem;
+
+}
+
+/* ---------- TRACK TITLE ---------- */
+
+.track-title{
+
+    flex:1;
+
+    min-width:0;
+
+}
+
+/* ---------- ARTIST INFO ---------- */
+
+.artist-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+}
+
+.artist-avatar{
+
+    width:74px;
+    height:74px;
+
+}
+
+/* ---------- BUTTON GROUP ---------- */
+
+.secondary-links{
+
+    gap:1.3rem;
+
+}
+
+/* ---------- INTRO MOBILE ---------- */
+
+@media (max-width:640px){
+
+    .intro{
+
+        padding-inline:1.5rem;
+
+    }
+
+    .intro-title{
+
+        white-space:nowrap;
+
+        font-size:clamp(1.6rem,5vw,2rem);
+
+        letter-spacing:.18em;
+
+    }
+
+    .intro-subtitle{
+
+        margin-top:1.4rem;
+
+    }
+
+}
