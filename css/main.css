@@ -1735,7 +1735,7 @@ body{
 
     .album-cover{
 
-        width:min(360px,100%);
+        width:min(430px,100%);
         margin-bottom:2.8rem;
 
         align-self:flex-start;
@@ -1834,8 +1834,8 @@ body{
 
 .artist-avatar{
 
-    width:74px;
-    height:74px;
+    width:78px;
+    height:78px;
 
 }
 
