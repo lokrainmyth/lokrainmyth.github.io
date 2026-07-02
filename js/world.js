@@ -1,9 +1,10 @@
 /* ==========================================================
    PROJECT DAWN
-   WORLD.JS
-   PART 1
-   World Engine
+   WORLD ENGINE
+   FINAL FOUNDATION
 ========================================================== */
+
+"use strict";
 
 const World = {
 
@@ -13,9 +14,11 @@ const World = {
 
     windPlayed: false,
 
-    elements: {},
+    currentLayer: "dawn",
 
-    init() {
+    elements:{},
+
+    init(){
 
         this.cache();
 
@@ -25,665 +28,156 @@ const World = {
 
     },
 
-    /* ====================================================== */
+/* ====================================================== */
 
-    cache() {
+    cache(){
 
-        this.elements = {
+        this.elements={
 
-            intro: document.querySelector(".intro"),
+            intro:document.getElementById("intro"),
 
-           outro: document.getElementById("outro"),
+            outro:document.getElementById("outro"),
 
-            world: document.querySelector(".world"),
+            world:document.querySelector(".world"),
 
-            cover: document.querySelector(".album-cover"),
+            cover:document.querySelector(".album-cover"),
 
-            goDeeper: document.querySelector(".go-deeper"),
+            wind:document.getElementById("windSound"),
 
-            mythPortal: document.querySelector(".myth-portal"),
+            mythSound:document.getElementById("mythSound"),
 
-            wind: document.getElementById("windSound")
+            main:document.getElementById("mainApp"),
+
+            myth:document.getElementById("mythLayer"),
+
+            theo:document.getElementById("theoLayer")
 
         };
 
     },
 
-    /* ====================================================== */
+/* ====================================================== */
 
-    bind() {
+    bind(){
 
-        if (this.elements.intro) {
+        this.elements.intro?.addEventListener(
 
-            this.elements.intro.addEventListener(
-                "click",
-                () => this.enter()
-            );
+            "click",
 
-        }
+            ()=>this.enter()
 
-        document.addEventListener("keydown", (event) => {
+        );
 
-            if (!this.introOpen) return;
+        window.addEventListener(
 
-            if (
-                event.code === "Enter" ||
-                event.code === "Space"
-            ) {
+            "keydown",
 
-                event.preventDefault();
+            e=>{
 
-                this.enter();
+                if(this.introOpen){
+
+                    if(
+
+                        e.code==="Enter" ||
+
+                        e.code==="Space"
+
+                    ){
+
+                        e.preventDefault();
+
+                        this.enter();
+
+                    }
+
+                }
+
+                if(e.key==="Escape"){
+
+                    this.escape();
+
+                }
 
             }
 
-        });
+        );
 
     },
 
-    /* ====================================================== */
+/* ====================================================== */
 
-    prepare() {
+    prepare(){
 
-        if (this.elements.wind) {
+        if(this.elements.wind){
 
-            this.elements.wind.loop = false;
+            this.elements.wind.volume=.55;
 
-            this.elements.wind.volume = 0.55;
+            this.elements.wind.loop=false;
 
         }
 
-        if (this.elements.cover) {
+        if(this.elements.cover){
 
-            this.elements.cover.style.opacity = "0";
+            this.elements.cover.style.opacity="0";
 
-            this.elements.cover.style.transition =
+            this.elements.cover.style.transition=
+
                 "opacity 5s ease";
 
         }
 
     },
 
-    /* ====================================================== */
+/* ====================================================== */
 
-    async enter() {
+    async enter(){
 
-        if (!this.introOpen) return;
+        if(!this.introOpen)return;
 
-        this.introOpen = false;
+        this.introOpen=false;
 
         this.playWind();
 
-        this.fadeIntro();
+        this.elements.intro?.classList.add("hidden");
 
         await this.wait(900);
 
-        this.revealWorld();
+        this.elements.world?.classList.add(
 
-        document.dispatchEvent(
-            new CustomEvent("worldEntered")
+            "world-awake"
+
         );
 
-    },
+        if(this.elements.cover){
 
-    /* ====================================================== */
-
-    playWind() {
-
-        if (this.windPlayed) return;
-
-        this.windPlayed = true;
-
-        if (!this.elements.wind) return;
-
-        this.elements.wind.currentTime = 0;
-
-        this.elements.wind.play().catch(() => {});
-
-    },
-
-    /* ====================================================== */
-
-    fadeIntro() {
-
-        if (!this.elements.intro) return;
-
-        this.elements.intro.classList.add("hidden");
-
-    },
-
-    /* ====================================================== */
-
-    revealWorld() {
-
-        if (this.elements.cover) {
-
-            this.elements.cover.style.opacity = "1";
-
-        }
-
-        if (this.elements.world) {
-
-            this.elements.world.classList.add(
-                "world-awake"
-            );
+            this.elements.cover.style.opacity="1";
 
         }
 
     },
 
-    /* ====================================================== */
+/* ====================================================== */
 
-    wait(ms) {
+    playWind(){
 
-        return new Promise(resolve => {
+        if(this.windPlayed)return;
 
-            setTimeout(resolve, ms);
+        this.windPlayed=true;
 
-        });
+        this.elements.wind
+
+            ?.play()
+
+            .catch(()=>{});
+
+    },
+
+/* ====================================================== */
+
+    wait(ms){
+
+        return new Promise(r=>setTimeout(r,ms));
 
     }
 
 };
-
-/* ==========================================================
-   AUTO START
-========================================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    World.init();
-
-});
-
-/* ==========================================================
-   WORLD STATES
-========================================================== */
-
-const WORLD_STATES = [
-    "night",
-    "deep-night",
-    "pre-dawn",
-    "dawn",
-    "morning"
-];
-
-function clamp(v,min,max){
-    return Math.min(max,Math.max(min,v));
-}
-
-function setWorldProgress(progress){
-
-    progress = clamp(progress,0,1);
-
-    document.documentElement.style.setProperty(
-        "--world-progress",
-        progress
-    );
-
-    document.documentElement.style.setProperty(
-        "--world-brightness",
-        (0.18 + progress*0.82).toFixed(3)
-    );
-
-    document.documentElement.style.setProperty(
-        "--world-saturation",
-        (0.42 + progress*0.58).toFixed(3)
-    );
-
-    document.documentElement.style.setProperty(
-        "--world-warmth",
-        progress.toFixed(3)
-    );
-
-    document.documentElement.style.setProperty(
-        "--cover-opacity",
-        (.35 + progress*.65).toFixed(3)
-    );
-
-    document.documentElement.style.setProperty(
-        "--cover-scale",
-        (.985 + progress*.015).toFixed(3)
-    );
-
-    updateWorldClass(progress);
-
-}
-
-/* ==========================================================
-   WORLD CLASS
-========================================================== */
-
-function updateWorldClass(progress){
-
-    document.body.classList.remove(
-        "night",
-        "deep-night",
-        "pre-dawn",
-        "dawn",
-        "morning"
-    );
-
-    if(progress<0.15){
-
-        document.body.classList.add("night");
-        return;
-
-    }
-
-    if(progress<0.35){
-
-        document.body.classList.add("deep-night");
-        return;
-
-    }
-
-    if(progress<0.60){
-
-        document.body.classList.add("pre-dawn");
-        return;
-
-    }
-
-    if(progress<0.88){
-
-        document.body.classList.add("dawn");
-        return;
-
-    }
-
-    document.body.classList.add("morning");
-
-}
-
-/* ==========================================================
-   TRACK PROGRESS
-========================================================== */
-
-function updateJourneyWorld(completed,total){
-
-    if(!total)return;
-
-    const progress = completed/total;
-
-    setWorldProgress(progress);
-
-    revealSections(progress);
-
-}
-
-/* ==========================================================
-   REVEAL
-========================================================== */
-
-function revealSections(progress){
-
-    const about=document.getElementById("aboutSection");
-    const lyrics=document.getElementById("lyricsSection");
-    const communication=document.getElementById("communicationSection");
-
-    if(about){
-
-        about.classList.toggle(
-            "visible",
-            progress>=0.30
-        );
-
-    }
-
-    if(lyrics){
-
-        lyrics.classList.toggle(
-            "visible",
-            progress>=0.60
-        );
-
-    }
-
-    if(communication){
-
-        communication.classList.toggle(
-            "visible",
-            progress>=1
-        );
-
-    }
-
-}
-
-/* ==========================================================
-   GO DEEPER
-========================================================== */
-
-const goDeeperSection =
-    document.getElementById("goDeeper");
-
-const goDeeperButton =
-    document.getElementById("goDeeperButton");
-
-const mythLayer =
-    document.getElementById("mythLayer");
-
-const mythSound =
-    document.getElementById("mythSound");
-
-const returnButton =
-    document.getElementById("returnToDawn");
-
-
-function showGoDeeper(){
-
-    if(!goDeeperSection) return;
-
-    goDeeperSection.classList.remove("hidden");
-
-    requestAnimationFrame(()=>{
-
-        goDeeperSection.classList.add("visible");
-
-    });
-
-}
-
-/* ==========================================================
-   ENTER MYTH
-========================================================== */
-
-function enterMyth(){
-
-    if(!mythLayer) return;
-
-    document.body.classList.add("entering-myth");
-
-    if(mythSound){
-
-        mythSound.currentTime=0;
-
-        mythSound.volume=0;
-
-        mythSound.play().catch(()=>{});
-
-        let v=0;
-
-        const fade=setInterval(()=>{
-
-            v+=0.02;
-
-            mythSound.volume=Math.min(v,.6);
-
-            if(v>=.6){
-
-                clearInterval(fade);
-
-            }
-
-        },120);
-
-    }
-
-    setTimeout(()=>{
-
-        mythLayer.classList.remove("hidden");
-
-        mythLayer.classList.add("visible");
-
-    },2800);
-
-}
-
-/* ==========================================================
-   RETURN
-========================================================== */
-
-function leaveMyth(){
-
-    document.body.classList.remove("entering-myth");
-
-    mythLayer.classList.remove("visible");
-
-    mythLayer.classList.add("hidden");
-
-    if(mythSound){
-
-        const fade=setInterval(()=>{
-
-            mythSound.volume-=0.03;
-
-            if(mythSound.volume<=0){
-
-                clearInterval(fade);
-
-                mythSound.pause();
-
-                mythSound.currentTime=0;
-
-            }
-
-        },80);
-
-    }
-
-}
-
-function showOutro(){
-
-    if(!World.elements.outro) return;
-
-    World.elements.outro.classList.add("visible");
-
-}
-
-document
-.getElementById("outroGoDeeper")
-?.addEventListener(
-
-    "click",
-
-    ()=>{
-
-        World.elements.outro
-            .classList.remove("visible");
-
-        openTheo();
-
-    }
-
-);
-
-/* ==========================================================
-   EVENTS
-========================================================== */
-
-goDeeperButton?.addEventListener(
-
-    "click",
-
-    ()=>{
-
-        enterMyth();
-
-    }
-
-);
-
-returnButton?.addEventListener(
-
-    "click",
-
-    ()=>{
-
-        leaveMyth();
-
-    }
-
-);
-
-window.addEventListener(
-
-    "keydown",
-
-    e=>{
-
-        if(e.key==="Escape"){
-
-            leaveMyth();
-
-        }
-
-    }
-
-);
-
-/* ==========================================================
-   WORLD LAYERS
-========================================================== */
-
-let currentLayer = "dawn";
-
-const layers = {
-
-    dawn: document.getElementById("mainApp"),
-
-    myth: document.getElementById("mythLayer"),
-
-    theo: document.getElementById("theoLayer")
-
-};
-
-/* ==========================================================
-   SWITCH LAYER
-========================================================== */
-
-function switchLayer(name){
-
-    Object.values(layers).forEach(el=>{
-
-        if(!el) return;
-
-        el.classList.add("hidden");
-
-        el.classList.remove("visible");
-
-    });
-
-    const target = layers[name];
-
-    if(!target) return;
-
-    target.classList.remove("hidden");
-
-    requestAnimationFrame(()=>{
-
-        target.classList.add("visible");
-
-    });
-
-    currentLayer = name;
-
-}
-
-/* ==========================================================
-   MYTH CONTROL
-========================================================== */
-
-function openMyth(){
-
-    switchLayer("myth");
-
-    document.body.classList.add("myth-mode");
-
-}
-
-function closeMyth(){
-
-    switchLayer("dawn");
-
-    document.body.classList.remove("myth-mode");
-
-}
-
-/* ==========================================================
-   THEO CONTROL
-========================================================== */
-
-function openTheo(){
-
-    switchLayer("theo");
-
-    document.body.classList.add("theo-mode");
-
-    // сюда позже подключим three.js / glb loader
-    console.log("Theo layer ready");
-
-}
-
-function closeTheo(){
-
-    switchLayer("dawn");
-
-    document.body.classList.remove("theo-mode");
-
-}
-
-/* ==========================================================
-   ESC HANDLER
-========================================================== */
-
-window.addEventListener("keydown",(e)=>{
-
-    if(e.key !== "Escape") return;
-
-    if(currentLayer === "myth"){
-
-        closeMyth();
-
-    }
-
-    if(currentLayer === "theo"){
-
-        closeTheo();
-
-    }
-
-});
-
-function onGoDeeper(){
-
-    openMyth();
-
-}
-
-document.getElementById("returnToDawn")
-?.addEventListener("click",()=>{
-
-    closeMyth();
-
-});
-
-/* ==========================================================
-   THEO SECRET ENTRY
-========================================================== */
-
-let theoBuffer = "";
-
-window.addEventListener("keydown",(e)=>{
-
-    if(currentLayer !== "dawn") return;
-
-    theoBuffer += e.key.toLowerCase();
-
-    if(theoBuffer.length > 10){
-
-        theoBuffer = theoBuffer.slice(-10);
-
-    }
-
-    if(theoBuffer.includes("theo")){
-
-        openTheo();
-
-        theoBuffer = "";
-
-    }
-
-});
