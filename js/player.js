@@ -282,11 +282,11 @@ function stopAirportMasks(){
 
 function getDisplayedTitle(track){
 
-    if(track.completed){
+   if(track.completed){
 
-        return "☼ " + track.title;
+    return track.title;
 
-    }
+}
 
     if(track.id===currentTrack && isPlaying){
 
@@ -602,19 +602,19 @@ function formatTime(sec){
 
 audio.addEventListener("ended",()=>{
 
-    const track = journey[currentTrack];
+    const track=journey[currentTrack];
 
     if(track){
 
-        track.completed = true;
+        track.completed=true;
 
         completedTracks.add(currentTrack);
 
-       saveJourney();
-applyTrackState();
-       checkJourneyEnd();
-
     }
+
+    saveJourney();
+
+    applyTrackState();
 
     updateJourneyWorld(
 
@@ -628,17 +628,15 @@ applyTrackState();
 
     stopAirportMasks();
 
-    const next = currentTrack + 1;
+    if(completedTracks.size===journey.length){
 
-    if(next < journey.length){
+        triggerGoDeeper();
 
-        loadTrack(next);
-
-    } else {
-
-        showGoDeeper();
+        return;
 
     }
+
+    loadTrack(currentTrack+1);
 
 });
 
@@ -655,22 +653,6 @@ audio.addEventListener("timeupdate", updateProgress);
 playButton?.addEventListener("click", playTrack);
 
 pauseButton?.addEventListener("click", pauseTrack);
-
-skipButton?.addEventListener("click", ()=>{
-
-    const next = currentTrack + 1;
-
-    if(next < journey.length){
-
-        loadTrack(next);
-
-    } else {
-
-        showGoDeeper();
-
-    }
-
-});
 
 /* ==========================================================
    STORAGE
@@ -798,11 +780,11 @@ function skipTrack(){
 
         loadTrack(next);
 
-    } else {
+   } else {
 
-        showGoDeeper();
+    triggerGoDeeper();
 
-    }
+}
 
 }
 
@@ -870,11 +852,7 @@ function triggerGoDeeper(){
 
     setTimeout(()=>{
 
-        if(typeof showOutro==="function"){
-
-            showOutro();
-
-        }
+        showOutro();
 
     },2500);
 
