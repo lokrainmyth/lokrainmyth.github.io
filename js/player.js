@@ -870,9 +870,13 @@ function triggerGoDeeper(){
 
     setTimeout(()=>{
 
-        showGoDeeper();
+        if(typeof showOutro==="function"){
 
-    },5000);
+            showOutro();
+
+        }
+
+    },2500);
 
 }
 
