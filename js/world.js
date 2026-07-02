@@ -463,6 +463,31 @@ function leaveMyth(){
 
 }
 
+function showOutro(){
+
+    if(!World.elements.outro) return;
+
+    World.elements.outro.classList.add("visible");
+
+}
+
+document
+.getElementById("outroGoDeeper")
+?.addEventListener(
+
+    "click",
+
+    ()=>{
+
+        World.elements.outro
+            .classList.remove("visible");
+
+        openTheo();
+
+    }
+
+);
+
 /* ==========================================================
    EVENTS
 ========================================================== */
