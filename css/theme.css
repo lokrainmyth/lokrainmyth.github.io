@@ -403,3 +403,59 @@ img{
     background:var(--gold);
 
 }
+
+/* ==========================================================
+   OUTRO
+========================================================== */
+
+.outro{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#050505;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity 2.5s ease;
+
+    z-index:300;
+
+}
+
+.outro.visible{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+.outro.hidden{
+
+    display:flex;
+
+}
+
+.outro-content{
+
+    text-align:center;
+
+}
+
+.outro .go-deeper-button{
+
+    font-size:1.05rem;
+
+    letter-spacing:.24em;
+
+}
