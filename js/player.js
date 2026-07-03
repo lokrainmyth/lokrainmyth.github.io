@@ -778,13 +778,7 @@ function skipTrack(){
 
     if(next < journey.length){
 
-        loadTrack(next);
-
-   } else {
-
-    triggerGoDeeper();
-
-}
+    loadTrack(next);
 
 }
 
