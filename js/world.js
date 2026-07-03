@@ -366,6 +366,23 @@ function showOutro(){
 
 }
 
+document
+.getElementById("outroGoDeeper")
+?.addEventListener(
+
+    "click",
+
+    ()=>{
+
+        World.elements.outro
+            ?.classList.remove("visible");
+
+        openTheo();
+
+    }
+
+);
+
 /* ==========================================================
    LAYERS
 ========================================================== */
