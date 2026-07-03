@@ -780,8 +780,16 @@ function skipTrack(){
 
     loadTrack(next);
 
-}
+}else{
 
+    if(completedTracks.size===journey.length){
+
+        triggerGoDeeper();
+
+    }
+
+}
+   
 /* ==========================================================
    SKIP BUTTON UPDATE
 ========================================================== */
