@@ -511,3 +511,39 @@ Meaning over functionality.
 The listener should leave feeling they have travelled somewhere.
 
 Not simply listened to an album.
+
+# Scene Architecture
+
+PROJECT DAWN is divided into scenes rather than pages.
+
+Current sequence:
+
+Intro
+
+↓
+
+Journey
+
+↓
+
+Outro
+
+↓
+
+Theo
+
+↓
+
+Myth
+
+↓
+
+Return
+
+Each scene is responsible for one emotional transition.
+
+Scenes should never overlap.
+
+Only one primary scene should be visible at a time.
+
+Transitions should always fade rather than instantly switch.
