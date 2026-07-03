@@ -559,3 +559,11 @@ closeScene()
 No scene should directly manipulate another scene.
 
 Scene transitions should always be requested rather than forced.
+
+# Architecture Rule
+
+Legacy systems are removed immediately after replacement.
+
+Old and new navigation must never coexist.
+
+Every transition should have only one implementation.
