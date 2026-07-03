@@ -567,3 +567,13 @@ Legacy systems are removed immediately after replacement.
 Old and new navigation must never coexist.
 
 Every transition should have only one implementation.
+
+# Transition Rule
+
+Every transition should preserve the previous scene underneath.
+
+The world never disappears instantly.
+
+It slowly fades into the next experience.
+
+Darkness is a bridge rather than a cut.
