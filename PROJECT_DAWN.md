@@ -547,3 +547,15 @@ Scenes should never overlap.
 Only one primary scene should be visible at a time.
 
 Transitions should always fade rather than instantly switch.
+
+# Scene Rules
+
+Every scene has only two public actions.
+
+openScene()
+
+closeScene()
+
+No scene should directly manipulate another scene.
+
+Scene transitions should always be requested rather than forced.
