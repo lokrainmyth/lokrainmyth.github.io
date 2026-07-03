@@ -353,17 +353,16 @@ function revealSections(progress){
 
 function showOutro(){
 
-    const outro = World.elements.outro;
+    document
+        .querySelector(".world")
+        ?.classList.add("outro-active");
 
-    if(!outro) return;
+    setTimeout(()=>{
 
-    outro.classList.remove("hidden");
+        World.elements.outro
+            ?.classList.add("visible");
 
-    requestAnimationFrame(()=>{
-
-        outro.classList.add("visible");
-
-    });
+    },1800);
 
 }
 
