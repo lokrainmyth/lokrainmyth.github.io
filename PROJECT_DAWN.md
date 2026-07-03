@@ -577,3 +577,18 @@ The world never disappears instantly.
 It slowly fades into the next experience.
 
 Darkness is a bridge rather than a cut.
+
+CURRENT PHASE
+
+The project is no longer in the architecture stage.
+
+Core systems are considered complete.
+
+Current development focuses only on polishing,
+visual rhythm,
+micro-interactions,
+light,
+timing,
+and emotional continuity.
+
+No new major systems should be introduced unless they extend the existing mythology.
