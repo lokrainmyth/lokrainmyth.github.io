@@ -620,3 +620,13 @@ The interface disappears.
 The visitor is invited to continue the journey voluntarily.
 
 Theo is revealed only after accepting the invitation.
+
+### Theo Sequence
+
+Theo is not a menu.
+
+Theo is an encounter.
+
+The object appears first.
+
+Only after its presence is felt does the path toward Lo.Krain Myth become available.
