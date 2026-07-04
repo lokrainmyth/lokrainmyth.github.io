@@ -500,17 +500,23 @@ img{
 
 }
 
+.outro-content{
+
+    text-align:center;
+
+}
+
 #outroGoDeeper{
 
     background:none;
 
     border:none;
 
-    color:#eef3ff;
+    color:#f7f6f3;
 
     cursor:pointer;
 
-    font-size:clamp(48px,7vw,88px);
+    font-size:clamp(64px,8vw,110px);
 
     font-weight:300;
 
