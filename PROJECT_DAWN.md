@@ -594,3 +594,15 @@ and emotional continuity.
 No new major systems should be introduced unless they extend the existing mythology.
 
 The site is not a landing page. It is a journey with an intro, a dawn, an outro, and a continuation. Every transition should feel like entering another state rather than opening another page.
+
+## Outro
+
+The outro mirrors the Intro.
+
+After the final track the world fades into darkness.
+
+Only one element remains:
+
+GO DEEPER?
+
+Silence is part of the transition.
