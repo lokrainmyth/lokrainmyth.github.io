@@ -372,61 +372,37 @@ function showOutro(){
 
 function switchLayer(name){
 
-    const layers=[
+    const layers={
 
-        World.elements.main,
+        dawn:World.elements.main,
 
-        World.elements.myth,
+        myth:World.elements.myth,
 
-        World.elements.theo
+        theo:World.elements.theo
 
-    ];
+    };
 
-    layers.forEach(layer=>{
+    Object.values(layers).forEach(layer=>{
 
         if(!layer) return;
 
-        layer.classList.add("hidden");
-
         layer.classList.remove("visible");
+
+        layer.classList.add("hidden");
 
     });
 
-    let target=null;
+    const target=layers[name];
 
-    switch(name){
+    if(!target) return;
 
-        case "dawn":
+    target.classList.remove("hidden");
 
-            target=World.elements.main;
+    requestAnimationFrame(()=>{
 
-            break;
+        target.classList.add("visible");
 
-        case "myth":
-
-            target=World.elements.myth;
-
-            break;
-
-        case "theo":
-
-            target=World.elements.theo;
-
-            break;
-
-    }
-
-    if(target){
-
-        target.classList.remove("hidden");
-
-        requestAnimationFrame(()=>{
-
-            target.classList.add("visible");
-
-        });
-
-    }
+    });
 
     World.currentLayer=name;
 
@@ -557,32 +533,6 @@ document
     ()=>{
 
         closeTheo();
-
-    }
-
-);
-
-/* ==========================================================
-   THEO → MYTH
-========================================================== */
-
-document
-
-.getElementById("enterMythButton")
-
-?.addEventListener(
-
-    "click",
-
-    ()=>{
-
-        closeTheo();
-
-        setTimeout(()=>{
-
-            openMyth();
-
-        },700);
 
     }
 
