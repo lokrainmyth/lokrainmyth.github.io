@@ -606,3 +606,17 @@ Only one element remains:
 GO DEEPER?
 
 Silence is part of the transition.
+
+### Outro Philosophy
+
+The Outro is not an ending screen.
+
+It is a threshold.
+
+Go Deeper? appears alone in darkness.
+
+The interface disappears.
+
+The visitor is invited to continue the journey voluntarily.
+
+Theo is revealed only after accepting the invitation.
