@@ -639,3 +639,19 @@ Only after its presence is felt does the path toward Lo.Krain Myth become availa
 ✓ Journey Progress
 ✓ World States
 ✓ Outro
+
+Album
+    ↓
+Outro
+    ↓
+Go Deeper
+    ↓
+Theo (Original Object, July 2011)
+    ↓
+Lo.Krain Myth
+    ↓
+Myth Map
+    ↓
+Theo
+Dreamer
+The Darkest Hour Before Dawn
