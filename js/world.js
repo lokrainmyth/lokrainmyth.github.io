@@ -360,6 +360,9 @@ function showOutro(){
     setTimeout(()=>{
 
         World.elements.outro
+            ?.classList.remove("hidden");
+
+        World.elements.outro
             ?.classList.add("visible");
 
     },1800);
