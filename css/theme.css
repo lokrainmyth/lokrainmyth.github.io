@@ -543,3 +543,19 @@ img{
         filter 2s ease;
 
 }
+
+.outro.hidden{
+
+    display:none;
+
+}
+
+.outro.visible{
+
+    display:flex;
+
+    opacity:1;
+
+    visibility:visible;
+
+}
