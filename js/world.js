@@ -490,9 +490,7 @@ World.escape=function(){
 ========================================================== */
 
 document
-
 .getElementById("outroGoDeeper")
-
 ?.addEventListener(
 
     "click",
@@ -500,10 +498,13 @@ document
     ()=>{
 
         World.elements.outro
-
             ?.classList.remove("visible");
 
-        openTheo();
+        setTimeout(()=>{
+
+            openMyth();
+
+        },800);
 
     }
 
