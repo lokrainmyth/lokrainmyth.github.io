@@ -542,28 +542,6 @@ document
 
 );
 
-document
-
-.querySelector('[data-chapter="theo"]')
-
-?.addEventListener(
-
-    "click",
-
-    ()=>{
-
-        closeMyth();
-
-        setTimeout(()=>{
-
-            openTheo();
-
-        },700);
-
-    }
-
-);
-
 /* ==========================================================
    SECRET
 ========================================================== */
