@@ -502,7 +502,7 @@ document
 
         setTimeout(()=>{
 
-            openMyth();
+            openTheo();
 
         },800);
 
