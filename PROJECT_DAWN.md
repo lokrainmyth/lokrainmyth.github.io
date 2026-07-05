@@ -630,3 +630,12 @@ Theo is an encounter.
 The object appears first.
 
 Only after its presence is felt does the path toward Lo.Krain Myth become available.
+
+## Stable Build
+
+✓ Intro
+✓ Player
+✓ Playlist
+✓ Journey Progress
+✓ World States
+✓ Outro
