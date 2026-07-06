@@ -421,6 +421,12 @@ function openTheo(){
 
     document.body.classList.add("theo-mode");
 
+    if(!Theo.scene){
+
+        Theo.init();
+
+    }
+
 }
 
 function closeTheo(){
