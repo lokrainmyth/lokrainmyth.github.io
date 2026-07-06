@@ -655,3 +655,19 @@ Myth Map
 Theo
 Dreamer
 The Darkest Hour Before Dawn
+
+## Theo Philosophy
+
+Theo is not a 3D viewer.
+
+Theo is treated as a museum object.
+
+The visitor does not rotate the object freely.
+
+The object gently responds to the visitor's presence.
+
+Mouse movement creates only a subtle inertial rotation.
+
+The object always returns to its original position.
+
+The interaction should feel respectful, quiet and physical.
