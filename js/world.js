@@ -6,6 +6,8 @@
 
 "use strict";
 
+console.log("WORLD JS LOADED");
+
 const World = {
 
     state: "night",
