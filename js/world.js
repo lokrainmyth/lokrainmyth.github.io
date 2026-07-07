@@ -48,7 +48,7 @@ const World = {
 
             mythSound:document.getElementById("mythSound"),
 
-            main:document.getElementById("mainApp"),
+            main:document.querySelector(".world"),
 
             myth:document.getElementById("mythLayer"),
 
