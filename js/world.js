@@ -423,6 +423,11 @@ function openTheo(){
 
     const theo = document.getElementById("theoLayer");
 
+    console.log(
+        "ALL THEO SEARCH",
+        document.body.innerHTML.includes("theoLayer")
+    );
+
     console.log("THEO:", theo);
 
     if(theo){
