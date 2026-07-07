@@ -419,37 +419,23 @@ function switchLayer(name){
 
 function openTheo(){
 
-    console.log("OPEN THEO FIXED");
+    console.log("OPEN THEO TEST");
 
-    World.elements.outro
-        ?.classList.remove("visible");
+    const theo = document.getElementById("theoLayer");
 
-
-    switchLayer("theo");
-
-
-    const theo = document.getElementById(
-        "theoLayer"
-    );
-
+    console.log("THEO ELEMENT:", theo);
 
     if(theo){
 
-        theo.classList.remove(
-            "hidden"
-        );
+        theo.classList.remove("hidden");
 
-        theo.classList.add(
-            "visible"
-        );
+        theo.classList.add("visible");
+
+        theo.style.display="flex";
+
+        theo.style.zIndex="99999";
 
     }
-
-
-    document.body.classList.add(
-        "theo-mode"
-    );
-
 
 }
 
