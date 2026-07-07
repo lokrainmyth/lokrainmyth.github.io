@@ -417,11 +417,15 @@ function switchLayer(name){
 
 function openTheo(){
 
+    console.log("OPEN THEO");
+
     switchLayer("theo");
 
     document.body.classList.add("theo-mode");
 
     setTimeout(()=>{
+
+        console.log("START THEO");
 
         Theo.init();
 
