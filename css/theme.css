@@ -601,3 +601,15 @@ img{
     height:80vh;
 
 }
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.visible{
+
+    display:flex !important;
+
+}
