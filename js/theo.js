@@ -72,62 +72,6 @@ const Theo = {
             ambient
         );
 
-
-        const loader = new THREE.GLTFLoader();
-
-
-        loader.load(
-
-            "assets/models/Theo.glb",
-
-            (gltf)=>{
-
-
-                this.model = gltf.scene;
-
-
-                this.model.scale.set(
-                    1,
-                    1,
-                    1
-                );
-
-
-                this.model.position.set(
-                    0,
-                    -0.8,
-                    0
-                );
-
-
-                this.scene.add(
-                    this.model
-                );
-
-
-                console.log(
-                    "Theo model loaded"
-                );
-
-
-            },
-
-
-            undefined,
-
-
-            (error)=>{
-
-                console.error(
-                    "Theo model error",
-                    error
-                );
-
-            }
-
-        );
-
-
         this.renderer =
             new THREE.WebGLRenderer({
 
