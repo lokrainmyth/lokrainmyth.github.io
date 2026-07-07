@@ -419,28 +419,23 @@ function switchLayer(name){
 
 function openTheo(){
 
-    console.log("OPEN THEO FINAL");
+    console.log("OPEN THEO DIRECT");
 
     const outro = document.getElementById("outro");
     const theo = document.getElementById("theoLayer");
 
     if(outro){
 
-        outro.classList.remove("visible");
-
-        outro.classList.add("hidden");
+        outro.style.display="none";
 
     }
 
 
     if(theo){
 
-        theo.classList.remove("hidden");
-
-        theo.classList.add("visible");
-
         theo.style.display="flex";
-
+        theo.style.visibility="visible";
+        theo.style.opacity="1";
         theo.style.zIndex="99999";
 
     }
@@ -450,12 +445,6 @@ function openTheo(){
         "theo-mode"
     );
 
-
-    if(typeof Theo !== "undefined"){
-
-        Theo.init();
-
-    }
 
 }
 
