@@ -419,22 +419,26 @@ function switchLayer(name){
 
 function openTheo(){
 
-    console.log("OPEN THEO FIRED");
+    console.log("OPEN THEO TEST");
 
-    const theo = document.getElementById("theoLayer");
-
-    console.log(
-        "ALL THEO SEARCH",
-        document.body.innerHTML.includes("theoLayer")
+    const theo = document.getElementById(
+        "theoLayer"
     );
 
-    console.log("THEO:", theo);
+    console.log(
+        "THEO ELEMENT:",
+        theo
+    );
 
     if(theo){
 
-        theo.classList.remove("hidden");
+        theo.classList.remove(
+            "hidden"
+        );
 
-        theo.classList.add("visible");
+        theo.classList.add(
+            "visible"
+        );
 
     }
 
