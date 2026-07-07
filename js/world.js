@@ -425,7 +425,7 @@ function openTheo(){
 
     setTimeout(()=>{
 
-        console.log("START THEO");
+        console.log("CALL THEO INIT");
 
         Theo.init();
 
@@ -507,10 +507,14 @@ document
 
     ()=>{
 
+        console.log("OUTRO BUTTON CLICK");
+
         World.elements.outro
             ?.classList.remove("visible");
 
         setTimeout(()=>{
+
+            console.log("CALL OPEN THEO");
 
             openTheo();
 
