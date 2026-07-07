@@ -419,19 +419,37 @@ function switchLayer(name){
 
 function openTheo(){
 
-    console.log("OPEN THEO");
+    console.log("OPEN THEO FIXED");
+
+    World.elements.outro
+        ?.classList.remove("visible");
+
 
     switchLayer("theo");
 
-    document.body.classList.add("theo-mode");
 
-    setTimeout(()=>{
+    const theo = document.getElementById(
+        "theoLayer"
+    );
 
-        console.log("CALL THEO INIT");
 
-        Theo.init();
+    if(theo){
 
-    },500);
+        theo.classList.remove(
+            "hidden"
+        );
+
+        theo.classList.add(
+            "visible"
+        );
+
+    }
+
+
+    document.body.classList.add(
+        "theo-mode"
+    );
+
 
 }
 
@@ -509,19 +527,11 @@ document
 
     ()=>{
 
-        console.log("GO DEEPER CLICK");
+        console.log(
+            "GO DEEPER → THEO"
+        );
 
-        World.elements.outro
-            ?.classList.remove("visible");
-
-
-        setTimeout(()=>{
-
-            console.log("OPEN THEO FROM OUTRO");
-
-            openTheo();
-
-        },800);
+        openTheo();
 
     }
 
