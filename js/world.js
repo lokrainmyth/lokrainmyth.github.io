@@ -421,11 +421,11 @@ function openTheo(){
 
     document.body.classList.add("theo-mode");
 
-    if(!Theo.scene){
+    setTimeout(()=>{
 
         Theo.init();
 
-    }
+    },500);
 
 }
 
