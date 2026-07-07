@@ -419,11 +419,19 @@ function switchLayer(name){
 
 function openTheo(){
 
-    console.log("OPEN THEO TEST");
+    console.log("OPEN THEO FINAL");
 
+    const outro = document.getElementById("outro");
     const theo = document.getElementById("theoLayer");
 
-    console.log("THEO ELEMENT:", theo);
+    if(outro){
+
+        outro.classList.remove("visible");
+
+        outro.classList.add("hidden");
+
+    }
+
 
     if(theo){
 
@@ -434,6 +442,18 @@ function openTheo(){
         theo.style.display="flex";
 
         theo.style.zIndex="99999";
+
+    }
+
+
+    document.body.classList.add(
+        "theo-mode"
+    );
+
+
+    if(typeof Theo !== "undefined"){
+
+        Theo.init();
 
     }
 
