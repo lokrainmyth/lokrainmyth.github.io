@@ -571,3 +571,33 @@ img{
     height:500px;
 
 }
+
+/* ==========================================================
+   THEO DEBUG
+========================================================== */
+
+.theo-layer{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:500;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#050505;
+
+}
+
+.theo-viewport{
+
+    width:80vw;
+
+    height:80vh;
+
+}
