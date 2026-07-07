@@ -419,7 +419,7 @@ function switchLayer(name){
 
 function openTheo(){
 
-    console.log("OPEN THEO");
+   console.log("OPEN THEO FIRED");
 
     const outro = document.getElementById("outro");
     const theo = document.getElementById("theoLayer");
