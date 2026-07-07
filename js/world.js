@@ -509,14 +509,15 @@ document
 
     ()=>{
 
-        console.log("OUTRO BUTTON CLICK");
+        console.log("GO DEEPER CLICK");
 
         World.elements.outro
             ?.classList.remove("visible");
 
+
         setTimeout(()=>{
 
-            console.log("CALL OPEN THEO");
+            console.log("OPEN THEO FROM OUTRO");
 
             openTheo();
 
