@@ -8,7 +8,11 @@ const Theo = {
 
     init() {
 
+        console.log("Theo init");
+        
         const container = document.getElementById("theoViewport");
+
+        console.log(container);
 
         if (!container) return;
 
@@ -81,6 +85,8 @@ this.scene.add(this.model);
         );
 
         container.appendChild(this.renderer.domElement);
+
+        console.log("Canvas added");
 
         this.animate();
 
