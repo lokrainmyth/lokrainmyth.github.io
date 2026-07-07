@@ -49,28 +49,48 @@ const ambient = new THREE.AmbientLight(
 
 this.scene.add(ambient);
 
-const geometry = new THREE.SphereGeometry(
-    .7,
-    64,
-    64
+const loader = new THREE.GLTFLoader();
+
+loader.load(
+
+    "assets/models/Theo.glb",
+
+    (gltf)=>{
+
+        this.model = gltf.scene;
+
+        this.model.scale.set(
+            1,
+            1,
+            1
+        );
+
+        this.model.position.set(
+            0,
+            -0.8,
+            0
+        );
+
+        this.scene.add(
+            this.model
+        );
+
+        console.log("Theo model loaded");
+
+    },
+
+    undefined,
+
+    (error)=>{
+
+        console.error(
+            "Theo load error",
+            error
+        );
+
+    }
+
 );
-
-const material = new THREE.MeshStandardMaterial({
-
-    color:0xc7a257,
-
-    metalness:.9,
-
-    roughness:.28
-
-});
-
-this.model = new THREE.Mesh(
-    geometry,
-    material
-);
-
-this.scene.add(this.model);
 
 console.log("Sphere created");
 
