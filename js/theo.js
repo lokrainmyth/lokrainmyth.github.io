@@ -72,6 +72,8 @@ this.model = new THREE.Mesh(
 
 this.scene.add(this.model);
 
+console.log("Sphere created");
+
         this.renderer = new THREE.WebGLRenderer({
             antialias: true,
             alpha: true
