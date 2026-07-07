@@ -419,16 +419,21 @@ function switchLayer(name){
 
 function openTheo(){
 
-    console.log("OPEN THEO TEST");
+    console.log(
+        "OPEN THEO FIXED"
+    );
+
+    World.elements.outro
+        ?.classList.remove("visible");
+
+
+    switchLayer("theo");
+
 
     const theo = document.getElementById(
         "theoLayer"
     );
 
-    console.log(
-        "THEO ELEMENT:",
-        theo
-    );
 
     if(theo){
 
@@ -441,6 +446,11 @@ function openTheo(){
         );
 
     }
+
+
+    document.body.classList.add(
+        "theo-mode"
+    );
 
 }
 
