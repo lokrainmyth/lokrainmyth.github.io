@@ -507,7 +507,9 @@ document
 
     ()=>{
 
-        console.log("GO DEEPER CLICK");
+        console.log(
+            "GO DEEPER → THEO"
+        );
 
         openTheo();
 
