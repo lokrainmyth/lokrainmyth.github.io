@@ -499,23 +499,21 @@ World.escape=function(){
    BUTTONS
 ========================================================== */
 
-document
-.getElementById("outroGoDeeper")
-?.addEventListener(
+const goDeeper = document.getElementById("outroGoDeeper");
 
-    "click",
+console.log("GO BUTTON:", goDeeper);
 
-    ()=>{
+if(goDeeper){
 
-        console.log(
-            "GO DEEPER → THEO"
-        );
+    goDeeper.onclick = ()=>{
+
+        console.log("GO DEEPER CLICK");
 
         openTheo();
 
-    }
+    };
 
-);
+}
 
 document
 
