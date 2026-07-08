@@ -213,6 +213,7 @@ function loadTheo() {
 
             scene.add(model);
 
+        console.log("MODEL ADDED", model);
 
         },
 
