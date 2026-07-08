@@ -419,38 +419,17 @@ function switchLayer(name){
 
 function openTheo(){
 
-    console.log(
-        "OPEN THEO FIXED"
-    );
-
-    World.elements.outro
-        ?.classList.remove("visible");
-
-
-    switchLayer("theo");
-
+    console.log("OPEN THEO");
 
     const theo = document.getElementById(
         "theoLayer"
     );
 
+    if(!theo) return;
 
-    if(theo){
+    theo.classList.remove("hidden");
 
-        theo.classList.remove(
-            "hidden"
-        );
-
-        theo.classList.add(
-            "visible"
-        );
-
-    }
-
-
-    document.body.classList.add(
-        "theo-mode"
-    );
+    theo.classList.add("visible");
 
 }
 
