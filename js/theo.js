@@ -94,6 +94,26 @@ model.position.z -= center.z;
 
 scene.add(model);
 
+                const size = box.getSize(
+    new THREE.Vector3()
+);
+
+const maxSize = Math.max(
+    size.x,
+    size.y,
+    size.z
+);
+
+const scale = 2 / maxSize;
+
+model.scale.set(
+    scale,
+    scale,
+    scale
+);
+
+                camera.position.set(0,0,3);
+
             },
 
             undefined,
