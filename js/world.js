@@ -428,8 +428,6 @@ function openTheo(){
     theo.classList.remove("hidden");
     theo.classList.add("visible");
 
-   startTheoScene();
-
    document
     .querySelector(".world")
     ?.classList.remove("outro-active");
