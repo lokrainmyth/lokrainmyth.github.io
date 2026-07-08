@@ -16,8 +16,6 @@ window.Theo = (function () {
 
     function open() {
 
-        console.log("THEO OPEN");
-
         if (renderer) {
             renderer.domElement.style.display = "block";
             animate();
