@@ -22,7 +22,7 @@ export function openTheo() {
     }
 
 
-    container = document.getElementById("theo-scene");
+    container = document.getElementById("theoViewport");
 
     if (!container) {
         console.error("Theo container missing");
