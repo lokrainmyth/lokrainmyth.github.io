@@ -18,14 +18,15 @@ let animationFrame;
 
 export function openTheo() {
 
-    console.log("OPEN THEO");
+    console.log("1");
 
     if (renderer) {
         startAnimation();
         return;
     }
 
-
+    console.log("2");
+    
     container = document.getElementById("theoViewport");
 
     if (!container) {
@@ -33,13 +34,20 @@ export function openTheo() {
         return;
     }
 
-
+ console.log("3");
+    
     createScene();
+    console.log("4");
     createCamera();
+    console.log("5");
     createRenderer();
+    console.log("6");
     createLights();
-    loadTheo();
+    console.log("7");
 
+    loadTheo();
+console.log("8");
+    
     window.addEventListener(
         "resize",
         resize
@@ -52,6 +60,7 @@ export function openTheo() {
 
 
     startAnimation();
+    console.log("9");
 }
 
 
