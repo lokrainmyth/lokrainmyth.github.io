@@ -1,362 +1,148 @@
-console.log("THEO JS LOADED");
+"use strict";
 
-import * as THREE from "./vendor/three.module.js";
-import { GLTFLoader } from "./vendor/GLTFLoader.js";
+console.log("THEO ENGINE READY");
 
-let scene;
-let camera;
-let renderer;
-let model;
+window.Theo = (function () {
 
-let targetRotation = 0;
-let currentRotation = 0;
+    let scene;
+    let camera;
+    let renderer;
+    let model;
+    let container;
+    let frame;
 
-let container;
+    function open() {
 
-let animationFrame;
+        console.log("THEO OPEN");
 
+        if (renderer) {
+            renderer.domElement.style.display = "block";
+            animate();
+            return;
+        }
 
-export function openTheo() {
+        container = document.getElementById("theoViewport");
 
-    console.log("1");
+        if (!container) {
+            console.error("Theo viewport not found");
+            return;
+        }
 
-    if (renderer) {
-        startAnimation();
-        return;
-    }
+        scene = new THREE.Scene();
 
-    console.log("2");
-    
-    container = document.getElementById("theoViewport");
+        camera = new THREE.PerspectiveCamera(
+            35,
+            container.clientWidth / container.clientHeight,
+            0.1,
+            100
+        );
 
-    if (!container) {
-        console.error("Theo container missing");
-        return;
-    }
+        camera.position.set(0, 0, 3);
 
- console.log("3");
-    
-    createScene();
-    console.log("4");
-    createCamera();
-    console.log("5");
-    createRenderer();
-    console.log("6");
-    createLights();
-    console.log("7");
-
-    loadTheo();
-console.log("8");
-    
-    window.addEventListener(
-        "resize",
-        resize
-    );
-
-    container.addEventListener(
-        "mousemove",
-        interaction
-    );
-
-
-    startAnimation();
-    console.log("9");
-}
-
-
-
-export function closeTheo() {
-
-    cancelAnimationFrame(animationFrame);
-
-    if (renderer) {
-        renderer.domElement.remove();
-    }
-
-}
-
-
-
-function createScene() {
-
-    scene = new THREE.Scene();
-
-    scene.fog = new THREE.FogExp2(
-        0x050505,
-        0.025
-    );
-
-}
-
-
-
-function createCamera() {
-
-    camera = new THREE.PerspectiveCamera(
-        35,
-        window.innerWidth /
-        window.innerHeight,
-        0.1,
-        100
-    );
-
-
-    camera.position.set(
-        0,
-        0.2,
-        3
-    );
-
-}
-
-
-
-function createRenderer() {
-
-    renderer =
-        new THREE.WebGLRenderer({
-            antialias:true,
-            alpha:true
+        renderer = new THREE.WebGLRenderer({
+            antialias: true,
+            alpha: true
         });
 
+        renderer.setPixelRatio(window.devicePixelRatio);
 
-    renderer.setPixelRatio(
-        window.devicePixelRatio
-    );
-
-
-    renderer.setSize(
-        window.innerWidth,
-        window.innerHeight
-    );
-
-
-    renderer.outputColorSpace =
-        THREE.SRGBColorSpace;
-
-
-    container.appendChild(
-        renderer.domElement
-    );
-
-}
-
-
-
-function createLights() {
-
-
-    const key =
-        new THREE.DirectionalLight(
-            0xffffff,
-            2
+        renderer.setSize(
+            container.clientWidth,
+            container.clientHeight
         );
 
+        container.appendChild(renderer.domElement);
 
-    key.position.set(
-        2,
-        3,
-        4
-    );
+        const ambient = new THREE.AmbientLight(0xffffff, 1);
 
+        scene.add(ambient);
 
-    scene.add(key);
+        const light = new THREE.DirectionalLight(0xffffff, 2);
 
+        light.position.set(2, 3, 5);
 
+        scene.add(light);
 
-    const soft =
-        new THREE.AmbientLight(
-            0xbfd5ff,
-            0.5
+        const loader = new GLTFLoader();
+
+        console.log("Loading model...");
+
+        loader.load(
+
+            "assets/models/Theo.glb",
+
+            function (gltf) {
+
+                console.log("MODEL LOADED");
+
+                model = gltf.scene;
+
+                scene.add(model);
+
+            },
+
+            undefined,
+
+            function (err) {
+
+                console.error(err);
+
+            }
+
         );
 
+        window.addEventListener("resize", resize);
 
-    scene.add(soft);
+        animate();
 
+    }
 
+    function animate() {
 
-    const rim =
-        new THREE.PointLight(
-            0xffffff,
-            1,
-            10
-        );
+        frame = requestAnimationFrame(animate);
 
+        if (model) {
 
-    rim.position.set(
-        -2,
-        1,
-        -2
-    );
-
-
-    scene.add(rim);
-
-}
-
-
-function loadTheo() {
-
-
-    const loader =
-        new GLTFLoader();
-
-
-    loader.load(
-    "assets/models/Theo.glb",
-
-    function(gltf){
-
-        console.log("THEO LOADED", gltf);
-
-        model = gltf.scene;
-
-
-const box = new THREE.Box3()
-    .setFromObject(model);
-
-
-const size = box.getSize(
-    new THREE.Vector3()
-);
-
-
-const center = box.getCenter(
-    new THREE.Vector3()
-);
-
-
-model.position.x =
-    -center.x;
-
-model.position.y =
-    -center.y;
-
-model.position.z =
-    -center.z;
-
-
-const maxSize =
-    Math.max(
-        size.x,
-        size.y,
-        size.z
-    );
-
-
-const scale =
-    1.5 / maxSize;
-
-
-model.scale.set(
-    scale,
-    scale,
-    scale
-);
-
-            scene.add(model);
-
-        console.log("MODEL ADDED", model);
-
-        },
-
-
-        undefined,
-
-
-        function(error){
-
-            console.error(
-                "Theo loading error",
-                error
-            );
+            model.rotation.y += 0.003;
 
         }
 
-    );
-
-}
-
-
-
-function interaction(event){
-
-    const x =
-        event.clientX /
-        window.innerWidth;
-
-
-    targetRotation =
-        (x - 0.5) *
-        0.25;
-
-}
-
-
-
-function animate(){
-
-
-    animationFrame =
-        requestAnimationFrame(
-            animate
-        );
-
-
-    if(model){
-
-
-        currentRotation +=
-            (
-                targetRotation -
-                currentRotation
-            ) * 0.03;
-
-
-        model.rotation.y =
-            currentRotation;
-
-
-
-        model.rotation.y +=
-            0.0015;
-
+        renderer.render(scene, camera);
 
     }
 
+    function resize() {
 
+        if (!renderer) return;
 
-    renderer.render(
-        scene,
-        camera
-    );
+        camera.aspect =
+            container.clientWidth /
+            container.clientHeight;
 
-}
+        camera.updateProjectionMatrix();
 
+        renderer.setSize(
+            container.clientWidth,
+            container.clientHeight
+        );
 
+    }
 
-function startAnimation(){
+    function close() {
 
-    animate();
+        if (!renderer) return;
 
-}
+        cancelAnimationFrame(frame);
 
+        renderer.domElement.style.display = "none";
 
+    }
 
-function resize(){
+    return {
 
+        open,
+        close
 
-    camera.aspect =
-        window.innerWidth /
-        window.innerHeight;
+    };
 
-
-    camera.updateProjectionMatrix();
-
-
-    renderer.setSize(
-        window.innerWidth,
-        window.innerHeight
-    );
-
-}
+})();
