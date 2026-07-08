@@ -191,12 +191,13 @@ function loadTheo() {
 
 
     loader.load(
-        "assets/models/Theo.glb",
+    "assets/models/Theo.glb",
 
-        function(gltf){
+    function(gltf){
 
-            model =
-                gltf.scene;
+        console.log("THEO LOADED", gltf);
+
+        model = gltf.scene;
 
 
             model.scale.set(
