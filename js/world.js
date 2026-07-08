@@ -430,6 +430,13 @@ function openTheo(){
     theo.classList.remove("hidden");
     theo.classList.add("visible");
 
+   document
+    .querySelector(".world")
+    ?.classList.remove("outro-active");
+
+World.elements.outro?.classList.remove("visible");
+World.elements.outro?.classList.add("hidden");
+
 }
 
 function closeTheo(){
