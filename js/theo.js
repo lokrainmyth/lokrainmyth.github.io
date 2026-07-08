@@ -138,7 +138,8 @@ model.scale.set(
 
         if (model) {
 
-            model.rotation.y += 0.003;
+            model.rotation.y =
+    Math.sin(Date.now() * 0.0003) * 0.15;
 
         }
 
