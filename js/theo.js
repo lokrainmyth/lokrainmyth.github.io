@@ -1,175 +1,317 @@
-"use strict";
+import * as THREE from "./vendor/three.module.js";
+import { GLTFLoader } from "./vendor/GLTFLoader.js";
 
-const Theo = {
+let scene;
+let camera;
+let renderer;
+let model;
 
-    scene: null,
-    camera: null,
-    renderer: null,
-    model: null,
+let targetRotation = 0;
+let currentRotation = 0;
 
-    init(){
+let container;
 
-        console.log("Theo init");
+let animationFrame;
 
-        const container = document.getElementById(
-            "theoViewport"
+
+export function openTheo() {
+
+    if (renderer) {
+        startAnimation();
+        return;
+    }
+
+
+    container = document.getElementById("theo-scene");
+
+    if (!container) {
+        console.error("Theo container missing");
+        return;
+    }
+
+
+    createScene();
+    createCamera();
+    createRenderer();
+    createLights();
+    loadTheo();
+
+    window.addEventListener(
+        "resize",
+        resize
+    );
+
+    container.addEventListener(
+        "mousemove",
+        interaction
+    );
+
+
+    startAnimation();
+}
+
+
+
+export function closeTheo() {
+
+    cancelAnimationFrame(animationFrame);
+
+    if (renderer) {
+        renderer.domElement.remove();
+    }
+
+}
+
+
+
+function createScene() {
+
+    scene = new THREE.Scene();
+
+    scene.fog = new THREE.FogExp2(
+        0x050505,
+        0.025
+    );
+
+}
+
+
+
+function createCamera() {
+
+    camera = new THREE.PerspectiveCamera(
+        35,
+        window.innerWidth /
+        window.innerHeight,
+        0.1,
+        100
+    );
+
+
+    camera.position.set(
+        0,
+        0.2,
+        3
+    );
+
+}
+
+
+
+function createRenderer() {
+
+    renderer =
+        new THREE.WebGLRenderer({
+            antialias:true,
+            alpha:true
+        });
+
+
+    renderer.setPixelRatio(
+        window.devicePixelRatio
+    );
+
+
+    renderer.setSize(
+        window.innerWidth,
+        window.innerHeight
+    );
+
+
+    renderer.outputColorSpace =
+        THREE.SRGBColorSpace;
+
+
+    container.appendChild(
+        renderer.domElement
+    );
+
+}
+
+
+
+function createLights() {
+
+
+    const key =
+        new THREE.DirectionalLight(
+            0xffffff,
+            2
         );
 
-        if(!container){
+
+    key.position.set(
+        2,
+        3,
+        4
+    );
+
+
+    scene.add(key);
+
+
+
+    const soft =
+        new THREE.AmbientLight(
+            0xbfd5ff,
+            0.5
+        );
+
+
+    scene.add(soft);
+
+
+
+    const rim =
+        new THREE.PointLight(
+            0xffffff,
+            1,
+            10
+        );
+
+
+    rim.position.set(
+        -2,
+        1,
+        -2
+    );
+
+
+    scene.add(rim);
+
+}
+
+
+
+function loadTheo() {
+
+
+    const loader =
+        new GLTFLoader();
+
+
+    loader.load(
+        "assets/models/Theo.glb",
+
+        function(gltf){
+
+            model =
+                gltf.scene;
+
+
+            model.scale.set(
+                1,
+                1,
+                1
+            );
+
+
+            model.position.y =
+                -0.35;
+
+
+            scene.add(model);
+
+
+        },
+
+
+        undefined,
+
+
+        function(error){
 
             console.error(
-                "Theo viewport missing"
+                "Theo loading error",
+                error
             );
-
-            return;
 
         }
 
+    );
 
-        this.scene = new THREE.Scene();
-
-        this.scene.background = null;
-
-
-        this.camera = new THREE.PerspectiveCamera(
-            35,
-            container.clientWidth /
-            container.clientHeight,
-            0.1,
-            100
-        );
+}
 
 
-        this.camera.position.set(
-            0,
-            0,
-            5
-        );
+
+function interaction(event){
+
+    const x =
+        event.clientX /
+        window.innerWidth;
 
 
-        const keyLight = new THREE.PointLight(
-            0xd7b56d,
-            8
-        );
+    targetRotation =
+        (x - 0.5) *
+        0.25;
 
-        keyLight.position.set(
-            0,
-            1,
-            3
-        );
-
-        this.scene.add(
-            keyLight
-        );
+}
 
 
-        const ambient = new THREE.AmbientLight(
-            0xffffff,
-            0.35
-        );
 
-        this.scene.add(
-            ambient
-        );
-
-        this.renderer =
-            new THREE.WebGLRenderer({
-
-                antialias:true,
-
-                alpha:true
-
-            });
+function animate(){
 
 
-        this.renderer.setPixelRatio(
-            window.devicePixelRatio
-        );
-
-
-        this.renderer.setSize(
-            container.clientWidth,
-            container.clientHeight
-        );
-
-
-        container.appendChild(
-            this.renderer.domElement
-        );
-
-
-        console.log(
-            "Theo canvas ready"
-        );
-
-
-        this.animate();
-
-
-        window.addEventListener(
-            "resize",
-            ()=>this.resize()
-        );
-
-
-    },
-
-
-    animate(){
-
-
+    animationFrame =
         requestAnimationFrame(
-            ()=>this.animate()
+            animate
         );
 
 
-        if(this.model){
-
-            this.model.rotation.y += 0.002;
-
-        }
+    if(model){
 
 
-        this.renderer.render(
-            this.scene,
-            this.camera
-        );
+        currentRotation +=
+            (
+                targetRotation -
+                currentRotation
+            ) * 0.03;
 
 
-    },
+        model.rotation.y =
+            currentRotation;
 
 
-    resize(){
 
-
-        const container =
-            document.getElementById(
-                "theoViewport"
-            );
-
-
-        if(!container || !this.camera){
-
-            return;
-
-        }
-
-
-        this.camera.aspect =
-            container.clientWidth /
-            container.clientHeight;
-
-
-        this.camera.updateProjectionMatrix();
-
-
-        this.renderer.setSize(
-            container.clientWidth,
-            container.clientHeight
-        );
+        model.rotation.y +=
+            0.0015;
 
 
     }
 
 
-};
+
+    renderer.render(
+        scene,
+        camera
+    );
+
+}
+
+
+
+function startAnimation(){
+
+    animate();
+
+}
+
+
+
+function resize(){
+
+
+    camera.aspect =
+        window.innerWidth /
+        window.innerHeight;
+
+
+    camera.updateProjectionMatrix();
+
+
+    renderer.setSize(
+        window.innerWidth,
+        window.innerHeight
+    );
+
+}
