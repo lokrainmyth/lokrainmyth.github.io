@@ -435,11 +435,15 @@ function openTheo(){
 World.elements.outro?.classList.remove("visible");
 World.elements.outro?.classList.add("hidden");
 
+   Theo.open();
+
 }
 
 function closeTheo(){
 
     switchLayer("dawn");
+
+    Theo.close();
 
     document.body.classList.remove("theo-mode");
 
