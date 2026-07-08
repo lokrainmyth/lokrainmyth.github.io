@@ -4,8 +4,6 @@
    FINAL FOUNDATION
 ========================================================== */
 
-import { openTheo as startTheoScene } from "./theo.js";
-
 "use strict";
 
 const World = {
