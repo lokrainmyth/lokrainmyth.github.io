@@ -1,3 +1,5 @@
+console.log("THEO JS LOADED");
+
 import * as THREE from "./vendor/three.module.js";
 import { GLTFLoader } from "./vendor/GLTFLoader.js";
 
@@ -15,6 +17,8 @@ let animationFrame;
 
 
 export function openTheo() {
+
+    console.log("OPEN THEO");
 
     if (renderer) {
         startAnimation();
