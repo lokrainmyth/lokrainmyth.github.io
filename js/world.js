@@ -4,9 +4,9 @@
    FINAL FOUNDATION
 ========================================================== */
 
-"use strict";
+import { openTheo as startTheoScene } from "./theo.js";
 
-console.log("WORLD JS LOADED");
+"use strict";
 
 const World = {
 
@@ -429,6 +429,8 @@ function openTheo(){
 
     theo.classList.remove("hidden");
     theo.classList.add("visible");
+
+   startTheoScene();
 
    document
     .querySelector(".world")
