@@ -421,14 +421,13 @@ function openTheo(){
 
     console.log("OPEN THEO");
 
-    const theo = document.getElementById(
-        "theoLayer"
-    );
+    const theo = document.getElementById("theoLayer");
 
     if(!theo) return;
 
-    theo.classList.remove("hidden");
+    World.currentLayer = "theo";
 
+    theo.classList.remove("hidden");
     theo.classList.add("visible");
 
 }
