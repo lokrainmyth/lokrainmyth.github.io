@@ -200,16 +200,47 @@ function loadTheo() {
         model = gltf.scene;
 
 
-            model.scale.set(
-                1,
-                1,
-                1
-            );
+const box = new THREE.Box3()
+    .setFromObject(model);
 
 
-            model.position.y =
-                -0.35;
+const size = box.getSize(
+    new THREE.Vector3()
+);
 
+
+const center = box.getCenter(
+    new THREE.Vector3()
+);
+
+
+model.position.x =
+    -center.x;
+
+model.position.y =
+    -center.y;
+
+model.position.z =
+    -center.z;
+
+
+const maxSize =
+    Math.max(
+        size.x,
+        size.y,
+        size.z
+    );
+
+
+const scale =
+    1.5 / maxSize;
+
+
+model.scale.set(
+    scale,
+    scale,
+    scale
+);
 
             scene.add(model);
 
