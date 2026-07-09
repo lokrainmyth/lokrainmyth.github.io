@@ -1,3 +1,11 @@
+const BASE_ROTATION = {
+
+    x: 8,
+    y: 25,
+    z: 10
+
+};
+
 let targetX = 0;
 let targetY = 0;
 
