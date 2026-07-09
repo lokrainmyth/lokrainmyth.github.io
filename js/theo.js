@@ -102,6 +102,18 @@ window.Theo = (function () {
 
         model = gltf.scene;
 
+        model.traverse((child) => {
+
+    if (!child.isMesh) return;
+
+    child.material.roughness = 0.45;
+
+    child.material.metalness = 0.75;
+
+    child.material.envMapIntensity = 1.6;
+
+});
+
         const box = new THREE.Box3().setFromObject(model);
 const center = box.getCenter(new THREE.Vector3());
 
