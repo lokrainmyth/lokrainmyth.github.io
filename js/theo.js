@@ -1,3 +1,11 @@
+const MODEL_OFFSET = {
+
+    x: 0,
+    y: 0,
+    z: 0
+
+};
+
 const BASE_ROTATION = {
 
     x: 10,
@@ -120,9 +128,13 @@ window.Theo = (function () {
 const center = box.getCenter(new THREE.Vector3());
 
 model.position.set(
-    -center.x,
-    -center.y,
-    -center.z
+
+    -center.x + MODEL_OFFSET.x,
+
+    -center.y + MODEL_OFFSET.y,
+
+    -center.z + MODEL_OFFSET.z
+
 );
 
 model.scale.set(
