@@ -78,43 +78,39 @@ window.Theo = (function () {
 
         model = gltf.scene;
 
-        console.log(model);
-
+        // вычисляем реальные размеры модели
         const box = new THREE.Box3().setFromObject(model);
-
-        console.log("BOX", box);
-
-        console.log(
-            "MIN",
-            box.min.x,
-            box.min.y,
-            box.min.z
-        );
-
-        console.log(
-            "MAX",
-            box.max.x,
-            box.max.y,
-            box.max.z
-        );
 
         const center = box.getCenter(
             new THREE.Vector3()
         );
 
-        console.log("CENTER", center);
-
-        scene.add(model);
-        
-        const helper = new THREE.Box3Helper(
-            box,
-            0xff0000
+        // переносим модель в центр сцены
+        model.position.set(
+            -center.x,
+            -center.y,
+            -center.z
         );
 
-        scene.add(helper);
+        // пока оставим масштаб обычным
+        model.scale.set(
+            1,
+            1,
+            1
+        );
 
-        scene.add(
-            new THREE.AxesHelper(1)
+        scene.add(model);
+
+        camera.position.set(
+            0,
+            0,
+            3
+        );
+
+        camera.lookAt(
+            0,
+            0,
+            0
         );
 
         window.addEventListener(
@@ -130,10 +126,7 @@ window.Theo = (function () {
 
     function (error) {
 
-        console.error(
-            "MODEL ERROR",
-            error
-        );
+        console.error("MODEL ERROR", error);
 
     }
 
