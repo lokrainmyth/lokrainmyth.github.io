@@ -60,6 +60,16 @@ window.Theo = (function () {
 
         container.appendChild(renderer.domElement);
 
+        window.addEventListener("mousemove", (e) => {
+
+    targetY =
+        (e.clientX / window.innerWidth - 0.5) * 0.22;
+
+    targetX =
+        (e.clientY / window.innerHeight - 0.5) * 0.12;
+
+});
+
         const ambient = new THREE.AmbientLight(0xffffff, 1);
 
         scene.add(ambient);
@@ -98,12 +108,6 @@ model.scale.set(
     1,
     1
 );
-
-model.rotation.set(
-    THREE.MathUtils.degToRad(8),   // наклон вниз/вверх
-    THREE.MathUtils.degToRad(25),  // поворот влево/вправо
-    THREE.MathUtils.degToRad(10)     // наклон головы
-);
         
 scene.add(model);
 
@@ -138,34 +142,30 @@ camera.lookAt(
 
 );
         } 
+    
     function animate() {
 
+    frame = requestAnimationFrame(animate);
+
+    if (model) {
+
         currentX += (targetX - currentX) * 0.04;
-currentY += (targetY - currentY) * 0.04;
+        currentY += (targetY - currentY) * 0.04;
 
-model.rotation.x =
-    THREE.MathUtils.degToRad(-8) + currentX;
+        model.rotation.x =
+            THREE.MathUtils.degToRad(8) + currentX;
 
-model.rotation.y =
-    THREE.MathUtils.degToRad(-25) + currentY;
+        model.rotation.y =
+            THREE.MathUtils.degToRad(25) + currentY;
 
-}
-
-        renderer.render(scene, camera);
-
-    window.addEventListener("mousemove", (e) => {
-
-    targetY = (
-        e.clientX / window.innerWidth - 0.5
-    ) * 0.22;
-
-    targetX = (
-        e.clientY / window.innerHeight - 0.5
-    ) * 0.12;
-
-});
+        model.rotation.z =
+            THREE.MathUtils.degToRad(10);
 
     }
+
+    renderer.render(scene, camera);
+
+}
 
     function resize() {
 
