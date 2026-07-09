@@ -70,51 +70,74 @@ window.Theo = (function () {
 
         loader.load(
 
-            "assets/models/Theo.glb",
+    "assets/models/Theo.glb",
 
-            function (gltf) {
+    function (gltf) {
 
-                console.log("MODEL LOADED");
+        console.log("MODEL LOADED");
 
-                model = gltf.scene;
+        model = gltf.scene;
 
-                console.log(model);
+        console.log(model);
 
-const box = new THREE.Box3().setFromObject(model);
+        const box = new THREE.Box3().setFromObject(model);
 
-console.log("BOX", box);
+        console.log("BOX", box);
 
-console.log(
-    "MIN",
-    box.min.x,
-    box.min.y,
-    box.min.z
-);
+        console.log(
+            "MIN",
+            box.min.x,
+            box.min.y,
+            box.min.z
+        );
 
-console.log(
-    "MAX",
-    box.max.x,
-    box.max.y,
-    box.max.z
-);
+        console.log(
+            "MAX",
+            box.max.x,
+            box.max.y,
+            box.max.z
+        );
 
-const center = box.getCenter(new THREE.Vector3());
+        const center = box.getCenter(
+            new THREE.Vector3()
+        );
 
-console.log("CENTER", center);
+        console.log("CENTER", center);
 
-                scene.add(model);
+        scene.add(model);
 
-                const helper = new THREE.Box3Helper(box, 0xff0000);
-scene.add(helper);
+        const helper = new THREE.Box3Helper(
+            box,
+            0xff0000
+        );
 
-                scene.add(new THREE.AxesHelper(1));
+        scene.add(helper);
 
-        window.addEventListener("resize", resize);
+        scene.add(
+            new THREE.AxesHelper(1)
+        );
+
+        window.addEventListener(
+            "resize",
+            resize
+        );
 
         animate();
 
+    },
+
+    undefined,
+
+    function (error) {
+
+        console.error(
+            "MODEL ERROR",
+            error
+        );
+
     }
 
+);
     function animate() {
 
         frame = requestAnimationFrame(animate);
