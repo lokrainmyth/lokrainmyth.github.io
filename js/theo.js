@@ -98,7 +98,7 @@ scene.add(model);
 camera.position.set(
     0,
     0,
-    8
+    12
 );
 
 camera.lookAt(
