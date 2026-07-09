@@ -100,9 +100,9 @@ model.scale.set(
 );
 
 model.rotation.set(
-    THREE.MathUtils.degToRad(-8),   // наклон вниз/вверх
-    THREE.MathUtils.degToRad(-25),  // поворот влево/вправо
-    THREE.MathUtils.degToRad(0)     // наклон головы
+    THREE.MathUtils.degToRad(8),   // наклон вниз/вверх
+    THREE.MathUtils.degToRad(25),  // поворот влево/вправо
+    THREE.MathUtils.degToRad(10)     // наклон головы
 );
         
 scene.add(model);
