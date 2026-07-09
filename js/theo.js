@@ -138,6 +138,7 @@ window.Theo = (function () {
     }
 
 );
+        } 
     function animate() {
 
         frame = requestAnimationFrame(animate);
