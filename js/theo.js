@@ -105,17 +105,6 @@ window.Theo = (function () {
         console.log("CENTER", center);
 
         scene.add(model);
-
-const box = new THREE.Box3().setFromObject(model);
-
-const center = box.getCenter(new THREE.Vector3());
-
-// переносим центр модели в (0,0,0)
-model.position.set(
-    -center.x,
-    -center.y,
-    -center.z
-);
         
         const helper = new THREE.Box3Helper(
             box,
