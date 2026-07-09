@@ -78,20 +78,8 @@ window.Theo = (function () {
 
         model = gltf.scene;
 
-        // вычисляем реальные размеры модели
         const box = new THREE.Box3().setFromObject(model);
-
-       const size = box.getSize(new THREE.Vector3());
-
-const maxSize = Math.max(
-    size.x,
-    size.y,
-    size.z
-);
-
-const center = box.getCenter(
-    new THREE.Vector3()
-);
+const center = box.getCenter(new THREE.Vector3());
 
 model.position.set(
     -center.x,
@@ -99,11 +87,18 @@ model.position.set(
     -center.z
 );
 
-// расстояние камеры автоматически
+model.scale.set(
+    1,
+    1,
+    1
+);
+
+scene.add(model);
+
 camera.position.set(
     0,
     0,
-    maxSize * 2.2
+    8
 );
 
 camera.lookAt(
