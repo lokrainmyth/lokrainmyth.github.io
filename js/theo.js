@@ -106,19 +106,13 @@ window.Theo = (function () {
 
     if (!child.isMesh) return;
 
-  child.material.roughness = 0.45;
+    child.geometry.computeVertexNormals();
+
+    child.material.roughness = 0.45;
 
     child.material.metalness = 0.75;
 
     child.material.envMapIntensity = 1.6;
-
-});
-
-            if (child.isMesh) {
-
-    child.geometry.computeVertexNormals();
-
-}
 
 });
 
