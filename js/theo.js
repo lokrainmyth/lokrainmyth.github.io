@@ -106,17 +106,11 @@ window.Theo = (function () {
 
     if (!child.isMesh) return;
 
-   const material = new THREE.MeshPhysicalMaterial({
+  child.material.roughness = 0.45;
 
-    color: 0x8b7d63,
+    child.material.metalness = 0.75;
 
-    roughness: 0.55,
-
-    metalness: 0.7,
-
-    clearcoat: 0.35,
-
-    clearcoatRoughness: 0.5
+    child.material.envMapIntensity = 1.6;
 
 });
 
