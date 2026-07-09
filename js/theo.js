@@ -93,6 +93,12 @@ model.scale.set(
     1
 );
 
+model.rotation.set(
+    THREE.MathUtils.degToRad(-8),   // наклон вниз/вверх
+    THREE.MathUtils.degToRad(-25),  // поворот влево/вправо
+    THREE.MathUtils.degToRad(0)     // наклон головы
+);
+        
 scene.add(model);
 
 camera.position.set(
