@@ -1,8 +1,8 @@
 const BASE_ROTATION = {
 
-    x: -50,
+    x: 10,
     y: 0,
-    z: -50
+    z: -10
 
 };
 
