@@ -138,10 +138,9 @@ window.Theo = (function () {
 
         if (model) {
 
-            model.rotation.y =
-    Math.sin(Date.now() * 0.0003) * 0.15;
+    // пока без движения
 
-        }
+}
 
         renderer.render(scene, camera);
 
