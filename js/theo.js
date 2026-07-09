@@ -1,14 +1,14 @@
 const MODEL_OFFSET = {
 
     x: 0,
-    y: -20,
+    y: 50,
     z: 0
 
 };
 
 const BASE_ROTATION = {
 
-    x: 10,
+    x: 20,
     y: 0,
     z: 0
 
