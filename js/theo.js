@@ -167,6 +167,8 @@ model.rotation.y =
 
     }
 
+                }
+
     function resize() {
 
         if (!renderer) return;
