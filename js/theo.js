@@ -83,9 +83,9 @@ window.Theo = (function () {
 ========================================================== */
 
 model.scale.set(
-    1,
-    1,
-    1
+    10,
+    10,
+    10
 );
 
 model.position.set(
