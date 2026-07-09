@@ -140,15 +140,30 @@ camera.lookAt(
         } 
     function animate() {
 
-        frame = requestAnimationFrame(animate);
+        currentX += (targetX - currentX) * 0.04;
+currentY += (targetY - currentY) * 0.04;
 
-        if (model) {
+model.rotation.x =
+    THREE.MathUtils.degToRad(-8) + currentX;
 
-    // пока без движения
+model.rotation.y =
+    THREE.MathUtils.degToRad(-25) + currentY;
 
 }
 
         renderer.render(scene, camera);
+
+    window.addEventListener("mousemove", (e) => {
+
+    targetY = (
+        e.clientX / window.innerWidth - 0.5
+    ) * 0.22;
+
+    targetX = (
+        e.clientY / window.innerHeight - 0.5
+    ) * 0.12;
+
+});
 
     }
 
