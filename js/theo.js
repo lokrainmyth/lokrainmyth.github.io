@@ -173,13 +173,13 @@ camera.lookAt(
         currentY += (targetY - currentY) * 0.04;
 
         model.rotation.x =
-            THREE.MathUtils.degToRad(8) + currentX;
+    THREE.MathUtils.degToRad(BASE_ROTATION.x) + currentX;
 
-        model.rotation.y =
-            THREE.MathUtils.degToRad(25) + currentY;
+model.rotation.y =
+    THREE.MathUtils.degToRad(BASE_ROTATION.y) + currentY;
 
-        model.rotation.z =
-            THREE.MathUtils.degToRad(10);
+model.rotation.z =
+    THREE.MathUtils.degToRad(BASE_ROTATION.z);
 
     }
 
