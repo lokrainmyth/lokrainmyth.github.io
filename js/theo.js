@@ -78,35 +78,36 @@ window.Theo = (function () {
 
                 model = gltf.scene;
 
-/* ==========================================================
-   THEO STAGE
-========================================================== */
+                console.log(model);
 
-model.scale.set(
-    10,
-    10,
-    10
+const box = new THREE.Box3().setFromObject(model);
+
+console.log("BOX", box);
+
+console.log(
+    "MIN",
+    box.min.x,
+    box.min.y,
+    box.min.z
 );
 
-model.position.set(
-    0,
-    0,
-    0
+console.log(
+    "MAX",
+    box.max.x,
+    box.max.y,
+    box.max.z
 );
 
-scene.add(model);
+const center = box.getCenter(new THREE.Vector3());
 
-camera.position.set(
-    0,
-    0,
-    2.5
-);
+console.log("CENTER", center);
 
-camera.lookAt(
-    0,
-    0,
-    0
-);
+                scene.add(model);
+
+                const helper = new THREE.Box3Helper(box, 0xff0000);
+scene.add(helper);
+
+                scene.add(new THREE.AxesHelper(1));
 
         window.addEventListener("resize", resize);
 
