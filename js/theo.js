@@ -81,38 +81,37 @@ window.Theo = (function () {
         // вычисляем реальные размеры модели
         const box = new THREE.Box3().setFromObject(model);
 
-        const center = box.getCenter(
-            new THREE.Vector3()
-        );
+       const size = box.getSize(new THREE.Vector3());
 
-        // переносим модель в центр сцены
-        model.position.set(
-            -center.x,
-            -center.y,
-            -center.z
-        );
+const maxSize = Math.max(
+    size.x,
+    size.y,
+    size.z
+);
 
-        // пока оставим масштаб обычным
-        model.scale.set(
-            1,
-            1,
-            1
-        );
+const center = box.getCenter(
+    new THREE.Vector3()
+);
 
-        scene.add(model);
+model.position.set(
+    -center.x,
+    -center.y,
+    -center.z
+);
 
-        camera.position.set(
-            0,
-            0,
-            3
-        );
+// расстояние камеры автоматически
+camera.position.set(
+    0,
+    0,
+    maxSize * 2.2
+);
 
-        camera.lookAt(
-            0,
-            0,
-            0
-        );
-
+camera.lookAt(
+    0,
+    0,
+    0
+);
+        
         window.addEventListener(
             "resize",
             resize
