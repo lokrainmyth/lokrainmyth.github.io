@@ -114,8 +114,6 @@ window.Theo = (function () {
 
 });
 
-child.material = material;
-
             if (child.isMesh) {
 
     child.geometry.computeVertexNormals();
