@@ -1,6 +1,6 @@
 const MODEL_OFFSET = {
 
-    x: 5,
+    x: -5,
     y: -4,
     z: 0
 
