@@ -10,7 +10,7 @@ const BASE_ROTATION = {
 
     x: 22,
     y: -40,
-    z: 0
+    z: 2
 
 };
 
