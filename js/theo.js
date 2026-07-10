@@ -9,7 +9,7 @@ const MODEL_OFFSET = {
 const BASE_ROTATION = {
 
     x: 20,
-    y: -60,
+    y: -40,
     z: -10
 
 };
