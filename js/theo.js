@@ -9,8 +9,8 @@ const MODEL_OFFSET = {
 const BASE_ROTATION = {
 
     x: 22,
-    y: -40,
-    z: 2
+    y: -35,
+    z: 3
 
 };
 
