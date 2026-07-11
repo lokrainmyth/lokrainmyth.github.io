@@ -79,10 +79,10 @@ window.Theo = (function () {
         window.addEventListener("mousemove", (e) => {
 
     targetY =
-        (e.clientX / window.innerWidth - 0.5) * 0.22;
+        (e.clientX / window.innerWidth - 0.5) * 0.08;
 
     targetX =
-        (e.clientY / window.innerHeight - 0.5) * 0.12;
+        (e.clientY / window.innerHeight - 0.5) * 0.05;
 
 });
 
@@ -183,8 +183,8 @@ camera.lookAt(
 
     if (model) {
 
-        currentX += (targetX - currentX) * 0.04;
-        currentY += (targetY - currentY) * 0.04;
+        currentX += (targetX - currentX) * 0.015;
+        currentY += (targetY - currentY) * 0.015;
 
         model.rotation.x =
     THREE.MathUtils.degToRad(BASE_ROTATION.x) + currentX;
