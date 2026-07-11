@@ -104,6 +104,19 @@ keyLight.position.set(
 
 scene.add(keyLight);
 
+        const rim = new THREE.DirectionalLight(
+    0x6f92ff,
+    0.7
+);
+
+rim.position.set(
+    -4,
+    2,
+    -6
+);
+
+scene.add(rim);
+
         light.position.set(2, 3, 5);
 
         scene.add(light);
