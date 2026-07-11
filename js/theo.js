@@ -14,8 +14,6 @@ const BASE_ROTATION = {
 
 };
 
-let dust;
-
 let targetX = 0;
 let targetY = 0;
 
@@ -38,6 +36,7 @@ window.Theo = (function () {
     let container;
     let frame;
     let keyLight;
+    let dust;
 
     function open() {
 
