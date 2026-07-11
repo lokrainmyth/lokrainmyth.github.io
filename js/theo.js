@@ -134,6 +134,16 @@ scene.add(bounce);
 
         createDust();
 
+        scene.fog = new THREE.Fog(
+
+    0x090909,
+
+    10,
+
+    24
+
+);
+
         light.position.set(2, 3, 5);
 
         scene.add(light);
