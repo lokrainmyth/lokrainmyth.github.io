@@ -266,7 +266,7 @@ model.rotation.z =
 }
 
     renderer.setClearColor(
-    0x090909,
+    0x070707,
     1
 );
 
