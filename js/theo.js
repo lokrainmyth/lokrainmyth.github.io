@@ -35,6 +35,7 @@ window.Theo = (function () {
     let model;
     let container;
     let frame;
+    let keyLight;
 
     function open() {
 
@@ -90,7 +91,18 @@ window.Theo = (function () {
 
         scene.add(ambient);
 
-        const light = new THREE.DirectionalLight(0xffffff, 2);
+       keyLight = new THREE.DirectionalLight(
+    0xffffff,
+    2.8
+);
+
+keyLight.position.set(
+    3,
+    4,
+    5
+);
+
+scene.add(keyLight);
 
         light.position.set(2, 3, 5);
 
@@ -194,6 +206,10 @@ model.rotation.y =
 
 model.rotation.z =
     THREE.MathUtils.degToRad(BASE_ROTATION.z);
+
+        keyLight.intensity =
+    2.8 +
+    Math.sin(performance.now() * 0.00025) * 0.08;
 
     }
 
