@@ -76,6 +76,11 @@ window.Theo = (function () {
             container.clientHeight
         );
 
+renderer.setClearColor(
+    0x090909,
+    1
+);
+        
         container.appendChild(renderer.domElement);
 
         window.addEventListener("mousemove", (e) => {
@@ -143,10 +148,6 @@ scene.add(bounce);
 
 );
 
-        light.position.set(2, 3, 5);
-
-        scene.add(light);
-
         const loader = new GLTFLoader();
 
         console.log("Loading model...");
@@ -172,6 +173,9 @@ scene.add(bounce);
     child.material.metalness = 0.75;
 
     child.material.envMapIntensity = 1.6;
+
+    child.material.fog = true;
+child.material.needsUpdate = true;
 
 });
 
@@ -252,9 +256,8 @@ model.rotation.z =
 
         if(dust){
 
-    dust.rotation.y += 0.00004;
-
-    dust.rotation.x += 0.00001;
+    dust.position.y =
+    Math.sin(performance.now()*0.00015)*0.08;
 
 }
 
