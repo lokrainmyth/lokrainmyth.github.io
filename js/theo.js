@@ -265,6 +265,11 @@ model.rotation.z =
 
 }
 
+    renderer.setClearColor(
+    0x090909,
+    1
+);
+
     function resize() {
 
         if (!renderer) return;
