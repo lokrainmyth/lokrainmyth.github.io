@@ -14,6 +14,8 @@ const BASE_ROTATION = {
 
 };
 
+let dust;
+
 let targetX = 0;
 let targetY = 0;
 
@@ -116,6 +118,21 @@ rim.position.set(
 );
 
 scene.add(rim);
+
+        const bounce = new THREE.DirectionalLight(
+    0xb89b63,
+    0.25
+);
+
+bounce.position.set(
+    0,
+    -4,
+    2
+);
+
+scene.add(bounce);
+
+        createDust();
 
         light.position.set(2, 3, 5);
 
@@ -224,6 +241,14 @@ model.rotation.z =
     2.8 +
     Math.sin(performance.now() * 0.00025) * 0.08;
 
+        if(dust){
+
+    dust.rotation.y += 0.00004;
+
+    dust.rotation.x += 0.00001;
+
+}
+
     }
 
     renderer.render(scene, camera);
@@ -246,6 +271,65 @@ model.rotation.z =
         );
 
     }
+
+    function createDust() {
+
+    const geometry =
+        new THREE.BufferGeometry();
+
+    const count = 700;
+
+    const vertices = [];
+
+    for(let i=0;i<count;i++){
+
+        vertices.push(
+
+            (Math.random()-0.5)*18,
+
+            (Math.random()-0.5)*12,
+
+            (Math.random()-0.5)*12
+
+        );
+
+    }
+
+    geometry.setAttribute(
+
+        "position",
+
+        new THREE.Float32BufferAttribute(
+            vertices,
+            3
+        )
+
+    );
+
+    const material =
+        new THREE.PointsMaterial({
+
+            color:0xffffff,
+
+            size:0.025,
+
+            transparent:true,
+
+            opacity:0.12,
+
+            depthWrite:false
+
+        });
+
+    dust =
+        new THREE.Points(
+            geometry,
+            material
+        );
+
+    scene.add(dust);
+
+}
 
     function close() {
 
