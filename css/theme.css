@@ -601,3 +601,17 @@ img{
     z-index:0;
 
 }
+
+.theo-caption{
+
+    position:absolute;
+
+    bottom:14vh;
+
+    width:100%;
+
+    text-align:center;
+
+    z-index:5;
+
+}
