@@ -351,19 +351,19 @@ model.rotation.z =
 
     const count = 700;
 
-    const vertices = [];
+    dustPositions = [];
 
     for(let i=0;i<count;i++){
 
-        vertices.push(
+       dustPositions.push(
 
-            (Math.random()-0.5)*18,
+    (Math.random()-0.5)*18,
 
-            (Math.random()-0.5)*12,
+    (Math.random()-0.5)*12,
 
-            (Math.random()-0.5)*12
+    (Math.random()-0.5)*12
 
-        );
+);
 
     }
 
@@ -372,9 +372,9 @@ model.rotation.z =
         "position",
 
         new THREE.Float32BufferAttribute(
-            vertices,
-            3
-        )
+    dustPositions,
+    3
+)
 
     );
 
