@@ -688,6 +688,8 @@ img{
 
 }
 
+animation: theoGlow 8s ease-in-out infinite;
+
 .theo-caption h2{
 
     animation:
