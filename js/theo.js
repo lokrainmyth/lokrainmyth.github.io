@@ -275,13 +275,9 @@ room.add(blueReflector);
         createDust();
 
         scene.fog = new THREE.Fog(
-
-    0x090909,
-
-    10,
-
-    24
-
+    0x050505,
+    8,
+    28
 );
 
         const loader = new GLTFLoader();
@@ -304,11 +300,13 @@ room.add(blueReflector);
 
     child.geometry.computeVertexNormals();
 
-    child.material.roughness = 0.45;
+   child.material.roughness = 0.58;
 
-    child.material.metalness = 0.75;
+child.material.metalness = 0.95;
 
-    child.material.envMapIntensity = 1.6;
+child.material.envMapIntensity = 1.4;
+
+child.material.needsUpdate = true;
 
     child.material.fog = true;
 child.material.needsUpdate = true;
