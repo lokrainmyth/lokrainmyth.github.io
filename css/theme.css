@@ -620,14 +620,6 @@ img{
 
 .theo-caption h2{
 
-    display:inline-block;
-
-    margin:0;
-
-}
-
-.theo-caption h2{
-
     font-size:58px;
 
     font-weight:300;
@@ -643,6 +635,12 @@ img{
         0 0 20px rgba(215,184,120,.08);
 
     margin-bottom:20px;
+
+   transform:translateX(.15em);
+
+    display:inline-block;
+
+    margin:0;
 
 }
 
