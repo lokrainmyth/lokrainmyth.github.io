@@ -76,6 +76,15 @@ window.Theo = (function () {
             container.clientHeight
         );
 
+        renderer.outputColorSpace =
+    THREE.SRGBColorSpace;
+
+renderer.toneMapping =
+    THREE.ACESFilmicToneMapping;
+
+renderer.toneMappingExposure =
+    1.1;
+
 renderer.setClearColor(
     0x090909,
     1
