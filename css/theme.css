@@ -606,13 +606,23 @@ img{
 
     position:absolute;
 
+    left:50%;
     bottom:8vh;
 
-    width:100%;
+    transform:translateX(-50%);
+
+    width:700px;
+    max-width:90vw;
 
     text-align:center;
 
-    z-index:5;
+}
+
+.theo-caption h2{
+
+    display:inline-block;
+
+    margin:0;
 
 }
 
@@ -647,5 +657,43 @@ img{
     opacity:.82;
 
     margin:8px 0;
+
+}
+
+@keyframes theoGlow{
+
+    0%{
+
+        text-shadow:
+            0 0 6px rgba(215,184,120,.15),
+            0 0 18px rgba(215,184,120,.05);
+
+    }
+
+    50%{
+
+        text-shadow:
+            0 0 10px rgba(215,184,120,.28),
+            0 0 28px rgba(215,184,120,.12);
+
+    }
+
+    100%{
+
+        text-shadow:
+            0 0 6px rgba(215,184,120,.15),
+            0 0 18px rgba(215,184,120,.05);
+
+    }
+
+}
+
+.theo-caption h2{
+
+    animation:
+        theoGlow
+        9s
+        ease-in-out
+        infinite;
 
 }
