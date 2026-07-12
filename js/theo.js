@@ -147,6 +147,131 @@ bounce.position.set(
 
 scene.add(bounce);
 
+        // ---------- MUSEUM ENVIRONMENT ----------
+
+const room = new THREE.Group();
+
+scene.add(room);
+
+
+// потолок
+
+const ceiling = new THREE.Mesh(
+
+    new THREE.PlaneGeometry(40,40),
+
+    new THREE.MeshBasicMaterial({
+
+        color:0x141414,
+
+        side:THREE.DoubleSide
+
+    })
+
+);
+
+ceiling.position.y = 10;
+ceiling.rotation.x = Math.PI/2;
+
+room.add(ceiling);
+
+
+// пол
+
+const floor = new THREE.Mesh(
+
+    new THREE.PlaneGeometry(40,40),
+
+    new THREE.MeshBasicMaterial({
+
+        color:0x0a0a0a,
+
+        side:THREE.DoubleSide
+
+    })
+
+);
+
+floor.position.y = -10;
+floor.rotation.x = -Math.PI/2;
+
+room.add(floor);
+
+
+// огромное "окно"
+
+const windowLight = new THREE.Mesh(
+
+    new THREE.PlaneGeometry(8,5),
+
+    new THREE.MeshBasicMaterial({
+
+        color:0xf5f5f5
+
+    })
+
+);
+
+windowLight.position.set(
+    -8,
+    6,
+    -8
+);
+
+windowLight.lookAt(0,0,0);
+
+room.add(windowLight);
+
+
+// теплый отражатель
+
+const goldReflector = new THREE.Mesh(
+
+    new THREE.PlaneGeometry(6,6),
+
+    new THREE.MeshBasicMaterial({
+
+        color:0xb89b63
+
+    })
+
+);
+
+goldReflector.position.set(
+    0,
+    -6,
+    5
+);
+
+goldReflector.lookAt(0,0,0);
+
+room.add(goldReflector);
+
+
+// холодный отражатель
+
+const blueReflector = new THREE.Mesh(
+
+    new THREE.PlaneGeometry(5,8),
+
+    new THREE.MeshBasicMaterial({
+
+        color:0x607cff
+
+    })
+
+);
+
+blueReflector.position.set(
+    7,
+    0,
+    -5
+);
+
+blueReflector.lookAt(0,0,0);
+
+room.add(blueReflector);
+
         createDust();
 
         scene.fog = new THREE.Fog(
