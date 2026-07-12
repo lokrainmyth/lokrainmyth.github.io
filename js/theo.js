@@ -38,6 +38,7 @@ window.Theo = (function () {
     let keyLight;
     let dust;
     let dustPositions;
+    let dustBasePositions;
 
     function open() {
 
@@ -314,10 +315,25 @@ model.rotation.z =
 2.8 +
 Math.sin(performance.now()*0.00018)*0.18;
 
-        if(dust){
+        if (dust) {
 
-    dust.position.y =
-    Math.sin(performance.now()*0.00015)*0.08;
+    const pos = dust.geometry.attributes.position.array;
+
+    const t = performance.now() * 0.00025;
+
+    for (let i = 0; i < pos.length; i += 3) {
+
+        pos[i] =
+            dustBasePositions[i] +
+            Math.sin(t + i * 0.13) * 0.01;
+
+        pos[i + 1] =
+            dustBasePositions[i + 1] +
+            Math.cos(t + i * 0.11) * 0.015;
+
+    }
+
+    dust.geometry.attributes.position.needsUpdate = true;
 
 }
 
@@ -377,6 +393,8 @@ Math.sin(performance.now()*0.00018)*0.18;
 )
 
     );
+
+    dustBasePositions = [...dustPositions];
 
     const material =
         new THREE.PointsMaterial({
