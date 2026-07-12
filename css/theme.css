@@ -634,7 +634,7 @@ img{
         0 0 8px rgba(215,184,120,.18),
         0 0 20px rgba(215,184,120,.08);
 
-    margin-bottom:20px;
+    margin-bottom:30px;
 
    transform:translateX(.15em);
 
@@ -700,7 +700,7 @@ animation: theoGlow 8s ease-in-out infinite;
 
 .theo-object{
 
-    margin-bottom:22px;
+    margin-bottom:30px;
 
 }
 
