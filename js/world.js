@@ -428,6 +428,12 @@ function openTheo(){
     theo.classList.remove("hidden");
     theo.classList.add("visible");
 
+   const audio = new Audio("assets/sounds/lokrainmyth.mp3");
+
+audio.volume = 0.18;
+
+audio.play().catch(() => {});
+
    document
     .querySelector(".world")
     ?.classList.remove("outro-active");
