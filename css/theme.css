@@ -615,3 +615,37 @@ img{
     z-index:5;
 
 }
+
+.theo-caption h2{
+
+    font-size:58px;
+
+    font-weight:300;
+
+    letter-spacing:.35em;
+
+    color:#d7b878;
+
+    text-transform:uppercase;
+
+    text-shadow:
+        0 0 8px rgba(215,184,120,.18),
+        0 0 20px rgba(215,184,120,.08);
+
+    margin-bottom:20px;
+
+}
+
+.theo-caption p{
+
+    color:#b89b63;
+
+    letter-spacing:.25em;
+
+    font-size:18px;
+
+    opacity:.82;
+
+    margin:8px 0;
+
+}
