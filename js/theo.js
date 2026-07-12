@@ -311,8 +311,8 @@ model.rotation.z =
     THREE.MathUtils.degToRad(BASE_ROTATION.z);
 
         keyLight.intensity =
-    2.8 +
-    Math.sin(performance.now() * 0.00025) * 0.08;
+2.8 +
+Math.sin(performance.now()*0.00018)*0.18;
 
         if(dust){
 
@@ -381,13 +381,15 @@ model.rotation.z =
     const material =
         new THREE.PointsMaterial({
 
+            blending: THREE.AdditiveBlending,
+
             color:0xffffff,
 
-            size:0.025,
+            size:0.04,
 
             transparent:true,
 
-            opacity:0.12,
+            opacity:0.18,
 
             depthWrite:false
 
