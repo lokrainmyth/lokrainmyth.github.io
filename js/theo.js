@@ -37,6 +37,7 @@ window.Theo = (function () {
     let frame;
     let keyLight;
     let dust;
+    let dustPositions;
 
     function open() {
 
