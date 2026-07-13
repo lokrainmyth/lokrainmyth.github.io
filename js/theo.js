@@ -317,10 +317,10 @@ Math.sin(performance.now()*0.00018)*0.18;
         if(lightBeam){
 
     lightBeam.material.opacity =
-        0.03 +
-        Math.sin(
-            performance.now()*0.0004
-        ) * 0.01;
+    0.012 +
+    Math.sin(
+        performance.now()*0.00035
+    ) * 0.003;
 
 }
 
@@ -452,10 +452,10 @@ function createLightBeam(){
 
     const geometry =
         new THREE.CylinderGeometry(
-            1.8,
-            3,
-            10,
-            32,
+            2.5,
+            4.5,
+            12,
+            64,
             1,
             true
         );
@@ -468,11 +468,13 @@ function createLightBeam(){
 
             transparent:true,
 
-            opacity:0.035,
+            opacity:0.012,
 
             side:THREE.DoubleSide,
 
-            depthWrite:false
+            depthWrite:false,
+
+            blending:THREE.AdditiveBlending
 
         });
 
@@ -486,9 +488,13 @@ function createLightBeam(){
 
     lightBeam.position.set(
         0,
-        3,
-        0
+        4,
+        -1
     );
+
+
+    lightBeam.rotation.x =
+        Math.PI;
 
 
     scene.add(lightBeam);
