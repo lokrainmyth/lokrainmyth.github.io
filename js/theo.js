@@ -36,9 +36,7 @@ window.Theo = (function () {
     let container;
     let frame;
     let keyLight;
-    let dust;
-    let dustPositions;
-    let dustBasePositions;
+    let dust = [];  
 
     function open() {
 
@@ -315,23 +313,51 @@ model.rotation.z =
 2.8 +
 Math.sin(performance.now()*0.00018)*0.18;
 
-        if (dust) {
+        if (dust.length) {
 
-    const pos = dust.geometry.attributes.position.array;
+    const t = performance.now();
 
-    const t = performance.now() * 0.00025;
+    for (const p of dust) {
 
-    for (let i = 0; i < pos.length; i += 3) {
+        p.position.x += p.userData.vx;
 
-        pos[i] =
-            dustBasePositions[i] +
-            Math.sin(t + i * 0.13) * 0.01;
+        p.position.y += p.userData.vy;
 
-        pos[i + 1] =
-            dustBasePositions[i + 1] +
-            Math.cos(t + i * 0.11) * 0.015;
+        p.position.z += p.userData.vz;
+
+        if (p.position.x > 6)
+            p.position.x = -6;
+
+        if (p.position.x < -6)
+            p.position.x = 6;
+
+        if (p.position.y > 4)
+            p.position.y = -4;
+
+        if (p.position.y < -4)
+            p.position.y = 4;
+
+        if (p.position.z > 3)
+            p.position.z = -3;
+
+        if (p.position.z < -3)
+            p.position.z = 3;
+
+        p.material.opacity =
+
+            p.userData.baseOpacity +
+
+            Math.sin(
+
+                t * 0.00035 +
+
+                p.userData.phase
+
+            ) * 0.015;
 
     }
+
+}
 
     dust.geometry.attributes.position.needsUpdate = true;
 
@@ -416,68 +442,79 @@ function createDustTexture() {
 
 }
     
-    function createDust() {
-
-    const geometry =
-        new THREE.BufferGeometry();
-
-    const count = 700;
-
-    dustPositions = [];
-
-    for(let i=0;i<count;i++){
-
-       dustPositions.push(
-
-    (Math.random()-0.5)*18,
-
-    (Math.random()-0.5)*12,
-
-    (Math.random()-0.5)*12
-
-);
-
-    }
-
-    geometry.setAttribute(
-
-        "position",
-
-        new THREE.Float32BufferAttribute(
-    dustPositions,
-    3
-)
-
-    );
-
-    dustBasePositions = [...dustPositions];
+   function createDust() {
 
     const texture = createDustTexture();
 
-    const material =
-        new THREE.PointsMaterial({
+    for (let i = 0; i < 24; i++) {
 
-            blending: THREE.AdditiveBlending,
+        const material =
+            new THREE.SpriteMaterial({
 
-            color:0xffffff,
+                map: texture,
 
-            size:0.04,
+                color: 0xffffff,
 
-            transparent:true,
+                transparent: true,
 
-            opacity:0.18,
+                opacity: 0.04 + Math.random() * 0.05,
 
-            depthWrite:false
+                depthWrite: false,
 
-        });
+                depthTest: true
 
-    dust =
-        new THREE.Points(
-            geometry,
-            material
+            });
+
+        const sprite =
+            new THREE.Sprite(material);
+
+        sprite.position.set(
+
+            (Math.random() - 0.5) * 12,
+
+            (Math.random() - 0.5) * 8,
+
+            (Math.random() - 0.5) * 6
+
         );
 
-    scene.add(dust);
+        const size =
+            0.04 + Math.random() * 0.14;
+
+        sprite.scale.set(
+
+            size,
+
+            size,
+
+            size
+
+        );
+
+        sprite.userData = {
+
+            vx:
+                (Math.random() - 0.5) * 0.00018,
+
+            vy:
+                (Math.random() - 0.5) * 0.00022,
+
+            vz:
+                (Math.random() - 0.5) * 0.00008,
+
+            phase:
+                Math.random() * Math.PI * 2,
+
+            baseOpacity:
+                material.opacity
+
+        };
+
+        dust.push(sprite);
+
+        scene.add(sprite);
+
+    }
 
 }
 
