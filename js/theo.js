@@ -202,8 +202,8 @@ room.add(floor);
 
         scene.fog = new THREE.Fog(
     0x050505,
-    8,
-    28
+    5,
+    20
 );
 
         const loader = new GLTFLoader();
