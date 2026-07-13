@@ -65,11 +65,12 @@ window.Theo = (function () {
         camera.position.set(0, 0, 3);
 
         renderer = new THREE.WebGLRenderer({
-            renderer.setClearColor(0x000000,0);
             antialias: true,
             alpha: true
         });
 
+        renderer.setClearColor(0x000000,0);
+        
         renderer.setPixelRatio(window.devicePixelRatio);
 
         renderer.setSize(
