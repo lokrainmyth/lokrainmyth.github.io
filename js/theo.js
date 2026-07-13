@@ -68,8 +68,6 @@ window.Theo = (function () {
             antialias: true,
             alpha: true
         });
-
-        renderer.setClearColor(0x000000,0);
         
         renderer.setPixelRatio(window.devicePixelRatio);
 
@@ -360,6 +358,7 @@ Math.sin(performance.now()*0.00018)*0.18;
     }
 
 }
+    }
 
     renderer.render(scene, camera);
 
