@@ -36,7 +36,8 @@ window.Theo = (function () {
     let container;
     let frame;
     let keyLight;
-    let dust = [];  
+    let dust = [];
+    let lightBeam;
 
     function open() {
 
@@ -144,6 +145,8 @@ bounce.position.set(
 );
 
 scene.add(bounce);
+
+        createLightBeam();
 
         // ---------- MUSEUM ENVIRONMENT ----------
 
@@ -311,6 +314,16 @@ model.rotation.z =
 2.8 +
 Math.sin(performance.now()*0.00018)*0.18;
 
+        if(lightBeam){
+
+    lightBeam.material.opacity =
+        0.03 +
+        Math.sin(
+            performance.now()*0.0004
+        ) * 0.01;
+
+}
+
         if (dust.length) {
 
     const t = performance.now();
@@ -432,6 +445,53 @@ function createDustTexture() {
     );
 
     return new THREE.CanvasTexture(canvas);
+
+}
+
+function createLightBeam(){
+
+    const geometry =
+        new THREE.CylinderGeometry(
+            1.8,
+            3,
+            10,
+            32,
+            1,
+            true
+        );
+
+
+    const material =
+        new THREE.MeshBasicMaterial({
+
+            color:0xd8b56a,
+
+            transparent:true,
+
+            opacity:0.035,
+
+            side:THREE.DoubleSide,
+
+            depthWrite:false
+
+        });
+
+
+    lightBeam =
+        new THREE.Mesh(
+            geometry,
+            material
+        );
+
+
+    lightBeam.position.set(
+        0,
+        3,
+        0
+    );
+
+
+    scene.add(lightBeam);
 
 }
     
