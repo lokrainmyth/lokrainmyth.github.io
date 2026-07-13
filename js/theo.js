@@ -439,7 +439,7 @@ function createDustTexture() {
 
     const texture = createDustTexture();
 
-    for (let i = 0; i < 24; i++) {
+    for (let i = 0; i < 80; i++) {
 
         const material =
             new THREE.SpriteMaterial({
