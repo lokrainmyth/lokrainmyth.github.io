@@ -361,12 +361,6 @@ Math.sin(performance.now()*0.00018)*0.18;
 
 }
 
-    dust.geometry.attributes.position.needsUpdate = true;
-
-}
-
-    }
-
     renderer.render(scene, camera);
 
 }
