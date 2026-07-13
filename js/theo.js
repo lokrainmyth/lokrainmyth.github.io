@@ -85,8 +85,6 @@ renderer.toneMapping =
 renderer.toneMappingExposure =
     1.1;
 
-renderer.physicallyCorrectLights = true;
-
 renderer.setClearColor(
     0x090909,
     1
