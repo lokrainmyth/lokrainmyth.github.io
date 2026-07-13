@@ -452,6 +452,8 @@ function createDustTexture() {
 
     dustBasePositions = [...dustPositions];
 
+    const texture = createDustTexture();
+
     const material =
         new THREE.PointsMaterial({
 
