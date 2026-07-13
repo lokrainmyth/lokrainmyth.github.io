@@ -36,8 +36,7 @@ window.Theo = (function () {
     let container;
     let frame;
     let keyLight;
-    let dust = [];
-    let lightBeam;
+    let dust = [];  
 
     function open() {
 
@@ -146,8 +145,6 @@ bounce.position.set(
 
 scene.add(bounce);
 
-        createLightBeam();
-
         // ---------- MUSEUM ENVIRONMENT ----------
 
 const room = new THREE.Group();
@@ -202,8 +199,8 @@ room.add(floor);
 
         scene.fog = new THREE.Fog(
     0x050505,
-    5,
-    20
+    8,
+    28
 );
 
         const loader = new GLTFLoader();
@@ -313,16 +310,6 @@ model.rotation.z =
         keyLight.intensity =
 2.8 +
 Math.sin(performance.now()*0.00018)*0.18;
-
-        if(lightBeam){
-
-    lightBeam.material.opacity =
-    0.012 +
-    Math.sin(
-        performance.now()*0.00035
-    ) * 0.003;
-
-}
 
         if (dust.length) {
 
@@ -447,65 +434,12 @@ function createDustTexture() {
     return new THREE.CanvasTexture(canvas);
 
 }
-
-function createLightBeam(){
-
-    const geometry =
-        new THREE.CylinderGeometry(
-            2.5,
-            4.5,
-            12,
-            64,
-            1,
-            true
-        );
-
-
-    const material =
-        new THREE.MeshBasicMaterial({
-
-            color:0xd8b56a,
-
-            transparent:true,
-
-            opacity:0.012,
-
-            side:THREE.DoubleSide,
-
-            depthWrite:false,
-
-            blending:THREE.AdditiveBlending
-
-        });
-
-
-    lightBeam =
-        new THREE.Mesh(
-            geometry,
-            material
-        );
-
-
-    lightBeam.position.set(
-        0,
-        4,
-        -1
-    );
-
-
-    lightBeam.rotation.x =
-        Math.PI;
-
-
-    scene.add(lightBeam);
-
-}
     
    function createDust() {
 
     const texture = createDustTexture();
 
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 24; i++) {
 
         const material =
             new THREE.SpriteMaterial({
