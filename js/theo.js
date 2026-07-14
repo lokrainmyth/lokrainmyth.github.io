@@ -36,6 +36,7 @@ window.Theo = (function () {
     let container;
     let frame;
     let keyLight;
+    let mythHover = false;
     let dust = [];  
 
     function open() {
