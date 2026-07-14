@@ -731,7 +731,31 @@ animation: theoGlow 8s ease-in-out infinite;
 
     cursor:pointer;
 
-    color:#f7f7f7;
+    background:
+
+linear-gradient(
+
+180deg,
+
+#ffffff,
+
+#f7f7f7 45%,
+
+#ececec 100%
+
+);
+
+color:transparent;
+
+background-clip:text;
+
+-webkit-background-clip:text;
+
+   filter:
+
+drop-shadow(0 2px 0 rgba(255,255,255,.2))
+
+drop-shadow(0 12px 24px rgba(0,0,0,.35));
 
     font-family:"Modak", cursive;
 
