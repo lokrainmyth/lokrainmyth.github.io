@@ -297,8 +297,16 @@ camera.lookAt(
 
     if (model) {
 
-        currentX += (targetX - currentX) * 0.015;
-        currentY += (targetY - currentY) * 0.015;
+        const speed =
+    mythHover
+        ? 0.003
+        : 0.015;
+
+currentX +=
+    (targetX-currentX)*speed;
+
+currentY +=
+    (targetY-currentY)*speed;
 
         model.rotation.x =
     THREE.MathUtils.degToRad(BASE_ROTATION.x) + currentX;
