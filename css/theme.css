@@ -780,32 +780,23 @@ animation: theoGlow 8s ease-in-out infinite;
 
 }
 
-
 #mythButton:hover{
+
+    transform:none !important;
+
+    scale:1 !important;
+
+    translate:none !important;
+
+    rotate:none !important;
 
     letter-spacing:.5em;
 
     filter:
-
         brightness(1.25)
-
         drop-shadow(0 0 14px rgba(120,150,255,.3));
 
 }
-
-       @keyframes mythFlow{
-
-    from{
-
-        background-position:0% 0%;
-
-    }
-
-    to{
-
-        background-position:220% 0%;
-
-    }
 
 }
 
