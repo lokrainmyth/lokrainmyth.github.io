@@ -709,3 +709,86 @@ animation: theoGlow 8s ease-in-out infinite;
     margin-top:0;
 
 }
+
+.myth-entry {
+
+    position:absolute;
+
+    left:50%;
+    bottom:4vh;
+
+    transform:translateX(-50%);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:
+        opacity 3s ease;
+
+}
+
+
+.myth-entry.visible {
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+
+
+#mythButton {
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:42px;
+
+    font-weight:300;
+
+    letter-spacing:.45em;
+
+    color:#567cff;
+
+    text-transform:uppercase;
+
+    text-shadow:
+
+        0 0 10px rgba(86,124,255,.35),
+
+        0 0 35px rgba(86,124,255,.15);
+
+
+    transition:
+
+        transform .8s ease,
+
+        text-shadow .8s ease,
+
+        color .8s ease;
+
+}
+
+
+
+#mythButton:hover {
+
+
+    transform:scale(1.05);
+
+
+    color:#9bb5ff;
+
+
+    text-shadow:
+
+        0 0 18px rgba(120,160,255,.7),
+
+        0 0 60px rgba(80,120,255,.35);
+
+}
