@@ -43,7 +43,6 @@ window.Theo = (function () {
         if (renderer) {
             renderer.domElement.style.display = "block";
             animate();
-            revealMyth();
             return;
         }
 
@@ -276,6 +275,7 @@ camera.lookAt(
         );
 
         animate();
+        revealMyth();
 
     },
 
