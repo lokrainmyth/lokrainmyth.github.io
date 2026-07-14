@@ -723,7 +723,7 @@ animation: theoGlow 8s ease-in-out infinite;
 
 }
 
-#mythButton{
+/* #mythButton{
 
     background:none;
 
@@ -783,17 +783,58 @@ drop-shadow(0 12px 24px rgba(0,0,0,.35));
 
         color .6s ease;
 
+} */
+
+#mythButton:hover span:nth-child(1){
+
+    transform:
+        rotate(-7deg)
+        translateY(-4px);
+
 }
 
-#mythButton:hover{
+#mythButton:hover span:nth-child(2){
 
-    color:#ffffff;
+    transform:
+        scale(1.08,.95)
+        rotate(1deg);
 
-    filter:
+}
 
-        brightness(1.05)
+#mythButton:hover span:nth-child(4){
 
-        drop-shadow(0 0 14px rgba(180,210,255,.22));
+    transform:
+        rotate(5deg);
+
+}
+
+#mythButton:hover span:nth-child(5){
+
+    transform:
+        translateY(5px)
+        rotate(-2deg);
+
+}
+
+#mythButton:hover span:nth-child(10){
+
+    transform:
+        rotate(5deg)
+        translateY(-2px);
+
+}
+
+#mythButton:hover span:nth-child(11){
+
+    transform:
+        rotate(-3deg);
+
+}
+
+#mythButton:hover span:nth-child(13){
+
+    transform:
+        scale(.95,1.12);
 
 }
 
@@ -898,6 +939,18 @@ drop-shadow(0 12px 24px rgba(0,0,0,.35));
 
         mythFlow 28s linear infinite;
 
+   text-shadow:
+
+0 1px 0 #ffffff,
+
+0 2px 0 #f8f8f8,
+
+0 3px 0 #efefef,
+
+0 4px 0 #e5e5e5,
+
+0 10px 18px rgba(0,0,0,.28);
+
 }
 
 /* @keyframes mythFlow{
@@ -921,3 +974,13 @@ drop-shadow(0 12px 24px rgba(0,0,0,.35));
     white-space:nowrap;
 
 }
+
+background-image:
+
+linear-gradient(...),
+
+radial-gradient(circle at 20% 30%, rgba(255,255,255,.22) 0 2px, transparent 3px),
+
+radial-gradient(circle at 75% 55%, rgba(255,255,255,.16) 0 1px, transparent 2px),
+
+radial-gradient(circle at 55% 75%, rgba(255,255,255,.18) 0 2px, transparent 3px);
