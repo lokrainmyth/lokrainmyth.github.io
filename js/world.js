@@ -563,6 +563,22 @@ document
 
 );
 
+document
+.getElementById("mythButton")
+?.addEventListener(
+
+"click",
+
+()=>{
+
+    console.log("ENTER LO.KRAIN MYTH");
+
+    openMyth();
+
+}
+
+);
+
 /* ==========================================================
    SECRET
 ========================================================== */
