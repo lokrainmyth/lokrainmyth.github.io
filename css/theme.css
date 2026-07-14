@@ -807,3 +807,10 @@ animation: theoGlow 8s ease-in-out infinite;
         mythFlow 28s linear infinite;
 
 }
+
+#mythButton,
+#mythButton:hover{
+
+    transform:none !important;
+
+}
