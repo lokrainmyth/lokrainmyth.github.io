@@ -816,13 +816,6 @@ animation: theoGlow 8s ease-in-out infinite;
 
 }
 
-#mythButton,
-#mythButton:hover{
-
-    transform:none !important;
-
-}
-
 .myth-entry{
 
     white-space:nowrap;
