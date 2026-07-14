@@ -43,6 +43,7 @@ window.Theo = (function () {
         if (renderer) {
             renderer.domElement.style.display = "block";
             animate();
+            revealMyth();
             return;
         }
 
