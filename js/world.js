@@ -579,6 +579,33 @@ document
 
 );
 
+const button =
+    document.getElementById("mythButton");
+
+button?.addEventListener(
+
+    "mouseenter",
+
+    ()=>{
+
+        mythHover = true;
+
+    }
+
+);
+
+button?.addEventListener(
+
+    "mouseleave",
+
+    ()=>{
+
+        mythHover = false;
+
+    }
+
+);
+
 /* ==========================================================
    SECRET
 ========================================================== */
