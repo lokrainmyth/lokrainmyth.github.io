@@ -800,6 +800,22 @@ animation: theoGlow 8s ease-in-out infinite;
 
 }
 
+@keyframes mythFlow{
+
+    from{
+
+        background-position:0% 50%;
+
+    }
+
+    to{
+
+        background-position:240% 50%;
+
+    }
+
+}
+
 #mythButton,
 #mythButton:hover{
 
