@@ -721,80 +721,27 @@ animation: theoGlow 8s ease-in-out infinite;
 
 #mythButton{
 
-    position:relative;
+    font-size:44px;
 
-    background:none;
+    font-weight:300;
 
-    border:none;
+    letter-spacing:.14em;
 
-    cursor:pointer;
+    white-space:nowrap;
 
-    font-size:58px;
+    display:inline-block;
 
-    font-weight:200;
-
-    letter-spacing:.42em;
-
-    text-transform:uppercase;
-
-    color:transparent;
-
-    padding:18px 12px;
-
-    background-image:
-        repeating-linear-gradient(
-
-            -25deg,
-
-            #ffffff 0px,
-
-            #ffffff 8px,
-
-            #d8d8d8 8px,
-
-            #d8d8d8 16px,
-
-            #5b5b5b 16px,
-
-            #5b5b5b 18px,
-
-            #ffffff 18px,
-
-            #ffffff 26px
-
-        );
-
-    background-size:220% 220%;
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    transition:
-        letter-spacing .8s,
-        filter .8s,
-        transform .8s;
-
-    filter:
-
-        drop-shadow(0 0 6px rgba(255,255,255,.08));
+    padding:20px 36px;
 
 }
 
 #mythButton:hover{
 
-    transform:none !important;
-
-    scale:1 !important;
-
-    translate:none !important;
-
-    rotate:none !important;
-
-    letter-spacing:.5em;
+    letter-spacing:.16em;
 
     filter:
-        brightness(1.25)
-        drop-shadow(0 0 14px rgba(120,150,255,.3));
+        brightness(1.15)
+        drop-shadow(0 0 12px rgba(120,150,255,.25));
 
 }
 
@@ -812,5 +759,11 @@ animation: theoGlow 8s ease-in-out infinite;
 #mythButton:hover{
 
     transform:none !important;
+
+}
+
+.myth-entry{
+
+    white-space:nowrap;
 
 }
