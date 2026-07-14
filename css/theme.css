@@ -717,27 +717,31 @@ animation: theoGlow 8s ease-in-out infinite;
 
 }
 
+.myth-entry{
+
+    perspective:1200px;
+
+}
+
 #mythButton{
 
-    background:none;
-    border:none;
-    cursor:pointer;
+    position:relative;
 
     display:inline-block;
 
+    padding:18px 34px;
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
     white-space:nowrap;
 
-    padding:14px 18px;
+    font:700 78px/1 inherit;
 
-    font-family:inherit;
-
-    font-size:76px;
-
-    font-weight:700;
-
-    letter-spacing:.04em;
-
-    line-height:1;
+    letter-spacing:.05em;
 
     text-transform:uppercase;
 
@@ -750,41 +754,99 @@ animation: theoGlow 8s ease-in-out infinite;
             -35deg,
 
             #ffffff 0px,
-            #ffffff 8px,
+            #ffffff 12px,
 
-            #ececec 8px,
-            #ececec 16px
+            #ededed 12px,
+            #ededed 24px
 
         );
 
-    background-size:100% 100%;
-
-    -webkit-background-clip:text;
     background-clip:text;
+    -webkit-background-clip:text;
 
     filter:
 
-        drop-shadow(0 0 6px rgba(255,255,255,.08));
+        drop-shadow(0 2px 2px rgba(255,255,255,.18))
+
+        drop-shadow(0 8px 18px rgba(0,0,0,.35));
 
     transition:
 
-        filter .8s ease,
-        background-size 2s ease,
-        letter-spacing .6s ease;
+        transform .8s,
+
+        filter .8s,
+
+        background-size 1.4s;
+
+}
+
+#mythButton::after{
+
+    content:"LO.KRAIN MYTH";
+
+    position:absolute;
+
+    inset:0;
+
+    color:rgba(0,0,0,.18);
+
+    transform:
+
+        translateY(3px);
+
+    z-index:-1;
+
+    filter:blur(1px);
+
+}
+
+#mythButton::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:20px;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(255,255,255,.22),
+
+            rgba(255,255,255,0)
+
+        );
+
+    opacity:.55;
+
+    mix-blend-mode:screen;
+
+    pointer-events:none;
 
 }
 
 #mythButton:hover{
 
-    background-size:130% 130%;
+    transform:
+
+        rotateX(3deg)
+
+        rotateY(-4deg);
+
+    background-size:135% 135%;
 
     filter:
 
         brightness(1.08)
 
-        drop-shadow(0 0 10px rgba(255,255,255,.12))
+        drop-shadow(0 0 10px rgba(255,255,255,.16))
 
-        drop-shadow(0 0 24px rgba(120,160,255,.22));
+        drop-shadow(0 0 26px rgba(110,150,255,.28));
 
 }
 
