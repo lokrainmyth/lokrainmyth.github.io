@@ -606,41 +606,21 @@ img{
 
     position:absolute;
 
-    left:50%;
-    bottom:8vh;
+    right:7vw;
 
-    transform:translateX(-50%);
+    bottom:11vh;
 
-    width:700px;
-    max-width:90vw;
+    width:260px;
 
-    text-align:center;
+    text-align:left;
 
 }
 
 .theo-caption h2{
 
-    font-size:58px;
+    font-size:44px;
 
-    font-weight:300;
-
-    letter-spacing:.35em;
-
-    color:#d7b878;
-
-    text-transform:uppercase;
-
-    text-shadow:
-        0 0 8px rgba(215,184,120,.18),
-        0 0 20px rgba(215,184,120,.08);
-
-    margin-bottom:25px;
-
-   transform:translateX(.15em);
-
-    display:inline-block;
-
-    margin:0;
+    letter-spacing:.28em;
 
 }
 
@@ -700,13 +680,13 @@ animation: theoGlow 8s ease-in-out infinite;
 
 .theo-object{
 
-    margin-bottom:25px;
+    margin-top:26px;
 
 }
 
 .theo-date{
 
-    margin-top:0;
+    margin-top:16px;
 
 }
 
@@ -739,7 +719,9 @@ animation: theoGlow 8s ease-in-out infinite;
 
 
 
-#mythButton {
+#mythButton{
+
+    position:relative;
 
     background:none;
 
@@ -747,48 +729,94 @@ animation: theoGlow 8s ease-in-out infinite;
 
     cursor:pointer;
 
-    font-size:42px;
+    font-size:58px;
 
-    font-weight:300;
+    font-weight:200;
 
-    letter-spacing:.45em;
-
-    color:#567cff;
+    letter-spacing:.42em;
 
     text-transform:uppercase;
 
-    text-shadow:
+    color:transparent;
 
-        0 0 10px rgba(86,124,255,.35),
+    padding:18px 12px;
 
-        0 0 35px rgba(86,124,255,.15);
+    background-image:
+        repeating-linear-gradient(
 
+            -25deg,
+
+            #ffffff 0px,
+
+            #ffffff 8px,
+
+            #d8d8d8 8px,
+
+            #d8d8d8 16px,
+
+            #5b5b5b 16px,
+
+            #5b5b5b 18px,
+
+            #ffffff 18px,
+
+            #ffffff 26px
+
+        );
+
+    background-size:220% 220%;
+
+    -webkit-background-clip:text;
+    background-clip:text;
 
     transition:
+        letter-spacing .8s,
+        filter .8s,
+        transform .8s;
 
-        transform .8s ease,
+    filter:
 
-        text-shadow .8s ease,
-
-        color .8s ease;
+        drop-shadow(0 0 6px rgba(255,255,255,.08));
 
 }
 
 
+#mythButton:hover{
 
-#mythButton:hover {
+    letter-spacing:.5em;
 
+    filter:
 
-    transform:scale(1.05);
+        brightness(1.25)
 
+        drop-shadow(0 0 14px rgba(120,150,255,.3));
 
-    color:#9bb5ff;
+}
 
+       @keyframes mythFlow{
 
-    text-shadow:
+    from{
 
-        0 0 18px rgba(120,160,255,.7),
+        background-position:0% 0%;
+
+    }
+
+    to{
+
+        background-position:220% 0%;
+
+    }
+
+}
 
         0 0 60px rgba(80,120,255,.35);
+
+}
+
+#mythButton{
+
+    animation:
+
+        mythFlow 28s linear infinite;
 
 }
