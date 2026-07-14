@@ -554,4 +554,101 @@ function createDustTexture() {
 
     };
 
+    /* ==========================================================
+   BUTTONS
+========================================================== */
+
+document
+.getElementById("outroGoDeeper")
+?.addEventListener(
+
+    "click",
+
+    ()=>{
+
+        console.log(
+            "GO DEEPER → THEO"
+        );
+
+        openTheo();
+
+    }
+
+);
+
+document
+
+.getElementById("returnToDawn")
+
+?.addEventListener(
+
+    "click",
+
+    ()=>{
+
+        closeMyth();
+
+    }
+
+);
+
+document
+
+.querySelector('[data-return="theo"]')
+
+?.addEventListener(
+
+    "click",
+
+    ()=>{
+
+        closeTheo();
+
+    }
+
+);
+
+document
+.getElementById("mythButton")
+?.addEventListener(
+
+"click",
+
+()=>{
+
+    console.log("ENTER LO.KRAIN MYTH");
+
+    openMyth();
+
+}
+
+);
+
+const button =
+    document.getElementById("mythButton");
+
+button?.addEventListener(
+
+    "mouseenter",
+
+    ()=>{
+
+        mythHover = true;
+
+    }
+
+);
+
+button?.addEventListener(
+
+    "mouseleave",
+
+    ()=>{
+
+        mythHover = false;
+
+    }
+
+);
+
 })();
