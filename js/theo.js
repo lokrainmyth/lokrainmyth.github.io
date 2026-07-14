@@ -511,6 +511,22 @@ function createDustTexture() {
 
 }
 
+    function revealMyth(){
+
+    const myth =
+        document.querySelector(".myth-entry");
+
+    if(!myth) return;
+
+
+    setTimeout(()=>{
+
+        myth.classList.add("visible");
+
+    },3500);
+
+}
+
     function close() {
 
         if (!renderer) return;
