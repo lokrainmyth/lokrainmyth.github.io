@@ -725,128 +725,51 @@ animation: theoGlow 8s ease-in-out infinite;
 
 #mythButton{
 
-    position:relative;
-
-    display:inline-block;
-
-    padding:18px 34px;
+    background:none;
 
     border:none;
 
-    background:none;
-
     cursor:pointer;
 
-    white-space:nowrap;
+    color:#f7f7f7;
 
-    font:700 78px/1 inherit;
+    font-family:"Modak", cursive;
 
-    letter-spacing:.05em;
+    font-size:92px;
+
+    line-height:0.9;
+
+    letter-spacing:.02em;
+
+    font-weight:400;
 
     text-transform:uppercase;
 
-    color:transparent;
+    text-shadow:
 
-    background-image:
+        0 2px 0 rgba(255,255,255,.18),
 
-        repeating-linear-gradient(
-
-            -35deg,
-
-            #ffffff 0px,
-            #ffffff 12px,
-
-            #ededed 12px,
-            #ededed 24px
-
-        );
-
-    background-clip:text;
-    -webkit-background-clip:text;
-
-    filter:
-
-        drop-shadow(0 2px 2px rgba(255,255,255,.18))
-
-        drop-shadow(0 8px 18px rgba(0,0,0,.35));
+        0 10px 24px rgba(0,0,0,.45);
 
     transition:
 
-        transform .8s,
+        transform .6s ease,
 
-        filter .8s,
+        filter .6s ease,
 
-        background-size 1.4s;
-
-}
-
-#mythButton::after{
-
-    content:"LO.KRAIN MYTH";
-
-    position:absolute;
-
-    inset:0;
-
-    color:rgba(0,0,0,.18);
-
-    transform:
-
-        translateY(3px);
-
-    z-index:-1;
-
-    filter:blur(1px);
-
-}
-
-#mythButton::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:20px;
-
-    background:
-
-        linear-gradient(
-
-            180deg,
-
-            rgba(255,255,255,.22),
-
-            rgba(255,255,255,0)
-
-        );
-
-    opacity:.55;
-
-    mix-blend-mode:screen;
-
-    pointer-events:none;
+        color .6s ease;
 
 }
 
 #mythButton:hover{
 
-    transform:
-
-        rotateX(3deg)
-
-        rotateY(-4deg);
-
-    background-size:135% 135%;
+    color:#ffffff;
 
     filter:
 
-        brightness(1.08)
+        brightness(1.05)
 
-        drop-shadow(0 0 10px rgba(255,255,255,.16))
-
-        drop-shadow(0 0 26px rgba(110,150,255,.28));
+        drop-shadow(0 0 14px rgba(180,210,255,.22));
 
 }
 
