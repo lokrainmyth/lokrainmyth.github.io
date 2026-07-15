@@ -723,7 +723,7 @@ animation: theoGlow 8s ease-in-out infinite;
 
 }
 
-/* #mythButton{
+#mythButton{
 
     background:none;
 
@@ -731,110 +731,99 @@ animation: theoGlow 8s ease-in-out infinite;
 
     cursor:pointer;
 
-    background:
-
-linear-gradient(
-
-180deg,
-
-#ffffff,
-
-#f7f7f7 45%,
-
-#ececec 100%
-
-);
-
-color:transparent;
-
-background-clip:text;
-
--webkit-background-clip:text;
-
-   filter:
-
-drop-shadow(0 2px 0 rgba(255,255,255,.2))
-
-drop-shadow(0 12px 24px rgba(0,0,0,.35));
-
     font-family:"Modak", cursive;
 
     font-size:92px;
 
-    line-height:0.9;
-
-    letter-spacing:.02em;
-
     font-weight:400;
+
+    line-height:.92;
+
+    letter-spacing:.015em;
+
+    color:transparent;
 
     text-transform:uppercase;
 
-    text-shadow:
+    background-image:
 
-        0 2px 0 rgba(255,255,255,.18),
+        linear-gradient(
 
-        0 10px 24px rgba(0,0,0,.45);
+            180deg,
+
+            #ffffff 0%,
+
+            #fcfcfc 18%,
+
+            #ececec 38%,
+
+            #ffffff 54%,
+
+            #ededed 72%,
+
+            #d8d8d8 100%
+
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    filter:
+
+        drop-shadow(0 2px 0 rgba(255,255,255,.25))
+        drop-shadow(0 10px 20px rgba(0,0,0,.35));
 
     transition:
 
-        transform .6s ease,
-
-        filter .6s ease,
-
-        color .6s ease;
-
-} */
-
-#mythButton:hover span:nth-child(1){
-
-    transform:
-        rotate(-7deg)
-        translateY(-4px);
+        filter .8s ease,
+        transform .8s ease;
 
 }
 
-#mythButton:hover span:nth-child(2){
+#mythButton::before{
+
+    content:attr(data-text);
+
+    position:absolute;
+
+    inset:0;
+
+    color:transparent;
+
+    pointer-events:none;
+
+    background-image:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(255,255,255,.55),
+
+            rgba(255,255,255,0)
+
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
 
     transform:
-        scale(1.08,.95)
-        rotate(1deg);
+
+        translateY(2px);
+
+    opacity:.55;
 
 }
 
-#mythButton:hover span:nth-child(4){
+#mythButton:hover{
 
-    transform:
-        rotate(5deg);
+    filter:
 
-}
+        brightness(1.04)
 
-#mythButton:hover span:nth-child(5){
+        drop-shadow(0 0 10px rgba(255,255,255,.12))
 
-    transform:
-        translateY(5px)
-        rotate(-2deg);
-
-}
-
-#mythButton:hover span:nth-child(10){
-
-    transform:
-        rotate(5deg)
-        translateY(-2px);
-
-}
-
-#mythButton:hover span:nth-child(11){
-
-    transform:
-        rotate(-3deg);
-
-}
-
-#mythButton:hover span:nth-child(13){
-
-    transform:
-        scale(.95,1.12);
+        drop-shadow(0 12px 26px rgba(0,0,0,.42));
 
 }
 
