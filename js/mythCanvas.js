@@ -129,7 +129,7 @@ ctx.textAlign = "center";
 
 ctx.textBaseline = "middle";
 
-ctx.font = '92px "Modak"';
+ctx.font = "90px Arial";
 
 ctx.fillText(
 
