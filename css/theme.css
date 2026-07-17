@@ -980,6 +980,14 @@ animation: theoGlow 8s ease-in-out infinite;
 
 }
 
+#mythButton{
+
+    color:transparent;
+
+    background:none;
+
+}
+
 background-image:
 
 linear-gradient(...),
