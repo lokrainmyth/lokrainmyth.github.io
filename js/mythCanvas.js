@@ -121,6 +121,28 @@ function createStrokes() {
 
         ctx.stroke();
 
+        ctx.globalCompositeOperation = "destination-in";
+
+ctx.fillStyle = "#fff";
+
+ctx.textAlign = "center";
+
+ctx.textBaseline = "middle";
+
+ctx.font = '92px "Modak"';
+
+ctx.fillText(
+
+    "LO.KRAIN MYTH",
+
+    width / 2,
+
+    height / 2
+
+);
+
+ctx.globalCompositeOperation = "source-over";
+
     }
 
 }
