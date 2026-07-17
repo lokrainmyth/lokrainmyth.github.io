@@ -112,38 +112,36 @@ function createStrokes() {
         ctx.moveTo(s.x, s.y);
 
         ctx.lineTo(
-
             s.x + Math.cos(s.angle) * s.length,
-
             s.y + Math.sin(s.angle) * s.length
-
         );
 
         ctx.stroke();
 
-        ctx.globalCompositeOperation = "destination-in";
-
-ctx.fillStyle = "#fff";
-
-ctx.textAlign = "center";
-
-ctx.textBaseline = "middle";
-
-ctx.font = '92px "Modak"';
-
-ctx.fillText(
-
-    "LO.KRAIN MYTH",
-
-    width / 2,
-
-    height / 2
-
-);
-
-ctx.globalCompositeOperation = "source-over";
-
     }
+
+    // ← цикл закончился
+
+    ctx.globalAlpha = 1;
+
+    ctx.globalCompositeOperation = "destination-in";
+
+    ctx.fillStyle = "#fff";
+
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    ctx.font = '92px "Modak"';
+
+    ctx.fillText(
+        "LO.KRAIN MYTH",
+        width / 2,
+        height / 2
+    );
+
+    ctx.globalCompositeOperation = "source-over";
+
+}
 
 }
 
