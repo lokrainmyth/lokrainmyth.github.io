@@ -9,6 +9,7 @@ window.MythCanvas = (function () {
     let height;
 
     let animation;
+    let strokes = [];
 
     function start() {
 
@@ -51,31 +52,77 @@ window.MythCanvas = (function () {
 
         canvas.height = height;
 
+        createStrokes();
+
     }
 
+function createStrokes() {
+
+    strokes = [];
+
+    for (let i = 0; i < 350; i++) {
+
+        strokes.push({
+
+            x: Math.random() * width,
+
+            y: Math.random() * height,
+
+            angle: Math.random() * Math.PI * 2,
+
+            length: 2 + Math.random() * 4,
+
+            speed: 0.05 + Math.random() * 0.12,
+
+            alpha: 0.15 + Math.random() * 0.35
+
+        });
+
+    }
+
+}
+    
     function animate() {
 
-        animation =
-            requestAnimationFrame(
-                animate
-            );
+    animation = requestAnimationFrame(animate);
 
-        ctx.clearRect(
+    ctx.clearRect(0, 0, width, height);
 
-            0,
-            0,
-            width,
-            height
+    ctx.lineCap = "round";
+
+    for (const s of strokes) {
+
+        s.x += Math.cos(s.angle) * s.speed;
+        s.y += Math.sin(s.angle) * s.speed;
+
+        if (s.x < 0) s.x = width;
+        if (s.x > width) s.x = 0;
+
+        if (s.y < 0) s.y = height;
+        if (s.y > height) s.y = 0;
+
+        ctx.globalAlpha = s.alpha;
+
+        ctx.strokeStyle = "#ffffff";
+
+        ctx.lineWidth = 1.2;
+
+        ctx.beginPath();
+
+        ctx.moveTo(s.x, s.y);
+
+        ctx.lineTo(
+
+            s.x + Math.cos(s.angle) * s.length,
+
+            s.y + Math.sin(s.angle) * s.length
 
         );
 
+        ctx.stroke();
+
     }
 
-    return {
-
-        start,
-        stop
-
-    };
+}
 
 })();
