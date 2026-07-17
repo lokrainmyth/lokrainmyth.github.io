@@ -277,6 +277,7 @@ camera.lookAt(
 
         animate();
         revealMyth();
+        MythCanvas.start();
 
     },
 
