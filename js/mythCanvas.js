@@ -70,7 +70,7 @@ function createStrokes() {
 
             angle: Math.random() * Math.PI * 2,
 
-            length: 2 + Math.random() * 4,
+            length: 6 + Math.random() * 10,
 
             speed: 0.05 + Math.random() * 0.12,
 
@@ -103,9 +103,19 @@ function createStrokes() {
 
         ctx.globalAlpha = s.alpha;
 
-        ctx.strokeStyle = "#ffffff";
+        const colors = [
 
-        ctx.lineWidth = 1.2;
+"#ffffff",
+
+"#f7f7f7",
+
+"#ececec",
+
+"#dddddd"
+
+];
+
+        ctx.lineWidth = 2.2;
 
         ctx.beginPath();
 
