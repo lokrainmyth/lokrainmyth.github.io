@@ -103,17 +103,7 @@ function createStrokes() {
 
         ctx.globalAlpha = s.alpha;
 
-        const colors = [
-
-"#ffffff",
-
-"#f7f7f7",
-
-"#ececec",
-
-"#dddddd"
-
-];
+        ctx.strokeStyle = "#ffffff";
 
         ctx.lineWidth = 2.2;
 
