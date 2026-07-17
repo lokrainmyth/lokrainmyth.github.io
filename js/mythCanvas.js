@@ -143,8 +143,6 @@ function createStrokes() {
 
 }
 
-}
-
 return {
 
     start,
