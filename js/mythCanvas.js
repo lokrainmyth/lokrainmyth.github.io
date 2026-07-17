@@ -125,4 +125,11 @@ function createStrokes() {
 
 }
 
+return {
+
+    start,
+    stop
+
+};
+
 })();
