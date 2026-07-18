@@ -153,7 +153,7 @@ function createStrokes() {
 
 }
     
-    function animate() {
+   function animate() {
 
     animation = requestAnimationFrame(animate);
 
@@ -161,60 +161,49 @@ function createStrokes() {
 
     ctx.lineCap = "round";
 
-        const t = performance.now() * 0.001;
+    const t = performance.now() * 0.001;
 
     for (const s of strokes) {
 
+        // частица "дышит" возле своей исходной позиции
+
         s.x =
-    s.homeX +
-    Math.sin(t + s.homeY * 0.03) * 0.7;
+            s.homeX +
+            Math.sin(t + s.homeY * 0.03) * 0.7;
 
-s.y =
-    s.homeY +
-    Math.cos(t + s.homeX * 0.03) * 0.5;
+        s.y =
+            s.homeY +
+            Math.cos(t + s.homeX * 0.03) * 0.5;
 
-        const angle =
-    s.angle +
-    Math.sin(t + s.homeX * 0.05) * 0.25;
+        // слегка меняется направление мазка
 
         const angle =
-
-s.angle +
-
-Math.sin(
-
-t +
-
-s.homeX
-
-) * 0.3;
-
-        if (s.x < 0) s.x = width;
-        if (s.x > width) s.x = 0;
-
-        if (s.y < 0) s.y = height;
-        if (s.y > height) s.y = 0;
+            s.angle +
+            Math.sin(t + s.homeX * 0.05) * 0.25;
 
         ctx.globalAlpha = s.alpha;
 
         ctx.strokeStyle = "#ffffff";
 
-        ctx.lineWidth = 2.2;
+        ctx.lineWidth = 1.4;
 
         ctx.beginPath();
 
         ctx.moveTo(s.x, s.y);
 
         ctx.lineTo(
-    s.x + Math.cos(angle) * s.length,
-    s.y + Math.sin(angle) * s.length
-);
+
+            s.x + Math.cos(angle) * s.length,
+
+            s.y + Math.sin(angle) * s.length
+
+        );
 
         ctx.stroke();
 
+    }
+
 }
-        
-        }
 
 return {
 
