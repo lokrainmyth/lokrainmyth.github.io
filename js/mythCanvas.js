@@ -187,6 +187,8 @@ function createStrokes() {
         ctx.stroke();
 
 }
+        
+        }
 
 return {
 
