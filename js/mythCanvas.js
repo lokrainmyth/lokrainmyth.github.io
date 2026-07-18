@@ -11,6 +11,11 @@ window.MythCanvas = (function () {
     let animation;
     let strokes = [];
 
+    let maskCanvas;
+    let maskCtx;
+
+    let textPixels;
+
     function start() {
 
         canvas =
@@ -52,29 +57,92 @@ window.MythCanvas = (function () {
 
         canvas.height = height;
 
+        buildMask();
+
         createStrokes();
 
     }
+
+    function buildMask() {
+
+    maskCanvas = document.createElement("canvas");
+
+    maskCanvas.width = width;
+
+    maskCanvas.height = height;
+
+    maskCtx = maskCanvas.getContext("2d");
+
+    maskCtx.clearRect(0,0,width,height);
+
+    maskCtx.fillStyle = "#fff";
+
+    maskCtx.textAlign = "center";
+
+    maskCtx.textBaseline = "middle";
+
+    maskCtx.font = '92px "Modak"';
+
+    maskCtx.fillText(
+
+        "LO.KRAIN MYTH",
+
+        width/2,
+
+        height/2
+
+    );
+
+    textPixels = maskCtx.getImageData(
+
+        0,
+
+        0,
+
+        width,
+
+        height
+
+    ).data;
+
+}
 
 function createStrokes() {
 
     strokes = [];
 
-    for (let i = 0; i < 350; i++) {
+    while (strokes.length < 700) {
+
+        const x = Math.random() * width;
+
+        const y = Math.random() * height;
+
+        const index =
+
+            (Math.floor(y) * width +
+
+             Math.floor(x)) * 4 + 3;
+
+        if (textPixels[index] < 20)
+            continue;
 
         strokes.push({
 
-            x: Math.random() * width,
+            x,
 
-            y: Math.random() * height,
+            y,
 
-            angle: Math.random() * Math.PI * 2,
+            angle:
+                Math.random() * Math.PI * 2,
 
-            length: 6 + Math.random() * 10,
+            length:
+                4 + Math.random() * 8,
 
-            speed: 0.05 + Math.random() * 0.12,
+            speed:
+                0.02 + Math.random() * 0.05,
 
-            alpha: 0.15 + Math.random() * 0.35
+            alpha:
+                0.25 + Math.random() * 0.35
 
         });
 
@@ -117,29 +185,6 @@ function createStrokes() {
         );
 
         ctx.stroke();
-
-    }
-
-    // ← цикл закончился
-
-    ctx.globalAlpha = 1;
-
-    ctx.globalCompositeOperation = "destination-in";
-
-    ctx.fillStyle = "#fff";
-
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-
-    ctx.font = '92px "Modak"';
-
-    ctx.fillText(
-        "LO.KRAIN MYTH",
-        width / 2,
-        height / 2
-    );
-
-    ctx.globalCompositeOperation = "source-over";
 
 }
 
