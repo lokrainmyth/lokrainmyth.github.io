@@ -132,6 +132,9 @@ function createStrokes() {
 
             y,
 
+            homeX: x,
+            homeY: y,
+
             angle:
                 Math.random() * Math.PI * 2,
 
@@ -160,8 +163,15 @@ function createStrokes() {
 
     for (const s of strokes) {
 
-        s.x += Math.cos(s.angle) * s.speed;
-        s.y += Math.sin(s.angle) * s.speed;
+        const t = performance.now() * 0.001;
+
+s.x =
+    s.homeX +
+    Math.sin(t + s.homeY * 0.03) * 0.7;
+
+s.y =
+    s.homeY +
+    Math.cos(t + s.homeX * 0.03) * 0.5;
 
         if (s.x < 0) s.x = width;
         if (s.x > width) s.x = 0;
