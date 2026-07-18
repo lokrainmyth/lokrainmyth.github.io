@@ -163,15 +163,17 @@ function createStrokes() {
 
     for (const s of strokes) {
 
-        const t = performance.now() * 0.001;
+        const angle =
 
-s.x =
-    s.homeX +
-    Math.sin(t + s.homeY * 0.03) * 0.7;
+s.angle +
 
-s.y =
-    s.homeY +
-    Math.cos(t + s.homeX * 0.03) * 0.5;
+Math.sin(
+
+t +
+
+s.homeX
+
+) * 0.3;
 
         if (s.x < 0) s.x = width;
         if (s.x > width) s.x = 0;
