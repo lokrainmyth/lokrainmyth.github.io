@@ -161,7 +161,21 @@ function createStrokes() {
 
     ctx.lineCap = "round";
 
+        const t = performance.now() * 0.001;
+
     for (const s of strokes) {
+
+        s.x =
+    s.homeX +
+    Math.sin(t + s.homeY * 0.03) * 0.7;
+
+s.y =
+    s.homeY +
+    Math.cos(t + s.homeX * 0.03) * 0.5;
+
+        const angle =
+    s.angle +
+    Math.sin(t + s.homeX * 0.05) * 0.25;
 
         const angle =
 
@@ -192,9 +206,9 @@ s.homeX
         ctx.moveTo(s.x, s.y);
 
         ctx.lineTo(
-            s.x + Math.cos(s.angle) * s.length,
-            s.y + Math.sin(s.angle) * s.length
-        );
+    s.x + Math.cos(angle) * s.length,
+    s.y + Math.sin(angle) * s.length
+);
 
         ctx.stroke();
 
