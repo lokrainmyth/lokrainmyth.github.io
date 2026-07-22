@@ -114,54 +114,57 @@ function createStrokes() {
     while (strokes.length < 700) {
 
         const x = Math.random() * width;
-
         const y = Math.random() * height;
 
         const index =
 
             (Math.floor(y) * width +
-
              Math.floor(x)) * 4 + 3;
 
         if (textPixels[index] < 20)
             continue;
 
+        // ---------- длина штриха ----------
+
+        const r = Math.random();
+
+        let length;
+
+        if (r < 0.75) {
+
+            length = 5 + Math.random() * 3;
+
+        } else if (r < 0.95) {
+
+            length = 9 + Math.random() * 4;
+
+        } else {
+
+            length = 15 + Math.random() * 6;
+
+        }
+
+        // -------------------------------
+
         strokes.push({
 
             x,
-
             y,
 
             homeX: x,
             homeY: y,
 
             angle:
-                Math.random() * Math.PI * 2,
+                -0.75 +
+                (Math.random() - 0.5) * 0.18,
 
-            const r = Math.random();
-
-let length;
-
-if (r < 0.75)
-    length = 5 + Math.random() * 3;
-
-else if (r < 0.95)
-    length = 9 + Math.random() * 4;
-
-else
-    length = 15 + Math.random() * 6;
-
-        length,
+            length,
 
             speed:
                 0.02 + Math.random() * 0.05,
 
             alpha:
                 0.25 + Math.random() * 0.35
-
-        brightness:
-
-    220 + Math.random() * 35
 
         });
 
