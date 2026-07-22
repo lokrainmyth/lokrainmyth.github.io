@@ -210,6 +210,11 @@ function createStrokes() {
 
         ctx.moveTo(s.x, s.y);
 
+        ctx.strokeStyle =
+`rgb(${s.brightness},
+     ${s.brightness},
+     ${s.brightness})`;
+
         ctx.lineTo(
 
             s.x + Math.cos(angle) * s.length,
