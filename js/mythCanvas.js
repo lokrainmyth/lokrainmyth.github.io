@@ -138,14 +138,30 @@ function createStrokes() {
             angle:
                 Math.random() * Math.PI * 2,
 
-            length:
-                4 + Math.random() * 8,
+            const r = Math.random();
+
+let length;
+
+if (r < 0.75)
+    length = 5 + Math.random() * 3;
+
+else if (r < 0.95)
+    length = 9 + Math.random() * 4;
+
+else
+    length = 15 + Math.random() * 6;
+
+        length,
 
             speed:
                 0.02 + Math.random() * 0.05,
 
             alpha:
                 0.25 + Math.random() * 0.35
+
+        brightness:
+
+    220 + Math.random() * 35
 
         });
 
@@ -190,6 +206,11 @@ function createStrokes() {
         ctx.beginPath();
 
         ctx.moveTo(s.x, s.y);
+
+        ctx.strokeStyle =
+`rgb(${s.brightness},
+     ${s.brightness},
+     ${s.brightness})`;
 
         ctx.lineTo(
 
