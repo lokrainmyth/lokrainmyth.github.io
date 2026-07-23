@@ -988,6 +988,29 @@ animation: theoGlow 8s ease-in-out infinite;
 
 }
 
+#mythCanvas{
+
+    cursor:pointer;
+
+}
+
+#mythCanvas{
+
+    transition:
+        transform .5s ease,
+        filter .5s ease;
+
+}
+
+#mythCanvas:hover{
+
+    transform:scale(1.015);
+
+    filter:
+        drop-shadow(0 0 12px rgba(255,255,255,.08));
+
+}
+
 background-image:
 
 linear-gradient(...),
