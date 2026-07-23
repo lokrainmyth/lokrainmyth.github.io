@@ -457,15 +457,17 @@ function closeTheo(){
 
 function openMyth() {
 
-    document
-        .getElementById("theoLayer")
-        .classList
-        .add("hidden");
+    switchLayer("myth");
 
-    document
-        .getElementById("mythLayer")
-        .classList
-        .remove("hidden");
+    document.body.classList.add("myth-mode");
+
+    const sound=World.elements.mythSound;
+
+    if(sound){
+
+        sound.currentTime=0;
+
+        sound.volume=.6;
 
 }
 
