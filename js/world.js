@@ -455,23 +455,19 @@ function closeTheo(){
 
 }
 
-function openMyth(){
+function openMyth() {
 
-    switchLayer("myth");
+    document
+        .getElementById("theoLayer")
+        .classList
+        .add("hidden");
 
-    document.body.classList.add("myth-mode");
+    document
+        .getElementById("mythLayer")
+        .classList
+        .remove("hidden");
 
-    const sound=World.elements.mythSound;
-
-    if(sound){
-
-        sound.currentTime=0;
-
-        sound.volume=.6;
-
-        sound.play().catch(()=>{});
-
-    }
+}
 
 }
 
