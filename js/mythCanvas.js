@@ -26,6 +26,14 @@ window.MythCanvas = (function () {
         ctx =
             canvas.getContext("2d");
 
+        canvas.addEventListener(
+
+    "click",
+
+    openMyth
+
+);
+
         resize();
 
         window.addEventListener(
