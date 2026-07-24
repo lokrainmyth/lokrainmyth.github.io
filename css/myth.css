@@ -187,3 +187,34 @@ transition:
     stroke-width:.8;
 
 }
+
+.myth-entry{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:4vh;
+
+    width:760px;
+
+    height:160px;
+
+    transform:translateX(-50%);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity 2.5s ease;
+
+}
+
+.myth-entry.visible{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
