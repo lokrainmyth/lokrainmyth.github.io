@@ -388,6 +388,8 @@ Math.sin(performance.now()*0.00018)*0.18;
             container.clientHeight
         );
 
+console.log(width, height);
+        
     }
 
 function createDustTexture() {
