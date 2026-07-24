@@ -1,0 +1,189 @@
+/* ==========================================================
+   MYTH
+========================================================== */
+
+.myth-layer{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    background:#060606;
+
+}
+
+.myth-map{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:.88;
+
+    transition:opacity 2s;
+
+}
+
+.myth-layer::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-10%;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+
+            circle at 25% 35%,
+
+            rgba(255,255,255,.018),
+
+            transparent 45%
+
+        ),
+
+        radial-gradient(
+
+            circle at 80% 60%,
+
+            rgba(255,255,255,.012),
+
+            transparent 42%
+
+        ),
+
+        radial-gradient(
+
+            circle at 60% 18%,
+
+            rgba(255,255,255,.01),
+
+            transparent 36%
+
+        );
+
+    animation:
+
+        mythBreath
+
+        18s
+
+        ease-in-out
+
+        infinite;
+
+}
+
+@keyframes mythBreath{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:.65;
+
+    }
+
+    50%{
+
+        transform:scale(1.02);
+
+        opacity:.95;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:.65;
+
+    }
+
+}
+
+.myth-map svg{
+
+    width:min(1200px,92vw);
+
+    height:auto;
+
+    opacity:.8;
+
+    filter:
+
+        blur(.15px)
+
+        drop-shadow(
+
+            0 0 18px
+
+            rgba(255,255,255,.03)
+
+        );
+
+}
+
+.myth-map{
+
+    opacity:0;
+
+    transform:
+
+        scale(1.03);
+
+}
+
+body.myth-mode .myth-map{
+
+    opacity:1;
+
+    transform:
+
+        scale(1);
+
+}
+
+transition:
+
+    opacity 2.4s,
+
+    transform 3.2s;
+
+.myth-node{
+
+    transition:
+
+        opacity 1.4s,
+
+        transform 1.4s;
+
+}
+
+.hidden{
+
+    opacity:0;
+
+}
+
+.anchor{
+
+    fill:none;
+
+    stroke:rgba(255,255,255,.025);
+
+    stroke-width:.8;
+
+}
