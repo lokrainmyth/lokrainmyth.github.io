@@ -55,21 +55,22 @@ window.MythCanvas = (function () {
 
     function resize() {
 
-        width =
-            canvas.clientWidth;
+    const rect = canvas.getBoundingClientRect();
 
-        height =
-            canvas.clientHeight;
+    width = Math.round(rect.width);
+    height = Math.round(rect.height);
 
-        canvas.width = width;
-
-        canvas.height = height;
-
-        buildMask();
-
-        createStrokes();
-
+    if (width <= 0 || height <= 0) {
+        return;
     }
+
+    canvas.width = width;
+    canvas.height = height;
+
+    buildMask();
+    createStrokes();
+
+}
 
     function buildMask() {
 
