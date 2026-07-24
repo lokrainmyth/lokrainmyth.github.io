@@ -41,6 +41,14 @@ window.MythCanvas = (function () {
             resize
         );
 
+        requestAnimationFrame(() => {
+
+    resize();
+
+    animate();
+
+});
+
         animate();
 
     }
