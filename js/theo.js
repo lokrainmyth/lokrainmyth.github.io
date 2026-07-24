@@ -609,19 +609,20 @@ document
 
 );
 
-document
-.getElementById("mythButton")
-?.addEventListener(
+const mythCanvas =
+    document.getElementById("mythCanvas");
 
-"click",
+mythCanvas?.addEventListener(
 
-()=>{
+    "click",
 
-    console.log("ENTER LO.KRAIN MYTH");
+    ()=>{
 
-    openMyth();
+        console.log("ENTER LO.KRAIN MYTH");
 
-}
+        openMyth();
+
+    }
 
 );
 
