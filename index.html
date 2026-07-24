@@ -505,53 +505,290 @@
      MYTH LAYER
 ======================================================= -->
 
-<section
-    id="mythLayer"
-    class="myth-layer hidden">
+<section id="mythLayer" class="myth-layer hidden">
 
-    <div class="myth-intro">
+    <div class="myth-map">
 
-        <h2 class="myth-title">
+        <svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1000 700"
+     width="100%"
+     height="100%"
+     preserveAspectRatio="xMidYMid slice">
 
-            Lo.Krain Myth
+<style>
+.background{
+    fill:#090909;
+}
 
-        </h2>
+.paper{
+    stroke:rgba(255,255,255,.035);
+    stroke-width:.5;
+    fill:none;
+    stroke-linecap:round;
+}
 
-        <p class="myth-subtitle">
+.scratch{
+    stroke:rgba(255,255,255,.05);
+    stroke-width:.45;
+    fill:none;
+    stroke-linecap:round;
+}
 
-            Path through the night.
+.faint{
+    stroke:rgba(255,255,255,.06);
+    stroke-width:.75;
+    fill:none;
+}
 
-        </p>
+.false{
+    stroke:rgba(255,255,255,.07);
+    stroke-width:1;
+    fill:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.route{
+
+    stroke:rgba(255,255,255,.11);
+
+    stroke-width:1.35;
+
+    fill:none;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    stroke-dasharray:1200;
+
+    stroke-dashoffset:1200;
+
+}
+
+.nodeCircle{
+    stroke:rgba(255,255,255,.12);
+    stroke-width:1;
+    fill:none;
+}
+
+.nodeDot{
+    fill:rgba(255,255,255,.14);
+}
+
+.label{
+    fill:rgba(255,255,255,.40);
+    font-family:Georgia, serif;
+    font-size:14px;
+    letter-spacing:.9px;
+    user-select:none;
+}
+
+.ghostCircle{
+    stroke:rgba(255,255,255,.04);
+    stroke-width:.8;
+    fill:none;
+}
+</style>
+
+<rect class="background" width="1000" height="700"/>
+
+<g id="backgroundTexture"
+class="texture">
+
+    <!-- faint paper grain -->
+    <path class="paper" d="M40 58 C210 44 370 67 610 49 S870 63 956 48"/>
+    <path class="paper" d="M18 112 C185 126 364 101 590 119 S860 96 980 118"/>
+    <path class="paper" d="M50 178 C225 156 412 181 640 169 S870 183 962 170"/>
+    <path class="paper" d="M35 249 C201 235 402 259 602 246 S864 262 978 247"/>
+    <path class="paper" d="M60 327 C236 314 412 336 622 321 S855 334 949 318"/>
+    <path class="paper" d="M26 401 C214 385 410 409 648 395 S861 407 970 392"/>
+    <path class="paper" d="M44 474 C218 460 422 483 655 470 S858 481 965 466"/>
+    <path class="paper" d="M30 548 C204 533 401 555 620 541 S855 551 968 537"/>
+    <path class="paper" d="M48 621 C222 606 413 628 641 615 S862 626 972 610"/>
+
+    <!-- soft vertical texture -->
+    <path class="paper" d="M120 18 C128 210 110 450 122 682"/>
+    <path class="paper" d="M248 24 C262 220 240 474 254 682"/>
+    <path class="paper" d="M396 14 C406 214 390 454 402 684"/>
+    <path class="paper" d="M554 24 C563 205 548 460 560 680"/>
+    <path class="paper" d="M724 18 C734 206 714 458 726 678"/>
+    <path class="paper" d="M886 26 C896 215 879 466 892 680"/>
+
+    <!-- scratches -->
+    <path class="scratch" d="M214 122 l38 -19"/>
+    <path class="scratch" d="M744 104 l27 18"/>
+    <path class="scratch" d="M598 274 l48 -31"/>
+    <path class="scratch" d="M305 519 l32 -11"/>
+    <path class="scratch" d="M840 590 l39 -22"/>
+
+    <!-- ghost circles -->
+    <path class="ghostCircle" d="M580 210
+        m -92 0
+        a92 92 0 1 0 184 0
+        a92 92 0 1 0 -184 0"/>
+
+    <path class="ghostCircle" d="M282 490
+        m -60 0
+        a60 60 0 1 0 120 0
+        a60 60 0 1 0 -120 0"/>
+
+    <path class="ghostCircle" d="M820 460
+        m -72 0
+        a72 72 0 1 0 144 0
+        a72 72 0 1 0 -144 0"/>
+
+</g>
+
+<g id="falsePaths"
+class="false-routes">
+
+    <path class="false"
+          d="M92 202
+             C154 196 184 212 232 198
+             S310 164 342 184
+             S384 226 430 214"/>
+
+    <path class="false"
+          d="M432 143
+             C470 132 512 152 548 136
+             S618 92 660 118"/>
+
+    <path class="false"
+          d="M580 318
+             C620 334 640 358 666 346
+             S708 292 738 300
+             S782 338 816 332"/>
+
+    <path class="false"
+          d="M710 512
+             C682 540 640 542 620 572
+             S590 620 548 624"/>
+
+    <path class="false"
+          d="M210 544
+             C238 516 272 503 296 520
+             S342 568 382 560"/>
+
+    <path class="false"
+          d="M852 160
+             C816 186 790 178 764 198
+             S726 250 690 248"/>
+
+</g>
+
+<g id="futureRoutes">
+
+</g>
+
+<g id="mainRoute"
+class="main-route">
+
+    <path id="pathTheoDreamer"
+          class="route"
+          d="
+          M178 536
+          C214 520
+           260 500
+           304 476
+
+          C346 454
+           394 432
+           448 390
+
+          C478 366
+           506 336
+           544 284
+
+          C562 258
+           590 224
+           618 186
+          "/>
+
+    <path id="pathDreamerDarkest"
+          class="route"
+          d="
+          M618 186
+
+          C640 214
+           662 250
+           690 292
+
+          C714 326
+           736 362
+           766 416
+
+          C786 452
+           812 492
+           842 548
+          "/>
+
+</g>
+
+<g id="nodes">
+
+    <g id="theoNode">
+        class="myth-node active">
+    
+    <!-- Theo -->
+    <circle class="nodeCircle" cx="178" cy="536" r="9.5"/>
+    <circle class="nodeDot" cx="178" cy="536" r="1.9"/>
+    <path class="ghostCircle"
+          d="M178 536
+             m -31 0
+             a31 31 0 1 0 62 0
+             a31 31 0 1 0 -62 0"/>
+    <text class="label" x="196" y="540">Theo</text>
+
+        <circle
+
+class="anchor"
+
+cx="178"
+
+cy="536"
+
+r="18"/>
+
+    <g id="dreamerNode">
+        class="myth-node hidden">
+
+    <!-- Dreamer -->
+    <circle class="nodeCircle" cx="618" cy="186" r="9"/>
+    <circle class="nodeDot" cx="618" cy="186" r="1.8"/>
+    <path class="ghostCircle"
+          d="M618 186
+             m -36 0
+             a36 36 0 1 0 72 0
+             a36 36 0 1 0 -72 0"/>
+    <text class="label" x="634" y="181">Dreamer</text>
+
+    <g id="darkestNode">    
+        class="myth-node hidden">
+        
+    <!-- Darkest -->
+    <circle class="nodeCircle" cx="842" cy="548" r="10"/>
+    <circle class="nodeDot" cx="842" cy="548" r="2"/>
+    <path class="ghostCircle"
+          d="M842 548
+             m -42 0
+             a42 42 0 1 0 84 0
+             a42 42 0 1 0 -84 0"/>
+    <text class="label" x="860" y="553">The Darkest Hour</text>
+
+</g>
+
+</svg>
 
     </div>
 
-    <nav class="myth-navigation">
+    <div id="mythPanel">
 
-        <button class="myth-chapter" data-chapter="theo">
+    </div>
 
-            Theo
+    <button id="returnToDawn">
 
-        </button>
-
-        <button class="myth-chapter" data-chapter="dreamer">
-
-            Dreamer
-
-        </button>
-
-        <button class="myth-chapter" data-chapter="darkest">
-
-            The Darkest Hour is Before Dawn
-
-        </button>
-
-    </nav>
-
-    <button
-        id="returnToDawn"
-        class="return-button">
-
-        ← Return to Dawn
+        Return to Dawn
 
     </button>
 
