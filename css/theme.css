@@ -959,8 +959,7 @@ animation: theoGlow 8s ease-in-out infinite;
     white-space:nowrap;
 
 }
-
- #mythCanvas{
+#mythCanvas{
 
     position:absolute;
 
@@ -968,46 +967,40 @@ animation: theoGlow 8s ease-in-out infinite;
 
     bottom:4vh;
 
-    transform:translateX(-50%);
-
     width:760px;
 
     height:160px;
 
-    pointer-events:auto;
-cursor:pointer;
-
     z-index:2;
 
-}
-
-#mythButton{
-
-    color:transparent;
-
-    background:none;
-
-}
-
-#mythCanvas{
+    pointer-events:auto;
 
     cursor:pointer;
 
-}
+    transform:
 
-#mythCanvas{
+        translateX(-50%)
+
+        scale(1);
 
     transition:
+
         transform .5s ease,
+
         filter .5s ease;
 
 }
 
 #mythCanvas:hover{
 
-    transform:scale(1.015);
+    transform:
+
+        translateX(-50%)
+
+        scale(1.015);
 
     filter:
+
         drop-shadow(0 0 12px rgba(255,255,255,.08));
 
 }
