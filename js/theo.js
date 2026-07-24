@@ -629,7 +629,7 @@ mythCanvas?.addEventListener(
 const button =
     document.getElementById("mythButton");
 
-button?.addEventListener(
+mythCanvas?.addEventListener(
 
     "mouseenter",
 
@@ -641,7 +641,7 @@ button?.addEventListener(
 
 );
 
-button?.addEventListener(
+mythCanvas?.addEventListener(
 
     "mouseleave",
 
