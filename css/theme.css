@@ -959,15 +959,39 @@ animation: theoGlow 8s ease-in-out infinite;
     white-space:nowrap;
 
 }
+
 #mythCanvas{
 
+    position:absolute;
+
+    left:50%;
+
+    bottom:4vh;
+
+    width:760px;
+
+    height:160px;
     width:100%;
 
+    z-index:2;
     height:100%;
 
+    pointer-events:auto;
     display:block;
 
     cursor:pointer;
+
+    transform:
+
+        translateX(-50%)
+
+        scale(1);
+
+    transition:
+
+        transform .5s ease,
+
+        filter .5s ease;
 
 }
 
