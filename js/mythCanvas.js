@@ -63,9 +63,14 @@ window.MythCanvas = (function () {
 
     function resize() {
 
-    width = canvas.clientWidth;
+    const rect = canvas.getBoundingClientRect();
 
-    height = canvas.clientHeight;
+    width = Math.round(rect.width);
+    height = Math.round(rect.height);
+
+    if (width <= 0 || height <= 0) {
+        return;
+    }
 
     canvas.width = width;
     canvas.height = height;
