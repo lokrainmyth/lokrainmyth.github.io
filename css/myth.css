@@ -189,3 +189,34 @@ body.myth-mode #mythViewport svg{
         stroke-dashoffset 2.4s ease;
 
 }
+
+#mythViewport{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+#mythViewport svg{
+
+    width:min(1200px,95vw);
+
+    height:auto;
+
+    opacity:.9;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
