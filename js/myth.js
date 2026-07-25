@@ -6,9 +6,8 @@ let svg;
 
 function init(){
 
-const object=
-
-document.getElementById("mythSVG");
+const svg =
+document.querySelector("#mythMap svg");
 
 if(!object)return;
 
