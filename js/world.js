@@ -547,4 +547,30 @@ document.addEventListener("keydown", e=>{
 
     }
 
+   let theoTapCount = 0;
+let theoTapTimer = null;
+
+document.addEventListener("click", (e) => {
+
+    if (!e.target.closest(".album-cover")) return;
+
+    theoTapCount++;
+
+    clearTimeout(theoTapTimer);
+
+    if (theoTapCount >= 3) {
+
+        theoTapCount = 0;
+
+        openTheo();
+
+        return;
+    }
+
+    theoTapTimer = setTimeout(() => {
+
+        theoTapCount = 0;
+
+    }, 900);
+
 });
