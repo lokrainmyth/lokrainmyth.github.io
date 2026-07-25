@@ -459,6 +459,8 @@ function closeTheo(){
 
 function openMyth() {
 
+    switchLayer("myth");
+
     Myth.open();
 
     document.body.classList.add("myth-mode");
@@ -478,6 +480,8 @@ function openMyth() {
 function closeMyth(){
 
     Myth.close();
+
+    switchLayer("dawn");
 
     document.body.classList.remove("myth-mode");
 
