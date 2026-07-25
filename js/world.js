@@ -547,6 +547,8 @@ document.addEventListener("keydown", e=>{
 
     }
 
+   });
+
    let theoTapCount = 0;
 let theoTapTimer = null;
 
