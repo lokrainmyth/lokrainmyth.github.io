@@ -459,25 +459,25 @@ function closeTheo(){
 
 function openMyth() {
 
-    switchLayer("myth");
+    Myth.open();
 
     document.body.classList.add("myth-mode");
 
-    const sound=World.elements.mythSound;
+    const sound = World.elements.mythSound;
 
-    if(sound){
+    if (sound) {
 
-        sound.currentTime=0;
+        sound.currentTime = 0;
+        sound.volume = 0.6;
+        sound.play().catch(()=>{});
 
-        sound.volume=.6;
-
-}
+    }
 
 }
 
 function closeMyth(){
 
-    switchLayer("dawn");
+    Myth.close();
 
     document.body.classList.remove("myth-mode");
 
