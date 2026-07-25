@@ -190,6 +190,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     World.init();
 
+    Myth.init();
+
 });
 
 /* ==========================================================
@@ -506,12 +508,6 @@ World.escape=function(){
     }
 
 };
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    Myth.init();
-
-});
 
 /* ==========================================================
    SECRET
