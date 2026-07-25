@@ -220,3 +220,32 @@ body.myth-mode #mythViewport svg{
     display:none;
 
 }
+
+#mythLayer.hidden{
+    opacity:0;
+    pointer-events:none;
+}
+
+#mythLayer.visible{
+    opacity:1;
+    pointer-events:auto;
+}
+
+#mythViewport{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+
+#mythViewport svg{
+
+    width:min(1200px,90vw);
+    height:auto;
+
+}
