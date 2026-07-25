@@ -1,109 +1,85 @@
 "use strict";
 
-window.Myth = (function () {
+window.Myth = (function(){
 
-    let layer;
-
-    let panel;
-
-    let theoNode;
-
-    let pathTheoDreamer;
+    let svg;
 
     function init(){
 
-        layer =
-            document.getElementById(
-                "mythLayer"
-            );
+        svg = document.querySelector("#mythViewport svg");
 
-        panel =
-            document.getElementById(
-                "mythPanel"
-            );
+        if(!svg){
 
-        theoNode =
-            document.getElementById(
-                "theoNode"
-            );
+            console.log("MYTH SVG NOT FOUND");
 
-        pathTheoDreamer =
-            document.getElementById(
-                "pathTheoDreamer"
-            );
-
-        if(!layer) return;
-
-        console.log(
-            "Myth ready"
-        );
-
-        activateTheo();
-
-    }
-
-    function activateTheo(){
-
-        if(pathTheoDreamer){
-
-            pathTheoDreamer.style.strokeDashoffset =
-                "1200";
+            return;
 
         }
 
-        if(theoNode){
+        console.log("MYTH SVG READY");
 
-            theoNode.classList.remove(
-                "hidden"
-            );
-
-            theoNode.addEventListener(
-
-                "click",
-
-                openTheoChapter
-
-            );
-
-        }
+        prepare();
 
     }
 
-    function openTheoChapter(){
 
-        if(pathTheoDreamer){
+    function prepare(){
 
-            pathTheoDreamer.style.strokeDashoffset =
-                "0";
+        const route =
+            svg.querySelector("#pathTheoDreamer");
+
+
+        if(route){
+
+            route.style.strokeDasharray =
+                route.getTotalLength();
+
+            route.style.strokeDashoffset =
+                route.getTotalLength();
+
+
+            requestAnimationFrame(()=>{
+
+                route.style.transition =
+                    "stroke-dashoffset 4s ease";
+
+                route.style.strokeDashoffset = 0;
+
+            });
 
         }
 
-        panel.classList.add(
-            "visible"
-        );
 
-        panel.innerHTML = `
+        const nodes =
+            svg.querySelectorAll(".node-hidden");
 
-<h2>Theo</h2>
 
-<p>
+        nodes.forEach(node=>{
 
-The first memory.
+            node.style.opacity = "0.15";
 
-The first fracture.
+        });
 
-The beginning of the Lo.Krain Myth.
-
-</p>
-
-`;
 
     }
 
-    return{
+
+    return {
 
         init
 
     };
 
+
 })();
+
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    ()=>{
+
+        Myth.init();
+
+    }
+);
