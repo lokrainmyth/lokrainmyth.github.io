@@ -1,39 +1,62 @@
 "use strict";
 
-window.Myth = {
+window.Myth = (function () {
 
-    init(){
+    let layer;
+    let viewport;
+    let panel;
+    let svg;
 
-        console.log("MYTH READY");
+    function init() {
 
-        const path =
-        document.getElementById("pathTheoDreamer");
+        layer = document.getElementById("mythLayer");
+        viewport = document.getElementById("mythViewport");
+        panel = document.getElementById("mythPanel");
 
+        if (!layer || !viewport) {
 
-        if(path){
+            console.warn("Myth: layer not found");
+            return;
 
-            path.style.strokeDashoffset = 0;
+        }
+
+        svg = viewport.querySelector("svg");
+
+        if (!svg) {
+
+            console.warn("Myth: SVG not found");
+            return;
 
         }
 
-
-        const theo =
-        document.getElementById("theoNode");
-
-
-        if(theo){
-
-            theo.addEventListener(
-                "click",
-                ()=>{
-
-                    console.log("THEO NODE");
-
-                }
-            );
-
-        }
+        console.log("Myth ready");
 
     }
 
-};
+    function open() {
+
+        if (!layer) return;
+
+        layer.classList.remove("hidden");
+        layer.classList.add("visible");
+
+    }
+
+    function close() {
+
+        if (!layer) return;
+
+        layer.classList.remove("visible");
+        layer.classList.add("hidden");
+
+    }
+
+    return {
+
+        init,
+        open,
+        close
+
+    };
+
+})();
