@@ -1,30 +1,47 @@
 "use strict";
 
-window.Myth = (function () {
+window.Myth=(function(){
 
-    let layer;
+let svg;
 
-    function open(){
+function init(){
 
-        layer = document.getElementById("mythLayer");
+const object=
 
-        if(!layer) return;
+document.getElementById("mythSVG");
 
-        layer.classList.add("visible");
+if(!object)return;
 
-    }
+object.addEventListener(
 
-    function close(){
+"load",
 
-        layer?.classList.remove("visible");
+()=>{
 
-    }
+svg=
 
-    return{
+object.contentDocument;
 
-        open,
-        close
+start();
 
-    };
+});
+
+}
+
+function start(){
+
+console.log(
+
+"Myth loaded"
+
+);
+
+}
+
+return{
+
+init
+
+};
 
 })();
