@@ -8,6 +8,9 @@
 
     inset:0;
 
+    width:100vw;
+    height:100vh;
+
     background:#090909;
 
     overflow:hidden;
@@ -32,11 +35,16 @@
 }
 
 
+/* SVG HOLDER */
+
 #mythViewport{
 
     position:absolute;
 
     inset:0;
+
+    width:100%;
+    height:100%;
 
     display:flex;
 
@@ -44,32 +52,35 @@
 
     align-items:center;
 
-    overflow:hidden;
-
 }
 
 
+/* MAP */
+
 #mythViewport svg{
 
-    width:min(1300px,96vw);
+    display:block;
+
+    width:min(1300px,92vw);
 
     height:auto;
 
-    opacity:.9;
+    max-height:90vh;
+
+    opacity:.85;
 
     filter:
         brightness(.92)
         contrast(1.05)
         drop-shadow(
-            0 0 24px rgba(255,255,255,.03)
+            0 0 24px rgba(255,255,255,.04)
         );
 
-    transform:scale(1.02);
+    transform:scale(.96);
 
     transition:
-
         opacity 2s ease,
-        transform 4s ease;
+        transform 3s ease;
 
 }
 
@@ -83,6 +94,7 @@ body.myth-mode #mythViewport svg{
 }
 
 
+/* PANEL */
 
 #mythPanel{
 
@@ -100,15 +112,7 @@ body.myth-mode #mythViewport svg{
 
     font-family:Georgia,serif;
 
-    font-size:15px;
-
-    line-height:1.75;
-
     opacity:0;
-
-    transform:translateY(18px);
-
-    transition:.8s;
 
 }
 
@@ -117,11 +121,10 @@ body.myth-mode #mythViewport svg{
 
     opacity:1;
 
-    transform:none;
-
 }
 
 
+/* BUTTON */
 
 #returnToDawn{
 
@@ -133,7 +136,9 @@ body.myth-mode #mythViewport svg{
 
     background:none;
 
-    border:1px solid rgba(255,255,255,.12);
+    border:
+
+        1px solid rgba(255,255,255,.12);
 
     color:#d8d8d8;
 
@@ -141,33 +146,11 @@ body.myth-mode #mythViewport svg{
 
     cursor:pointer;
 
-    opacity:0;
-
 }
 
 
-#returnToDawn.visible{
+#returnToDawn:hover{
 
-    opacity:1;
-
-}
-
-
-.myth-node{
-
-    cursor:pointer;
-
-}
-
-
-.route{
-
-    stroke-dasharray:1200;
-
-    stroke-dashoffset:1200;
-
-    transition:
-
-        stroke-dashoffset 2.4s ease;
+    border-color:rgba(255,255,255,.35);
 
 }
