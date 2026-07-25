@@ -509,11 +509,216 @@
 
     <div id="mythMap">
 
-        <object
-            id="mythSVG"
-            type="image/svg+xml"
-            data="svg/myth-map.svg">
-        </object>
+        <?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1000 700"
+     width="1000"
+     height="700"
+     role="img"
+     aria-labelledby="title desc">
+
+  <title id="title">Myth Map</title>
+  <desc id="desc">A quiet abstract cartographic composition with subtle routes and nodes.</desc>
+
+  <style><![CDATA[
+    svg{
+      background:#090909;
+      shape-rendering:geometricPrecision;
+      text-rendering:geometricPrecision;
+    }
+
+    .paper{
+      fill:none;
+      stroke:#ffffff;
+      opacity:0.035;
+      stroke-width:0.6;
+      vector-effect:non-scaling-stroke;
+    }
+
+    .texture{
+      fill:none;
+      stroke:#ffffff;
+      opacity:0.045;
+      stroke-width:0.5;
+      vector-effect:non-scaling-stroke;
+    }
+
+    .false{
+      fill:none;
+      stroke:#ffffff;
+      opacity:0.06;
+      stroke-width:1;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      vector-effect:non-scaling-stroke;
+    }
+
+    .route{
+      fill:none;
+      stroke:#ffffff;
+      opacity:0.14;
+      stroke-width:1.5;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      stroke-dasharray:9 8;
+      stroke-dashoffset:220;
+      vector-effect:non-scaling-stroke;
+    }
+
+    .myth-node{
+      opacity:1;
+    }
+
+    .hidden{
+      opacity:0.42;
+    }
+
+    .anchor{
+      fill:#ffffff;
+      opacity:0.01;
+      pointer-events:all;
+    }
+
+    .nodeCircle{
+      fill:none;
+      stroke:#ffffff;
+      stroke-width:1.2;
+      opacity:0.13;
+    }
+
+    .nodeDot{
+      fill:#ffffff;
+      opacity:0.15;
+    }
+
+    .label{
+      fill:#ffffff;
+      opacity:0.12;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:18px;
+      letter-spacing:1.4px;
+    }
+
+    .ghost{
+      fill:none;
+      stroke:#ffffff;
+      stroke-width:0.8;
+      opacity:0.05;
+    }
+  ]]></style>
+
+  <rect width="1000" height="700" fill="#090909"/>
+
+  <g id="backgroundTexture">
+
+    <!-- horizontal fibres -->
+    <path class="paper" d="M40 70 H960"/>
+    <path class="paper" d="M50 118 H955"/>
+    <path class="paper" d="M35 171 H945"/>
+    <path class="paper" d="M60 228 H950"/>
+    <path class="paper" d="M45 286 H958"/>
+    <path class="paper" d="M52 345 H947"/>
+    <path class="paper" d="M38 404 H962"/>
+    <path class="paper" d="M60 466 H951"/>
+    <path class="paper" d="M42 529 H956"/>
+    <path class="paper" d="M55 591 H949"/>
+    <path class="paper" d="M47 646 H960"/>
+
+    <!-- vertical fibres -->
+    <path class="paper" d="M105 35 V665"/>
+    <path class="paper" d="M202 40 V660"/>
+    <path class="paper" d="M308 32 V668"/>
+    <path class="paper" d="M415 38 V662"/>
+    <path class="paper" d="M520 28 V670"/>
+    <path class="paper" d="M625 35 V663"/>
+    <path class="paper" d="M735 40 V658"/>
+    <path class="paper" d="M842 36 V664"/>
+    <path class="paper" d="M930 42 V657"/>
+
+    <!-- scratches -->
+    <path class="texture" d="M110 160 l18 -6"/>
+    <path class="texture" d="M287 492 l16 5"/>
+    <path class="texture" d="M452 213 l14 -8"/>
+    <path class="texture" d="M676 536 l19 -4"/>
+    <path class="texture" d="M811 141 l17 7"/>
+    <path class="texture" d="M182 603 l21 -5"/>
+    <path class="texture" d="M564 382 l15 8"/>
+    <path class="texture" d="M910 455 l16 -6"/>
+    <path class="texture" d="M372 96 l14 4"/>
+    <path class="texture" d="M745 299 l20 -7"/>
+
+    <!-- faint circles -->
+    <circle class="texture" cx="170" cy="150" r="42"/>
+    <circle class="texture" cx="815" cy="140" r="57"/>
+    <circle class="texture" cx="640" cy="530" r="61"/>
+    <circle class="texture" cx="280" cy="505" r="36"/>
+    <circle class="texture" cx="515" cy="305" r="88"/>
+
+    <!-- construction lines -->
+    <path class="texture" d="M90 610 L910 95"/>
+    <path class="texture" d="M120 80 L880 640"/>
+    <path class="texture" d="M55 340 H945"/>
+    <path class="texture" d="M500 40 V660"/>
+
+  </g>
+
+  <g id="falsePaths">
+    <path class="false" d="M85 120 C160 105 185 210 250 185 S360 130 410 180"/>
+    <path class="false" d="M760 82 C700 160 740 230 655 278 S520 290 480 350"/>
+    <path class="false" d="M125 565 C180 500 245 560 292 515 S385 455 425 470"/>
+    <path class="false" d="M905 548 C855 515 840 430 780 418 S665 440 625 402"/>
+    <path class="false" d="M320 75 C355 135 320 205 392 246 S470 330 455 390"/>
+    <path class="false" d="M118 355 C182 372 236 322 298 340 S395 385 450 360"/>
+    <path class="false" d="M570 605 C635 582 700 640 765 612 S850 560 910 590"/>
+    <path class="false" d="M655 150 C620 200 570 185 550 238 S515 315 548 360"/>
+  </g>
+
+  <g id="futureRoutes">
+    <path id="pathTheoDreamer"
+          class="route"
+          d="M210 470 C300 420 375 360 470 322 S610 270 705 235"/>
+
+    <path id="pathDreamerDarkest"
+          class="route"
+          d="M705 235 C760 278 792 350 808 420 S842 528 875 595"/>
+  </g>
+
+  <g id="mainRoute">
+    <path class="route"
+          d="M210 470 C300 420 375 360 470 322 S610 270 705 235 S808 420 875 595"
+          opacity="0.08"/>
+  </g>
+
+  <g id="nodes">
+
+    <g id="theoNode" class="myth-node active">
+      <circle class="ghost" cx="210" cy="470" r="22"/>
+      <circle class="nodeCircle" cx="210" cy="470" r="10"/>
+      <circle class="nodeDot" cx="210" cy="470" r="2.4"/>
+      <text class="label" x="228" y="476">Theo</text>
+      <circle class="anchor" cx="210" cy="470" r="18"/>
+    </g>
+
+    <g id="dreamerNode" class="myth-node hidden">
+      <circle class="ghost" cx="705" cy="235" r="24"/>
+      <circle class="nodeCircle" cx="705" cy="235" r="10"/>
+      <circle class="nodeDot" cx="705" cy="235" r="2.4"/>
+      <text class="label" x="722" y="241">Dreamer</text>
+      <circle class="anchor" cx="705" cy="235" r="18"/>
+    </g>
+
+    <g id="darkestNode" class="myth-node hidden">
+      <circle class="ghost" cx="875" cy="595" r="26"/>
+      <circle class="nodeCircle" cx="875" cy="595" r="10"/>
+      <circle class="nodeDot" cx="875" cy="595" r="2.4"/>
+      <text class="label" x="760" y="603">The Darkest Hour</text>
+      <circle class="anchor" cx="875" cy="595" r="18"/>
+    </g>
+
+  </g>
+
+</svg>
 
     </div>
 
