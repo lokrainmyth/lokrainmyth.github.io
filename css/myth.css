@@ -218,3 +218,26 @@ transition:
 
 }
 
+#mythLayer{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#080808;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity 1.2s ease;
+
+}
+
+#mythLayer.visible{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
