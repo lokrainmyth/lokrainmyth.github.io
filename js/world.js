@@ -507,6 +507,12 @@ World.escape=function(){
 
 };
 
+document.addEventListener("DOMContentLoaded", () => {
+
+    Myth.init();
+
+});
+
 /* ==========================================================
    SECRET
 ========================================================== */
