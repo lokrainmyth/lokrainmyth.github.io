@@ -1,85 +1,39 @@
 "use strict";
 
-window.Myth = (function(){
+window.Myth = {
 
-    let svg;
+    init(){
 
-    function init(){
+        console.log("MYTH READY");
 
-        svg = document.querySelector("#mythViewport svg");
-
-        if(!svg){
-
-            console.log("MYTH SVG NOT FOUND");
-
-            return;
-
-        }
-
-        console.log("MYTH SVG READY");
-
-        prepare();
-
-    }
+        const path =
+        document.getElementById("pathTheoDreamer");
 
 
-    function prepare(){
+        if(path){
 
-        const route =
-            svg.querySelector("#pathTheoDreamer");
-
-
-        if(route){
-
-            route.style.strokeDasharray =
-                route.getTotalLength();
-
-            route.style.strokeDashoffset =
-                route.getTotalLength();
-
-
-            requestAnimationFrame(()=>{
-
-                route.style.transition =
-                    "stroke-dashoffset 4s ease";
-
-                route.style.strokeDashoffset = 0;
-
-            });
+            path.style.strokeDashoffset = 0;
 
         }
 
 
-        const nodes =
-            svg.querySelectorAll(".node-hidden");
+        const theo =
+        document.getElementById("theoNode");
 
 
-        nodes.forEach(node=>{
+        if(theo){
 
-            node.style.opacity = "0.15";
+            theo.addEventListener(
+                "click",
+                ()=>{
 
-        });
+                    console.log("THEO NODE");
 
+                }
+            );
 
-    }
-
-
-    return {
-
-        init
-
-    };
-
-
-})();
-
-
-
-document.addEventListener(
-    "DOMContentLoaded",
-    ()=>{
-
-        Myth.init();
+        }
 
     }
-);
+
+};
