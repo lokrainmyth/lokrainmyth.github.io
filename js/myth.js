@@ -1,51 +1,109 @@
 "use strict";
 
-window.Myth=(function(){
+window.Myth = (function () {
 
-let svg;
+    let layer;
 
-function init(){
+    let panel;
 
-const svg =
-document.querySelector("#mythMap svg");
+    let theoNode;
 
-const path =
-document.getElementById("pathTheoDreamer");
+    let pathTheoDreamer;
 
-path.style.strokeDashoffset = 0;
+    function init(){
 
-if(!object)return;
+        layer =
+            document.getElementById(
+                "mythLayer"
+            );
 
-object.addEventListener(
+        panel =
+            document.getElementById(
+                "mythPanel"
+            );
 
-"load",
+        theoNode =
+            document.getElementById(
+                "theoNode"
+            );
 
-()=>{
+        pathTheoDreamer =
+            document.getElementById(
+                "pathTheoDreamer"
+            );
 
-svg=
+        if(!layer) return;
 
-object.contentDocument;
+        console.log(
+            "Myth ready"
+        );
 
-start();
+        activateTheo();
 
-});
+    }
 
-}
+    function activateTheo(){
 
-function start(){
+        if(pathTheoDreamer){
 
-console.log(
+            pathTheoDreamer.style.strokeDashoffset =
+                "1200";
 
-"Myth loaded"
+        }
 
-);
+        if(theoNode){
 
-}
+            theoNode.classList.remove(
+                "hidden"
+            );
 
-return{
+            theoNode.addEventListener(
 
-init
+                "click",
 
-};
+                openTheoChapter
+
+            );
+
+        }
+
+    }
+
+    function openTheoChapter(){
+
+        if(pathTheoDreamer){
+
+            pathTheoDreamer.style.strokeDashoffset =
+                "0";
+
+        }
+
+        panel.classList.add(
+            "visible"
+        );
+
+        panel.innerHTML = `
+
+<h2>Theo</h2>
+
+<p>
+
+The first memory.
+
+The first fracture.
+
+The beginning of the Lo.Krain Myth.
+
+</p>
+
+`;
+
+    }
+
+    return{
+
+        init
+
+    };
 
 })();
