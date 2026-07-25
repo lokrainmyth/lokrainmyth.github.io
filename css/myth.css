@@ -22,6 +22,7 @@
 
 }
 
+
 #mythLayer.visible{
 
     opacity:1;
@@ -29,6 +30,7 @@
     pointer-events:auto;
 
 }
+
 
 #mythViewport{
 
@@ -46,35 +48,31 @@
 
 }
 
+
 #mythViewport svg{
 
     width:min(1300px,96vw);
 
     height:auto;
 
-    opacity:.82;
+    opacity:.9;
 
     filter:
-
         brightness(.92)
-
         contrast(1.05)
-
         drop-shadow(
-
-            0 0 24px
-
-            rgba(255,255,255,.03)
-
+            0 0 24px rgba(255,255,255,.03)
         );
+
+    transform:scale(1.02);
 
     transition:
 
-        opacity 2s,
-
-        transform 4s;
+        opacity 2s ease,
+        transform 4s ease;
 
 }
+
 
 body.myth-mode #mythViewport svg{
 
@@ -83,6 +81,8 @@ body.myth-mode #mythViewport svg{
     transform:scale(1);
 
 }
+
+
 
 #mythPanel{
 
@@ -108,13 +108,10 @@ body.myth-mode #mythViewport svg{
 
     transform:translateY(18px);
 
-    transition:
-
-        opacity .8s,
-
-        transform .8s;
+    transition:.8s;
 
 }
+
 
 #mythPanel.visible{
 
@@ -123,6 +120,8 @@ body.myth-mode #mythViewport svg{
     transform:none;
 
 }
+
+
 
 #returnToDawn{
 
@@ -144,9 +143,8 @@ body.myth-mode #mythViewport svg{
 
     opacity:0;
 
-    transition:.4s;
-
 }
+
 
 #returnToDawn.visible{
 
@@ -154,29 +152,13 @@ body.myth-mode #mythViewport svg{
 
 }
 
-#returnToDawn:hover{
-
-    border-color:rgba(255,255,255,.28);
-
-}
 
 .myth-node{
 
     cursor:pointer;
 
-    transition:
-
-        opacity .8s,
-
-        transform .8s;
-
 }
 
-.myth-node.hidden{
-
-    opacity:.15;
-
-}
 
 .route{
 
@@ -187,65 +169,5 @@ body.myth-mode #mythViewport svg{
     transition:
 
         stroke-dashoffset 2.4s ease;
-
-}
-
-#mythViewport{
-
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-#mythViewport svg{
-
-    width:min(1200px,95vw);
-
-    height:auto;
-
-    opacity:.9;
-
-}
-
-.hidden{
-
-    display:none;
-
-}
-
-#mythLayer.hidden{
-    opacity:0;
-    pointer-events:none;
-}
-
-#mythLayer.visible{
-    opacity:1;
-    pointer-events:auto;
-}
-
-#mythViewport{
-
-    position:absolute;
-    inset:0;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-}
-
-
-#mythViewport svg{
-
-    width:min(1200px,90vw);
-    height:auto;
 
 }
