@@ -334,22 +334,17 @@ body{
     display:grid;
 
     grid-template-columns:
-
         minmax(380px,560px)
-
         minmax(420px,1fr);
 
     gap:110px;
 
-    align-items:center;
+    align-items:start;
 
     padding:
-
-        90px
-
+        70px
         0
-
-        120px;
+        100px;
 
 }
 
@@ -411,7 +406,7 @@ body{
 
     flex-direction:column;
 
-    justify-content:center;
+    justify-content:flex-start;
 
     gap:28px;
 
