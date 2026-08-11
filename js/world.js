@@ -371,6 +371,10 @@ function showOutro(){
 
 }
 
+document
+    .getElementById("outroGoDeeper")
+    ?.addEventListener("click", openMyth);
+
 /* ==========================================================
    LAYERS
 ========================================================== */
