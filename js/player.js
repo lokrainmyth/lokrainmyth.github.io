@@ -889,8 +889,8 @@ function canEnterMyth(){
 }
 
 /* ==========================================================
-   MOBILE MYTH TEST
-   TRIPLE TAP ON ALBUM COVER
+   MOBILE / DESKTOP MYTH TEST
+   TRIPLE TAP / CLICK ON ALBUM COVER
 ========================================================== */
 
 let coverTapCount = 0;
@@ -898,7 +898,12 @@ let coverTapTimer = null;
 
 const albumCover = document.querySelector(".album-cover");
 
-albumCover?.addEventListener("click", () => {
+albumCover?.addEventListener("pointerup", (event) => {
+
+    // Только основное нажатие
+    if (event.pointerType === "mouse" && event.button !== 0) {
+        return;
+    }
 
     coverTapCount++;
 
@@ -908,7 +913,6 @@ albumCover?.addEventListener("click", () => {
 
         coverTapCount = 0;
 
-        // Открываем Go Deeper?
         triggerGoDeeper();
 
         return;
