@@ -1493,6 +1493,13 @@ body{
 
 }
 
+.myth-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: #000;
+}
+
 .myth-portal.visible{
 
     opacity:1;
