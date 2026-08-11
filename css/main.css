@@ -1291,24 +1291,8 @@ body{
    HIDDEN SECTIONS
 ========================================================== */
 
-.hidden-section{
-
-    width:min(980px,92vw);
-
-    margin:180px auto 0;
-
-    opacity:0;
-
-    pointer-events:none;
-
-    transform:translateY(30px);
-
-    transition:
-
-        opacity 2.6s ease,
-
-        transform 2.6s ease;
-
+.hidden-section {
+    display: none;
 }
 
 .hidden-section.unlocked{
