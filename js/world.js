@@ -586,8 +586,7 @@ document.addEventListener("click", (e) => {
 
     theoTapTimer = setTimeout(() => {
 
-        theoTapCount = 0;
+    theoTapCount = 0;
 
-    }, 900);
-
-   });
+}, 900);
+});
