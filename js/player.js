@@ -628,15 +628,15 @@ audio.addEventListener("ended",()=>{
 
     stopAirportMasks();
 
-    if(completedTracks.size===journey.length){
+    if(currentTrack === 2){
 
-        triggerGoDeeper();
+    triggerGoDeeper();
 
-        return;
+    return;
 
-    }
+}
 
-    loadTrack(currentTrack+1);
+loadTrack(currentTrack+1);
 
 });
 
