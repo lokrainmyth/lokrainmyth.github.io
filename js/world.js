@@ -559,6 +559,14 @@ document.addEventListener("keydown", e=>{
    let theoTapCount = 0;
 let theoTapTimer = null;
 
+document.addEventListener("keydown", e => {
+
+    if (e.key.toLowerCase() === "m") {
+
+        showOutro();
+
+    }
+
 document.addEventListener("click", (e) => {
 
     if (!e.target.closest(".album-cover")) return;
@@ -582,12 +590,4 @@ document.addEventListener("click", (e) => {
 
     }, 900);
 
-document.addEventListener("keydown", e => {
-
-    if (e.key.toLowerCase() === "m") {
-
-        showOutro();
-
-    }
-
-});
+   });
