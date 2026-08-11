@@ -463,21 +463,20 @@ function closeTheo(){
 
 function openMyth() {
 
-    switchLayer("myth");
+    const mythScreen =
+        document.getElementById("mythScreen");
 
-    Myth.open();
+    if (!mythScreen) return;
 
-    document.body.classList.add("myth-mode");
+    World.elements.outro?.classList.remove("visible");
+    World.elements.outro?.classList.add("hidden");
 
-    const sound = World.elements.mythSound;
+    document
+        .querySelector(".world")
+        ?.classList.add("hidden");
 
-    if (sound) {
-
-        sound.currentTime = 0;
-        sound.volume = 0.6;
-        sound.play().catch(()=>{});
-
-    }
+    mythScreen.classList.remove("hidden");
+    mythScreen.setAttribute("aria-hidden", "false");
 
 }
 
