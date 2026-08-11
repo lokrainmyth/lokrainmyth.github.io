@@ -1708,6 +1708,145 @@ body{
 }
 
 /* ==========================================================
+   INTRO SUN
+========================================================== */
+
+.intro-sun{
+
+    position:relative;
+
+    width:64px;
+    height:64px;
+
+    margin:34px auto 30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    opacity:0.72;
+
+    transform:scale(1);
+
+    transition:
+        opacity 2s ease,
+        transform 2s ease,
+        filter 2s ease;
+}
+
+
+/* ----------------------------------------------------------
+   SUN CORE
+---------------------------------------------------------- */
+
+.sun-core{
+
+    width:16px;
+    height:16px;
+
+    border-radius:50%;
+
+    background:rgba(255,245,210,0.9);
+
+    box-shadow:
+        0 0 14px rgba(255,220,150,0.22),
+        0 0 30px rgba(255,220,150,0.08);
+
+    transition:
+        box-shadow 2s ease,
+        transform 2s ease;
+}
+
+
+/* ----------------------------------------------------------
+   RAYS
+---------------------------------------------------------- */
+
+.sun-ray{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:1px;
+    height:25px;
+
+    transform-origin:50% 0;
+
+    background:rgba(255,245,220,0.55);
+
+    opacity:0.65;
+
+    transition:
+        opacity 2s ease,
+        height 2s ease;
+}
+
+
+/* 8 directions */
+
+.ray-1{
+    transform:translate(-50%, -32px) rotate(0deg);
+}
+
+.ray-2{
+    transform:translate(-50%, -32px) rotate(45deg);
+}
+
+.ray-3{
+    transform:translate(-50%, -32px) rotate(90deg);
+}
+
+.ray-4{
+    transform:translate(-50%, -32px) rotate(135deg);
+}
+
+.ray-5{
+    transform:translate(-50%, -32px) rotate(180deg);
+}
+
+.ray-6{
+    transform:translate(-50%, -32px) rotate(225deg);
+}
+
+.ray-7{
+    transform:translate(-50%, -32px) rotate(270deg);
+}
+
+.ray-8{
+    transform:translate(-50%, -32px) rotate(315deg);
+}
+
+
+/* ----------------------------------------------------------
+   VERY SLOW BREATHING
+---------------------------------------------------------- */
+
+.intro-sun{
+
+    animation:
+        introSunBreath 8s ease-in-out infinite;
+
+}
+
+
+@keyframes introSunBreath{
+
+    0%,
+    100%{
+        transform:scale(0.96);
+        opacity:0.58;
+    }
+
+    50%{
+        transform:scale(1.04);
+        opacity:0.78;
+    }
+
+}
+
+/* ==========================================================
    END MAIN.CSS
 ========================================================== */
 
