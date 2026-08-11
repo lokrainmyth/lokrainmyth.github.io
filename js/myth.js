@@ -101,10 +101,16 @@ const Myth = {
                     <!-- pulse -->
 
                     <circle
-                        class="myth-pulse"
-                        cx="150"
-                        cy="400"
-                        r="9"/>
+    class="myth-hit"
+    cx="150"
+    cy="400"
+    r="42"/>
+
+<circle
+    class="myth-pulse"
+    cx="150"
+    cy="400"
+    r="9"/>
 
 
                     <!-- crow -->
@@ -196,10 +202,16 @@ const Myth = {
                     opacity="0">
 
                     <circle
-                        class="myth-pulse"
-                        cx="950"
-                        cy="400"
-                        r="9"/>
+    class="myth-hit"
+    cx="950"
+    cy="400"
+    r="42"/>
+
+<circle
+    class="myth-pulse"
+    cx="950"
+    cy="400"
+    r="9"/>
 
                     <!-- Eiffel tower -->
 
@@ -281,10 +293,16 @@ const Myth = {
                     opacity="0">
 
                     <circle
-                        class="myth-pulse"
-                        cx="600"
-                        cy="680"
-                        r="10"/>
+    class="myth-hit"
+    cx="600"
+    cy="680"
+    r="42"/>
+
+<circle
+    class="myth-pulse"
+    cx="600"
+    cy="680"
+    r="10"/>
 
                 </g>
 
