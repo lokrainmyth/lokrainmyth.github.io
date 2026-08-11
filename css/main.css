@@ -1936,6 +1936,9 @@ body{
 .myth-pulse {
     fill: white;
 
+    transform-box: fill-box;
+    transform-origin: center;
+
     animation:
         mythPulse 2.8s ease-in-out infinite;
 }
@@ -1984,18 +1987,18 @@ body{
 @keyframes mythPulse {
 
     0% {
-        opacity: .25;
-        transform: scale(.8);
+        opacity: .3;
+        transform: scale(.85);
     }
 
     50% {
         opacity: 1;
-        transform: scale(1.35);
+        transform: scale(1.15);
     }
 
     100% {
-        opacity: .25;
-        transform: scale(.8);
+        opacity: .3;
+        transform: scale(.85);
     }
 
 }
