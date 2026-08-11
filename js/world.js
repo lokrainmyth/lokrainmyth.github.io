@@ -582,4 +582,12 @@ document.addEventListener("click", (e) => {
 
     }, 900);
 
+document.addEventListener("keydown", e => {
+
+    if (e.key.toLowerCase() === "m") {
+
+        showOutro();
+
+    }
+
 });
