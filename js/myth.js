@@ -439,13 +439,28 @@ const Myth = {
 
     activateDawn() {
 
-        if (this.step < 3) return;
+    if (this.step < 3) return;
 
-        this.step = 4;
+    this.step = 4;
 
-        this.screen
-            ?.classList.add("myth-complete");
-    },
+    this.screen
+        ?.classList.add("myth-complete");
+
+    setTimeout(() => {
+
+        this.close();
+
+        document
+            .querySelector(".world")
+            ?.classList.remove("hidden");
+
+        document
+            .querySelector(".world")
+            ?.classList.remove("outro-active");
+
+    }, 1200);
+
+},
 
     open() {
 
