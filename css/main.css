@@ -1984,6 +1984,12 @@ body{
     opacity: 1;
 }
 
+.myth-hit {
+    fill: transparent;
+    pointer-events: all;
+    cursor: pointer;
+}
+
 @keyframes mythPulse {
 
     0% {
