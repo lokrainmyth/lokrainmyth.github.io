@@ -5,14 +5,6 @@
 
     <meta charset="UTF-8">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/myth.css">
-
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0">
@@ -27,7 +19,24 @@
         name="theme-color"
         content="#0e0d0c">
 
-    <!-- Icons -->
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Modak&display=swap"
+        rel="stylesheet">
+
+    <!-- =====================================================
+         ICONS
+    ====================================================== -->
 
     <link
         rel="icon"
@@ -53,7 +62,9 @@
         rel="manifest"
         href="assets/icons/site.webmanifest">
 
-    <!-- Open Graph -->
+    <!-- =====================================================
+         OPEN GRAPH
+    ====================================================== -->
 
     <meta
         property="og:title"
@@ -67,7 +78,9 @@
         property="og:image"
         content="assets/icons/social-cover.jpg">
 
-    <!-- CSS -->
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
 
     <link
         rel="stylesheet"
@@ -87,37 +100,140 @@
 
 </head>
 
+
 <body>
 
-<!-- =======================================================
+
+<!-- =========================================================
      INTRO
-======================================================= -->
+========================================================= -->
 
 <div
     class="intro"
-    id="intro">
+    id="intro"
+    aria-label="Lo.Krain — Io">
 
     <div class="intro-content">
 
-        <h1 class="intro-logo">
+        <h1
+            class="intro-logo"
+            id="introLogo">
 
             Lo.Krain — Io
 
         </h1>
 
-        <p class="intro-action">
+
+        <p
+            class="intro-action"
+            id="introAction">
 
             Journey to the Dawn
 
         </p>
 
+
+        <!-- =================================================
+             SUN
+        ================================================== -->
+
+        <div
+            class="intro-sun"
+            id="introSun"
+            aria-hidden="true">
+
+            <svg
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg">
+
+                <!-- central sun -->
+
+                <circle
+                    cx="50"
+                    cy="50"
+                    r="7"
+                    class="sun-core">
+                </circle>
+
+
+                <!-- eight rays -->
+
+                <g class="sun-rays">
+
+                    <line
+                        x1="50"
+                        y1="8"
+                        x2="50"
+                        y2="24">
+                    </line>
+
+                    <line
+                        x1="50"
+                        y1="76"
+                        x2="50"
+                        y2="92">
+                    </line>
+
+                    <line
+                        x1="8"
+                        y1="50"
+                        x2="24"
+                        y2="50">
+                    </line>
+
+                    <line
+                        x1="76"
+                        y1="50"
+                        x2="92"
+                        y2="50">
+                    </line>
+
+                    <line
+                        x1="20"
+                        y1="20"
+                        x2="31"
+                        y2="31">
+                    </line>
+
+                    <line
+                        x1="69"
+                        y1="69"
+                        x2="80"
+                        y2="80">
+                    </line>
+
+                    <line
+                        x1="80"
+                        y1="20"
+                        x2="69"
+                        y2="31">
+                    </line>
+
+                    <line
+                        x1="31"
+                        y1="69"
+                        x2="20"
+                        y2="80">
+                    </line>
+
+                </g>
+
+            </svg>
+
+        </div>
+
     </div>
 
 </div>
 
-<!-- =======================================================
-     OUTRO
-======================================================= -->
+
+
+<!-- =========================================================
+     OUTRO / FUTURE THRESHOLD
+     
+     Kept as a separate scene.
+     Later this becomes the transition into Myth.
+========================================================= -->
 
 <div
     class="outro hidden"
@@ -136,20 +252,50 @@
     </div>
 
 </div>
-    
-<!-- =======================================================
+
+
+
+<!-- =========================================================
      WORLD
-======================================================= -->
+========================================================= -->
 
-<div class="world">
+<div
+    class="world"
+    id="world">
 
-    <div class="background-layer"></div>
 
-    <div class="grain-layer"></div>
+    <!-- =====================================================
+         ATMOSPHERE
+    ====================================================== -->
 
-    <div class="light-layer"></div>
+    <div
+        class="background-layer"
+        aria-hidden="true">
+    </div>
 
-    <div class="ghost-words">
+
+    <div
+        class="grain-layer"
+        aria-hidden="true">
+    </div>
+
+
+    <div
+        class="light-layer"
+        aria-hidden="true">
+    </div>
+
+
+    <!-- =====================================================
+         GHOST WORDS
+
+         These are intentionally hidden/abstract.
+         CSS will make them atmospheric rather than readable.
+    ====================================================== -->
+
+    <div
+        class="ghost-words"
+        aria-hidden="true">
 
         <span>PATH</span>
 
@@ -163,573 +309,416 @@
 
     </div>
 
-<!-- =======================================================
-     EDITION
-======================================================= -->
 
-<main class="edition">
 
-<!-- =======================================================
-     COVER
-======================================================= -->
+    <!-- =====================================================
+         MAIN EDITION
+    ====================================================== -->
 
-<section class="cover-area">
+    <main class="edition">
 
-    <img
 
-        class="album-cover"
+        <!-- =================================================
+             LEFT COLUMN — COVER
+        ================================================== -->
 
-        src="assets/images/cover.jpeg"
+        <section
+            class="cover-area"
+            aria-label="Album cover">
 
-        alt="Io album cover">
+            <img
+                class="album-cover"
+                src="assets/images/cover.jpeg"
+                alt="Io album cover">
 
-</section>
+        </section>
 
-<!-- =======================================================
-     META
-======================================================= -->
 
-<section class="meta-area">
-    
-<!-- =======================================================
-     LANGUAGE
-======================================================= -->
 
-<div class="language-switch">
+        <!-- =================================================
+             RIGHT COLUMN — META
+        ================================================== -->
 
-    <button
-        class="lang-btn active"
-        data-lang="en">
+        <section class="meta-area">
 
-        EN
 
-    </button>
+            <!-- =============================================
+                 LANGUAGE
+            ============================================== -->
 
-    <span>/</span>
+            <div class="language-switch">
 
-    <button
-        class="lang-btn"
-        data-lang="ru">
+                <button
+                    class="lang-btn active"
+                    data-lang="en">
 
-        RU
+                    EN
 
-    </button>
+                </button>
+
+                <span>/</span>
+
+                <button
+                    class="lang-btn"
+                    data-lang="ru">
+
+                    RU
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 ALBUM
+            ============================================== -->
+
+            <div class="title-row">
+
+                <h1 class="album-title">
+
+                    Io
+
+                </h1>
+
+                <span class="meta-label">
+
+                    Album
+
+                </span>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 ARTIST
+            ============================================== -->
+
+            <div class="artist-row">
+
+                <h2 class="artist-name">
+
+                    Lo.Krain
+
+                </h2>
+
+                <span class="meta-label">
+
+                    Artist
+
+                </span>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 RELEASE
+            ============================================== -->
+
+            <div class="release-row">
+
+                <span class="release-label">
+
+                    Release
+
+                </span>
+
+                <span class="release-date">
+
+                    June 21, 2026
+
+                </span>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 DESCRIPTION
+            ============================================== -->
+
+            <p
+                class="album-description"
+                data-i18n="albumDescription">
+
+                An album completing a fifteen-year journey
+                from night to dawn.
+                Listen from beginning to end.
+                The path continues after the final track.
+
+            </p>
+
+
+
+            <!-- =============================================
+                 ARTIST PHOTO
+            ============================================== -->
+
+            <div class="artist-card">
+
+                <img
+                    src="assets/images/artist.jpg"
+                    alt="Lo.Krain"
+                    class="artist-photo">
+
+            </div>
+
+
+
+            <!-- =============================================
+                 PLAYER
+            ============================================== -->
+
+            <section
+                class="player-panel"
+                id="playerPanel">
+
+
+                <!-- =========================================
+                     PLAYER CONTROLS
+                ========================================== -->
+
+                <div class="player-controls">
+
+                    <button
+                        id="playButton"
+                        class="control-link">
+
+                        Play
+
+                    </button>
+
+
+                    <button
+                        id="pauseButton"
+                        class="control-link">
+
+                        Pause
+
+                    </button>
+
+
+                    <button
+                        id="skipButton"
+                        class="control-link">
+
+                        Skip
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     TIME
+                ========================================== -->
+
+                <div class="player-time">
+
+                    <span id="currentTime">
+
+                        00:00
+
+                    </span>
+
+                    <span class="time-separator">
+
+                        /
+
+                    </span>
+
+                    <span id="duration">
+
+                        00:00
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     PROGRESS
+                ========================================== -->
+
+                <div
+                    class="progress-track"
+                    id="progressTrack">
+
+                    <div
+                        class="progress-fill"
+                        id="progressFill">
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     PLAYLIST
+                ========================================== -->
+
+                <section
+                    class="playlist-section"
+                    aria-label="Playlist">
+
+                    <ol
+                        class="playlist"
+                        id="playlist">
+
+                        <!--
+                            player.js populates this list
+                        -->
+
+                    </ol>
+
+                </section>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 HIDDEN CONTENT
+                 
+                 These remain in the DOM.
+                 They can be unlocked after Myth.
+            ============================================== -->
+
+
+            <!-- ABOUT -->
+
+            <section
+                class="hidden-section"
+                id="aboutSection">
+
+                <h3>
+
+                    About
+
+                </h3>
+
+            </section>
+
+
+
+            <!-- LYRICS -->
+
+            <section
+                class="hidden-section"
+                id="lyricsSection">
+
+                <h3>
+
+                    Lyrics
+
+                </h3>
+
+            </section>
+
+
+
+            <!-- COMMUNICATION -->
+
+            <section
+                class="hidden-section"
+                id="communicationSection">
+
+                <h3>
+
+                    Communication
+
+                </h3>
+
+
+                <form
+                    class="communication-form"
+                    id="communicationForm">
+
+
+                    <input
+                        type="text"
+                        id="senderName"
+                        name="senderName"
+                        placeholder="Name"
+                        autocomplete="name">
+
+
+                    <input
+                        type="email"
+                        id="senderEmail"
+                        name="senderEmail"
+                        placeholder="Email"
+                        autocomplete="email">
+
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Message">
+                    </textarea>
+
+
+                    <button
+                        type="submit">
+
+                        Send
+
+                    </button>
+
+
+                </form>
+
+            </section>
+
+
+        </section>
+
+    </main>
 
 </div>
 
-<!-- =======================================================
-     ALBUM
-======================================================= -->
 
-<div class="title-row">
 
-    <h1 class="album-title">
+<!-- =========================================================
+     MYTH PLACEHOLDER
 
-        Io
+     NOT ACTIVE YET.
 
-    </h1>
+     This is intentionally outside .world and .edition.
+     The new Myth will become an independent scene.
+========================================================= -->
 
-    <span class="meta-label">
-
-        Album
-
-    </span>
-
-</div>
-
-<!-- =======================================================
-     ARTIST
-======================================================= -->
-
-<div class="artist-row">
-
-    <h2 class="artist-name">
-
-        Lo.Krain
-
-    </h2>
-
-    <span class="meta-label">
-
-        Artist
-
-    </span>
-
-</div>
-
-<!-- =======================================================
-     RELEASE
-======================================================= -->
-
-<div class="release-row">
-
-    <span class="release-label">
-
-        Release
-
-    </span>
-
-    <span class="release-date">
-
-        June 21, 2026
-
-    </span>
-
-</div>
-
-<!-- =======================================================
-     DESCRIPTION
-======================================================= -->
-
-<p class="album-description"
-   data-i18n="albumDescription">
-
-    An album completing a fifteen-year journey from night to dawn.
-    Listen from beginning to end.
-    The path continues after the final track.
-
-</p>
-
-<!-- =======================================================
-     ARTIST PHOTO
-======================================================= -->
-
-<div class="artist-card">
-
-    <img
-
-        src="assets/images/artist.jpg"
-
-        alt="Lo.Krain"
-
-        class="artist-photo">
-
-</div>
-
-<!-- =======================================================
-     PLAYER START
-======================================================= -->
-
-<section class="player-panel">
-
-<!-- =======================================================
-     PLAYER
-======================================================= -->
-
-<div class="player-controls">
-
-    <button
-        id="playButton"
-        class="control-link">
-
-        Play
-
-    </button>
-
-    <button
-        id="pauseButton"
-        class="control-link">
-
-        Pause
-
-    </button>
-
-    <button
-        id="skipButton"
-        class="control-link">
-
-        Skip
-
-    </button>
-
-</div>
-
-<div class="player-time">
-
-    <span id="currentTime">
-
-        00:00
-
-    </span>
-
-    <span class="time-separator">
-
-        /
-
-    </span>
-
-    <span id="duration">
-
-        00:00
-
-    </span>
-
-</div>
-
-<div class="progress-track">
+<section
+    id="mythLayer"
+    class="myth-layer hidden"
+    aria-hidden="true">
 
     <div
-        class="progress-fill"
-        id="progressFill">
+        id="mythViewport"
+        class="myth-viewport">
+
+        <!--
+            New SVG Myth will be inserted here.
+        -->
 
     </div>
 
-</div>
 
-<!-- =======================================================
-     PLAYLIST
-======================================================= -->
-
-<section class="playlist-section">
-
-    <ol
-        class="playlist"
-        id="playlist">
-
-        <!-- Заполняется player.js -->
-
-    </ol>
-
-</section>
-
-</section>
-
-<!-- =======================================================
-     HIDDEN CONTENT
-======================================================= -->
-
-<section
-    class="hidden-section"
-    id="aboutSection">
-
-    <h3>
-
-        About
-
-    </h3>
-
-</section>
-
-<section
-    class="hidden-section"
-    id="lyricsSection">
-
-    <h3>
-
-        Lyrics
-
-    </h3>
-
-</section>
-
-<section
-    class="hidden-section"
-    id="communicationSection">
-
-    <h3>
-
-        Communication
-
-    </h3>
-
-    <form
-        class="communication-form"
-        id="communicationForm">
-
-        <input
-
-            type="text"
-
-            id="senderName"
-
-            placeholder="Name">
-
-        <input
-
-            type="email"
-
-            id="senderEmail"
-
-            placeholder="Email">
-
-        <textarea
-
-            id="message"
-
-            placeholder="Message"></textarea>
-
-        <button type="submit">
-
-            Send
-
-        </button>
-
-    </form>
-
-</section> <!-- communicationSection -->
-
-</section> <!-- meta-area -->
-
-<!-- =======================================================
-     THEO LAYER
-======================================================= -->
-
-<section
-    id="theoLayer"
-    class="theo-layer hidden">
-
-    <div
-        id="theoViewport"
-        class="theo-viewport">
-    </div>
-
-    <div class="theo-caption">
-
-        <h2>Theo</h2>
-
-        <p class="theo-object">
-    Original Object
-</p>
-
-<p class="theo-date">
-    July 2011
-</p>
-
-    </div>
-
-   <div class="myth-entry">
-
-    <canvas id="mythCanvas"></canvas>
-
-</div>
-    
-</section>
-
-<!-- =======================================================
-     MYTH LAYER
-======================================================= -->
-
-<section id="mythLayer">
-
-    <div id="mythViewport">
-
-<svg xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink"
-     viewBox="0 0 1000 700"
-     width="1000"
-     height="700"
-     role="img"
-     aria-labelledby="title desc">
-
-  <title id="title">Myth Map</title>
-  <desc id="desc">A quiet abstract cartographic composition with subtle routes and nodes.</desc>
-
-  <style><![CDATA[
-    svg{
-      background:#090909;
-      shape-rendering:geometricPrecision;
-      text-rendering:geometricPrecision;
-    }
-
-    .paper{
-      fill:none;
-      stroke:#ffffff;
-      opacity:0.035;
-      stroke-width:0.6;
-      vector-effect:non-scaling-stroke;
-    }
-
-    .texture{
-      fill:none;
-      stroke:#ffffff;
-      opacity:0.045;
-      stroke-width:0.5;
-      vector-effect:non-scaling-stroke;
-    }
-
-    .false{
-      fill:none;
-      stroke:#ffffff;
-      opacity:0.06;
-      stroke-width:1;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-      vector-effect:non-scaling-stroke;
-    }
-
-    .route{
-      fill:none;
-      stroke:#ffffff;
-      opacity:0.14;
-      stroke-width:1.5;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-      stroke-dasharray:9 8;
-      stroke-dashoffset:220;
-      vector-effect:non-scaling-stroke;
-    }
-
-    .myth-node{
-      opacity:1;
-    }
-
-    .node-hidden{
-    opacity:0.42;
-}
-
-    .anchor{
-      fill:#ffffff;
-      opacity:0.01;
-      pointer-events:all;
-    }
-
-    .nodeCircle{
-      fill:none;
-      stroke:#ffffff;
-      stroke-width:1.2;
-      opacity:0.13;
-    }
-
-    .nodeDot{
-      fill:#ffffff;
-      opacity:0.15;
-    }
-
-    .label{
-      fill:#ffffff;
-      opacity:0.12;
-      font-family:Georgia,"Times New Roman",serif;
-      font-size:18px;
-      letter-spacing:1.4px;
-    }
-
-    .ghost{
-      fill:none;
-      stroke:#ffffff;
-      stroke-width:0.8;
-      opacity:0.05;
-    }
-  ]]></style>
-
-  <rect width="1000" height="700" fill="#090909"/>
-
-  <g id="backgroundTexture">
-
-    <!-- horizontal fibres -->
-    <path class="paper" d="M40 70 H960"/>
-    <path class="paper" d="M50 118 H955"/>
-    <path class="paper" d="M35 171 H945"/>
-    <path class="paper" d="M60 228 H950"/>
-    <path class="paper" d="M45 286 H958"/>
-    <path class="paper" d="M52 345 H947"/>
-    <path class="paper" d="M38 404 H962"/>
-    <path class="paper" d="M60 466 H951"/>
-    <path class="paper" d="M42 529 H956"/>
-    <path class="paper" d="M55 591 H949"/>
-    <path class="paper" d="M47 646 H960"/>
-
-    <!-- vertical fibres -->
-    <path class="paper" d="M105 35 V665"/>
-    <path class="paper" d="M202 40 V660"/>
-    <path class="paper" d="M308 32 V668"/>
-    <path class="paper" d="M415 38 V662"/>
-    <path class="paper" d="M520 28 V670"/>
-    <path class="paper" d="M625 35 V663"/>
-    <path class="paper" d="M735 40 V658"/>
-    <path class="paper" d="M842 36 V664"/>
-    <path class="paper" d="M930 42 V657"/>
-
-    <!-- scratches -->
-    <path class="texture" d="M110 160 l18 -6"/>
-    <path class="texture" d="M287 492 l16 5"/>
-    <path class="texture" d="M452 213 l14 -8"/>
-    <path class="texture" d="M676 536 l19 -4"/>
-    <path class="texture" d="M811 141 l17 7"/>
-    <path class="texture" d="M182 603 l21 -5"/>
-    <path class="texture" d="M564 382 l15 8"/>
-    <path class="texture" d="M910 455 l16 -6"/>
-    <path class="texture" d="M372 96 l14 4"/>
-    <path class="texture" d="M745 299 l20 -7"/>
-
-    <!-- faint circles -->
-    <circle class="texture" cx="170" cy="150" r="42"/>
-    <circle class="texture" cx="815" cy="140" r="57"/>
-    <circle class="texture" cx="640" cy="530" r="61"/>
-    <circle class="texture" cx="280" cy="505" r="36"/>
-    <circle class="texture" cx="515" cy="305" r="88"/>
-
-    <!-- construction lines -->
-    <path class="texture" d="M90 610 L910 95"/>
-    <path class="texture" d="M120 80 L880 640"/>
-    <path class="texture" d="M55 340 H945"/>
-    <path class="texture" d="M500 40 V660"/>
-
-  </g>
-
-  <g id="falsePaths">
-    <path class="false" d="M85 120 C160 105 185 210 250 185 S360 130 410 180"/>
-    <path class="false" d="M760 82 C700 160 740 230 655 278 S520 290 480 350"/>
-    <path class="false" d="M125 565 C180 500 245 560 292 515 S385 455 425 470"/>
-    <path class="false" d="M905 548 C855 515 840 430 780 418 S665 440 625 402"/>
-    <path class="false" d="M320 75 C355 135 320 205 392 246 S470 330 455 390"/>
-    <path class="false" d="M118 355 C182 372 236 322 298 340 S395 385 450 360"/>
-    <path class="false" d="M570 605 C635 582 700 640 765 612 S850 560 910 590"/>
-    <path class="false" d="M655 150 C620 200 570 185 550 238 S515 315 548 360"/>
-  </g>
-
-  <g id="futureRoutes">
-    <path id="pathTheoDreamer"
-          class="route"
-          d="M210 470 C300 420 375 360 470 322 S610 270 705 235"/>
-
-    <path id="pathDreamerDarkest"
-          class="route"
-          d="M705 235 C760 278 792 350 808 420 S842 528 875 595"/>
-  </g>
-
-  <g id="mainRoute">
-    <path class="route"
-          d="M210 470 C300 420 375 360 470 322 S610 270 705 235 S808 420 875 595"
-          opacity="0.08"/>
-  </g>
-
-  <g id="nodes">
-
-    <g id="theoNode" class="myth-node active">
-      <circle class="ghost" cx="210" cy="470" r="22"/>
-      <circle class="nodeCircle" cx="210" cy="470" r="10"/>
-      <circle class="nodeDot" cx="210" cy="470" r="2.4"/>
-      <text class="label" x="228" y="476">Theo</text>
-      <circle class="anchor" cx="210" cy="470" r="18"/>
-    </g>
-
-    <g id="dreamerNode" class="myth-node node-hidden">
-      <circle class="ghost" cx="705" cy="235" r="24"/>
-      <circle class="nodeCircle" cx="705" cy="235" r="10"/>
-      <circle class="nodeDot" cx="705" cy="235" r="2.4"/>
-      <text class="label" x="722" y="241">Dreamer</text>
-      <circle class="anchor" cx="705" cy="235" r="18"/>
-    </g>
-
-    <g id="darkestNode" class="myth-node node-hidden">
-      <circle class="ghost" cx="875" cy="595" r="26"/>
-      <circle class="nodeCircle" cx="875" cy="595" r="10"/>
-      <circle class="nodeDot" cx="875" cy="595" r="2.4"/>
-      <text class="label" x="760" y="603">The Darkest Hour</text>
-      <circle class="anchor" cx="875" cy="595" r="18"/>
-    </g>
-
-  </g>
-
-</svg>
-
-    </div>
-
-    <aside id="mythPanel">
+    <aside
+        id="mythPanel"
+        class="myth-panel">
 
     </aside>
 
-    <button id="returnToDawn">
+
+    <button
+        id="returnToDawn"
+        class="return-to-dawn">
 
         Return to Dawn
 
@@ -737,18 +726,17 @@
 
 </section>
 
-    </main>
 
-</div> <!-- world -->
 
-<!-- =======================================================
+<!-- =========================================================
      AUDIO
-======================================================= -->
+========================================================= -->
 
 <audio
     id="player"
     preload="metadata">
 </audio>
+
 
 <audio
     id="windSound"
@@ -756,36 +744,32 @@
     src="assets/sounds/wind-lokrain.mp3">
 </audio>
 
+
 <audio
     id="mythSound"
     preload="auto"
     src="assets/sounds/lokrainmyth.mp3">
 </audio>
 
-<!-- =======================================================
-     SCRIPTS
-======================================================= -->
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- =========================================================
+     EMAILJS
+========================================================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+
+
+<!-- =========================================================
+     CORE JS
+========================================================= -->
 
 <script src="js/storage.js"></script>
 
 <script src="js/translations.js"></script>
-
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://unpkg.com/three@0.180.0/build/three.module.js",
-    "three/addons/": "https://unpkg.com/three@0.180.0/examples/jsm/"
-  }
-}
-</script>
-
-<script type="module" src="js/theo.js"></script>
-
-<script src="js/mythCanvas.js"></script>
-
-<script src="js/myth.js"></script>
 
 <script src="js/world.js"></script>
 
@@ -793,11 +777,19 @@
 
 <script src="js/living.js"></script>
 
-<!-- <script src="js/app.js"></script> -->
 
-</main>
 
-</div>
+<!-- =========================================================
+     FUTURE MYTH ENGINE
+     
+     Temporarily disabled while the new Myth is rebuilt.
+========================================================= -->
+
+<!--
+<script src="js/myth.js"></script>
+-->
+
+
 
 </body>
 
