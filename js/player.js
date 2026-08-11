@@ -887,3 +887,37 @@ function canEnterMyth(){
     return skippedTracks.size === 0;
 
 }
+
+/* ==========================================================
+   MOBILE MYTH TEST
+   TRIPLE TAP ON ALBUM COVER
+========================================================== */
+
+let coverTapCount = 0;
+let coverTapTimer = null;
+
+const albumCover = document.querySelector(".album-cover");
+
+albumCover?.addEventListener("click", () => {
+
+    coverTapCount++;
+
+    clearTimeout(coverTapTimer);
+
+    if (coverTapCount >= 3) {
+
+        coverTapCount = 0;
+
+        // Открываем Go Deeper?
+        triggerGoDeeper();
+
+        return;
+    }
+
+    coverTapTimer = setTimeout(() => {
+
+        coverTapCount = 0;
+
+    }, 700);
+
+});
