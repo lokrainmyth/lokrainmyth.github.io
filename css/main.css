@@ -1860,3 +1860,142 @@ body{
     }
 
 }
+
+/* ==========================================================
+   MYTH MAP
+========================================================== */
+
+.myth-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    background: #050505;
+
+    overflow: hidden;
+}
+
+.myth-viewport {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.myth-map {
+    width: min(1200px, 94vw);
+    height: min(800px, 88vh);
+
+    overflow: visible;
+
+    color: var(--paper);
+}
+
+/* ==========================================================
+   PATH
+========================================================== */
+
+.myth-path {
+    fill: none;
+
+    stroke: rgba(255,255,255,.65);
+
+    stroke-width: 1.2;
+
+    stroke-linecap: round;
+
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+
+    transition:
+        stroke-dashoffset 5s ease;
+}
+
+.myth-path.draw {
+    stroke-dashoffset: 0;
+}
+
+/* ==========================================================
+   NODES
+========================================================== */
+
+.myth-node {
+    cursor: pointer;
+
+    transition:
+        opacity 2s ease,
+        transform 2s ease;
+}
+
+.myth-node:hover {
+    filter: url(#mythGlow);
+}
+
+.myth-pulse {
+    fill: white;
+
+    animation:
+        mythPulse 2.8s ease-in-out infinite;
+}
+
+.myth-crow,
+.myth-scarecrow,
+.myth-eiffel,
+.myth-dreamer-boy {
+    fill: none;
+
+    stroke: rgba(255,255,255,.8);
+
+    stroke-width: 1.2;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+.myth-crow {
+    fill: rgba(255,255,255,.08);
+}
+
+.myth-sun {
+    fill: rgba(255,220,150,.08);
+
+    stroke: rgba(255,225,170,.8);
+
+    stroke-width: 1;
+}
+
+.myth-birds {
+    fill: none;
+
+    stroke: rgba(255,255,255,.75);
+
+    stroke-width: 1;
+}
+
+.myth-dreamer.reveal,
+.myth-darkest.reveal,
+.myth-dawn.reveal {
+    opacity: 1;
+}
+
+@keyframes mythPulse {
+
+    0% {
+        opacity: .25;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.35);
+    }
+
+    100% {
+        opacity: .25;
+        transform: scale(.8);
+    }
+
+}
