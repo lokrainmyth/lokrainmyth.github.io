@@ -437,11 +437,20 @@ function requestTrack(index){
     // Попытка перескочить вперёд
     if(index > currentTrack){
 
+    if(localStorage.getItem("dawn_myth_completed")==="true"){
+
+        loadTrack(index);
+        playTrack();
+
+    }else{
+
         showSkipDialog(index);
 
-        return;
-
     }
+
+    return;
+
+}
 
     // Возврат к предыдущему треку
     loadTrack(index);
