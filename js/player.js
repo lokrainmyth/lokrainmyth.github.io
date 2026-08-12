@@ -1051,6 +1051,10 @@ if (navigation) {
 
             section.classList.add("visible");
 
+           document
+    .getElementById("progressBar")
+    ?.classList.remove("locked");
+
         });
 
 }
