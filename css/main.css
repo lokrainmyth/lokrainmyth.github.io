@@ -2019,47 +2019,58 @@ body{
    POST-MYTH NAVIGATION
 ========================================================== */
 
-.myth-navigation {
+.cover-area {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+}
 
-    width: auto;
-    max-width: 220px;
+.myth-navigation {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
 
-    margin-top: 20px;
-
-    gap: 8px;
+    width: 100%;
+    max-width: 100%;
 
     box-sizing: border-box;
+
+    margin-top: 20px;
+    gap: 8px;
 }
 
 .myth-navigation.hidden {
-    display: none;
+    display: none !important;
 }
 
 .myth-navigation.visible {
-    display: flex;
+    display: flex !important;
 }
 
 .myth-navigation button {
-    display: block;
+    display: block !important;
 
-    width: auto;
-    max-width: 220px;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
 
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-family: inherit !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.08em !important;
+
+    text-transform: none !important;
+
+    background: none !important;
+    border: 0 !important;
+
+    transform: none !important;
+    scale: none !important;
 
     white-space: nowrap;
-
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-
-    background: none;
-    border: 0;
-
     cursor: pointer;
 }
