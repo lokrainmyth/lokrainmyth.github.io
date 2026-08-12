@@ -149,6 +149,16 @@ document.addEventListener(
 
     ()=>{
 
+       const progressBar =
+    document.getElementById("progressBar");
+
+if (
+    localStorage.getItem("dawn_myth_completed")
+    !== "true"
+) {
+    progressBar?.classList.add("locked");
+}
+
         buildJourney();
 
        syncWorld();
