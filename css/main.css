@@ -996,8 +996,9 @@ body{
 
 .progress-track{
 
-   cursor:pointer;
-touch-action:none;
+    touch-action:none;
+
+    cursor:pointer;
 
     position:relative;
 
@@ -1008,6 +1009,12 @@ touch-action:none;
     overflow:hidden;
 
     background:rgba(255,255,255,.08);
+
+}
+
+.progress-track.locked{
+
+    cursor:default;
 
 }
 
