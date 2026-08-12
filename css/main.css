@@ -2016,61 +2016,97 @@ body{
 }
 
 /* ==========================================================
-   POST-MYTH NAVIGATION
+POST MYTH NAVIGATION
 ========================================================== */
 
-.cover-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.myth-navigation{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    width:100%;
+
+    margin-top:34px;
+
+    gap:18px;
 }
 
-.myth-navigation {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
+.myth-navigation.hidden{
 
-    width: 100%;
-    max-width: 100%;
+    display:none !important;
 
-    box-sizing: border-box;
-
-    margin-top: 20px;
-    gap: 8px;
 }
 
-.myth-navigation.hidden {
-    display: none !important;
+.myth-navigation.visible{
+
+    display:flex !important;
+
 }
 
-.myth-navigation.visible {
-    display: flex !important;
+.myth-navigation button{
+
+    position:relative;
+
+    padding:0;
+
+    background:none;
+    border:none;
+
+    font:inherit;
+
+    font-size:1.08rem;
+    font-weight:500;
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    color:var(--paper);
+
+    opacity:.88;
+
+    cursor:pointer;
+
+    transition:
+        color var(--slow-transition),
+        opacity var(--slow-transition),
+        letter-spacing var(--slow-transition);
+
 }
 
-.myth-navigation button {
-    display: block !important;
+.myth-navigation button::after{
 
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
+    content:"";
 
-    margin: 0 !important;
-    padding: 0 !important;
+    position:absolute;
 
-    font-family: inherit !important;
-    font-size: 14px !important;
-    font-weight: 400 !important;
-    line-height: 1.4 !important;
-    letter-spacing: 0.08em !important;
+    left:50%;
+    bottom:-8px;
 
-    text-transform: none !important;
+    width:0;
+    height:1px;
 
-    background: none !important;
-    border: 0 !important;
+    transform:translateX(-50%);
 
-    transform: none !important;
-    scale: none !important;
+    background:var(--gold);
 
-    white-space: nowrap;
-    cursor: pointer;
+    transition:
+        width .8s ease;
+
+}
+
+.myth-navigation button:hover{
+
+    color:var(--gold);
+
+    opacity:1;
+
+    letter-spacing:.22em;
+
+}
+
+.myth-navigation button:hover::after{
+
+    width:100%;
+
 }
