@@ -961,6 +961,7 @@ const navigation = document.getElementById("mythNavigation");
 
 if (navigation) {
 
+    navigation.classList.remove("hidden");
     navigation.classList.add("visible");
 
 }
