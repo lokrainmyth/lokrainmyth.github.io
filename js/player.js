@@ -665,6 +665,31 @@ loadTrack(currentTrack+1);
 audio.addEventListener("timeupdate", updateProgress);
 
 /* ==========================================================
+   TIMELINE SEEK
+========================================================== */
+
+const progressBar = document.getElementById("progressBar");
+
+progressBar?.addEventListener("pointerdown", (event) => {
+
+    if (!audio.duration) return;
+
+    const rect = progressBar.getBoundingClientRect();
+
+    const percent =
+        (event.clientX - rect.left) / rect.width;
+
+    const clamped =
+        Math.max(0, Math.min(1, percent));
+
+    audio.currentTime =
+        clamped * audio.duration;
+
+    updateProgress();
+
+});
+
+/* ==========================================================
    UI CONTROLS
 ========================================================== */
 
