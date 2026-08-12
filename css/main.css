@@ -362,10 +362,13 @@ body{
 
 }
 
-.cover-area {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.cover-area{
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+
 }
 
 .album-cover{
