@@ -672,6 +672,12 @@ const progressBar = document.getElementById("progressBar");
 
 progressBar?.addEventListener("pointerdown", (event) => {
 
+    if (
+        localStorage.getItem("dawn_myth_completed") !== "true"
+    ) {
+        return;
+    }
+
     if (!audio.duration) return;
 
     const rect = progressBar.getBoundingClientRect();
