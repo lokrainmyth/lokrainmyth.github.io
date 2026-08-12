@@ -2014,3 +2014,24 @@ body{
     }
 
 }
+
+/* ==========================================================
+   POST-MYTH NAVIGATION
+========================================================== */
+
+.myth-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.myth-navigation.hidden {
+    display: none;
+}
+
+.myth-navigation.visible {
+    display: flex;
+}
