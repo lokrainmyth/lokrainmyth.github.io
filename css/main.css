@@ -2023,9 +2023,15 @@ body{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    width: 100%;
+
+    width: auto;
+    max-width: 220px;
+
     margin-top: 20px;
+
+    gap: 8px;
+
+    box-sizing: border-box;
 }
 
 .myth-navigation.hidden {
@@ -2034,4 +2040,26 @@ body{
 
 .myth-navigation.visible {
     display: flex;
+}
+
+.myth-navigation button {
+    display: block;
+
+    width: auto;
+    max-width: 220px;
+
+    margin: 0;
+    padding: 0;
+
+    white-space: nowrap;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+
+    background: none;
+    border: 0;
+
+    cursor: pointer;
 }
