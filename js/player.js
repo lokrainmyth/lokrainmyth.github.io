@@ -513,6 +513,31 @@ function loadTrack(index){
 
     audio.src = "assets/music/" + track.file;
 
+    if ("mediaSession" in navigator) {
+
+        navigator.mediaSession.metadata =
+            new MediaMetadata({
+
+                title: track.title,
+
+                artist: "Lo.Krain",
+
+                album: "Io",
+
+                artwork: [
+
+                    {
+                        src: "assets/images/cover.jpg",
+                        sizes: "512x512",
+                        type: "image/jpeg"
+                    }
+
+                ]
+
+            });
+
+    }
+   
     audio.load();
 
     isPlaying = false;
