@@ -957,6 +957,14 @@ function unlockAfterMyth() {
         .classList
         .add("myth-completed");
 
+const navigation = document.getElementById("mythNavigation");
+
+if (navigation) {
+
+    navigation.classList.add("visible");
+
+}
+   
     document
         .querySelectorAll(".hidden-section")
         .forEach(section => {
