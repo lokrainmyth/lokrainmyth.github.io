@@ -154,6 +154,12 @@ document.addEventListener(
 
         restoreJourney();
 
+       if (localStorage.getItem("dawn_myth_completed") === "true") {
+
+    unlockAfterMyth();
+
+}
+
         updateJourneyWorld(
 
             completedTracks.size,
