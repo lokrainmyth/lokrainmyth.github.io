@@ -362,6 +362,12 @@ body{
 
 }
 
+.cover-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .album-cover{
 
     width:min(100%,540px);
