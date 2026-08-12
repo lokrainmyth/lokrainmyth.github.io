@@ -813,6 +813,14 @@ function skipTrack(){
 
 skipButton?.addEventListener("click", ()=>{
 
+   if(localStorage.getItem("dawn_myth_completed")==="true"){
+
+    skipTrack();
+
+    return;
+
+}
+
     const msg = document.documentElement.lang === "ru"
 
         ? "Путь запоминается.\n\nХотите пропустить шаг?"
