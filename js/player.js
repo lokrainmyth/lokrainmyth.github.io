@@ -925,3 +925,38 @@ albumCover?.addEventListener("pointerup", (event) => {
     }, 700);
 
 });
+
+/* ==========================================================
+MYTH COMPLETED
+========================================================== */
+
+function unlockAfterMyth() {
+
+    localStorage.setItem("dawn_myth_completed", "true");
+
+    stopAirportMasks();
+
+    journey.forEach(track => {
+        track.completed = true;
+    });
+
+    completedTracks = new Set(
+        journey.map(track => track.id)
+    );
+
+    refreshPlaylist();
+
+    document
+        .body
+        .classList
+        .add("myth-completed");
+
+    document
+        .querySelectorAll(".hidden-section")
+        .forEach(section => {
+
+            section.classList.add("visible");
+
+        });
+
+}
