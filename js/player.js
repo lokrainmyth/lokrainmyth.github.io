@@ -45,6 +45,9 @@ const playlist =
 const progressFill =
     document.getElementById("progressFill");
 
+const progressTrack =
+document.getElementById("progressTrack");
+
 const currentTimeElement =
     document.getElementById("currentTime");
 
