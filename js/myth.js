@@ -450,13 +450,15 @@ const Myth = {
 
         this.close();
 
-        document
-            .querySelector(".world")
-            ?.classList.remove("hidden");
+unlockAfterMyth();
 
-        document
-            .querySelector(".world")
-            ?.classList.remove("outro-active");
+document
+    .querySelector(".world")
+    ?.classList.remove("hidden");
+
+document
+    .querySelector(".world")
+    ?.classList.remove("outro-active");
 
     }, 1200);
 
