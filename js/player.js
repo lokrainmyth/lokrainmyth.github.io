@@ -553,14 +553,6 @@ function playTrack(){
 
     }).catch(()=>{});
 
-    if(wind){
-
-        wind.pause();
-
-        wind.currentTime = 0;
-
-    }
-
 }
 
 /* ==========================================================
