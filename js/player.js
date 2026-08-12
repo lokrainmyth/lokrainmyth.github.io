@@ -54,9 +54,6 @@ const currentTimeElement =
 const durationElement =
     document.getElementById("duration");
 
-const wind =
-    document.getElementById("windSound");
-
 /* ==========================================================
    TRACK LIST
 ========================================================== */
