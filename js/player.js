@@ -952,6 +952,24 @@ albumCover?.addEventListener("pointerup", (event) => {
 
 });
 
+progressTrack?.addEventListener("pointerdown",(e)=>{
+
+    if(!audio.duration)return;
+
+    const rect=progressTrack.getBoundingClientRect();
+
+    const percent=Math.min(
+        Math.max(
+            (e.clientX-rect.left)/rect.width,
+            0
+        ),
+        1
+    );
+
+    audio.currentTime=audio.duration*percent;
+
+});
+
 /* ==========================================================
 MYTH COMPLETED
 ========================================================== */
