@@ -996,6 +996,9 @@ body{
 
 .progress-track{
 
+   cursor:pointer;
+touch-action:none;
+
     position:relative;
 
     width:100%;
