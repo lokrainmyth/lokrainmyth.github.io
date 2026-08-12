@@ -527,7 +527,7 @@ function loadTrack(index){
                 artwork: [
 
                     {
-                        src: "assets/images/cover.jpg",
+                        src: "assets/images/cover.jpeg",
                         sizes: "512x512",
                         type: "image/jpeg"
                     }
