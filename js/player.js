@@ -511,6 +511,12 @@ function loadTrack(index){
 
     if(!track) return;
 
+   if(index === 0){
+
+    journeyStarted = true;
+
+}
+
     currentTrack = index;
 
     audio.src = "assets/music/" + track.file;
