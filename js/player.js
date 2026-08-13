@@ -684,9 +684,10 @@ audio.addEventListener("ended",()=>{
 
     const firstThreeCompleted =
 
-        completedTracks.has(0) &&
-        completedTracks.has(1) &&
-        completedTracks.has(2);
+    journeyStarted &&
+    completedTracks.has(0) &&
+    completedTracks.has(1) &&
+    completedTracks.has(2);
 
     if (firstThreeCompleted){
 
