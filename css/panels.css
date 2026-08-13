@@ -1,0 +1,81 @@
+/* ==========================================================
+   GLOBAL PANEL
+========================================================== */
+
+.global-panel {
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9998;
+
+    background:rgba(0,0,0,.72);
+
+    backdrop-filter:blur(14px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+
+}
+
+
+.global-panel.visible {
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+.global-panel-inner {
+
+    position:absolute;
+
+    inset:8vh 8vw;
+
+    background:rgba(15,15,13,.92);
+
+    border:
+
+        1px solid
+
+        rgba(216,177,90,.25);
+
+    box-shadow:
+
+        0 40px 120px rgba(0,0,0,.6);
+
+    padding:50px;
+
+}
+
+
+.global-panel-close {
+
+    position:absolute;
+
+    top:20px;
+
+    right:30px;
+
+    font-size:42px;
+
+    color:var(--gold);
+
+}
+
+
+.global-panel-content {
+
+    height:100%;
+
+    overflow:auto;
+
+}
