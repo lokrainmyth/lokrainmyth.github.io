@@ -671,13 +671,22 @@ audio.addEventListener("ended",()=>{
     stopAirportMasks();
 
     if (
-    currentTrack === 2 &&
     localStorage.getItem("dawn_myth_completed") !== "true"
 ){
 
-    triggerGoDeeper();
+    const firstThreeCompleted =
 
-    return;
+        completedTracks.has(0) &&
+        completedTracks.has(1) &&
+        completedTracks.has(2);
+
+    if (firstThreeCompleted){
+
+        triggerGoDeeper();
+
+        return;
+
+    }
 
 }
 
