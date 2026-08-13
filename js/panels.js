@@ -116,32 +116,7 @@ const Panels = {
 
 };
 
-document.addEventListener("DOMContentLoaded",()=>{
-
-    document
-        .querySelectorAll("[data-panel]")
-        .forEach(button=>{
-
-            button.addEventListener("click",()=>{
-
-                const panel =
-                    button.dataset.panel;
-
-                Panels.open(
-                    PANEL_CONTENT[panel]
-                );
-
-            });
-
-        });
-
-});
-
-document.addEventListener(
-    "DOMContentLoaded",
-    ()=>{
-
-       const PANEL_CONTENT = {
+const PANEL_CONTENT = {
 
     about: `
         <h1>About</h1>
@@ -180,7 +155,34 @@ document.addEventListener(
 
 };
 
+
+document.addEventListener(
+    "DOMContentLoaded",
+    ()=>{
+
         Panels.init();
+
+
+        document
+            .querySelectorAll("[data-panel]")
+            .forEach(button=>{
+
+                button.addEventListener(
+                    "click",
+                    ()=>{
+
+                        const panel =
+                            button.dataset.panel;
+
+
+                        Panels.open(
+                            PANEL_CONTENT[panel]
+                        );
+
+                    }
+                );
+
+            });
 
     }
 );
