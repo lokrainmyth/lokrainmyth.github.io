@@ -116,9 +116,69 @@ const Panels = {
 
 };
 
+document.addEventListener("DOMContentLoaded",()=>{
+
+    document
+        .querySelectorAll("[data-panel]")
+        .forEach(button=>{
+
+            button.addEventListener("click",()=>{
+
+                const panel =
+                    button.dataset.panel;
+
+                Panels.open(
+                    PANEL_CONTENT[panel]
+                );
+
+            });
+
+        });
+
+});
+
 document.addEventListener(
     "DOMContentLoaded",
     ()=>{
+
+       const PANEL_CONTENT = {
+
+    about: `
+        <h1>About</h1>
+        <p>
+            Information about Lo.Krain.
+        </p>
+    `,
+
+    lyrics: `
+        <h1>Lyrics</h1>
+        <p>
+            Lyrics section.
+        </p>
+    `,
+
+    myth: `
+        <h1>Lo.Krain Myth</h1>
+        <p>
+            Myth placeholder.
+        </p>
+    `,
+
+    communication: `
+        <h1>Communication</h1>
+        <p>
+            Communication placeholder.
+        </p>
+    `,
+
+    creator: `
+        <h1>Creator</h1>
+        <p>
+            About the creator.
+        </p>
+    `
+
+};
 
         Panels.init();
 
