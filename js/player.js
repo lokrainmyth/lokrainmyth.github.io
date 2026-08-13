@@ -670,7 +670,10 @@ audio.addEventListener("ended",()=>{
 
     stopAirportMasks();
 
-    if(currentTrack === 2){
+    if (
+    currentTrack === 2 &&
+    localStorage.getItem("dawn_myth_completed") !== "true"
+){
 
     triggerGoDeeper();
 
