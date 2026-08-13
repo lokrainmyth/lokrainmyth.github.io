@@ -73,6 +73,50 @@ const Panels = {
             }
         );
 
+               document
+            .getElementById("aboutButton")
+            ?.addEventListener(
+                "click",
+                ()=>{
+                    this.open(`
+                        <h1>About</h1>
+                        <p>
+                        Information about Lo.Krain.
+                        </p>
+                    `);
+                }
+            );
+
+
+        document
+            .getElementById("lyricsButton")
+            ?.addEventListener(
+                "click",
+                ()=>{
+                    this.open(`
+                        <h1>Lyrics</h1>
+                        <p>
+                        Lyrics section.
+                        </p>
+                    `);
+                }
+            );
+
+
+        document
+            .getElementById("creatorButton")
+            ?.addEventListener(
+                "click",
+                ()=>{
+                    this.open(`
+                        <h1>Creator</h1>
+                        <p>
+                        About the creator.
+                        </p>
+                    `);
+                }
+            );
+
     },
 
 
