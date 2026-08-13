@@ -23,6 +23,8 @@ let skippedTracks = new Set();
 
 let completedTracks = new Set();
 
+let journeyStarted = false;
+
 /* ==========================================================
    ELEMENTS
 ========================================================== */
