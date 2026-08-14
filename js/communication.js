@@ -1,11 +1,6 @@
-console.log("COMMUNICATION ACTIVE");
-
 "use strict";
 
-
-document.addEventListener(
-"DOMContentLoaded",
-()=>{
+console.log("COMMUNICATION ACTIVE");
 
 
 emailjs.init(
@@ -13,25 +8,26 @@ emailjs.init(
 );
 
 
-const form =
-document.getElementById(
-    "communicationForm"
-);
-
-
-if(!form) return;
-
-
-form.addEventListener(
+document.addEventListener(
 "submit",
 function(event){
 
+
+    if(
+        event.target.id !== "communicationForm"
+    ){
+        return;
+    }
+
+
     console.log("SEND PRESSED");
+
 
     event.preventDefault();
 
 
     const params = {
+
 
         from_name:
         document.getElementById(
@@ -52,36 +48,60 @@ function(event){
 
     };
 
-console.log("PARAMS:", params);
-    
-    emailjs.send(
-        "service_x28p0ve",
-        "template_7x2kupb",
+
+    console.log(
+        "PARAMS:",
         params
+    );
+
+
+    emailjs.send(
+
+        "service_x28p0ve",
+
+        "template_7x2kupb",
+
+        params
+
     )
     .then(()=>{
+
+
+        console.log(
+            "MESSAGE SENT"
+        );
+
 
         alert(
         "Thank you. Your message has reached Lo.Krain."
         );
 
 
-        form.reset();
+        document
+        .getElementById(
+            "communicationForm"
+        )
+        .reset();
 
 
     })
+
+
     .catch(error=>{
 
-        console.log(error);
+
+        console.log(
+            "EMAIL ERROR:",
+            error
+        );
+
 
         alert(
         "Something went wrong."
         );
 
+
     });
-
-
-});
 
 
 });
