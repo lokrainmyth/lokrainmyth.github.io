@@ -280,3 +280,43 @@
     }
 
 }
+
+.panel-text,
+.lyrics-list {
+
+    max-width:760px;
+    margin:0 auto;
+
+    font-size:18px;
+    line-height:1.8;
+
+    color:rgba(243,241,234,.82);
+
+}
+
+
+.panel-text p {
+
+    margin-bottom:32px;
+
+}
+
+
+.lyrics-list h2 {
+
+    margin-top:45px;
+
+    color:#d9b46a;
+
+    letter-spacing:.12em;
+
+    font-size:20px;
+
+}
+
+
+.lyrics-list p {
+
+    margin-bottom:30px;
+
+}
