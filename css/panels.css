@@ -84,12 +84,11 @@
 }
 
 
-.global-panel.visible
-.global-panel-inner{
+.global-panel.visible .global-panel-inner {
 
-    transform:
+    transform:translateY(0);
 
-        translateY(0);
+    opacity:1;
 
 }
 
