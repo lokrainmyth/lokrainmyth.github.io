@@ -92,7 +92,7 @@
 }
 
 
-.global-panel-inner::before{
+.global-panel-inner::after{
 
     content:"";
 
@@ -100,15 +100,16 @@
 
     left:60px;
     right:60px;
-    top:0;
+    bottom:28px;
 
     height:1px;
 
     background:var(--gold);
 
-    box-shadow:
+    opacity:.55;
 
-        0 0 20px rgba(216,177,90,.35);
+    box-shadow:
+        0 0 14px rgba(216,177,90,.28);
 
 }
 
