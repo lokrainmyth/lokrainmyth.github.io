@@ -67,9 +67,13 @@
 
    border:1px solid rgba(255,255,255,.035);
 
-    box-shadow:
+   box-shadow:
 
-        0 30px 80px rgba(0,0,0,.55);
+    inset 0 1px rgba(255,255,255,.03),
+
+    0 35px 90px rgba(0,0,0,.6),
+
+    0 0 50px rgba(216,177,90,.05);
 
     transform:
 
