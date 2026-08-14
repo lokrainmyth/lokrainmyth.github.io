@@ -1,14 +1,20 @@
+console.log("COMMUNICATION ACTIVE");
+
 "use strict";
-
-
-document.addEventListener(
-"DOMContentLoaded",
-()=>{
 
 
 emailjs.init(
     "ERryTDaq2vefa_Fop"
 );
+
+
+const form =
+document.getElementById(
+    "communicationForm"
+);
+
+
+if(!form) return;
 
 
 const form =
@@ -74,9 +80,6 @@ function(event){
         );
 
     });
-
-
-});
 
 
 });
