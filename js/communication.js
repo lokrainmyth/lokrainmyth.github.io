@@ -52,7 +52,8 @@ function(event){
 
     };
 
-
+console.log("PARAMS:", params);
+    
     emailjs.send(
         "service_x28p0ve",
         "template_7x2kupb",
