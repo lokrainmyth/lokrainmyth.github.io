@@ -9,6 +9,8 @@
 
     inset:0;
 
+   pointer-events:auto;
+
     display:flex;
 
     justify-content:center;
@@ -32,11 +34,9 @@
 
     transition:
 
-        opacity .9s ease,
+    opacity .9s ease,
 
-        visibility .9s ease,
-
-        backdrop-filter .9s ease;
+    visibility .9s ease;
 
     z-index:9999;
 
@@ -51,6 +51,11 @@
 
 }
 
+.global-panel:not(.visible){
+
+    pointer-events:none;
+
+}
 
 .global-panel-inner{
 
@@ -85,12 +90,9 @@
 }
 
 
-.global-panel.visible
-.global-panel-inner{
+.global-panel.visible .global-panel-inner{
 
-    transform:
-
-        translateY(0);
+    transform:translateY(0);
 
 }
 
