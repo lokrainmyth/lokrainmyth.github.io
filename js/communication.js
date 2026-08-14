@@ -13,10 +13,6 @@ document.getElementById(
     "communicationForm"
 );
 
-
-if(!form) return;
-
-
 const form =
 document.getElementById(
     "communicationForm"
