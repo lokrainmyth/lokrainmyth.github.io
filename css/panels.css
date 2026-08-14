@@ -337,3 +337,142 @@ max-height:80vh;
     margin-bottom:30px;
 
 }
+
+.communication-form {
+
+    max-width:620px;
+
+    margin:0 auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+
+.communication-hint {
+
+    text-align:center;
+
+    opacity:.45;
+
+    font-size:16px;
+
+    margin-bottom:20px;
+
+}
+
+
+.communication-form input,
+.communication-form textarea {
+
+
+    width:100%;
+
+
+    background:rgba(255,255,255,.03);
+
+
+    border:none;
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+
+    padding:18px 10px;
+
+
+    color:var(--paper);
+
+
+    font-size:18px;
+
+
+    outline:none;
+
+
+    transition:
+
+        border-color .5s ease,
+
+        background .5s ease;
+
+}
+
+
+.communication-form textarea {
+
+    min-height:160px;
+
+    resize:none;
+
+}
+
+
+.communication-form input:focus,
+.communication-form textarea:focus {
+
+    border-color:var(--gold);
+
+    background:rgba(255,255,255,.06);
+
+}
+
+
+.communication-send {
+
+    margin:30px auto 0;
+
+
+    padding:
+
+    14px 50px;
+
+
+    background:none;
+
+
+    border:1px solid var(--gold);
+
+
+    color:var(--gold);
+
+
+    font-size:16px;
+
+
+    letter-spacing:.15em;
+
+
+    cursor:pointer;
+
+
+    transition:
+
+    background .5s ease,
+
+    color .5s ease;
+
+}
+
+
+.communication-send:hover {
+
+    background:var(--gold);
+
+    color:#111;
+
+}
+
+
+.communication-status {
+
+    text-align:center;
+
+    min-height:24px;
+
+    opacity:.7;
+
+}
