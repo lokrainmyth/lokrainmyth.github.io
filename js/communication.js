@@ -26,6 +26,8 @@ form.addEventListener(
 "submit",
 function(event){
 
+    console.log("SEND PRESSED");
+
     event.preventDefault();
 
 
