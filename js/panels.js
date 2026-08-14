@@ -418,11 +418,53 @@ Working on the record became as light and spontaneous as the way I write songs.
     `,
 
     communication: `
-        <h1>Communication</h1>
-        <p>
-            Communication placeholder.
-        </p>
-    `,
+
+<h1>Communication</h1>
+
+
+<div class="communication-form">
+
+
+<p class="communication-hint">
+Leave a message and a contact for connection.
+</p>
+
+
+<input
+    id="contactName"
+    type="text"
+    placeholder="Name">
+
+
+<input
+    id="contactEmail"
+    type="email"
+    placeholder="Email">
+
+
+<textarea
+    id="contactMessage"
+    placeholder="Message"></textarea>
+
+
+<button
+    id="sendMessageButton"
+    class="communication-send">
+
+    Send
+
+</button>
+
+
+<div
+    id="communicationStatus"
+    class="communication-status">
+</div>
+
+
+</div>
+
+`,
 
     creator: `
         <h1>Creator</h1>
