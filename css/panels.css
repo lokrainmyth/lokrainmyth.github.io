@@ -24,9 +24,11 @@
         10vh
         6vw;
 
-    background:rgba(5,5,5,.72);
+    background:rgba(5,5,5,.82);
 
-    backdrop-filter:blur(18px);
+backdrop-filter:blur(22px);
+
+-webkit-backdrop-filter:blur(22px);
 
     opacity:0;
 
@@ -66,8 +68,6 @@
    overflow-y:auto;
 
 max-height:80vh;
-
-   scrollbar-width:thin;
 
     padding:
 
