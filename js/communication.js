@@ -13,12 +13,6 @@ document.getElementById(
     "communicationForm"
 );
 
-const form =
-document.getElementById(
-    "communicationForm"
-);
-
-
 if(!form) return;
 
 
@@ -77,5 +71,7 @@ function(event){
 
     });
 
+
+});
 
 });
