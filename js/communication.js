@@ -120,7 +120,7 @@ function(event){
             Panels.close();
 
 
-        },7000);
+        },5000);
 
 
     })
