@@ -439,9 +439,9 @@ Leave a message and a contact for connection.
 
 
 <input
-    id="contactEmail"
-    type="email"
-    placeholder="Email">
+    id="contactContact"
+    type="text"
+    placeholder="Contact">
 
 
 <textarea
