@@ -90,9 +90,9 @@ function(event){
 
 
         reply_to:
-        document.getElementById(
-            "contactContact"
-        ).value,
+document.getElementById(
+    "contactEmail"
+).value,
 
 
         message:
