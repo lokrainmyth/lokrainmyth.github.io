@@ -465,6 +465,13 @@ max-height:80vh;
 
 }
 
+.communication-send:disabled{
+
+    opacity:.45;
+
+    transform:scale(.96);
+
+}
 
 .communication-send:hover {
 
