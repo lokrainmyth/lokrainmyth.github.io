@@ -123,16 +123,32 @@ function(event){
     .then(()=>{
 
 
-        setTimeout(()=>{
+        .then(()=>{
+
+    button.textContent = "Sent";
 
 
-            Panels.close();
+    setTimeout(()=>{
+
+        status.textContent =
+        "Your words have reached Lo.Krain.";
 
 
-        },5000);
+        status.style.opacity = "1";
 
 
-    })
+    },2500);
+
+
+
+    setTimeout(()=>{
+
+        Panels.close();
+
+    },8000);
+
+
+})
 
 
     .catch((error)=>{
