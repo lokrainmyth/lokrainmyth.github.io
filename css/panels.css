@@ -676,14 +676,6 @@ max-height:80vh;
 }
 
 
-.myth-navigation.visible button:hover {
-
-    transform:
-        translateY(-2px);
-
-}
-
-
 
 @keyframes mythLight {
 
@@ -715,10 +707,31 @@ max-height:80vh;
 
 .myth-navigation button {
 
-    letter-spacing:.35em;
+    letter-spacing:.42em;
 
     text-transform:uppercase;
 
-    font-weight:300;
+    font-weight:400;
+
+    position:relative;
+
+    transition:
+
+        filter .6s ease,
+        opacity .6s ease;
+
+}
+
+
+.myth-navigation button:hover {
+
+    filter:
+
+        drop-shadow(
+            0 0 18px
+            rgba(240,210,130,.65)
+        );
+
+    opacity:1;
 
 }
