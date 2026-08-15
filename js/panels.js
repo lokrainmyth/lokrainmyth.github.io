@@ -470,11 +470,31 @@ Leave a message and a contact for connection.
 `,
 
     creator: `
-        <h1>Creator</h1>
-        <p>
-            About the creator.
-        </p>
-    `
+
+<div class="creator-gallery">
+
+    <div class="creator-track">
+
+        <img src="assets/photos/001.jpg">
+        <img src="assets/photos/002.jpg">
+        <img src="assets/photos/003.jpg">
+        <img src="assets/photos/004.jpg">
+        <img src="assets/photos/005.jpg">
+        <img src="assets/photos/006.jpg">
+        <img src="assets/photos/007.jpg">
+        <img src="assets/photos/008.jpg">
+        <img src="assets/photos/009.jpg">
+        <img src="assets/photos/010.jpg">
+        <img src="assets/photos/011.jpg">
+        <img src="assets/photos/012.jpg">
+        <img src="assets/photos/013.jpg">
+        <img src="assets/photos/014.jpg">
+
+    </div>
+
+</div>
+
+`,
 
 };
 
