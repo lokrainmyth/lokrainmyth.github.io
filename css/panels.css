@@ -500,3 +500,15 @@ max-height:80vh;
         opacity .9s ease;
 
 }
+
+.communication-send:disabled {
+
+    background:transparent;
+
+    color:var(--gold);
+
+    border:1px solid var(--gold);
+
+    opacity:1;
+
+}
