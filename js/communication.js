@@ -20,10 +20,50 @@ function(event){
     }
 
 
+    event.preventDefault();
+
+
     console.log("SEND PRESSED");
 
 
-    event.preventDefault();
+    const form = event.target;
+
+
+    const button =
+        form.querySelector("button");
+
+
+    const status =
+        document.getElementById(
+            "communicationStatus"
+        );
+
+
+    button.textContent =
+        "Sending...";
+
+
+    button.disabled = true;
+
+
+
+    status.style.opacity = "0";
+
+
+
+    setTimeout(()=>{
+
+
+        status.textContent =
+            "Your words have reached Lo.Krain.";
+
+
+        status.style.opacity =
+            "1";
+
+
+    },300);
+
 
 
     const params = {
@@ -35,7 +75,7 @@ function(event){
         ).value,
 
 
-        contact:
+        reply_to:
         document.getElementById(
             "contactContact"
         ).value,
@@ -49,79 +89,55 @@ function(event){
     };
 
 
+
     console.log(
         "PARAMS:",
         params
     );
 
 
-    form.addEventListener("submit", function(event){
-
-    event.preventDefault();
-
-
-    const button =
-        form.querySelector("button");
-
-
-    button.textContent = "Sending...";
-
-    button.disabled = true;
-
-
-    const successMessage = 
-        "Your words have reached Lo.Krain.";
-
-
-    status.style.opacity = "0";
-
-
-    setTimeout(()=>{
-
-        status.textContent = successMessage;
-
-        status.style.opacity = "1";
-
-
-    },300);
-
-
 
     emailjs.send(
+
         "service_x28p0ve",
+
         "template_7x2kupb",
-        {
-            from_name:
-            document.getElementById("contactName").value,
 
-            reply_to:
-            document.getElementById("contactContact").value,
+        params
 
-            message:
-            document.getElementById("contactMessage").value
-        }
     )
     .then(()=>{
 
 
         setTimeout(()=>{
 
+
             Panels.close();
+
 
         },1200);
 
 
     })
+
+
     .catch((error)=>{
+
 
         console.log(error);
 
+
         status.textContent =
-        "Something went wrong.";
+            "Something went wrong.";
 
-        button.disabled=false;
 
-        button.textContent="Send";
+        button.disabled =
+            false;
+
+
+        button.textContent =
+            "Send";
+
 
     });
 
