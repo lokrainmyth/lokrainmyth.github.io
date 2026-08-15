@@ -45,6 +45,15 @@ function(event){
 
     button.disabled = true;
 
+    form.querySelectorAll("input, textarea, button")
+.forEach(element=>{
+
+    element.style.opacity="0";
+
+    element.style.transform="translateY(-10px)";
+
+});
+    
     setTimeout(()=>{
 
     button.textContent =
@@ -67,7 +76,7 @@ function(event){
             "1";
 
 
-    },3000);
+    },2000);
 
 
 
