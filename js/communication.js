@@ -82,25 +82,18 @@ function(event){
 
     const params = {
 
-
-        from_name:
-        document.getElementById(
-            "contactName"
-        ).value,
+    from_name:
+    document.getElementById("contactName").value,
 
 
-        reply_to:
-document.getElementById(
-    "contactContact"
-).value,
+    contact:
+    document.getElementById("contactContact").value,
 
 
-        message:
-        document.getElementById(
-            "contactMessage"
-        ).value
+    message:
+    document.getElementById("contactMessage").value
 
-    };
+};
 
 
 
