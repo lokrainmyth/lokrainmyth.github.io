@@ -109,7 +109,15 @@ function(event){
         params
     );
 
+console.log(
+    "CONTACT FIELD:",
+    document.getElementById("contactContact").value
+);
 
+console.log(
+    "MESSAGE FIELD:",
+    document.getElementById("contactMessage").value
+);
 
     emailjs.send(
 
