@@ -544,3 +544,87 @@ max-height:80vh;
     -webkit-text-fill-color:var(--gold) !important;
 
 }
+
+/* ==========================================================
+   CREATOR GALLERY
+========================================================== */
+
+
+.creator-gallery{
+
+    width:100%;
+
+    overflow:hidden;
+
+}
+
+
+.creator-track{
+
+    display:flex;
+
+    gap:30px;
+
+    overflow-x:auto;
+
+    scroll-snap-type:x mandatory;
+
+    scrollbar-width:none;
+
+    -webkit-overflow-scrolling:touch;
+
+}
+
+
+.creator-track::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+
+.creator-track img{
+
+    flex:
+
+        0 0 100%;
+
+    width:100%;
+
+    max-height:75vh;
+
+    object-fit:contain;
+
+    scroll-snap-align:center;
+
+    border-radius:4px;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+    transition:
+
+        transform .8s ease,
+
+        opacity .8s ease;
+
+}
+
+
+@media(max-width:768px){
+
+    .creator-track{
+
+        gap:20px;
+
+    }
+
+
+    .creator-track img{
+
+        max-height:70vh;
+
+    }
+
+}
