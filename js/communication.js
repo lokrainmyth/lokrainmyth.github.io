@@ -45,7 +45,12 @@ function(event){
 
     button.disabled = true;
 
+    setTimeout(()=>{
 
+    button.textContent =
+        "Sent";
+
+},2000);
 
     status.style.opacity = "0";
 
