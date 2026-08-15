@@ -528,3 +528,19 @@ max-height:80vh;
     opacity:1;
 
 }
+
+.communication-send:disabled {
+
+    background:none !important;
+
+    background-color:transparent !important;
+
+    color:var(--gold) !important;
+
+    border:1px solid var(--gold) !important;
+
+    opacity:1 !important;
+
+    -webkit-text-fill-color:var(--gold) !important;
+
+}
