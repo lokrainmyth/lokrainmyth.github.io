@@ -121,6 +121,11 @@ console.log(
     "TEXT VALUE:",
     document.getElementById("contactMessage").value
 );
+
+console.log(
+"BEFORE SEND:",
+document.getElementById("contactMessage").value
+);
     
     emailjs.send(
 
