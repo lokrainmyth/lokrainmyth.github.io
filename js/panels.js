@@ -422,7 +422,9 @@ Working on the record became as light and spontaneous as the way I write songs.
 <h1>Communication</h1>
 
 
-<div class="communication-form">
+<form
+    id="communicationForm"
+    class="communication-form">
 
 
 <p class="communication-hint">
@@ -462,7 +464,7 @@ Leave a message and a contact for connection.
 </div>
 
 
-</div>
+</form>
 
 `,
 
