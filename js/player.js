@@ -954,6 +954,8 @@ function checkJourneyEnd(){
 
 function triggerGoDeeper(){
 
+   console.log("GO DEEPER TRIGGERED");
+
     stopAirportMasks();
 
     setTimeout(()=>{
