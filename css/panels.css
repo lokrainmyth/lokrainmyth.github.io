@@ -459,6 +459,10 @@ max-height:80vh;
 
     color .5s ease;
 
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+
 }
 
 
