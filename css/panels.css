@@ -482,12 +482,11 @@ max-height:80vh;
 }
 
 
-.communication-status {
+.communication-status{
 
-    text-align:center;
+    opacity:0;
 
-    min-height:24px;
-
-    opacity:.7;
+    transition:
+        opacity 900ms ease;
 
 }
