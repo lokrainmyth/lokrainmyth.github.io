@@ -628,3 +628,87 @@ max-height:80vh;
     }
 
 }
+
+/* ==========================================================
+   AWAKENED MYTH MENU
+========================================================== */
+
+
+.myth-navigation.visible button {
+
+    background:
+
+    linear-gradient(
+        120deg,
+        #b88a45,
+        #f5dc91,
+        #87a9c7,
+        #f5dc91,
+        #b88a45
+    );
+
+
+    background-size:400% 400%;
+
+
+    animation:
+        mythLight 14s ease infinite;
+
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+
+    filter:
+
+        drop-shadow(
+            0 0 12px
+            rgba(220,185,100,.35)
+        );
+
+
+    transition:
+        transform .6s ease;
+
+}
+
+
+.myth-navigation.visible button:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+
+@keyframes mythLight {
+
+
+    0% {
+
+        background-position:
+        0% 50%;
+
+    }
+
+
+    50% {
+
+        background-position:
+        100% 50%;
+
+    }
+
+
+    100% {
+
+        background-position:
+        0% 50%;
+
+    }
+
+}
