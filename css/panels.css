@@ -630,100 +630,101 @@ max-height:80vh;
 }
 
 /* ==========================================================
-   AWAKENED MYTH MENU
+   MYTH NAVIGATION — ALBUM TRACKLIST STYLE
 ========================================================== */
 
 
-.myth-navigation.visible button {
+.myth-navigation {
 
-    background:
+    width:100%;
 
-    linear-gradient(
-        120deg,
-        #b88a45,
-        #f5dc91,
-        #87a9c7,
-        #f5dc91,
-        #b88a45
-    );
+    display:flex;
 
+    justify-content:space-between;
 
-    background-size:400% 400%;
+    align-items:center;
 
+    gap:40px;
 
-    animation:
-        mythLight 14s ease infinite;
+    padding:
+
+        20px 0;
 
 
-    -webkit-background-clip:text;
+    overflow-x:auto;
 
-    background-clip:text;
+    scrollbar-width:none;
 
-    color:transparent;
-
-
-    filter:
-
-        drop-shadow(
-            0 0 12px
-            rgba(220,185,100,.35)
-        );
-
-
-    transition:
-        transform .6s ease;
+    -webkit-overflow-scrolling:touch;
 
 }
 
 
+.myth-navigation::-webkit-scrollbar{
 
-@keyframes mythLight {
-
-
-    0% {
-
-        background-position:
-        0% 50%;
-
-    }
-
-
-    50% {
-
-        background-position:
-        100% 50%;
-
-    }
-
-
-    100% {
-
-        background-position:
-        0% 50%;
-
-    }
+    display:none;
 
 }
+
 
 .myth-navigation button {
 
+    flex:
+
+        0 0 auto;
+
+
+    background:none;
+
+    border:none;
+
+    padding:10px 0;
+
+
+    cursor:pointer;
+
+
+    color:var(--paper);
+
+
+    font-family:inherit;
+
+
+    font-size:
+
+        clamp(12px,1.1vw,16px);
+
+
     letter-spacing:.42em;
+
 
     text-transform:uppercase;
 
+
+    white-space:nowrap;
+
+
     font-weight:400;
 
+
+    opacity:.9;
+
+
     position:relative;
+
 
     transition:
 
         filter .6s ease,
+
         opacity .6s ease;
 
 }
 
 
+
 .myth-navigation button:hover {
+
 
     filter:
 
@@ -732,6 +733,47 @@ max-height:80vh;
             rgba(240,210,130,.65)
         );
 
+
     opacity:1;
+
+}
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+
+@media(max-width:768px){
+
+
+    .myth-navigation{
+
+
+        justify-content:flex-start;
+
+
+        gap:45px;
+
+
+        padding:
+
+            20px 0 25px;
+
+
+    }
+
+
+    .myth-navigation button{
+
+
+        font-size:13px;
+
+
+        letter-spacing:.35em;
+
+
+    }
 
 }
