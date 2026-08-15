@@ -451,7 +451,8 @@ Leave a message and a contact for connection.
 
 <button
     id="sendMessageButton"
-    class="communication-send">
+    class="communication-send"
+    type="submit">
 
     Send
 
