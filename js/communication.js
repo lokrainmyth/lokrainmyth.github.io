@@ -31,19 +31,19 @@ function(event){
 
         from_name:
         document.getElementById(
-            "senderName"
+            "contactName"
         ).value,
 
 
         contact:
         document.getElementById(
-            "senderContact"
+            "contactContact"
         ).value,
 
 
         message:
         document.getElementById(
-            "message"
+            "contactMessage"
         ).value
 
     };
