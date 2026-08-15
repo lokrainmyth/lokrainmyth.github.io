@@ -183,6 +183,8 @@ max-height:80vh;
 
     position:fixed;
 
+    z-index:10001;
+
     top:34px;
 
     right:34px;
@@ -290,9 +292,9 @@ max-height:80vh;
 
     .global-panel-close{
 
-        top:18px;
+        top:12px;
 
-        right:18px;
+        right:12px;
 
     }
 
