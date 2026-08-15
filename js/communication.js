@@ -122,9 +122,6 @@ function(event){
     )
     .then(()=>{
 
-
-        .then(()=>{
-
     button.textContent = "Sent";
 
 
