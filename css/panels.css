@@ -712,3 +712,13 @@ max-height:80vh;
     }
 
 }
+
+.myth-navigation button {
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+
+    font-weight:300;
+
+}
