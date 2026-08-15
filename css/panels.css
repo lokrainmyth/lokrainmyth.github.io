@@ -183,11 +183,13 @@ max-height:80vh;
 
     position:fixed;
 
-    z-index:10001;
-
     top:34px;
 
     right:34px;
+
+    z-index:10001;
+
+    pointer-events:auto;
 
     width:42px;
 
