@@ -467,9 +467,13 @@ max-height:80vh;
 
 .communication-send:disabled{
 
-    opacity:.45;
+    opacity:.7;
 
-    transform:scale(.96);
+    color:var(--paper);
+
+    background:var(--gold);
+
+    cursor:default;
 
 }
 
