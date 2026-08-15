@@ -119,6 +119,16 @@ console.log(
     document.getElementById("contactMessage").value
 );
 
+console.log(
+    "TEXTAREA:",
+    document.getElementById("contactMessage")
+);
+
+console.log(
+    "TEXT VALUE:",
+    document.getElementById("contactMessage").value
+);
+    
     emailjs.send(
 
         "service_x28p0ve",
