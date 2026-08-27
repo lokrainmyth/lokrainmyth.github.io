@@ -469,28 +469,22 @@ function closeTheo(){
 
 }
 
-function openMyth(){
+function openMyth() {
 
     const mythScreen =
         document.getElementById("mythScreen");
 
-    if(!mythScreen) return;
+    if (!mythScreen) return;
 
-
-    World.elements.outro
-        ?.classList.remove("visible");
-
-
-    World.elements.outro
-        ?.classList.add("hidden");
-
+    World.elements.outro?.classList.remove("visible");
+    World.elements.outro?.classList.add("hidden");
 
     document
         .querySelector(".world")
         ?.classList.add("hidden");
 
-
-    Myth.open();
+    mythScreen.classList.remove("hidden");
+    mythScreen.setAttribute("aria-hidden", "false");
 
 }
 
