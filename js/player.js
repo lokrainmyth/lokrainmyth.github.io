@@ -1095,3 +1095,17 @@ if (navigation) {
         });
 
 }
+
+/* ==========================================================
+   DEBUG HOTKEY
+========================================================== */
+
+document.addEventListener("keydown",(event)=>{
+
+    if(event.key.toLowerCase()==="m"){
+
+        triggerGoDeeper();
+
+    }
+
+});
