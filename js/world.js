@@ -371,9 +371,17 @@ function showOutro(){
 
 }
 
-document
-    .getElementById("outroGoDeeper")
-    ?.addEventListener("click", openMyth);
+document.addEventListener("click", (event)=>{
+
+    if(event.target.id === "outroGoDeeper"){
+
+        console.log("GO DEEPER CLICK");
+
+        openMyth();
+
+    }
+
+});
 
 /* ==========================================================
    LAYERS
