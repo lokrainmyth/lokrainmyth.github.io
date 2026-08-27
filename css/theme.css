@@ -891,6 +891,12 @@ animation: theoGlow 8s ease-in-out infinite;
 
 }
 
+#outroGoDeeper{
+
+    visibility:visible !important;
+
+}
+
 background-image:
 
 linear-gradient(...),
