@@ -2036,16 +2036,20 @@ POST MYTH NAVIGATION
 
 .myth-navigation{
 
-    display:flex;
-    flex-direction:column;
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
     align-items:center;
 
     width:100%;
 
     margin-top:34px;
 
-    gap:18px;
+    gap:0;
+
 }
+
 
 .myth-navigation.hidden{
 
@@ -2053,41 +2057,70 @@ POST MYTH NAVIGATION
 
 }
 
+
 .myth-navigation.visible{
 
-    display:flex !important;
+    display:grid !important;
 
 }
+
+
 
 .myth-navigation button{
 
     position:relative;
 
-    padding:0;
+    width:100%;
+
+    padding:12px 0;
 
     background:none;
+
     border:none;
 
-    font:inherit;
+    font-family:Inter,sans-serif;
 
-    font-size:1.08rem;
+    font-size:1rem;
+
     font-weight:500;
-    letter-spacing:.18em;
+
+    letter-spacing:.32em;
 
     text-transform:uppercase;
 
-    color:var(--paper);
-
-    opacity:.88;
-
     cursor:pointer;
 
+    color:transparent;
+
+    background-image:linear-gradient(
+        90deg,
+        #d8d1c0,
+        #f5dda0,
+        #fff6d8,
+        #cfe2ff,
+        #f5dda0,
+        #d8d1c0
+    );
+
+    background-size:200% auto;
+
+    background-clip:text;
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:dawnFlow 12s linear infinite;
+
     transition:
-        color var(--slow-transition),
-        opacity var(--slow-transition),
-        letter-spacing var(--slow-transition);
+
+        text-shadow .8s ease,
+
+        letter-spacing .8s ease;
 
 }
+
+
 
 .myth-navigation button::after{
 
@@ -2096,33 +2129,96 @@ POST MYTH NAVIGATION
     position:absolute;
 
     left:50%;
-    bottom:-8px;
+
+    bottom:0;
 
     width:0;
+
     height:1px;
 
     transform:translateX(-50%);
 
-    background:var(--gold);
+    background:#f3d98b;
 
-    transition:
-        width .8s ease;
+    transition:width .8s ease;
 
 }
+
+
 
 .myth-navigation button:hover{
 
-    color:var(--gold);
+    letter-spacing:.38em;
 
-    opacity:1;
+    text-shadow:
 
-    letter-spacing:.22em;
+        0 0 16px rgba(255,220,120,.45),
+
+        0 0 40px rgba(150,190,255,.25);
 
 }
 
+
+
 .myth-navigation button:hover::after{
 
-    width:100%;
+    width:70%;
+
+}
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media(max-width:768px){
+
+
+    .myth-navigation{
+
+        display:flex;
+
+        flex-direction:row;
+
+        justify-content:flex-start;
+
+        overflow-x:auto;
+
+        gap:34px;
+
+        padding:0 20px;
+
+        scrollbar-width:none;
+
+    }
+
+
+    .myth-navigation.visible{
+
+        display:flex !important;
+
+    }
+
+
+    .myth-navigation::-webkit-scrollbar{
+
+        display:none;
+
+    }
+
+
+    .myth-navigation button{
+
+        flex:0 0 auto;
+
+        width:auto;
+
+        font-size:.85rem;
+
+        letter-spacing:.28em;
+
+    }
 
 }
 
