@@ -2127,37 +2127,17 @@ POST MYTH NAVIGATION
 }
 
 /* ==========================================================
-   DAWN SHIMMER
+   DAWN GRADIENT
 ========================================================== */
 
-@keyframes dawnShimmer{
+@keyframes dawnFlow{
 
     0%{
-        color:#d9d2c2;
-        text-shadow:none;
-    }
-
-    25%{
-        color:#f3df9d;
-        text-shadow:
-            0 0 10px rgba(245,215,120,.18);
-    }
-
-    50%{
-        color:#d8e7ff;
-        text-shadow:
-            0 0 12px rgba(170,205,255,.18);
-    }
-
-    75%{
-        color:#f5e6b5;
-        text-shadow:
-            0 0 10px rgba(245,220,150,.16);
+        background-position:0% 50%;
     }
 
     100%{
-        color:#d9d2c2;
-        text-shadow:none;
+        background-position:200% 50%;
     }
 
 }
@@ -2165,19 +2145,104 @@ POST MYTH NAVIGATION
 body.myth-completed .myth-navigation button,
 body.myth-completed .track-title{
 
-    animation:dawnShimmer 14s ease-in-out infinite;
+    background:linear-gradient(
+        90deg,
+        #d9d2c2 0%,
+        #f6dfa1 18%,
+        #fff7dd 35%,
+        #d7e9ff 52%,
+        #f7df9d 70%,
+        #d9d2c2 100%
+    );
+
+    background-size:200% auto;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:dawnFlow 12s linear infinite;
 
 }
 
 body.myth-completed .myth-navigation button:hover,
 body.myth-completed .track:hover .track-title{
 
-    color:#fff5c7;
-
     text-shadow:
+        0 0 16px rgba(255,220,120,.45),
+        0 0 42px rgba(120,180,255,.25);
 
-        0 0 18px rgba(255,220,120,.45),
+}
 
-        0 0 40px rgba(160,190,255,.22);
+.myth-navigation{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    align-items:center;
+
+    margin-top:28px;
+
+    gap:0;
+
+}
+
+.myth-navigation button{
+
+    width:100%;
+
+    padding:12px 4px;
+
+    text-align:center;
+
+    letter-spacing:.45em;
+
+    font-family:Inter,sans-serif;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+}
+
+@media (max-width:768px){
+
+    .myth-navigation{
+
+        display:flex;
+
+        overflow-x:auto;
+
+        gap:28px;
+
+        justify-content:flex-start;
+
+        scrollbar-width:none;
+
+    }
+
+    .myth-navigation::-webkit-scrollbar{
+
+        display:none;
+
+    }
+
+    .myth-navigation button{
+
+        flex:0 0 auto;
+
+        white-space:nowrap;
+
+    }
 
 }
