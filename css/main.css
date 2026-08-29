@@ -2065,12 +2065,12 @@ stroke-dashoffset:0;
 
 .myth-point{
 
-    fill:#b9d8ff;
+fill:#c8dcff;
 
-    filter:url(#blueGlow);
+filter:url(#blueGlow);
 
-    animation:
-    mythPulse 3s infinite;
+animation:
+mythPulse 3s ease-in-out infinite;
 
 }
 
@@ -2079,13 +2079,14 @@ stroke-dashoffset:0;
 
 0%,100%{
 
-    opacity:.55;
+opacity:.45;
 
 }
 
+
 50%{
 
-    opacity:1;
+opacity:1;
 
 }
 
@@ -2164,6 +2165,38 @@ transform:rotate(360deg);
 
     animation:
     mythPulse 4s infinite;
+
+}
+
+.myth-figure{
+
+stroke:#dbe8ff;
+
+stroke-width:3;
+
+fill:none;
+
+opacity:.55;
+
+filter:
+drop-shadow(
+0 0 12px rgba(150,190,255,.5)
+);
+
+}
+
+
+.myth-label{
+
+fill:#ffffff;
+
+font-size:42px;
+
+letter-spacing:.45em;
+
+opacity:.85;
+
+font-family:Inter,sans-serif;
 
 }
 
