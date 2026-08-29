@@ -58,7 +58,7 @@ const translations = {
         "Связь",
 
         creator:
-        "Создатель",
+        "Автор",
 
         play:
         "Слушать",
