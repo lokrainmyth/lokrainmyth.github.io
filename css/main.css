@@ -2040,27 +2040,24 @@ stroke-dashoffset:0;
 
     opacity:1 !important;
 
-    transition:opacity 1.5s;
+    transition:
+        opacity 1.5s ease;
 
-}
-
-    overflow: visible;
-
-    color: var(--paper);
 }
 
 @media(max-width:768px){
 
     .myth-map{
 
-        width:94vw;
-        max-height:none;
+        width:92vw;
+        height:auto;
 
     }
 
+
     .myth-viewport{
 
-        padding:20px;
+        padding:10px;
 
     }
 
@@ -2082,15 +2079,13 @@ stroke-dashoffset:0;
 
 0%,100%{
 
-    opacity:.5;
-    transform:scale(1);
+    opacity:.55;
 
 }
 
 50%{
 
     opacity:1;
-    transform:scale(1.35);
 
 }
 
@@ -2101,11 +2096,13 @@ stroke-dashoffset:0;
 
     fill:white;
 
-    font-size:32px;
+    font-size:28px;
 
-    letter-spacing:.4em;
+    letter-spacing:.35em;
 
-    opacity:.8;
+    opacity:.85;
+
+    text-transform:uppercase;
 
 }
 
@@ -2119,8 +2116,7 @@ stroke-dashoffset:0;
 
 .sphere-grid{
 
-    animation:
-    sphereMove 18s linear infinite;
+    opacity:.45;
 
 }
 
