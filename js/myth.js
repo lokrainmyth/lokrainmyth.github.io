@@ -30,8 +30,6 @@ const Myth = {
 
         this.viewport.innerHTML = `
 
-            this.viewport.innerHTML = `
-
 <svg
 class="myth-map"
 viewBox="0 0 1200 900"
