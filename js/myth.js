@@ -32,7 +32,7 @@ const Myth = {
 
 <svg
 class="myth-map"
-viewBox="0 0 1200 900"
+viewBox="0 0 1200 1200"
 xmlns="http://www.w3.org/2000/svg"
 aria-label="Lo.Krain Myth">
 
@@ -40,87 +40,88 @@ aria-label="Lo.Krain Myth">
 <defs>
 
 
-<radialGradient id="sphereGlow">
+<radialGradient id="sphereLight">
 
-<stop offset="0%" stop-color="#9fc8ff"/>
-
-<stop offset="60%" stop-color="#38557c"/>
-
-<stop offset="100%" stop-color="#101724"/>
+    <stop offset="0%" stop-color="#ffffff"/>
+    <stop offset="45%" stop-color="#bcd8ff"/>
+    <stop offset="100%" stop-color="#304060"/>
 
 </radialGradient>
 
 
 <filter id="blueGlow">
 
-<feGaussianBlur
-stdDeviation="6"
-result="blur"/>
+    <feGaussianBlur
+        stdDeviation="8"
+        result="blur"/>
 
-<feMerge>
+    <feMerge>
 
-<feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
 
-<feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="SourceGraphic"/>
 
-</feMerge>
-
-</filter>
-
-
-<filter id="softGlow">
-
-<feGaussianBlur
-stdDeviation="3"/>
+    </feMerge>
 
 </filter>
+
+
+<linearGradient
+id="dawnRoad"
+x1="0"
+x2="1">
+
+<stop
+offset="0%"
+stop-color="#6d8cff"/>
+
+<stop
+offset="50%"
+stop-color="#fff0b0"/>
+
+<stop
+offset="100%"
+stop-color="#ffffff"/>
+
+</linearGradient>
 
 
 </defs>
 
 
-
-<!-- ==================================================
-PATH
-================================================== -->
+<!-- =========================
+     PATH
+========================= -->
 
 
 <g class="myth-paths">
 
 
 <path
-id="pathTheo"
+id="pathHorizontal"
 class="myth-path"
 d="
-M600 450
-C470 450 350 390 210 430
+M300 600
+C420 600 470 600 600 600
+C730 600 780 600 900 600
 "/>
 
 
 <path
-id="pathDreamer"
+id="pathDown"
 class="myth-path"
 d="
-M600 450
-C760 450 850 380 980 420
+M600 600
+C600 760 600 820 600 950
 "/>
 
 
 <path
-id="pathNight"
+id="pathVertical"
 class="myth-path"
 d="
-M600 450
-C600 330 600 250 600 150
-"/>
-
-
-<path
-id="pathDawn"
-class="myth-path"
-d="
-M600 450
-C600 570 600 680 600 780
+M600 600
+C600 430 600 350 600 200
 "/>
 
 
@@ -128,81 +129,51 @@ C600 570 600 680 600 780
 
 
 
+<!-- =========================
+     CENTRAL IO SPHERE
+========================= -->
 
-<!-- ==================================================
-CENTER SPHERE
-================================================== -->
 
-
-<g class="myth-sphere">
+<g class="io-sphere">
 
 
 <circle
 cx="600"
-cy="450"
-r="95"
-fill="url(#sphereGlow)"
+cy="600"
+r="90"
+fill="url(#sphereLight)"
 filter="url(#blueGlow)"
 />
 
 
-<!-- chess grid -->
-
-
-<g
-class="sphere-grid"
-stroke="rgba(255,255,255,.35)"
-fill="none">
-
-
-<ellipse
-cx="600"
-cy="450"
-rx="95"
-ry="35"/>
-
-
-<ellipse
-cx="600"
-cy="450"
-rx="95"
-ry="65"/>
-
-
-<path
-d="
-M505 450
-H695
-"/>
-
-
-<path
-d="
-M600 355
-V545
-"/>
-
-
-</g>
-
-
-
 <circle
-class="sphere-core"
 cx="600"
-cy="450"
-r="18"/>
+cy="600"
+r="110"
+fill="none"
+stroke="rgba(200,220,255,.35)"
+stroke-width="2"
+/>
+
+
+<path
+d="
+M530 600
+Q600 560 670 600
+Q600 640 530 600
+"
+fill="none"
+stroke="rgba(255,255,255,.4)"
+/>
 
 
 </g>
 
 
 
-
-
-<!-- ==================================================
-THEO
-================================================== -->
+<!-- =========================
+     THEO
+========================= -->
 
 
 <g
@@ -212,175 +183,160 @@ data-myth-action="expulsion">
 
 <circle
 class="myth-point"
-cx="210"
-cy="430"
-r="14"/>
-
-
-<circle
-class="myth-hit"
-cx="210"
-cy="430"
-r="45"/>
-
-
-
-<!-- hat -->
-
-<path
-class="theo-hat"
-d="
-M170 350
-Q210 320 250 350
-L250 365
-L170 365Z"
+cx="300"
+cy="600"
+r="12"
 />
-
-
-
-<!-- head -->
-
-<circle
-cx="210"
-cy="385"
-r="22"
-/>
-
-
-<!-- body -->
-
-<path
-d="
-M185 410
-L235 410
-L250 520
-L170 520Z"
-/>
-
 
 
 <text
-x="150"
-y="580"
-class="myth-label">
+class="myth-label"
+x="250"
+y="700">
 
 THEO
 
 </text>
 
 
+
+<!-- scarecrow -->
+
+<g class="myth-figure">
+
+
+<circle
+cx="300"
+cy="500"
+r="28"/>
+
+
+<line
+x1="300"
+y1="530"
+x2="300"
+y2="620"/>
+
+
+<line
+x1="250"
+y1="560"
+x2="350"
+y2="560"/>
+
+
+<path
+d="
+M260 470
+Q300 430
+340 470
+"
+/>
+
+
+</g>
+
+
 </g>
 
 
 
 
-
-<!-- ==================================================
-DREAMER
-================================================== -->
+<!-- =========================
+     DREAMER
+========================= -->
 
 
 <g
 class="myth-node myth-dreamer"
-data-myth-action="dreamer"
-opacity="0">
+data-myth-action="dreamer">
 
 
 <circle
 class="myth-point"
-cx="980"
-cy="420"
-r="14"/>
-
-
-<circle
-class="myth-hit"
-cx="980"
-cy="420"
-r="45"/>
-
-
-
-<circle
-cx="980"
-cy="370"
-r="22"
-/>
-
-
-<path
-d="
-M950 400
-L1010 400
-L1025 520
-L935 520Z"
+cx="900"
+cy="600"
+r="12"
 />
 
 
 <text
-x="930"
-y="580"
-class="myth-label">
+class="myth-label"
+x="780"
+y="700">
 
 DREAMER
 
 </text>
 
 
+
+<g class="myth-figure">
+
+
+<circle
+cx="900"
+cy="500"
+r="24"
+/>
+
+
+<path
+d="
+M875 540
+L925 540
+L940 620
+L860 620
+Z
+"
+/>
+
+
+</g>
+
+
 </g>
 
 
 
 
-
-
-<!-- ==================================================
-NIGHT
-================================================== -->
+<!-- =========================
+     NIGHT
+========================= -->
 
 
 <g
 class="myth-node myth-darkest"
-data-myth-action="darkest"
-opacity="0">
+data-myth-action="darkest">
 
 
 <circle
 class="myth-point"
 cx="600"
-cy="150"
-r="14"/>
+cy="950"
+r="12"
+/>
 
 
-<circle
-class="myth-hit"
-cx="600"
-cy="150"
-r="45"/>
+<text
+class="myth-label"
+x="520"
+y="1080">
 
+NIGHT
+
+</text>
 
 
 <g class="stars">
 
 
-<circle cx="540" cy="100" r="5"/>
-
-<circle cx="600" cy="70" r="4"/>
-
-<circle cx="660" cy="110" r="6"/>
+<circle cx="540" cy="850" r="5"/>
+<circle cx="600" cy="820" r="5"/>
+<circle cx="660" cy="850" r="5"/>
 
 
 </g>
-
-
-<text
-x="520"
-y="220"
-class="myth-label">
-
-NIGHT
-
-</text>
 
 
 </g>
@@ -388,66 +344,65 @@ NIGHT
 
 
 
-
-
-<!-- ==================================================
-DAWN
-================================================== -->
+<!-- =========================
+     DAWN
+========================= -->
 
 
 <g
 class="myth-node myth-dawn"
-data-myth-action="dawn"
-opacity="0">
+data-myth-action="dawn">
 
 
 <circle
 class="myth-point"
 cx="600"
-cy="780"
-r="14"/>
-
-
-<circle
-class="myth-hit"
-cx="600"
-cy="780"
-r="45"/>
-
-
-
-<circle
-cx="600"
-cy="700"
-r="55"
-class="sun"
+cy="200"
+r="12"
 />
 
+
+
+<circle
+class="sun"
+cx="600"
+cy="120"
+r="45"
+filter="url(#blueGlow)"
+/>
 
 
 <path
 class="road"
 d="
-M600 760
-L560 850
-M600 760
-L640 850
-"/>
+M600 200
+L600 350
+"
+stroke="url(#dawnRoad)"
+/>
 
 
 
 <text
-x="550"
-y="880"
-class="myth-label">
+class="myth-label"
+x="520"
+y="320">
 
 DAWN
 
 </text>
 
 
+
+<g class="birds">
+
+<path d="M500 160 Q520 140 540 160"/>
+<path d="M660 160 Q680 140 700 160"/>
+
 </g>
 
+
+</g>
 
 
 </svg>
