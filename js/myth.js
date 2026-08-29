@@ -32,7 +32,7 @@ const Myth = {
 
             <svg
                 class="myth-map"
-                viewBox="0 0 1200 800"
+                viewBox="0 0 1000 1000"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-label="Lo.Krain Myth">
 
