@@ -3,17 +3,22 @@
 
 const Myth = {
 
+
     initialized:false,
 
-    screen:null,
     viewport:null,
+
+    screen:null,
 
     step:0,
 
 
     init(){
 
-        if(this.initialized) return;
+
+        if(this.initialized)
+            return;
+
 
         this.initialized=true;
 
@@ -26,12 +31,15 @@ const Myth = {
             document.getElementById("mythViewport");
 
 
-        if(!this.screen || !this.viewport) return;
+        if(!this.screen || !this.viewport)
+            return;
 
 
         this.build();
 
+
     },
+
 
 
     build(){
@@ -39,40 +47,22 @@ const Myth = {
 
         this.viewport.innerHTML = `
 
+
 <svg
 class="myth-map"
 viewBox="0 0 1200 900"
 xmlns="http://www.w3.org/2000/svg">
 
+
 <defs>
-
-<radialGradient id="spaceGlow">
-    <stop offset="0%" stop-color="#17243d"/>
-    <stop offset="45%" stop-color="#080d18"/>
-    <stop offset="100%" stop-color="#020203"/>
-</radialGradient>
-
-
-<radialGradient id="sphereLight">
-    <stop offset="0%" stop-color="#f5e8b0"/>
-    <stop offset="55%" stop-color="#b8c7df"/>
-    <stop offset="100%" stop-color="#53647a"/>
-</radialGradient>
 
 
 <filter id="blueGlow">
 
+
 <feGaussianBlur
-stdDeviation="8"
-result="blur"/>
+stdDeviation="8"/>
 
-<feMerge>
-
-<feMergeNode in="blur"/>
-
-<feMergeNode in="SourceGraphic"/>
-
-</feMerge>
 
 </filter>
 
@@ -80,78 +70,83 @@ result="blur"/>
 </defs>
 
 
-<!-- BACKGROUND -->
-
-<rect
-width="1200"
-height="900"
-fill="url(#spaceGlow)"/>
-
 
 
 <!-- STARS -->
 
+
 <g class="stars">
 
-<circle cx="120" cy="140" r="2"/>
-<circle cx="220" cy="90" r="3"/>
-<circle cx="350" cy="170" r="2"/>
-<circle cx="900" cy="120" r="3"/>
-<circle cx="1030" cy="220" r="2"/>
-<circle cx="1080" cy="500" r="3"/>
-<circle cx="160" cy="650" r="2"/>
-<circle cx="300" cy="760" r="3"/>
+
+<circle cx="150" cy="120" r="2"/>
+<circle cx="300" cy="180" r="3"/>
+<circle cx="850" cy="130" r="2"/>
+<circle cx="1000" cy="220" r="3"/>
+<circle cx="700" cy="90" r="2"/>
+<circle cx="420" cy="250" r="2"/>
+
 
 </g>
 
 
 
-<!-- CENTRAL SPHERE -->
 
-<g class="myth-sphere">
+<!-- CENTRAL WORLD -->
+
+
+<g
+class="myth-sphere">
+
 
 <circle
 cx="600"
 cy="450"
 r="95"
-fill="url(#sphereLight)"
-filter="url(#blueGlow)"
-/>
+fill="#121a2b"
+stroke="#d9c58a"
+stroke-width="3"/>
 
 
 <!-- chess surface -->
+
+
+<g
+opacity=".25">
+
 
 <path
 d="
 M510 450
 H690
 
-M525 400
-H675
+M520 410
+H680
 
-M525 500
-H675
+M520 490
+H680
+
+M550 355
+V545
 
 M600 355
 V545
 
-M550 370
-V530
-
-M650 370
-V530
+M650 355
+V545
 "
-stroke="rgba(20,20,30,.4)"
-stroke-width="3"/>
+stroke="#fff"/>
+
+
+</g>
 
 
 </g>
 
 
 
-<!-- PATH -->
 
-<g class="myth-paths">
+
+<!-- PATHS -->
 
 
 <path
@@ -159,10 +154,11 @@ id="pathTheo"
 class="myth-path"
 d="
 M600 450
-C430 430
-300 350
-170 240
-"/>
+C480 450
+380 430
+250 300"
+/>
+
 
 
 <path
@@ -170,10 +166,11 @@ id="pathDreamer"
 class="myth-path"
 d="
 M600 450
-C760 400
-900 330
-1040 250
-"/>
+C720 450
+820 400
+960 320"
+/>
+
 
 
 <path
@@ -182,9 +179,10 @@ class="myth-path"
 d="
 M600 450
 C600 600
-600 700
-600 780
-"/>
+600 680
+600 760"
+/>
+
 
 
 <path
@@ -193,164 +191,200 @@ class="myth-path"
 d="
 M600 450
 C600 300
-600 180
-600 90
-"/>
-
-
-</g>
+600 200
+600 100"
+/>
 
 
 
 
-<!-- THEO -->
+
+
+<!-- THEO POINT -->
+
 
 <g
-class="myth-node theo"
-data-myth-action="expulsion">
+class="myth-node"
+data-myth-action="theo">
 
 
 <circle
 class="myth-point"
-cx="170"
-cy="240"
-r="14"/>
+cx="250"
+cy="300"
+r="12"/>
+
+
+<text
+class="myth-label"
+x="180"
+y="250">
+
+THEO
+
+</text>
+
 
 
 <!-- scarecrow -->
 
-<g transform="translate(130 150)"
+
+<g
 class="scarecrow">
 
 
 <circle
-cx="40"
-cy="35"
-r="28"/>
+cx="250"
+cy="210"
+r="25"/>
 
 
 <path
 d="
-M15 65
-L65 65
-L80 150
-L0 150
+M220 240
+L280 240
+L300 390
+L200 390
 Z"/>
 
 
 <path
 d="
-M0 90
-L-35 125
+M190 280
+L310 280"/>
 
-M80 90
-L115 125"
-/>
-
-
-<!-- hat -->
 
 <path
 d="
-M5 10
-Q40 -20
-75 10
-Z"/>
+M230 390
+L210 470
+
+M270 390
+L290 470"/>
+
+
+</g>
+
 
 </g>
 
 
-<text
-x="110"
-y="330"
-class="myth-label">
-THEO
-</text>
 
-
-</g>
 
 
 
 
 <!-- DREAMER -->
 
+
 <g
-class="myth-node dreamer"
+class="myth-node"
 data-myth-action="dreamer">
 
 
 <circle
 class="myth-point"
-cx="1040"
-cy="250"
-r="14"/>
+cx="960"
+cy="320"
+r="12"/>
+
+
+
+<text
+class="myth-label"
+x="850"
+y="270">
+
+DREAMER
+
+</text>
+
+
+
+<g
+class="dreamer">
 
 
 <circle
-cx="1040"
-cy="190"
-r="22"
-fill="#ddd"/>
+cx="960"
+cy="220"
+r="22"/>
 
 
 <path
 d="
-M1020 220
-L1060 220
-L1080 330
-L1000 330
-Z"
-fill="#ddd"/>
-
-
-<text
-x="970"
-y="390"
-class="myth-label">
-DREAMER
-</text>
+M940 250
+L980 250
+L1000 380
+L920 380
+Z"/>
 
 
 </g>
+
+
+
+</g>
+
+
+
 
 
 
 
 <!-- NIGHT -->
 
+
 <g
-class="myth-node darkest"
-data-myth-action="darkest">
+class="myth-node"
+data-myth-action="night">
 
 
 <circle
 class="myth-point"
 cx="600"
-cy="780"
-r="14"/>
+cy="760"
+r="12"/>
+
+
+<text
+class="myth-label"
+x="520"
+y="830">
+
+NIGHT
+
+</text>
 
 
 <g class="moon">
 
+
 <circle
 cx="600"
-cy="700"
-r="45"
-fill="#ccd6ef"/>
+cy="680"
+r="35"
+fill="#dce8ff"/>
+
+
+</g>
+
+
+
+<g>
+
+
+<circle cx="550" cy="620" r="3"/>
+<circle cx="650" cy="630" r="3"/>
+<circle cx="620" cy="580" r="3"/>
+
 
 </g>
 
 
-<text
-x="500"
-y="850"
-class="myth-label">
-NIGHT
-</text>
-
-
 </g>
+
+
 
 
 
@@ -358,71 +392,92 @@ NIGHT
 
 <!-- DAWN -->
 
+
 <g
-class="myth-node dawn"
+class="myth-node"
 data-myth-action="dawn">
 
 
 <circle
 class="myth-point"
 cx="600"
-cy="90"
-r="14"/>
+cy="100"
+r="12"/>
+
+
+
+<text
+class="myth-label"
+x="520"
+y="70">
+
+DAWN
+
+</text>
+
 
 
 <circle
 cx="600"
-cy="150"
-r="55"
-fill="#ffd982"
-filter="url(#blueGlow)"/>
+cy="170"
+r="45"
+fill="#f5d98b"/>
+
 
 
 <g class="birds">
 
-<path d="M500 230 Q530 200 560 230"/>
-<path d="M650 230 Q680 200 710 230"/>
-<path d="M580 260 Q600 240 620 260"/>
 
-</g>
+<path d="
+M450 230
+Q470 210
+490 230"/>
 
 
-<text
-x="520"
-y="300"
-class="myth-label">
-DAWN
-</text>
+<path d="
+M700 240
+Q720 220
+740 240"/>
 
 
 </g>
+
+
+</g>
+
 
 
 </svg>
 
-        `;
+
+`;
 
 
         this.bind();
 
+
     },
+
+
 
 
     bind(){
 
 
         this.viewport
-        .querySelectorAll(".myth-point")
-        .forEach(point=>{
+        .querySelectorAll("[data-myth-action]")
+        .forEach(node=>{
 
 
-            point.addEventListener(
+            node.addEventListener(
                 "click",
                 ()=>{
 
+
                     this.activate(
-                        point.dataset.point
+                        node.dataset.mythAction
                     );
+
 
                 }
             );
@@ -431,28 +486,177 @@ DAWN
         });
 
 
+
     },
 
 
-    activate(point){
 
-        console.log(
-            "MYTH POINT:",
-            point
+
+    activate(action){
+
+
+
+        if(action==="theo")
+            this.theo();
+
+
+
+        if(action==="dreamer")
+            this.dreamer();
+
+
+
+        if(action==="night")
+            this.night();
+
+
+
+        if(action==="dawn")
+            this.dawn();
+
+
+
+    },
+
+
+
+
+
+    revealPath(id){
+
+
+        document
+        .getElementById(id)
+        ?.classList.add("draw");
+
+
+    },
+
+
+
+
+    theo(){
+
+
+        if(this.step!==0)
+            return;
+
+
+        this.step=1;
+
+
+        this.revealPath(
+            "pathTheo"
         );
 
 
         document
-        .querySelector(
-            `.hidden-label`
-        )
-        ?.classList.add("show");
+        .querySelector('[data-myth-action="dreamer"]')
+        ?.classList.add("active");
 
 
     },
 
 
+
+
+
+    dreamer(){
+
+
+        if(this.step!==1)
+            return;
+
+
+        this.step=2;
+
+
+        this.revealPath(
+            "pathDreamer"
+        );
+
+
+        document
+        .querySelector('[data-myth-action="night"]')
+        ?.classList.add("active");
+
+
+    },
+
+
+
+
+
+    night(){
+
+
+        if(this.step!==2)
+            return;
+
+
+        this.step=3;
+
+
+        this.revealPath(
+            "pathNight"
+        );
+
+
+        document
+        .querySelector('[data-myth-action="dawn"]')
+        ?.classList.add("active");
+
+
+    },
+
+
+
+
+
+
+    dawn(){
+
+
+        if(this.step!==3)
+            return;
+
+
+        this.step=4;
+
+
+        this.revealPath(
+            "pathDawn"
+        );
+
+
+        setTimeout(()=>{
+
+
+            this.screen
+            ?.classList.add("myth-complete");
+
+
+
+            unlockAfterMyth();
+
+
+
+        },2000);
+
+
+
+    },
+
+
+
+
+
+
     open(){
+
+
+        this.step=0;
+
 
         this.screen
         ?.classList.remove("hidden");
@@ -467,10 +671,15 @@ DAWN
 
         this.build();
 
+
     },
 
 
+
+
+
     close(){
+
 
         this.screen
         ?.classList.add("hidden");
@@ -487,4 +696,3 @@ DAWN
 
 
 };
-
