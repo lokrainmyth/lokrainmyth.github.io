@@ -529,3 +529,17 @@ document.addEventListener(
 
     }
 );
+
+document
+.getElementById("mythInfoButton")
+?.addEventListener("click",()=>{
+
+    if(
+        localStorage.getItem("dawn_myth_completed")==="true"
+    ){
+
+        openMyth();
+
+    }
+
+});
