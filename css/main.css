@@ -1950,32 +1950,15 @@ body{
    MYTH MAP
 ========================================================== */
 
+.myth-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
 
-.myth-screen{
+    background: #050505;
 
-    position:fixed;
-
-    inset:0;
-
-    z-index:1000;
-
-    background:
-        radial-gradient(
-            circle at 50% 45%,
-            rgba(80,120,180,.18),
-            transparent 35%
-        ),
-        linear-gradient(
-            180deg,
-            #080c18,
-            #020308
-        );
-
-    overflow:hidden;
-
+    overflow: hidden;
 }
-
-
 
 .myth-viewport{
 
@@ -1983,344 +1966,237 @@ body{
     height:100%;
 
     display:flex;
-
     align-items:center;
     justify-content:center;
 
-    padding:30px;
+    padding:40px;
 
     box-sizing:border-box;
 
 }
 
-
-
 .myth-map{
 
-    width:min(92vw,920px);
-
+    width:min(92vw,900px);
     height:auto;
 
-    max-height:90vh;
+    max-height:88vh;
 
 }
 
 
-
-/* ==========================================================
-   ROUTE
-========================================================== */
-
-
-.route-line{
+.myth-path{
 
     fill:none;
 
-    stroke:
+    stroke:#d9c58a;
 
-    url(#dawnRoad);
+    stroke-width:4;
 
-    stroke-width:3;
+    stroke-dasharray:2000;
 
-    opacity:.45;
-
-    stroke-dasharray:12 18;
-
-    filter:url(#softGlow);
+    stroke-dashoffset:2000;
 
 }
 
 
+.myth-path.draw{
+
+    animation:pathDraw 2s forwards;
+
+}
 
 
-/* ==========================================================
-   CENTRAL WORLD
-========================================================== */
+@keyframes pathDraw{
+
+to{
+
+stroke-dashoffset:0;
+
+}
+
+}
 
 
-.myth-world{
+.myth-node{
 
     cursor:pointer;
 
 }
 
 
+.myth-node text{
 
-.world-ring{
+    fill:white;
 
-    fill:none;
+    font-size:24px;
 
-    stroke:rgba(210,230,255,.5);
-
-    stroke-width:2;
-
-    animation:
-
-    worldPulse 5s ease-in-out infinite;
+    letter-spacing:.3em;
 
 }
 
 
+.reveal{
 
-.world-grid{
+    opacity:1 !important;
 
-    stroke:
+    transition:
+        opacity 1.5s ease;
 
-    rgba(255,255,255,.18);
+}
 
-    stroke-width:2;
+@media(max-width:768px){
 
-    fill:none;
+    .myth-map{
+
+        width:92vw;
+        height:auto;
+
+    }
+
+
+    .myth-viewport{
+
+        padding:10px;
+
+    }
+
+}
+
+.myth-point{
+
+fill:#c8dcff;
+
+filter:url(#blueGlow);
+
+animation:
+mythPulse 3s ease-in-out infinite;
 
 }
 
 
-
-@keyframes worldPulse{
-
+@keyframes mythPulse{
 
 0%,100%{
+
+opacity:.45;
+
+}
+
+
+50%{
+
+opacity:1;
+
+}
+
+}
+
+
+.myth-label{
+
+    fill:white;
+
+    font-size:28px;
+
+    letter-spacing:.35em;
+
+    opacity:.85;
+
+    text-transform:uppercase;
+
+}
+
+
+.myth-sphere{
+
+    transform-origin:center;
+
+}
+
+
+.sphere-grid{
 
     opacity:.45;
 
 }
 
 
-50%{
+@keyframes sphereMove{
 
-    opacity:1;
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
 
 }
 
 }
-
-
-
-
-/* ==========================================================
-   PORTALS
-========================================================== */
-
-
-.portal{
-
-    fill:#cce7ff;
-
-    filter:url(#blueGlow);
-
-    animation:
-
-    portalPulse 3s ease-in-out infinite;
-
-}
-
-
-
-@keyframes portalPulse{
-
-
-0%,100%{
-
-    r:16;
-
-    opacity:.5;
-
-}
-
-
-50%{
-
-    r:22;
-
-    opacity:1;
-
-}
-
-}
-
-
-
-/* ==========================================================
-   HIDDEN CHAPTERS
-========================================================== */
-
-
-.myth-place{
-
-    opacity:0;
-
-    pointer-events:none;
-
-    transition:
-
-    opacity 2s ease;
-
-}
-
-
-
-.myth-place.visible{
-
-    opacity:1;
-
-    pointer-events:auto;
-
-}
-
-
-
-/* ==========================================================
-   THEO
-========================================================== */
-
-
-.scare-hat{
-
-    fill:#161820;
-
-    filter:url(#softGlow);
-
-}
-
-
-.scare-head{
-
-    fill:#d4b07a;
-
-}
-
-
-.scare-body{
-
-    fill:#9b855d;
-
-}
-
-
-.scare-line{
-
-    stroke:#9b855d;
-
-    stroke-width:8;
-
-}
-
-
-
-/* ==========================================================
-   DREAMER
-========================================================== */
-
-
-.dream-head{
-
-    fill:#f2d7b3;
-
-}
-
-
-.dream-body{
-
-    fill:#d9e5f5;
-
-}
-
-
-
-/* ==========================================================
-   NIGHT
-========================================================== */
-
-
-.moon{
-
-    fill:#e9edf7;
-
-    opacity:.9;
-
-    filter:url(#softGlow);
-
-}
-
-
-
-.night-stars path,
-.myth-stars path{
-
-    fill:white;
-
-    opacity:.8;
-
-    filter:url(#blueGlow);
-
-}
-
-
-
-/* ==========================================================
-   DAWN
-========================================================== */
 
 
 .sun{
 
-    fill:#ffe29a;
+    fill:#f5d98b;
 
-    filter:url(#softGlow);
-
-}
-
-
-
-.sun-road{
-
-    fill:url(#dawnRoad);
-
-    opacity:.35;
+    filter:url(#blueGlow);
 
 }
 
 
+.road{
 
-.birds path{
+    stroke:#f5d98b;
+
+    stroke-width:5;
 
     fill:none;
 
-    stroke:#fff;
+}
 
-    stroke-width:3;
 
-    opacity:.7;
+.stars circle{
+
+    fill:white;
+
+    animation:
+    mythPulse 4s infinite;
+
+}
+
+.myth-figure{
+
+stroke:#dbe8ff;
+
+stroke-width:3;
+
+fill:none;
+
+opacity:.55;
+
+filter:
+drop-shadow(
+0 0 12px rgba(150,190,255,.5)
+);
 
 }
 
 
+.myth-label{
 
+fill:#ffffff;
 
-/* ==========================================================
-   MOBILE
-========================================================== */
+font-size:42px;
 
+letter-spacing:.45em;
 
-@media(max-width:768px){
+opacity:.85;
 
-
-.myth-viewport{
-
-    padding:12px;
-
-}
-
-
-.myth-map{
-
-    width:100vw;
-
-    max-height:none;
-
-}
-
-
+font-family:Inter,sans-serif;
 
 }
 
