@@ -5,7 +5,7 @@ const translations = {
     en: {
 
         albumDescription:
-        "An album completing a fifteen-year journey from night to dawn. Listen from beginning to end. And be prepared to change trains after a few tracks.",
+        "An album completing a fifteen-year journey from night to dawn. Listen from beginning to end. And be ready for a transfer after a few tracks.",
 
         about:
         "About",
