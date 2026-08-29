@@ -498,6 +498,71 @@ Leave a message and a contact for connection.
 
 };
 
+const PANEL_CONTENT_RU = {
+
+    about: `
+
+<h1>О проекте</h1>
+
+<div class="panel-text">
+
+<p>
+Lo.Krain — это проект, который 15 лет складывался интуитивно. Я никогда не знал заранее, о чём будет следующая песня или альбом. Сначала приходили чувство, музыка, отдельные фразы, образы — и только спустя годы я увидел, что всё это время повторялся один и тот же миф: изгнание, ночь, пустые города, долгий поиск связи и рассвет.
+
+Новый альбом — это точка, в которой этот путь впервые осознаётся целиком. Он о том, что даже если ты не понимаешь свой путь сейчас, это не значит, что в нём нет смысла. Иногда смысл приходит только на рассвете.
+
+Альбом Ио — это работа, в которой интуиция и спонтанность окончательно взяли верх над желанием «сделать круто». Это результат моих творческих экспериментов с 2021 года, но сам альбом был записан буквально за несколько дней. Я ещё некоторое время думал, что в нём нужно изменить, но понял, что первый импульс и искренность важнее. Работа над записью стала такой же лёгкой и спонтанной, как и мой способ создания песен.
+</p>
+
+</div>
+
+`,
+
+    communication: `
+
+<h1>Связь</h1>
+
+<form
+    id="communicationForm"
+    class="communication-form">
+
+<p class="communication-hint">
+Оставьте сообщение и способ связаться с вами.
+</p>
+
+<input
+    id="contactName"
+    type="text"
+    placeholder="Имя">
+
+<input
+    id="contactContact"
+    type="text"
+    placeholder="Контакт">
+
+<textarea
+    id="contactMessage"
+    placeholder="Сообщение"></textarea>
+
+<button
+    id="sendMessageButton"
+    class="communication-send"
+    type="submit">
+
+Отправить
+
+</button>
+
+<div
+    id="communicationStatus"
+    class="communication-status">
+</div>
+
+</form>
+
+`
+
+};
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -518,9 +583,18 @@ document.addEventListener(
                             button.dataset.panel;
 
 
-                        Panels.open(
-                            PANEL_CONTENT[panel]
-                        );
+                        const language =
+    document.documentElement.lang;
+
+Panels.open(
+
+    language === "ru"
+
+        ? (PANEL_CONTENT_RU[panel] || PANEL_CONTENT[panel])
+
+        : PANEL_CONTENT[panel]
+
+);
 
                     }
                 );
