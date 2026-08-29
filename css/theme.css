@@ -472,6 +472,18 @@ img{
 
 }
 
+.outro-button{
+
+    max-width:90vw;
+
+    white-space:normal;
+
+    text-align:center;
+
+    line-height:1.15;
+
+}
+
 @media(max-width:768px){
 
     #outroGoDeeper{
