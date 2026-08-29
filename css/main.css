@@ -375,14 +375,6 @@ body{
 
 }
 
-.ghost-words span:nth-child(odd){
-    opacity:.5;
-}
-
-.ghost-words span:nth-child(even){
-    opacity:.25;
-}
-
 /* ==========================================================
    EDITION
 ========================================================== */
