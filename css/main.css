@@ -1950,253 +1950,450 @@ body{
    MYTH MAP
 ========================================================== */
 
-.myth-screen {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
 
-    background: #050505;
+.myth-screen{
 
-    overflow: hidden;
+    position:fixed;
+
+    inset:0;
+
+    z-index:1000;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #17243d 0%,
+            #080c16 45%,
+            #020203 100%
+        );
+
 }
+
+
 
 .myth-viewport{
 
     width:100%;
+
     height:100%;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
-    padding:40px;
+    padding:20px;
 
     box-sizing:border-box;
 
 }
 
+
+
 .myth-map{
 
     width:min(92vw,900px);
+
     height:auto;
 
-    max-height:88vh;
+    max-height:92vh;
+
+    overflow:visible;
 
 }
 
 
-.myth-path{
 
-    fill:none;
-
-    stroke:#d9c58a;
-
-    stroke-width:4;
-
-    stroke-dasharray:2000;
-
-    stroke-dashoffset:2000;
-
-}
+/* ==========================================================
+   STARS
+========================================================== */
 
 
-.myth-path.draw{
+.stars circle{
 
-    animation:pathDraw 2s forwards;
+    fill:#ffffff;
+
+    opacity:.35;
+
+    animation:
+        starPulse 5s ease-in-out infinite;
 
 }
 
 
-@keyframes pathDraw{
+.stars circle:nth-child(2n){
 
-to{
-
-stroke-dashoffset:0;
-
-}
+    animation-delay:2s;
 
 }
 
 
-.myth-node{
-
-    cursor:pointer;
-
-}
+@keyframes starPulse{
 
 
-.myth-node text{
+0%{
 
-    fill:white;
-
-    font-size:24px;
-
-    letter-spacing:.3em;
-
-}
-
-
-.reveal{
-
-    opacity:1 !important;
-
-    transition:
-        opacity 1.5s ease;
-
-}
-
-@media(max-width:768px){
-
-    .myth-map{
-
-        width:92vw;
-        height:auto;
-
-    }
-
-
-    .myth-viewport{
-
-        padding:10px;
-
-    }
-
-}
-
-.myth-point{
-
-fill:#c8dcff;
-
-filter:url(#blueGlow);
-
-animation:
-mythPulse 3s ease-in-out infinite;
-
-}
-
-
-@keyframes mythPulse{
-
-0%,100%{
-
-opacity:.45;
+    opacity:.25;
 
 }
 
 
 50%{
 
-opacity:1;
+    opacity:.8;
 
 }
 
+
+100%{
+
+    opacity:.25;
+
 }
+
+
+}
+
+
+
+/* ==========================================================
+   PATH
+========================================================== */
+
+
+.myth-path{
+
+    fill:none;
+
+    stroke:
+
+        rgba(220,210,170,.65);
+
+
+    stroke-width:3;
+
+    stroke-linecap:round;
+
+    stroke-dasharray:1500;
+
+    stroke-dashoffset:1500;
+
+    opacity:.25;
+
+}
+
+
+
+.myth-path.draw{
+
+    animation:
+
+        mythPathDraw 2.5s ease forwards;
+
+}
+
+
+
+@keyframes mythPathDraw{
+
+
+to{
+
+    stroke-dashoffset:0;
+
+    opacity:1;
+
+}
+
+
+}
+
+
+
+
+/* ==========================================================
+   CENTER SPHERE
+========================================================== */
+
+
+.myth-sphere circle{
+
+    animation:
+
+        sphereBreath 8s ease-in-out infinite;
+
+}
+
+
+
+@keyframes sphereBreath{
+
+
+0%{
+
+    transform:scale(1);
+
+}
+
+
+50%{
+
+    transform:scale(1.04);
+
+}
+
+
+100%{
+
+    transform:scale(1);
+
+}
+
+
+}
+
+
+
+/* ==========================================================
+   POINTS
+========================================================== */
+
+
+.myth-point{
+
+    fill:#cfe6ff;
+
+    filter:url(#blueGlow);
+
+    animation:
+
+        pointPulse 3s ease-in-out infinite;
+
+}
+
+
+
+@keyframes pointPulse{
+
+
+0%{
+
+    opacity:.45;
+
+    r:10;
+
+}
+
+
+50%{
+
+    opacity:1;
+
+    r:16;
+
+}
+
+
+100%{
+
+    opacity:.45;
+
+    r:10;
+
+}
+
+
+}
+
+
+
+
+/* ==========================================================
+   NODES
+========================================================== */
+
+
+.myth-node{
+
+    cursor:pointer;
+
+    opacity:.35;
+
+    transition:
+
+        opacity 1.5s ease;
+
+}
+
+
+
+.myth-node:hover{
+
+    opacity:1;
+
+}
+
+
+
+
+.myth-node.active{
+
+    opacity:1;
+
+}
+
+
+
+
+
+/* ==========================================================
+   LABELS
+========================================================== */
 
 
 .myth-label{
 
-    fill:white;
+    fill:#f5f2e8;
 
-    font-size:28px;
+    font-family:Inter,sans-serif;
+
+    font-size:32px;
 
     letter-spacing:.35em;
 
-    opacity:.85;
-
-    text-transform:uppercase;
+    opacity:.8;
 
 }
 
 
-.myth-sphere{
 
-    transform-origin:center;
-
-}
-
-
-.sphere-grid{
-
-    opacity:.45;
-
-}
+/* ==========================================================
+   THEO
+========================================================== */
 
 
-@keyframes sphereMove{
+.scarecrow{
 
-from{
+    stroke:#e7dcc0;
 
-transform:rotate(0deg);
+    fill:#51432f;
 
-}
-
-to{
-
-transform:rotate(360deg);
-
-}
+    stroke-width:3;
 
 }
 
 
-.sun{
 
-    fill:#f5d98b;
+/* ==========================================================
+   DREAMER
+========================================================== */
+
+
+.dreamer circle,
+.dreamer path{
+
+    stroke:#dce8ff;
+
+}
+
+
+
+/* ==========================================================
+   DAWN
+========================================================== */
+
+
+.birds path{
+
+    fill:none;
+
+    stroke:#fff;
+
+    stroke-width:3;
+
+    opacity:.7;
+
+}
+
+
+
+/* ==========================================================
+   MOON
+========================================================== */
+
+
+.moon circle{
 
     filter:url(#blueGlow);
 
 }
 
 
-.road{
 
-    stroke:#f5d98b;
-
-    stroke-width:5;
-
-    fill:none;
-
-}
+/* ==========================================================
+   COMPLETED
+========================================================== */
 
 
-.stars circle{
-
-    fill:white;
+.myth-complete .myth-map{
 
     animation:
-    mythPulse 4s infinite;
+
+        mythFade 2s ease forwards;
 
 }
 
-.myth-figure{
 
-stroke:#dbe8ff;
+@keyframes mythFade{
 
-stroke-width:3;
 
-fill:none;
+to{
 
-opacity:.55;
-
-filter:
-drop-shadow(
-0 0 12px rgba(150,190,255,.5)
-);
+    opacity:0;
 
 }
+
+
+}
+
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+
+@media(max-width:768px){
+
+
+.myth-map{
+
+    width:115vw;
+
+    max-height:none;
+
+}
+
+
+.myth-viewport{
+
+    padding:0;
+
+}
+
 
 
 .myth-label{
 
-fill:#ffffff;
+    font-size:42px;
 
-font-size:42px;
+    letter-spacing:.25em;
 
-letter-spacing:.45em;
+}
 
-opacity:.85;
-
-font-family:Inter,sans-serif;
 
 }
 
