@@ -37,6 +37,9 @@ const translations = {
         journey:
         "Journey to the Dawn"
 
+        goDeeper: 
+        "Go Deeper?"
+
     },
 
 
@@ -74,6 +77,9 @@ const translations = {
 
         journey:
         "Путь к рассвету"
+
+        goDeeper: 
+        "Продолжить путь?"
 
     }
 
