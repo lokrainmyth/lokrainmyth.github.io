@@ -484,13 +484,15 @@ img{
 
 }
 
-@media(max-width:768px){
+@media(max-width:600px){
 
     #outroGoDeeper{
 
-        font-size:48px;
+        max-width:85vw;
 
-        letter-spacing:.12em;
+        font-size:42px;
+
+        letter-spacing:.08em;
 
     }
 
@@ -498,31 +500,28 @@ img{
 
 #outroGoDeeper{
 
-    background:none;
+    max-width:90vw;
 
+    padding:0 20px;
+
+    background:none;
     border:none;
 
     color:#f7f6f3;
 
     cursor:pointer;
 
-    font-size:clamp(64px,8vw,110px);
+    font-size:clamp(42px,8vw,110px);
 
     font-weight:300;
 
-    letter-spacing:.18em;
+    letter-spacing:.12em;
 
-    text-transform:uppercase;
+    line-height:1.15;
 
-    transition:
+    text-align:center;
 
-        opacity .6s,
-
-        text-shadow .8s,
-
-        transform .8s;
-
-    opacity:.82;
+    white-space:normal;
 
 }
 
