@@ -2066,6 +2066,111 @@ stroke-dashoffset:0;
 
 }
 
+.myth-point{
+
+    fill:#b9d8ff;
+
+    filter:url(#blueGlow);
+
+    animation:
+    mythPulse 3s infinite;
+
+}
+
+
+@keyframes mythPulse{
+
+0%,100%{
+
+    opacity:.5;
+    transform:scale(1);
+
+}
+
+50%{
+
+    opacity:1;
+    transform:scale(1.35);
+
+}
+
+}
+
+
+.myth-label{
+
+    fill:white;
+
+    font-size:32px;
+
+    letter-spacing:.4em;
+
+    opacity:.8;
+
+}
+
+
+.myth-sphere{
+
+    transform-origin:center;
+
+}
+
+
+.sphere-grid{
+
+    animation:
+    sphereMove 18s linear infinite;
+
+}
+
+
+@keyframes sphereMove{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+.sun{
+
+    fill:#f5d98b;
+
+    filter:url(#blueGlow);
+
+}
+
+
+.road{
+
+    stroke:#f5d98b;
+
+    stroke-width:5;
+
+    fill:none;
+
+}
+
+
+.stars circle{
+
+    fill:white;
+
+    animation:
+    mythPulse 4s infinite;
+
+}
+
 /* ==========================================================
    PATH
 ========================================================== */
