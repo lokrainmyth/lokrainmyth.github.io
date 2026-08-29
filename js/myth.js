@@ -31,309 +31,400 @@ const Myth = {
         this.viewport.innerHTML = `
 
             <svg
-                class="myth-map"
-                viewBox="0 0 1000 1000"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-label="Lo.Krain Myth">
-
-                <defs>
-
-                    <filter id="mythGlow">
-
-                        <feGaussianBlur
-                            stdDeviation="5"
-                            result="blur"/>
-
-                        <feMerge>
-                            <feMergeNode in="blur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-
-                    </filter>
-
-                </defs>
+class="myth-map"
+viewBox="0 0 1000 1000"
+xmlns="http://www.w3.org/2000/svg">
 
 
-                <!-- ==================================================
-                     MAIN PATH
-                ================================================== -->
-
-                <g class="myth-paths">
-
-                    <path
-                        id="pathHorizontal"
-                        class="myth-path"
-                        d="M 150 400
-                           C 300 400,
-                             390 400,
-                             600 400
-                           C 810 400,
-                             900 400,
-                             1050 400"/>
-
-                    <path
-                        id="pathVertical"
-                        class="myth-path"
-                        d="M 600 400
-                           C 600 330,
-                             600 250,
-                             600 120"/>
-
-                    <path
-                        id="pathDown"
-                        class="myth-path"
-                        d="M 600 400
-                           C 600 470,
-                             600 550,
-                             600 680"/>
-
-                </g>
+<defs>
 
 
-                <!-- ==================================================
-                     EXPULSION
-                ================================================== -->
+<radialGradient id="mythSky">
 
-                <g
-                    class="myth-node myth-expulsion"
-                    data-myth-action="expulsion">
+    <stop offset="0%" stop-color="#243b63"/>
 
-                    <!-- pulse -->
+    <stop offset="60%" stop-color="#0b1220"/>
 
-                    <circle
-    class="myth-hit"
-    cx="150"
-    cy="400"
-    r="42"/>
+    <stop offset="100%" stop-color="#020308"/>
+
+</radialGradient>
+
+
+<linearGradient id="roadLight">
+
+    <stop offset="0%" stop-color="#777"/>
+
+    <stop offset="50%" stop-color="#ffd98a"/>
+
+    <stop offset="100%" stop-color="#fff"/>
+
+</linearGradient>
+
+
+<filter id="mythGlow">
+
+<feGaussianBlur
+stdDeviation="8"
+result="blur"/>
+
+<feMerge>
+
+<feMergeNode in="blur"/>
+
+<feMergeNode in="SourceGraphic"/>
+
+</feMerge>
+
+</filter>
+
+
+</defs>
+
+
+<!-- BACKGROUND -->
+
+<rect
+width="1000"
+height="1000"
+fill="url(#mythSky)"
+/>
+
+
+
+<!-- MAIN PATH -->
+
+<path
+id="pathHorizontal"
+class="myth-path"
+d="
+M500 850
+C500 700 500 600 500 500
+"
+/>
+
+
+<path
+id="pathDown"
+class="myth-path"
+d="
+M500 500
+C350 400 250 300 180 180
+"
+/>
+
+
+<path
+id="pathVertical"
+class="myth-path"
+d="
+M500 500
+C650 400 760 280 820 120
+"
+/>
+
+
+
+<!-- CENTRAL WORLD -->
+
+<g class="myth-world"
+transform="translate(500 500)"
+filter="url(#mythGlow)">
+
 
 <circle
-    class="myth-pulse"
-    cx="150"
-    cy="400"
-    r="9"/>
+r="90"
+fill="#101827"
+stroke="#e6c477"
+stroke-width="3"
+/>
 
 
-                    <!-- crow -->
+<!-- chess surface -->
 
-                    <g
-                        class="myth-crow"
-                        transform="translate(105 325)">
-
-                        <path
-                            d="
-                            M 0 55
-                            C 15 25, 45 15, 72 28
-                            C 90 38, 98 54, 82 63
-                            C 65 72, 42 66, 28 58
-                            C 20 70, 9 76, 0 75
-                            C 8 68, 12 61, 0 55
-                            Z"/>
-
-                        <path
-                            d="
-                            M 65 29
-                            L 96 20
-                            L 76 40
-                            Z"/>
-
-                        <circle
-                            cx="76"
-                            cy="31"
-                            r="2.5"/>
-
-                    </g>
+<path
+d="
+M-70 -70
+L70 -70
+L70 70
+L-70 70
+Z
+"
+fill="none"
+stroke="#d7e9ff"
+stroke-width="2"
+/>
 
 
-                    <!-- scarecrow -->
+<path
+d="
+M-70 0
+H70
+M0 -70
+V70
+"
+stroke="#d7e9ff"
+stroke-width="2"
+/>
 
-                    <g
-                        class="myth-scarecrow"
-                        transform="translate(210 315)">
-
-                        <line
-                            x1="35"
-                            y1="30"
-                            x2="35"
-                            y2="120"/>
-
-                        <line
-                            x1="0"
-                            y1="55"
-                            x2="70"
-                            y2="55"/>
-
-                        <circle
-                            cx="35"
-                            cy="25"
-                            r="18"/>
-
-                        <path
-                            d="
-                            M 18 44
-                            L 52 44
-                            L 60 112
-                            L 10 112
-                            Z"/>
-
-                        <line
-                            x1="18"
-                            y1="55"
-                            x2="4"
-                            y2="95"/>
-
-                        <line
-                            x1="52"
-                            y1="55"
-                            x2="66"
-                            y2="95"/>
-
-                    </g>
-
-                </g>
-
-
-                <!-- ==================================================
-                     DREAMER
-                ================================================== -->
-
-                <g
-                    class="myth-node myth-dreamer"
-                    data-myth-action="dreamer"
-                    opacity="0">
-
-                    <circle
-    class="myth-hit"
-    cx="950"
-    cy="400"
-    r="42"/>
 
 <circle
-    class="myth-pulse"
-    cx="950"
-    cy="400"
-    r="9"/>
-
-                    <!-- Eiffel tower -->
-
-                    <g
-                        class="myth-eiffel"
-                        transform="translate(865 270)">
-
-                        <path
-                            d="
-                            M 70 20
-                            L 20 130
-                            L 120 130
-                            Z"/>
-
-                        <line
-                            x1="42"
-                            y1="82"
-                            x2="98"
-                            y2="82"/>
-
-                        <line
-                            x1="30"
-                            y1="105"
-                            x2="110"
-                            y2="105"/>
-
-                        <line
-                            x1="70"
-                            y1="20"
-                            x2="70"
-                            y2="130"/>
-
-                    </g>
+r="25"
+fill="#ffd98a"
+/>
 
 
-                    <!-- Dreamer -->
-
-                    <g
-                        class="myth-dreamer-boy"
-                        transform="translate(970 330)">
-
-                        <circle
-                            cx="0"
-                            cy="0"
-                            r="17"/>
-
-                        <path
-                            d="
-                            M -15 20
-                            L 15 20
-                            L 24 90
-                            L -24 90
-                            Z"/>
-
-                        <line
-                            x1="-8"
-                            y1="90"
-                            x2="-18"
-                            y2="125"/>
-
-                        <line
-                            x1="8"
-                            y1="90"
-                            x2="18"
-                            y2="125"/>
-
-                    </g>
-
-                </g>
+</g>
 
 
-                <!-- ==================================================
-                     DARKEST HOUR
-                ================================================== -->
 
-                <g
-                    class="myth-node myth-darkest"
-                    data-myth-action="darkest"
-                    opacity="0">
+<!-- THEO -->
 
-                    <circle
-    class="myth-hit"
-    cx="600"
-    cy="680"
-    r="42"/>
+<g
+class="myth-node myth-expulsion"
+data-myth-action="expulsion">
+
 
 <circle
-    class="myth-pulse"
-    cx="600"
-    cy="680"
-    r="10"/>
+class="myth-hit"
+cx="180"
+cy="180"
+r="60"
+/>
 
-                </g>
+
+<!-- hat -->
+
+<path
+d="
+M140 120
+H220
+L200 90
+H160
+Z"
+/>
 
 
-                <!-- ==================================================
-                     DAWN
-                ================================================== -->
+<!-- head -->
 
-                <g
-                    class="myth-node myth-dawn"
-                    data-myth-action="dawn"
-                    opacity="0">
+<circle
+cx="180"
+cy="150"
+r="25"
+/>
 
-                    <circle
-                        class="myth-sun"
-                        cx="600"
-                        cy="120"
-                        r="32"/>
 
-                    <g class="myth-birds">
+<!-- body -->
 
-                        <path d="M 530 180 Q 545 165 560 180"/>
-                        <path d="M 570 150 Q 585 135 600 150"/>
-                        <path d="M 620 170 Q 635 155 650 170"/>
-                        <path d="M 660 145 Q 675 130 690 145"/>
+<line
+x1="180"
+y1="175"
+x2="180"
+y2="270"
+/>
 
-                    </g>
 
-                </g>
+<line
+x1="130"
+y1="210"
+x2="230"
+y2="210"
+/>
 
-            </svg>
+
+<text
+x="180"
+y="330"
+text-anchor="middle">
+THEO
+</text>
+
+
+</g>
+
+
+
+
+<!-- DREAMER -->
+
+<g
+class="myth-node myth-dreamer"
+data-myth-action="dreamer"
+opacity="0">
+
+
+<circle
+class="myth-hit"
+cx="820"
+cy="120"
+r="60"
+/>
+
+
+<circle
+cx="820"
+cy="90"
+r="22"
+/>
+
+
+<path
+d="
+M800 115
+L840 115
+L850 220
+L790 220
+Z"
+/>
+
+
+<circle
+cx="870"
+cy="70"
+r="8"
+fill="#fff"
+/>
+
+
+<text
+x="820"
+y="270"
+text-anchor="middle">
+DREAMER
+</text>
+
+
+</g>
+
+
+
+
+
+<!-- DARKEST NIGHT -->
+
+<g
+class="myth-node myth-darkest"
+data-myth-action="darkest"
+opacity="0">
+
+
+<circle
+class="myth-hit"
+cx="500"
+cy="850"
+r="60"
+/>
+
+
+<circle
+cx="500"
+cy="850"
+r="45"
+fill="#05060b"
+/>
+
+
+<circle
+cx="470"
+cy="830"
+r="5"
+fill="white"
+/>
+
+<circle
+cx="500"
+cy="810"
+r="5"
+fill="white"
+/>
+
+<circle
+cx="530"
+cy="830"
+r="5"
+fill="white"
+/>
+
+
+<text
+x="500"
+y="940"
+text-anchor="middle">
+NIGHT
+</text>
+
+
+</g>
+
+
+
+
+<!-- DAWN -->
+
+<g
+class="myth-node myth-dawn"
+data-myth-action="dawn"
+opacity="0">
+
+
+<circle
+class="myth-hit"
+cx="500"
+cy="80"
+r="70"
+/>
+
+
+<circle
+class="myth-sun"
+cx="500"
+cy="80"
+r="45"
+fill="#ffd978"
+/>
+
+
+
+<!-- road -->
+
+<path
+d="
+M500 130
+L430 450
+L570 450
+Z
+"
+fill="url(#roadLight)"
+/>
+
+
+
+<!-- birds -->
+
+<path
+d="
+M400 170 Q430 140 460 170
+M540 170 Q570 140 600 170
+"
+fill="none"
+stroke="white"
+stroke-width="3"
+/>
+
+
+<text
+x="500"
+y="220"
+text-anchor="middle">
+DAWN
+</text>
+
+
+</g>
+
+
+
+</svg>
+
         `;
 
         this.bind();
