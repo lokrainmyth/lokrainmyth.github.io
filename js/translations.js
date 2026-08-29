@@ -1,116 +1,162 @@
-/* =========================
-   translations.js — Io First Light
-   Poetic meaning layer (not i18n)
-   ========================= */
+"use strict";
 
-const IoLexicon = {
-  states: {
-    NIGHT: {
-      word: "NIGHT",
-      echo: "everything is still forming",
-      symbol: "∴",
-      colorHint: "cold-dark"
-    },
-    DEEP_NIGHT: {
-      word: "DEEP NIGHT",
-      echo: "thoughts without name",
-      symbol: "∷",
-      colorHint: "void-warm"
-    },
-    PRE_DAWN: {
-      word: "PRE-DAWN",
-      echo: "something starts remembering itself",
-      symbol: "⋯",
-      colorHint: "breathing"
-    },
-    DAWN: {
-      word: "DAWN",
-      echo: "light becomes aware of shape",
-      symbol: "◐",
-      colorHint: "soft-rise"
-    },
-    MORNING: {
-      word: "MORNING",
-      echo: "everything has already happened",
-      symbol: "◑",
-      colorHint: "clear-distance"
-    }
-  },
+const translations = {
 
-  systemWords: {
-    PATH: {
-      echo: "sequence becomes identity"
-    },
-    IO: {
-      echo: "input becomes memory"
-    },
-    HOME: {
-      echo: "return is never identical"
-    }
-  },
+    en: {
 
-  tracks: {
-    0: {
-      echo: "entry without consent",
-      hint: "beginning is always mistaken"
-    },
-    1: {
-      echo: "movement disguised as routine",
-      hint: "you are already elsewhere"
-    },
-    2: {
-      echo: "dependency with a human face",
-      hint: "connection has weight"
-    },
-    3: {
-      echo: "sky that forgets it is sky",
-      hint: "darkness is structural"
-    },
-    4: {
-      echo: "exposure without protection",
-      hint: "nothing hides anymore"
-    },
-    5: {
-      echo: "sound without owner",
-      hint: "emotion detaches"
-    },
-    6: {
-      echo: "time becomes visible",
-      hint: "months collapse into one point"
-    },
-    7: {
-      echo: "age that stops being number",
-      hint: "identity loosens"
-    },
-    8: {
-      echo: "beauty without demand",
-      hint: "no need to hold it"
-    },
-    9: {
-      echo: "arrival that was never departure",
-      hint: "end folds into origin"
-    }
-  },
+        albumDescription:
+        "An album completing a fifteen-year journey from night to dawn. Listen from beginning to end. And be prepared to change trains after a few tracks.",
 
-  final: {
-    myth: {
-      title: "GO DEEPER",
-      echo: "this is not the end of listening",
-      hint: "it is the beginning of remembering"
+        about:
+        "About",
+
+        lyrics:
+        "Lyrics",
+
+        myth:
+        "Lo.Krain Myth",
+
+        communication:
+        "Communication",
+
+        creator:
+        "Creator",
+
+        play:
+        "Play",
+
+        pause:
+        "Pause",
+
+        skip:
+        "Skip",
+
+        send:
+        "Send",
+
+        journey:
+        "Journey to the Dawn"
+
+    },
+
+
+    ru: {
+
+        albumDescription:
+        "Альбом, завершающий пятнадцатилетний путь от ночи к рассвету. Слушайте от начала до конца. И будьте готовы к пересадке через несколько треков.",
+
+        about:
+        "О проекте",
+
+        lyrics:
+        "Тексты",
+
+        myth:
+        "Миф Lo.Krain",
+
+        communication:
+        "Связь",
+
+        creator:
+        "Создатель",
+
+        play:
+        "Слушать",
+
+        pause:
+        "Пауза",
+
+        skip:
+        "Пропустить",
+
+        send:
+        "Отправить",
+
+        journey:
+        "Путь к рассвету"
+
     }
-  }
+
 };
 
-/* =========================
-   helper access layer
-   ========================= */
+function setLanguage(lang){
 
-window.IoLexicon = IoLexicon;
+    document.documentElement.lang = lang;
 
-window.getStateLexicon = function(state) {
-  return IoLexicon.states[state.toUpperCase()];
-};
 
-window.getTrackLexicon = function(index) {
-  return IoLexicon.tracks[index];
-};
+    document
+    .querySelectorAll("[data-i18n]")
+    .forEach(element=>{
+
+        const key =
+        element.dataset.i18n;
+
+
+        if(
+            translations[lang] &&
+            translations[lang][key]
+        ){
+
+            element.textContent =
+            translations[lang][key];
+
+        }
+
+    });
+
+
+    localStorage.setItem(
+        "dawn_language",
+        lang
+    );
+
+}
+
+document
+.querySelectorAll(".lang-btn")
+.forEach(button=>{
+
+
+    button.addEventListener(
+    "click",
+    ()=>{
+
+
+        setLanguage(
+            button.dataset.lang
+        );
+
+
+        document
+        .querySelectorAll(".lang-btn")
+        .forEach(btn=>{
+
+            btn.classList.remove("active");
+
+        });
+
+
+        button.classList.add("active");
+
+
+    });
+
+
+});
+
+document.addEventListener(
+"DOMContentLoaded",
+()=>{
+
+    const saved =
+    localStorage.getItem(
+        "dawn_language"
+    )
+    ||
+    "en";
+
+
+    setLanguage(saved);
+
+
+});
