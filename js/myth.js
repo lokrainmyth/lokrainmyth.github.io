@@ -746,6 +746,16 @@ Listen on all streaming platforms
 unlockAfterMyth();
 
 document
+.querySelector(".myth-dawn")
+?.addEventListener("click", ()=>{
+
+    this.close();
+
+    unlockAfterMyth();
+
+});
+
+document
     .querySelector(".world")
     ?.classList.remove("hidden");
 
