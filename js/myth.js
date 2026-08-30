@@ -1,558 +1,254 @@
-"use strict";
+const Myth = (() => {
+
+    let stage = 0;
+    let active = false;
+    let audio = null;
+
+    const myth = document.getElementById("myth");
+    const stageBox = document.getElementById("myth-stage");
+
+    const svg = `
+    <svg class="myth-svg" viewBox="0 0 1200 800">
+
+        <!-- paths -->
+        <g class="paths">
+
+            <path id="path1"
+            d="M120 650 C260 560 390 500 520 410"/>
+
+            <path id="path2"
+            d="M520 410 C650 330 720 350 790 420"/>
+
+            <path id="path3"
+            d="M790 420 C900 300 960 210 1040 150"/>
+
+        </g>
 
 
-const Myth = {
+        <!-- THEO -->
+        <g class="node theo">
+
+            <circle class="pulse"
+            cx="120"
+            cy="650"
+            r="7"/>
+
+            <text x="145" y="660">
+                THEO
+            </text>
 
 
-    screen:null,
-    viewport:null,
-    audio:null,
-    closeButton:null,
+            <!-- scarecrow -->
+            <g class="ghost scarecrow">
 
+                <line x1="120" y1="610" x2="120" y2="560"/>
+                <line x1="90" y1="585" x2="150" y2="585"/>
 
-    init(){
+                <circle cx="120" cy="545" r="15"/>
 
+                <path d="
+                M90 530
+                Q120 510 150 530
+                L145 520
+                L95 520 Z"/>
 
-        this.screen =
-            document.getElementById("mythScreen");
+            </g>
 
-
-        this.viewport =
-            document.getElementById("mythViewport");
-
-
-        this.audio =
-            document.getElementById("mythAudio");
-
-
-        this.closeButton =
-            document.getElementById("mythClose");
+        </g>
 
 
 
-        if(
-            !this.screen ||
-            !this.viewport
-        ){
+        <!-- DREAMER -->
 
-            return;
+        <g class="node dreamer hidden">
+
+            <circle class="dot"
+            cx="520"
+            cy="410"
+            r="6"/>
+
+            <text x="545" y="420">
+                DREAMER
+            </text>
+
+
+            <!-- sitting boy -->
+
+            <g class="ghost boy">
+
+                <circle cx="520" cy="455" r="12"/>
+
+                <path d="
+                M520 470
+                C500 490 510 530 550 540
+                M510 520
+                L480 560
+                M540 520
+                L580 540
+                "/>
+
+                <path d="
+                M520 455
+                Q540 445 550 455"/>
+
+            </g>
+
+        </g>
+
+
+
+
+        <!-- DARKEST -->
+
+        <g class="node darkest hidden">
+
+            <circle class="dot"
+            cx="790"
+            cy="420"
+            r="6"/>
+
+
+            <text x="815" y="430">
+                THE DARKEST HOUR
+            </text>
+
+
+            <g class="stars">
+
+                <text x="760" y="500">★</text>
+                <text x="820" y="550">★</text>
+                <text x="900" y="510">★</text>
+
+            </g>
+
+        </g>
+
+
+
+
+        <!-- IO -->
+
+        <g class="node io hidden">
+
+            <circle class="pulse io-dot"
+            cx="1040"
+            cy="150"
+            r="7"/>
+
+
+            <!-- sun -->
+
+            <g class="sun">
+
+                <circle cx="1040" cy="150" r="35"/>
+
+                <path d="
+                M1040 95V75
+                M1040 205V225
+                M985 150H965
+                M1095 150H1115
+                M1000 110L985 95
+                M1080 190L1095 205
+                M1080 110L1095 95
+                M1000 190L985 205
+                "/>
+
+            </g>
+
+
+
+            <text x="1090" y="150">
+                IO
+            </text>
+
+            <text class="subtitle"
+            x="1090"
+            y="185">
+                The Dawn has come
+            </text>
+
+
+
+            <!-- birds -->
+
+            <g class="birds">
+
+                <path d="
+                M1110 90
+                q20 -20 40 0
+                q20 -20 40 0"/>
+
+                <path d="
+                M1140 120
+                q20 -20 40 0
+                q20 -20 40 0"/>
+
+                <path d="
+                M1170 150
+                q20 -20 40 0
+                q20 -20 40 0"/>
+
+            </g>
+
+        </g>
+
+
+
+    </svg>
+
+
+    <div class="listen">
+        Listen on all streaming platforms
+    </div>
+    `;
+
+
+    function open(){
+
+        active = true;
+        stage = 0;
+
+        myth.classList.add("active");
+
+        stageBox.innerHTML = svg;
+
+        audio = new Audio("/audio/lokrainmyth.mp3");
+        audio.volume = 0.5;
+        audio.play().catch(()=>{});
+
+        bind();
+
+    }
+
+
+
+    function next(){
+
+        if(!active) return;
+
+        stage++;
+
+
+        if(stage === 1){
+
+            show(".path1");
+            show(".dreamer");
 
         }
 
 
-        this.build();
-        this.bind();
+        if(stage === 2){
 
-
-    },
-
-
-
-    build(){
-
-
-        this.viewport.innerHTML = `
-
-
-<svg
-class="myth-map"
-viewBox="0 0 700 1200"
-xmlns="http://www.w3.org/2000/svg">
-
-
-<defs>
-
-
-<radialGradient id="sky">
-
-<stop
-offset="0%"
-stop-color="#172744"/>
-
-<stop
-offset="100%"
-stop-color="#050812"/>
-
-</radialGradient>
-
-
-
-<filter id="glow">
-
-<feGaussianBlur
-stdDeviation="5"/>
-
-</filter>
-
-
-</defs>
-
-
-
-
-<rect
-width="700"
-height="1200"
-fill="url(#sky)"
-/>
-
-
-
-
-
-<!-- PATH -->
-
-
-<path
-class="myth-road"
-d="
-M180 1000
-C280 850 400 760 350 600
-C300 450 500 300 470 120
-"
-/>
-
-
-
-
-
-
-<!-- THEO -->
-
-
-<g
-class="myth-place theo">
-
-
-<circle
-class="myth-dot"
-cx="180"
-cy="1000"
-r="12"/>
-
-
-
-<text
-x="100"
-y="1080">
-
-THEO
-
-</text>
-
-
-
-<!-- scarecrow -->
-
-
-<g
-class="scarecrow"
-transform="translate(180 850)">
-
-
-
-<path
-d="
-M-45 -20
-Q0 -60 45 -20
-"/>
-
-
-<line
-x1="-60"
-y1="-15"
-x2="60"
-y2="-15"/>
-
-
-
-<circle
-cy="25"
-r="25"/>
-
-
-
-<line
-y1="50"
-y2="140"/>
-
-
-
-<line
-x1="-45"
-y1="80"
-x2="45"
-y2="80"/>
-
-
-</g>
-
-
-
-</g>
-
-
-
-
-
-
-<!-- DREAMER -->
-
-
-<g
-class="myth-place dreamer">
-
-
-<circle
-class="myth-dot"
-cx="350"
-cy="600"
-r="12"/>
-
-
-
-<text
-x="260"
-y="700">
-
-DREAMER
-
-</text>
-
-
-
-<g
-class="dreamer-figure"
-transform="translate(350 500)">
-
-
-
-<circle
-cy="0"
-r="25"/>
-
-
-
-<path
-d="
-M-35 40
-Q0 15 35 40
-L50 110
-L-50 110
-Z"/>
-
-
-
-</g>
-
-
-</g>
-
-
-// ==================================================
-// DARKEST HOUR
-// ==================================================
-
-
-<g
-class="myth-place darkest">
-
-
-<circle
-class="myth-dot"
-cx="250"
-cy="360"
-r="12"/>
-
-
-
-<text
-x="80"
-y="300">
-
-THE DARKEST HOUR
-
-</text>
-
-
-
-<g
-class="stars">
-
-
-<path
-d="
-M180 350
-l8 18
-20 2
--15 13
-5 20
--18-10
--18 10
-5-20
--15-13
-20-2z"/>
-
-
-
-<path
-d="
-M250 320
-l8 18
-20 2
--15 13
-5 20
--18-10
--18 10
-5-20
--15-13
-20-2z"/>
-
-
-
-<path
-d="
-M320 350
-l8 18
-20 2
--15 13
-5 20
--18-10
--18 10
-5-20
--15-13
-20-2z"/>
-
-
-</g>
-
-
-</g>
-
-
-
-
-
-
-<!-- ==================================================
-     IO
-================================================== -->
-
-
-<g
-class="myth-place io">
-
-
-<circle
-class="myth-dot"
-cx="470"
-cy="120"
-r="12"/>
-
-
-
-
-<text
-x="430"
-y="230">
-
-IO
-
-</text>
-
-
-
-<text
-class="dawn-text"
-x="310"
-y="270">
-
-The Dawn has come
-
-</text>
-
-
-
-
-
-
-<!-- SUN -->
-
-
-<g
-class="sun"
-transform="translate(470 80)">
-
-
-
-<circle
-r="45"/>
-
-
-
-<line
-y1="-75"
-y2="-55"/>
-
-
-<line
-y1="75"
-y2="55"/>
-
-
-<line
-x1="-75"
-x2="-55"/>
-
-
-<line
-x1="75"
-x2="55"/>
-
-
-</g>
-
-
-
-
-
-<!-- BIRDS -->
-
-
-<g
-class="birds">
-
-
-<path
-d="
-M520 130
-Q540 110 560 130"/>
-
-
-<path
-d="
-M570 150
-Q590 130 610 150"/>
-
-
-<path
-d="
-M620 120
-Q640 100 660 120"/>
-
-
-</g>
-
-
-</g>
-
-
-
-
-
-</svg>
-
-
-`;
-
-
-
-    },
-
-
-
-
-
-    bind(){
-
-
-
-        this.closeButton?.addEventListener(
-            "click",
-            ()=>{
-                this.close();
-            }
-        );
-
-
-
-        document.addEventListener(
-            "keydown",
-            e=>{
-
-
-                if(e.key==="Escape"){
-
-                    this.close();
-
-                }
-
-
-            }
-        );
-
-
-
-        this.viewport
-        .querySelector(".io")
-        ?.addEventListener(
-            "click",
-            ()=>{
-
-                this.close();
-
-            }
-        );
-
-
-
-    },
-
-
-
-
-
-    open(){
-
-
-        this.screen
-        ?.classList.remove(
-            "hidden"
-        );
-
-
-
-        if(this.audio){
-
-            this.audio.currentTime=0;
-
-            this.audio.play()
-            .catch(()=>{});
+            show(".path2");
+            show(".darkest");
 
         }
 
 
-    },
+        if(stage === 3){
 
-
-
-
-
-    close(){
-
-
-        this.screen
-        ?.classList.add(
-            "hidden"
-        );
-
-
-
-        if(this.audio){
-
-            this.audio.pause();
-
-            this.audio.currentTime=0;
+            show(".path3");
+            show(".io");
 
         }
 
@@ -561,15 +257,105 @@ Q640 100 660 120"/>
 
 
 
-};
+    function finish(){
+
+        document.querySelector(".listen")
+        .classList.add("visible");
+
+
+        setTimeout(()=>{
+
+            close();
+
+        },1200);
+
+    }
 
 
 
+    function close(){
 
-document.addEventListener(
-"DOMContentLoaded",
-()=>{
+        if(audio){
 
-    Myth.init();
+            audio.pause();
+            audio.currentTime = 0;
+            audio = null;
 
-});
+        }
+
+
+        myth.classList.remove("active");
+
+        document
+        .querySelector(".world")
+        ?.classList.remove("hidden");
+
+
+        stageBox.innerHTML="";
+
+        active=false;
+
+    }
+
+
+
+    function show(selector){
+
+        document
+        .querySelector(selector)
+        ?.classList.add("visible");
+
+    }
+
+
+
+    function bind(){
+
+        myth.onclick = e=>{
+
+            if(e.target.closest(".io")){
+
+                finish();
+                return;
+
+            }
+
+            if(stage < 3){
+
+                next();
+
+            }
+
+        };
+
+
+        document
+        .querySelector(".myth-close")
+        ?.addEventListener(
+            "click",
+            close
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            e=>{
+
+                if(e.key==="Escape")
+                    close();
+
+            }
+        );
+
+    }
+
+
+    return {
+
+        open,
+        close
+
+    };
+
+
+})();
