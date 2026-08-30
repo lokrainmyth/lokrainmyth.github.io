@@ -236,7 +236,48 @@ preserveAspectRatio="xMidYMid meet">
 
 }
 
+.listen-platforms {
 
+    opacity:0;
+
+    font-size:18px;
+
+    letter-spacing:5px;
+
+    text-anchor:middle;
+
+    fill:white;
+
+}
+
+
+.myth-dawn.reveal ~ .listen-platforms {
+
+    animation:
+    listenGlow 5s infinite;
+
+}
+
+
+
+@keyframes listenGlow {
+
+
+0%,100% {
+
+    opacity:.35;
+
+}
+
+
+50% {
+
+    opacity:1;
+
+}
+
+
+}
 
 </style>
 
