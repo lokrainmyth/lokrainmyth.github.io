@@ -2227,6 +2227,24 @@ font-family:Inter,sans-serif;
 
 }
 
+@media(max-width:600px){
+
+.myth-svg text {
+
+    font-size:16px;
+
+}
+
+
+.subtitle {
+
+    font-size:11px;
+
+}
+
+
+}
+
 /* ==========================================================
    PATH
 ========================================================== */
