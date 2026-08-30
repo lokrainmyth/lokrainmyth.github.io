@@ -1,380 +1,564 @@
-const Myth = (() => {
+"use strict";
 
-    let stage = 0;
-    let active = false;
-    let audio = null;
+const Myth = {
 
-    const myth = document.getElementById("myth");
-    const stageBox = document.getElementById("myth-stage");
+    initialized: false,
 
-    const svg = `
-    <svg class="myth-svg" viewBox="0 0 1200 800">
+    viewport: null,
+    screen: null,
 
-        <!-- paths -->
-        <g class="paths">
+    step: 0,
 
-            <path id="path1"
-            d="M120 650 C260 560 390 500 520 410"/>
+    init() {
 
-            <path id="path2"
-            d="M520 410 C650 330 720 350 790 420"/>
+        if (this.initialized) return;
 
-            <path id="path3"
-            d="M790 420 C900 300 960 210 1040 150"/>
+        this.initialized = true;
 
-        </g>
+        this.screen =
+            document.getElementById("mythScreen");
 
+        this.viewport =
+            document.getElementById("mythViewport");
 
-        <!-- THEO -->
-        <g class="node theo">
+        if (!this.screen || !this.viewport) return;
 
-            <circle class="pulse"
-            cx="120"
-            cy="650"
-            r="7"/>
+        this.build();
+    },
 
-            <text x="145" y="660">
-                THEO
-            </text>
+    build() {
 
+        this.viewport.innerHTML = `
 
-            <!-- scarecrow -->
-            <g class="ghost scarecrow">
+<svg
+class="myth-map"
+viewBox="0 0 1200 1200"
+xmlns="http://www.w3.org/2000/svg"
+aria-label="Lo.Krain Myth">
 
-                <line x1="120" y1="610" x2="120" y2="560"/>
-                <line x1="90" y1="585" x2="150" y2="585"/>
 
-                <circle cx="120" cy="545" r="15"/>
+<defs>
 
-                <path d="
-                M90 530
-                Q120 510 150 530
-                L145 520
-                L95 520 Z"/>
 
-            </g>
+<radialGradient id="sphereLight">
 
-        </g>
+    <stop offset="0%" stop-color="#ffffff"/>
+    <stop offset="45%" stop-color="#bcd8ff"/>
+    <stop offset="100%" stop-color="#304060"/>
 
+</radialGradient>
 
 
-        <!-- DREAMER -->
+<filter id="blueGlow">
 
-        <g class="node dreamer hidden">
+    <feGaussianBlur
+        stdDeviation="8"
+        result="blur"/>
 
-            <circle class="dot"
-            cx="520"
-            cy="410"
-            r="6"/>
+    <feMerge>
 
-            <text x="545" y="420">
-                DREAMER
-            </text>
+        <feMergeNode in="blur"/>
 
+        <feMergeNode in="SourceGraphic"/>
 
-            <!-- sitting boy -->
+    </feMerge>
 
-            <g class="ghost boy">
+</filter>
 
-                <circle cx="520" cy="455" r="12"/>
 
-                <path d="
-                M520 470
-                C500 490 510 530 550 540
-                M510 520
-                L480 560
-                M540 520
-                L580 540
-                "/>
+<linearGradient
+id="dawnRoad"
+x1="0"
+x2="1">
 
-                <path d="
-                M520 455
-                Q540 445 550 455"/>
+<stop
+offset="0%"
+stop-color="#6d8cff"/>
 
-            </g>
+<stop
+offset="50%"
+stop-color="#fff0b0"/>
 
-        </g>
+<stop
+offset="100%"
+stop-color="#ffffff"/>
 
+</linearGradient>
 
 
+</defs>
 
-        <!-- DARKEST -->
 
-        <g class="node darkest hidden">
+<!-- =========================
+     PATH
+========================= -->
 
-            <circle class="dot"
-            cx="790"
-            cy="420"
-            r="6"/>
 
+<g class="myth-paths">
 
-            <text x="815" y="430">
-                THE DARKEST HOUR
-            </text>
 
+<path
+id="pathHorizontal"
+class="myth-path"
+d="
+M300 600
+C420 600 470 600 600 600
+C730 600 780 600 900 600
+"/>
 
-            <g class="stars">
 
-                <text x="760" y="500">★</text>
-                <text x="820" y="550">★</text>
-                <text x="900" y="510">★</text>
+<path
+id="pathDown"
+class="myth-path"
+d="
+M600 600
+C600 760 600 820 600 950
+"/>
 
-            </g>
 
-        </g>
+<path
+id="pathVertical"
+class="myth-path"
+d="
+M600 600
+C600 430 600 350 600 200
+"/>
 
 
+</g>
 
 
-        <!-- IO -->
 
-        <g class="node io hidden">
+<!-- =========================
+     CENTRAL IO SPHERE
+========================= -->
 
-            <circle class="pulse io-dot"
-            cx="1040"
-            cy="150"
-            r="7"/>
 
+<g class="io-sphere">
 
-            <!-- sun -->
 
-            <g class="sun">
+<circle
+cx="600"
+cy="600"
+r="90"
+fill="url(#sphereLight)"
+filter="url(#blueGlow)"
+/>
 
-                <circle cx="1040" cy="150" r="35"/>
 
-                <path d="
-                M1040 95V75
-                M1040 205V225
-                M985 150H965
-                M1095 150H1115
-                M1000 110L985 95
-                M1080 190L1095 205
-                M1080 110L1095 95
-                M1000 190L985 205
-                "/>
+<circle
+cx="600"
+cy="600"
+r="110"
+fill="none"
+stroke="rgba(200,220,255,.35)"
+stroke-width="2"
+/>
 
-            </g>
 
+<path
+d="
+M530 600
+Q600 560 670 600
+Q600 640 530 600
+"
+fill="none"
+stroke="rgba(255,255,255,.4)"
+/>
 
 
-            <text x="1090" y="150">
-                IO
-            </text>
+</g>
 
-            <text class="subtitle"
-            x="1090"
-            y="185">
-                The Dawn has come
-            </text>
 
 
+<!-- =========================
+     THEO
+========================= -->
 
-            <!-- birds -->
 
-            <g class="birds">
+<g
+class="myth-node myth-theo"
+data-myth-action="expulsion">
 
-                <path d="
-                M1110 90
-                q20 -20 40 0
-                q20 -20 40 0"/>
 
-                <path d="
-                M1140 120
-                q20 -20 40 0
-                q20 -20 40 0"/>
+<circle
+class="myth-point"
+cx="300"
+cy="600"
+r="12"
+/>
 
-                <path d="
-                M1170 150
-                q20 -20 40 0
-                q20 -20 40 0"/>
 
-            </g>
+<text
+class="myth-label"
+x="250"
+y="700">
 
-        </g>
+THEO
 
+</text>
 
 
-    </svg>
 
+<!-- scarecrow -->
 
-    <div class="listen">
-        Listen on all streaming platforms
-    </div>
-    `;
+<g class="myth-figure">
 
 
-    function open(){
+<circle
+cx="300"
+cy="500"
+r="28"/>
 
-        active = true;
-        stage = 0;
 
-        myth.classList.add("active");
+<line
+x1="300"
+y1="530"
+x2="300"
+y2="620"/>
 
-        stageBox.innerHTML = svg;
 
-        audio = new Audio("assets/sounds/lokrainmyth.mp3");
-        audio.volume = 0.5;
-        audio.play().catch(()=>{});
+<line
+x1="250"
+y1="560"
+x2="350"
+y2="560"/>
 
-        bind();
 
-    }
+<path
+d="
+M260 470
+Q300 430
+340 470
+"
+/>
 
 
+</g>
 
-    function next(){
 
-        if(!active) return;
+</g>
 
-        stage++;
 
 
-        if(stage === 1){
 
-            show(".path1");
-            show(".dreamer");
+<!-- =========================
+     DREAMER
+========================= -->
+
+
+<g
+class="myth-node myth-dreamer"
+data-myth-action="dreamer">
+
+
+<circle
+class="myth-point"
+cx="900"
+cy="600"
+r="12"
+/>
+
+
+<text
+class="myth-label"
+x="780"
+y="700">
+
+DREAMER
+
+</text>
+
+
+
+<g class="myth-figure">
+
+
+<circle
+cx="900"
+cy="500"
+r="24"
+/>
+
+
+<path
+d="
+M875 540
+L925 540
+L940 620
+L860 620
+Z
+"
+/>
+
+
+</g>
+
+
+</g>
+
+
+
+
+<!-- =========================
+     NIGHT
+========================= -->
+
+
+<g
+class="myth-node myth-darkest"
+data-myth-action="darkest">
+
+
+<circle
+class="myth-point"
+cx="600"
+cy="950"
+r="12"
+/>
+
+
+<text
+class="myth-label"
+x="520"
+y="1080">
+
+NIGHT
+
+</text>
+
+
+<g class="stars">
+
+
+<circle cx="540" cy="850" r="5"/>
+<circle cx="600" cy="820" r="5"/>
+<circle cx="660" cy="850" r="5"/>
+
+
+</g>
+
+
+</g>
+
+
+
+
+<!-- =========================
+     DAWN
+========================= -->
+
+
+<g
+class="myth-node myth-dawn"
+data-myth-action="dawn">
+
+
+<circle
+class="myth-point"
+cx="600"
+cy="200"
+r="12"
+/>
+
+
+
+<circle
+class="sun"
+cx="600"
+cy="120"
+r="45"
+filter="url(#blueGlow)"
+/>
+
+
+<path
+class="road"
+d="
+M600 200
+L600 350
+"
+stroke="url(#dawnRoad)"
+/>
+
+
+
+<text
+class="myth-label"
+x="520"
+y="320">
+
+DAWN
+
+</text>
+
+
+
+<g class="birds">
+
+<path d="M500 160 Q520 140 540 160"/>
+<path d="M660 160 Q680 140 700 160"/>
+
+</g>
+
+
+</g>
+
+
+</svg>
+
+`;
+
+        this.bind();
+    },
+
+    bind() {
+
+        this.viewport
+            .querySelectorAll("[data-myth-action]")
+            .forEach(node => {
+
+                node.addEventListener("click", () => {
+
+                    this.activate(
+                        node.dataset.mythAction
+                    );
+
+                });
+
+            });
+
+    },
+
+    activate(action) {
+
+        if (action === "expulsion") {
+
+            this.activateExpulsion();
 
         }
 
+        if (action === "dreamer") {
 
-        if(stage === 2){
-
-            show(".path2");
-            show(".darkest");
+            this.activateDreamer();
 
         }
 
+        if (action === "darkest") {
 
-        if(stage === 3){
-
-            show(".path3");
-            show(".io");
+            this.activateDarkest();
 
         }
 
+        if (action === "dawn") {
 
-    }
-
-
-
-    function finish(){
-
-        document.querySelector(".listen")
-        .classList.add("visible");
-
-
-        setTimeout(()=>{
-
-            close();
-
-        },1200);
-
-    }
-
-
-
-    function close(){
-
-        if(audio){
-
-            audio.pause();
-            audio.currentTime = 0;
-            audio = null;
+            this.activateDawn();
 
         }
 
+    },
 
-        myth.classList.remove("active");
+    activateExpulsion() {
+
+        if (this.step > 0) return;
+
+        this.step = 1;
 
         document
-        .querySelector(".world")
-        ?.classList.remove("hidden");
-
-
-        stageBox.innerHTML="";
-
-        active=false;
-
-    }
-
-
-
-    function show(selector){
+            .getElementById("pathHorizontal")
+            ?.classList.add("draw");
 
         document
-        .querySelector(selector)
-        ?.classList.add("visible");
+            .querySelector(".myth-dreamer")
+            ?.classList.add("reveal");
 
-    }
+    },
 
+    activateDreamer() {
 
+        if (this.step < 1) return;
 
-    function bind(){
+        if (this.step > 1) return;
 
-        myth.onclick = e=>{
-
-            if(e.target.closest(".io")){
-
-                finish();
-                return;
-
-            }
-
-            if(stage < 3){
-
-                next();
-
-            }
-
-        };
-
+        this.step = 2;
 
         document
-        .querySelector(".myth-close")
-        ?.addEventListener(
-            "click",
-            close
-        );
+            .getElementById("pathDown")
+            ?.classList.add("draw");
 
+        document
+            .querySelector(".myth-darkest")
+            ?.classList.add("reveal");
 
-        document.addEventListener(
-            "keydown",
-            e=>{
+    },
 
-                if(e.key==="Escape")
-                    close();
+    activateDarkest() {
 
-            }
-        );
+        if (this.step < 2) return;
+
+        if (this.step > 2) return;
+
+        this.step = 3;
+
+        document
+            .getElementById("pathVertical")
+            ?.classList.add("draw");
+
+        document
+            .querySelector(".myth-dawn")
+            ?.classList.add("reveal");
+
+    },
+
+    activateDawn() {
+
+    if (this.step < 3) return;
+
+    this.step = 4;
+
+    this.screen
+        ?.classList.add("myth-complete");
+
+    setTimeout(() => {
+
+        this.close();
+
+unlockAfterMyth();
+
+document
+    .querySelector(".world")
+    ?.classList.remove("hidden");
+
+document
+    .querySelector(".world")
+    ?.classList.remove("outro-active");
+
+    }, 1200);
+
+},
+
+    open() {
+
+        this.step = 0;
+
+        this.screen
+            ?.classList.remove("hidden");
+
+        this.screen
+            ?.setAttribute("aria-hidden", "false");
+
+        this.build();
+
+    },
+
+    close() {
+
+        this.screen
+            ?.classList.add("hidden");
+
+        this.screen
+            ?.setAttribute("aria-hidden", "true");
 
     }
-
-
-   function init(){
-
-    const button = document.querySelector(".myth-open");
-
-    if(button){
-
-        button.addEventListener(
-            "click",
-            open
-        );
-
-    }
-
-}
-
-
-return {
-
-    init,
-    open,
-    close
 
 };
-
-
-})();
-
-window.Myth = Myth;
