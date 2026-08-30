@@ -1950,309 +1950,253 @@ body{
    MYTH MAP
 ========================================================== */
 
-#myth {
+.myth-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
 
-    position:fixed;
-    inset:0;
+    background: #050505;
 
-    background:
-    radial-gradient(
-        circle at top right,
-        #17243a,
-        #02050c 70%
-    );
-
-    display:none;
-
-    z-index:9999;
-
+    overflow: hidden;
 }
 
-
-#myth.active{
-
-    display:block;
-
-}
-
-
-
-#myth-stage{
+.myth-viewport{
 
     width:100%;
     height:100%;
 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:40px;
+
+    box-sizing:border-box;
+
+}
+
+.myth-map{
+
+    width:min(92vw,900px);
+    height:auto;
+
+    max-height:88vh;
+
 }
 
 
+.myth-path{
 
-.myth-close{
+    fill:none;
 
-    position:absolute;
+    stroke:#d9c58a;
 
-    right:30px;
-    top:25px;
+    stroke-width:4;
 
-    background:none;
-    border:0;
+    stroke-dasharray:2000;
 
-    color:#aaa;
+    stroke-dashoffset:2000;
 
-    font-size:26px;
+}
+
+
+.myth-path.draw{
+
+    animation:pathDraw 2s forwards;
+
+}
+
+
+@keyframes pathDraw{
+
+to{
+
+stroke-dashoffset:0;
+
+}
+
+}
+
+
+.myth-node{
 
     cursor:pointer;
 
 }
 
 
+.myth-node text{
 
-.myth-svg{
+    fill:white;
 
-    width:100%;
-    height:100%;
+    font-size:24px;
 
-}
-
-
-
-.paths path{
-
-    fill:none;
-
-    stroke:#9aa8bf;
-
-    stroke-width:1;
-
-    opacity:0;
-
-    stroke-dasharray:900;
-    stroke-dashoffset:900;
+    letter-spacing:.3em;
 
 }
 
 
-.paths path.visible{
+.reveal{
 
-    opacity:.5;
-
-    animation:
-    draw 2.5s ease forwards;
-
-}
-
-
-
-@keyframes draw{
-
-    to{
-
-        stroke-dashoffset:0;
-
-    }
-
-}
-
-
-
-.node{
-
-    opacity:0;
+    opacity:1 !important;
 
     transition:
-    opacity 2s ease;
+        opacity 1.5s ease;
+
+}
+
+@media(max-width:768px){
+
+    .myth-map{
+
+        width:92vw;
+        height:auto;
+
+    }
+
+
+    .myth-viewport{
+
+        padding:10px;
+
+    }
+
+}
+
+.myth-point{
+
+fill:#c8dcff;
+
+filter:url(#blueGlow);
+
+animation:
+mythPulse 3s ease-in-out infinite;
 
 }
 
 
+@keyframes mythPulse{
 
-.node.visible{
+0%,100%{
 
-    opacity:1;
-
-}
-
-
-
-text{
-
-    fill:#ddd;
-
-    font-family:
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
-
-    font-size:20px;
-
-    letter-spacing:4px;
+opacity:.45;
 
 }
 
 
+50%{
 
-.ghost{
+opacity:1;
 
-    opacity:.4;
+}
 
-    stroke:#c8d0df;
+}
+
+
+.myth-label{
+
+    fill:white;
+
+    font-size:28px;
+
+    letter-spacing:.35em;
+
+    opacity:.85;
+
+    text-transform:uppercase;
+
+}
+
+
+.myth-sphere{
+
+    transform-origin:center;
+
+}
+
+
+.sphere-grid{
+
+    opacity:.45;
+
+}
+
+
+@keyframes sphereMove{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+.sun{
+
+    fill:#f5d98b;
+
+    filter:url(#blueGlow);
+
+}
+
+
+.road{
+
+    stroke:#f5d98b;
+
+    stroke-width:5;
 
     fill:none;
 
-    stroke-width:1;
-
 }
 
 
-
-.pulse{
-
-    fill:#fff;
-
-    animation:
-    pulse 2s infinite;
-
-}
-
-
-
-@keyframes pulse{
-
-    0%,100%{
-
-        opacity:.3;
-
-        r:6;
-
-    }
-
-
-    50%{
-
-        opacity:1;
-
-        r:10;
-
-    }
-
-}
-
-
-
-.stars text{
-
-    font-size:32px;
+.stars circle{
 
     fill:white;
 
     animation:
-    stars 6s infinite;
+    mythPulse 4s infinite;
+
+}
+
+.myth-figure{
+
+stroke:#dbe8ff;
+
+stroke-width:3;
+
+fill:none;
+
+opacity:.55;
+
+filter:
+drop-shadow(
+0 0 12px rgba(150,190,255,.5)
+);
 
 }
 
 
+.myth-label{
 
-.stars text:nth-child(2){
+fill:#ffffff;
 
-    animation-delay:2s;
+font-size:42px;
 
-}
+letter-spacing:.45em;
 
+opacity:.85;
 
-.stars text:nth-child(3){
-
-    animation-delay:4s;
-
-}
-
-
-
-@keyframes stars{
-
-    0%,100%{
-
-        opacity:.4;
-
-    }
-
-    50%{
-
-        opacity:1;
-
-    }
-
-}
-
-
-
-.sun circle{
-
-    fill:#eee;
-
-    opacity:.8;
-
-}
-
-
-
-.sun path{
-
-    stroke:#eee;
-
-    stroke-width:2;
-
-}
-
-
-
-.birds path{
-
-    fill:none;
-
-    stroke:#ddd;
-
-    stroke-width:2;
-
-}
-
-
-
-.subtitle{
-
-    font-size:13px;
-
-    letter-spacing:3px;
-
-}
-
-
-
-.listen{
-
-    position:absolute;
-
-    bottom:70px;
-
-    width:100%;
-
-    text-align:center;
-
-    color:#ddd;
-
-    font-size:14px;
-
-    letter-spacing:5px;
-
-    opacity:0;
-
-    transition:opacity 1s;
-
-}
-
-
-
-.listen.visible{
-
-    opacity:1;
+font-family:Inter,sans-serif;
 
 }
 
