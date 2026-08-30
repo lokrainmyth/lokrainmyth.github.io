@@ -386,7 +386,7 @@ class="myth-stage stage-theo">
 
 <circle
 
-class="myth-point"
+class="preview-point"
 
 data-step="1"
 
@@ -449,7 +449,7 @@ class="myth-stage hidden-stage stage-dreamer">
 
 <circle
 
-class="myth-point"
+class="preview-point"
 
 data-step="2"
 
