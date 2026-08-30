@@ -514,8 +514,8 @@ data-myth-action="dawn">
 
 
 <circle class="pulse"
-cx="760"
-cy="170"
+cx="850"
+cy="160"
 r="7"/>
 
 
@@ -525,46 +525,35 @@ r="7"/>
 
 
 <circle
-cx="760"
-cy="170"
-r="28"/>
+cx="850"
+cy="160"
+r="35"/>
 
-
-<circle
-class="sun-core"
-cx="760"
-cy="170"
-r="18"/>
 
 
 <path d="
-M760 125V110
+M1040 95V75
+M1040 205V225
 
-M760 215V230
+M985 150H965
+M1095 150H1115
 
-M715 170H700
+M1000 110L985 95
+M1080 190L1095 205
 
-M805 170H820
-
-M730 140L720 130
-
-M790 200L800 210
-
-M790 140L800 130
-
-M730 200L720 210
+M1080 110L1095 95
+M1000 190L985 205
 "/>
+
 
 
 </g>
 
 
-<g class="myth-dawn"
-data-myth-action="dawn"
-transform="translate(-50 0)">
 
 
-<text x="810" y="170">
+
+<text x="900" y="160">
 
 IO
 
@@ -573,8 +562,8 @@ IO
 
 
 <text class="subtitle"
-x="810"
-y="200">
+x="900"
+y="195">
 The Dawn has come
 </text>
 
@@ -583,7 +572,7 @@ The Dawn has come
 
 
 <g class="birds"
-transform="translate(-180 20)">
+transform="translate(-100 0)">
 
 
 <path d="
