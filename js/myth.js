@@ -32,6 +32,75 @@ const Myth = {
 
    <svg class="myth-svg" viewBox="0 0 1200 800">
 
+   <style>
+
+.myth-svg text {
+    fill: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    letter-spacing: 4px;
+}
+
+.paths path {
+
+    fill:none;
+    stroke:#ffffff;
+    stroke-width:2;
+    opacity:.5;
+
+}
+
+.node {
+
+    opacity:1;
+
+}
+
+.ghost {
+
+    fill:none;
+    stroke:#ffffff;
+    stroke-width:2;
+    opacity:.4;
+
+}
+
+.pulse {
+
+    fill:white;
+
+}
+
+.sun circle {
+
+    fill:white;
+
+}
+
+.sun path {
+
+    stroke:white;
+    stroke-width:2;
+
+}
+
+.birds path {
+
+    fill:none;
+    stroke:white;
+    stroke-width:2;
+
+}
+
+.stars text {
+
+    fill:white;
+    font-size:35px;
+
+}
+
+</style>
+
     <!-- paths -->
     <g class="paths">
 
