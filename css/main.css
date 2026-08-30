@@ -2108,7 +2108,7 @@ opacity:1;
 }
 
 
-.myth-sphere{
+/* .myth-sphere{
 
     transform-origin:center;
 
@@ -2292,6 +2292,140 @@ opacity:1;
         opacity:1;
 
     }
+
+} */
+
+.myth-stage{
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:
+    opacity 1.4s ease;
+
+}
+
+
+.myth-stage.active{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+
+.myth-stage.visible{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+
+
+.myth-line{
+
+    fill:none;
+
+    stroke:#d8c78f;
+
+    stroke-width:2;
+
+    stroke-dasharray:1000;
+
+    stroke-dashoffset:1000;
+
+}
+
+
+.myth-line.visible{
+
+    animation:
+    drawLine 2s forwards;
+
+}
+
+
+
+@keyframes drawLine{
+
+to{
+
+stroke-dashoffset:0;
+
+}
+
+}
+
+
+
+.myth-point{
+
+    fill:#e7f0ff;
+
+    filter:url(#glow);
+
+    animation:
+    pulse 3s infinite;
+
+}
+
+
+
+@keyframes pulse{
+
+50%{
+
+opacity:.3;
+
+transform:scale(1.4);
+
+}
+
+}
+
+
+
+.figure{
+
+    fill:none;
+
+    stroke:#eee7d5;
+
+    stroke-width:3;
+
+}
+
+
+
+.myth-map text{
+
+    fill:#ffffff;
+
+    font-family:Inter,sans-serif;
+
+    font-size:28px;
+
+    letter-spacing:.3em;
+
+}
+
+
+
+.sun{
+
+    fill:#f4d47a;
+
+}
+
+
+
+.stars circle{
+
+    fill:white;
 
 }
 
