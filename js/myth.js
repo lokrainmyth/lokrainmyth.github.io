@@ -212,7 +212,7 @@ const Myth = (() => {
 
         stageBox.innerHTML = svg;
 
-        audio = new Audio("/assets/sounds/lokrainmyth.mp3");
+        audio = new Audio("assets/sounds/lokrainmyth.mp3");
         audio.volume = 0.5;
         audio.play().catch(()=>{});
 
@@ -350,12 +350,31 @@ const Myth = (() => {
     }
 
 
-    return {
+   function init(){
 
-        open,
-        close
+    const button = document.querySelector(".myth-open");
 
-    };
+    if(button){
+
+        button.addEventListener(
+            "click",
+            open
+        );
+
+    }
+
+}
+
+
+return {
+
+    init,
+    open,
+    close
+
+};
 
 
 })();
+
+window.Myth = Myth;
