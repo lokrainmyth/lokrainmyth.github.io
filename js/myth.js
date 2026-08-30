@@ -212,7 +212,7 @@ const Myth = (() => {
 
         stageBox.innerHTML = svg;
 
-        audio = new Audio("/audio/lokrainmyth.mp3");
+        audio = new Audio("/assets/sounds/lokrainmyth.mp3");
         audio.volume = 0.5;
         audio.play().catch(()=>{});
 
