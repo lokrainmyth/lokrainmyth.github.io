@@ -30,382 +30,193 @@ const Myth = {
 
         this.viewport.innerHTML = `
 
-<svg
-class="myth-map"
-viewBox="0 0 1200 1200"
-xmlns="http://www.w3.org/2000/svg"
-aria-label="Lo.Krain Myth">
+    <svg class="myth-svg" viewBox="0 0 1200 800">
 
+        <!-- paths -->
+        <g class="paths">
 
-<defs>
+            <path id="path1"
+            d="M120 650 C260 560 390 500 520 410"/>
 
+            <path id="path2"
+            d="M520 410 C650 330 720 350 790 420"/>
 
-<radialGradient id="sphereLight">
+            <path id="path3"
+            d="M790 420 C900 300 960 210 1040 150"/>
 
-    <stop offset="0%" stop-color="#ffffff"/>
-    <stop offset="45%" stop-color="#bcd8ff"/>
-    <stop offset="100%" stop-color="#304060"/>
+        </g>
 
-</radialGradient>
 
+        <!-- THEO -->
+        <g class="node theo">
 
-<filter id="blueGlow">
+            <circle class="pulse"
+            cx="120"
+            cy="650"
+            r="7"/>
 
-    <feGaussianBlur
-        stdDeviation="8"
-        result="blur"/>
+            <text x="145" y="660">
+                THEO
+            </text>
 
-    <feMerge>
 
-        <feMergeNode in="blur"/>
+            <!-- scarecrow -->
+            <g class="ghost scarecrow">
 
-        <feMergeNode in="SourceGraphic"/>
+                <line x1="120" y1="610" x2="120" y2="560"/>
+                <line x1="90" y1="585" x2="150" y2="585"/>
 
-    </feMerge>
+                <circle cx="120" cy="545" r="15"/>
 
-</filter>
+                <path d="
+                M90 530
+                Q120 510 150 530
+                L145 520
+                L95 520 Z"/>
 
+            </g>
 
-<linearGradient
-id="dawnRoad"
-x1="0"
-x2="1">
+        </g>
 
-<stop
-offset="0%"
-stop-color="#6d8cff"/>
 
-<stop
-offset="50%"
-stop-color="#fff0b0"/>
 
-<stop
-offset="100%"
-stop-color="#ffffff"/>
+        <!-- DREAMER -->
 
-</linearGradient>
+        <g class="node dreamer hidden">
 
+            <circle class="dot"
+            cx="520"
+            cy="410"
+            r="6"/>
 
-</defs>
+            <text x="545" y="420">
+                DREAMER
+            </text>
 
 
-<!-- =========================
-     PATH
-========================= -->
+            <!-- sitting boy -->
 
+            <g class="ghost boy">
 
-<g class="myth-paths">
+                <circle cx="520" cy="455" r="12"/>
 
+                <path d="
+                M520 470
+                C500 490 510 530 550 540
+                M510 520
+                L480 560
+                M540 520
+                L580 540
+                "/>
 
-<path
-id="pathHorizontal"
-class="myth-path"
-d="
-M300 600
-C420 600 470 600 600 600
-C730 600 780 600 900 600
-"/>
+                <path d="
+                M520 455
+                Q540 445 550 455"/>
 
+            </g>
 
-<path
-id="pathDown"
-class="myth-path"
-d="
-M600 600
-C600 760 600 820 600 950
-"/>
+        </g>
 
 
-<path
-id="pathVertical"
-class="myth-path"
-d="
-M600 600
-C600 430 600 350 600 200
-"/>
 
 
-</g>
+        <!-- DARKEST -->
 
+        <g class="node darkest hidden">
 
+            <circle class="dot"
+            cx="790"
+            cy="420"
+            r="6"/>
 
-<!-- =========================
-     CENTRAL IO SPHERE
-========================= -->
 
+            <text x="815" y="430">
+                THE DARKEST HOUR
+            </text>
 
-<g class="io-sphere">
 
+            <g class="stars">
 
-<circle
-cx="600"
-cy="600"
-r="90"
-fill="url(#sphereLight)"
-filter="url(#blueGlow)"
-/>
+                <text x="760" y="500">★</text>
+                <text x="820" y="550">★</text>
+                <text x="900" y="510">★</text>
 
+            </g>
 
-<circle
-cx="600"
-cy="600"
-r="110"
-fill="none"
-stroke="rgba(200,220,255,.35)"
-stroke-width="2"
-/>
+        </g>
 
 
-<path
-d="
-M530 600
-Q600 560 670 600
-Q600 640 530 600
-"
-fill="none"
-stroke="rgba(255,255,255,.4)"
-/>
 
 
-</g>
+        <!-- IO -->
 
+        <g class="node io hidden">
 
+            <circle class="pulse io-dot"
+            cx="1040"
+            cy="150"
+            r="7"/>
 
-<!-- =========================
-     THEO
-========================= -->
 
+            <!-- sun -->
 
-<g
-class="myth-node myth-theo"
-data-myth-action="expulsion">
+            <g class="sun">
 
+                <circle cx="1040" cy="150" r="35"/>
 
-<circle
-class="myth-point"
-cx="300"
-cy="600"
-r="12"
-/>
+                <path d="
+                M1040 95V75
+                M1040 205V225
+                M985 150H965
+                M1095 150H1115
+                M1000 110L985 95
+                M1080 190L1095 205
+                M1080 110L1095 95
+                M1000 190L985 205
+                "/>
 
+            </g>
 
-<text
-class="myth-label"
-x="250"
-y="700">
 
-THEO
 
-</text>
+            <text x="1090" y="150">
+                IO
+            </text>
 
+            <text class="subtitle"
+            x="1090"
+            y="185">
+                The Dawn has come
+            </text>
 
 
-<!-- scarecrow -->
 
-<g class="myth-figure">
+            <!-- birds -->
 
+            <g class="birds">
 
-<circle
-cx="300"
-cy="500"
-r="28"/>
+                <path d="
+                M1110 90
+                q20 -20 40 0
+                q20 -20 40 0"/>
 
+                <path d="
+                M1140 120
+                q20 -20 40 0
+                q20 -20 40 0"/>
 
-<line
-x1="300"
-y1="530"
-x2="300"
-y2="620"/>
+                <path d="
+                M1170 150
+                q20 -20 40 0
+                q20 -20 40 0"/>
 
+            </g>
 
-<line
-x1="250"
-y1="560"
-x2="350"
-y2="560"/>
+        </g>
 
 
-<path
-d="
-M260 470
-Q300 430
-340 470
-"
-/>
 
-
-</g>
-
-
-</g>
-
-
-
-
-<!-- =========================
-     DREAMER
-========================= -->
-
-
-<g
-class="myth-node myth-dreamer"
-data-myth-action="dreamer">
-
-
-<circle
-class="myth-point"
-cx="900"
-cy="600"
-r="12"
-/>
-
-
-<text
-class="myth-label"
-x="780"
-y="700">
-
-DREAMER
-
-</text>
-
-
-
-<g class="myth-figure">
-
-
-<circle
-cx="900"
-cy="500"
-r="24"
-/>
-
-
-<path
-d="
-M875 540
-L925 540
-L940 620
-L860 620
-Z
-"
-/>
-
-
-</g>
-
-
-</g>
-
-
-
-
-<!-- =========================
-     NIGHT
-========================= -->
-
-
-<g
-class="myth-node myth-darkest"
-data-myth-action="darkest">
-
-
-<circle
-class="myth-point"
-cx="600"
-cy="950"
-r="12"
-/>
-
-
-<text
-class="myth-label"
-x="520"
-y="1080">
-
-NIGHT
-
-</text>
-
-
-<g class="stars">
-
-
-<circle cx="540" cy="850" r="5"/>
-<circle cx="600" cy="820" r="5"/>
-<circle cx="660" cy="850" r="5"/>
-
-
-</g>
-
-
-</g>
-
-
-
-
-<!-- =========================
-     DAWN
-========================= -->
-
-
-<g
-class="myth-node myth-dawn"
-data-myth-action="dawn">
-
-
-<circle
-class="myth-point"
-cx="600"
-cy="200"
-r="12"
-/>
-
-
-
-<circle
-class="sun"
-cx="600"
-cy="120"
-r="45"
-filter="url(#blueGlow)"
-/>
-
-
-<path
-class="road"
-d="
-M600 200
-L600 350
-"
-stroke="url(#dawnRoad)"
-/>
-
-
-
-<text
-class="myth-label"
-x="520"
-y="320">
-
-DAWN
-
-</text>
-
-
-
-<g class="birds">
-
-<path d="M500 160 Q520 140 540 160"/>
-<path d="M660 160 Q680 140 700 160"/>
-
-</g>
-
-
-</g>
-
-
-</svg>
+    </svg>
 
 `;
 
