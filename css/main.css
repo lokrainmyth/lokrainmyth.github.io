@@ -1950,426 +1950,36 @@ body{
    MYTH MAP
 ========================================================== */
 
-.myth-screen {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-
-    background:#090d18;
-
-    overflow: hidden;
-}
-
-.myth-viewport{
-
-    width:100%;
-    height:100%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    padding:40px;
-
-    box-sizing:border-box;
-
-}
-
 .myth-map{
 
-    width:min(92vw,900px);
-    height:auto;
-
-    max-height:88vh;
+    width:min(90vw,700px);
+    height:90vh;
 
 }
 
 
-.myth-path{
+
+.myth-road{
 
     fill:none;
 
     stroke:#d9c58a;
 
-    stroke-width:4;
-
-    stroke-dasharray:2000;
-
-    stroke-dashoffset:2000;
-
-}
-
-
-.myth-path.draw{
-
-    animation:pathDraw 2s forwards;
-
-}
-
-
-@keyframes pathDraw{
-
-to{
-
-stroke-dashoffset:0;
-
-}
-
-}
-
-
-.myth-node{
-
-    cursor:pointer;
-
-}
-
-
-.myth-node text{
-
-    fill:white;
-
-    font-size:24px;
-
-    letter-spacing:.3em;
-
-}
-
-
-.reveal{
-
-    opacity:1 !important;
-
-    transition:
-        opacity 1.5s ease;
-
-}
-
-@media(max-width:768px){
-
-    .myth-map{
-
-        width:92vw;
-        height:auto;
-
-    }
-
-
-    .myth-viewport{
-
-        padding:10px;
-
-    }
-
-}
-
-.myth-point{
-
-fill:#c8dcff;
-
-filter:url(#blueGlow);
-
-animation:
-mythPulse 3s ease-in-out infinite;
-
-}
-
-
-@keyframes mythPulse{
-
-0%,100%{
-
-opacity:.45;
-
-}
-
-
-50%{
-
-opacity:1;
-
-}
-
-}
-
-
-.myth-label{
-
-    fill:white;
-
-    font-size:28px;
-
-    letter-spacing:.35em;
-
-    opacity:.85;
-
-    text-transform:uppercase;
-
-}
-
-
-/* .myth-sphere{
-
-    transform-origin:center;
-
-}
-
-
-.sphere-grid{
-
-    opacity:.45;
-
-}
-
-
-@keyframes sphereMove{
-
-from{
-
-transform:rotate(0deg);
-
-}
-
-to{
-
-transform:rotate(360deg);
-
-}
-
-}
-
-
-.sun{
-
-    fill:#f5d98b;
-
-    filter:url(#blueGlow);
-
-}
-
-
-.road{
-
-    stroke:#f5d98b;
-
-    stroke-width:5;
-
-    fill:none;
-
-}
-
-
-.stars circle{
-
-    fill:white;
-
-    animation:
-    mythPulse 4s infinite;
-
-}
-
-.myth-figure{
-
-stroke:#d8c78f;
-stroke-opacity:.55;
-   
-stroke-width:2;
-
-fill:none;
-
-opacity:.55;
-
-filter:
-drop-shadow(
-0 0 12px rgba(150,190,255,.5)
-);
-
-}
-
-
-.myth-label{
-
-fill:#ffffff;
-
-font-size:42px;
-
-letter-spacing:.45em;
-
-opacity:.85;
-
-font-family:Inter,sans-serif;
-
-}
-
-.hidden-stage{
-
-    opacity:0;
-    pointer-events:none;
-
-    transition:
-    opacity 1.5s ease;
-
-}
-
-
-.stage-visible{
-
-    opacity:1;
-    pointer-events:auto;
-
-}
-
-.myth-point{
-
-animation:
-pointPulse 3s ease-in-out infinite;
-
-}
-
-
-@keyframes pointPulse{
-
-0%,100%{
-
-opacity:.5;
-r:10px;
-
-}
-
-50%{
-
-opacity:1;
-
-}
-
-}
-
-.figure-theo,
-.figure-dreamer{
-
-    stroke:#eee7d5;
-
-    stroke-width:3;
-
-    fill:none;
-
-    opacity:.8;
-
-}
-
-
-.myth-subtitle{
-
-    fill:#c9d7ef;
-
-    font-size:18px;
-
-    letter-spacing:.25em;
-
-}
-
-
-.myth-point{
-
-    fill:#dcecff;
-
-    animation:
-    pointPulse 3s ease-in-out infinite;
-
-}
-
-
-@keyframes pointPulse{
-
-    0%,100%{
-
-        opacity:.5;
-
-    }
-
-    50%{
-
-        opacity:1;
-
-    }
-
-} */
-
-.myth-stage{
-
-    opacity:0;
-
-    pointer-events:none;
-
-    transition:
-    opacity 1.4s ease;
-
-}
-
-
-.myth-stage.active{
-
-    opacity:1;
-
-    pointer-events:auto;
-
-}
-
-
-.myth-stage.visible{
-
-    opacity:1;
-
-    pointer-events:auto;
-
-}
-
-
-
-.myth-line{
-
-    fill:none;
-
-    stroke:#d8c78f;
-
     stroke-width:2;
 
-    stroke-dasharray:1000;
-
-    stroke-dashoffset:1000;
-
-}
-
-
-.myth-line.visible{
-
-    animation:
-    drawLine 2s forwards;
+    opacity:.7;
 
 }
 
 
 
-@keyframes drawLine{
+.myth-dot{
 
-to{
-
-stroke-dashoffset:0;
-
-}
-
-}
-
-
-
-.myth-point{
-
-    fill:#e7f0ff;
+    fill:#ffffff;
 
     filter:url(#glow);
 
-    animation:
-    pulse 3s infinite;
+    animation:pulse 3s ease-in-out infinite;
 
 }
 
@@ -2379,102 +1989,9 @@ stroke-dashoffset:0;
 
 50%{
 
-opacity:.3;
+    opacity:.4;
 
-transform:scale(1.4);
-
-}
-
-}
-
-
-
-.figure{
-
-    fill:none;
-
-    stroke:#eee7d5;
-
-    stroke-width:3;
-
-}
-
-
-
-.myth-map text{
-
-    fill:#ffffff;
-
-    font-family:Inter,sans-serif;
-
-    font-size:28px;
-
-    letter-spacing:.3em;
-
-}
-
-
-
-.sun{
-
-    fill:#f4d47a;
-
-}
-
-
-
-.stars circle{
-
-    fill:white;
-
-}
-
-.myth-stage.locked{
-
-    opacity:0;
-    pointer-events:none;
-
-}
-
-
-.myth-stage.visible,
-.myth-stage.active{
-
-    opacity:1;
-    pointer-events:auto;
-
-}
-
-
-.myth-line{
-
-    fill:none;
-
-    stroke:url(#pathGradient);
-
-    stroke-width:2;
-
-    stroke-dasharray:1200;
-
-    stroke-dashoffset:1200;
-
-}
-
-
-.myth-line.visible{
-
-    animation:
-    drawMythLine 2.5s ease forwards;
-
-}
-
-
-
-@keyframes drawMythLine{
-
-to{
-
-stroke-dashoffset:0;
+    transform:scale(1.2);
 
 }
 
@@ -2482,34 +1999,7 @@ stroke-dashoffset:0;
 
 
 
-.myth-point{
-
-    fill:#eef4ff;
-
-    filter:url(#softGlow);
-
-    animation:
-    mythPulse 3s ease-in-out infinite;
-
-}
-
-
-
-@keyframes mythPulse{
-
-50%{
-
-transform:scale(1.25);
-
-opacity:.45;
-
-}
-
-}
-
-
-
-.myth-title{
+.myth-place text{
 
     fill:white;
 
@@ -2523,28 +2013,14 @@ opacity:.45;
 
 
 
-.myth-subtitle{
+.scarecrow,
+.dreamer-figure{
 
-    fill:#f4d98b;
-
-    font-family:Inter,sans-serif;
-
-    font-size:20px;
-
-}
-
-
-
-.figure-theo,
-.figure-dreamer{
-
-    fill:none;
-
-    stroke:#dce8ff;
+    stroke:#dbe7ff;
 
     stroke-width:3;
 
-    opacity:.7;
+    fill:none;
 
 }
 
@@ -2560,17 +2036,15 @@ opacity:.45;
 
 .sun circle{
 
-    fill:#f6d879;
-
-    filter:url(#softGlow);
+    fill:#f5d98b;
 
 }
 
 
 
-.sun-rays line{
+.sun line{
 
-    stroke:#f6d879;
+    stroke:#f5d98b;
 
     stroke-width:3;
 
@@ -2590,23 +2064,11 @@ opacity:.45;
 
 
 
-.myth-streaming{
+.dawn-text{
 
-    position:absolute;
+    fill:#f5d98b;
 
-    bottom:50px;
-
-    width:100%;
-
-    text-align:center;
-
-    color:white;
-
-    font-family:Inter,sans-serif;
-
-    letter-spacing:.2em;
-
-    font-size:14px;
+    font-size:18px;
 
 }
 
