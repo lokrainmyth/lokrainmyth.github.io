@@ -69,107 +69,83 @@ const Myth = {
 
 
 <svg
-
-class="myth-map"
-
-viewBox="0 0 1200 1000"
-
 xmlns="http://www.w3.org/2000/svg"
-
-aria-label="Lo.Krain Myth">
-
+viewBox="0 0 1200 1200">
 
 
 <defs>
 
 
+<!-- BACKGROUND -->
 
-<!-- ==========================
-     ATMOSPHERE
-========================== -->
+<radialGradient id="bg">
 
+    <stop
+    offset="0%"
+    stop-color="#253858"/>
 
-<radialGradient id="mythBackground">
+    <stop
+    offset="55%"
+    stop-color="#101827"/>
 
-
-<stop
-offset="0%"
-stop-color="#1a3154"/>
-
-
-<stop
-offset="45%"
-stop-color="#0b1425"/>
-
-
-<stop
-offset="100%"
-stop-color="#020306"/>
-
+    <stop
+    offset="100%"
+    stop-color="#050812"/>
 
 </radialGradient>
 
 
 
+<!-- SPHERE LIGHT -->
 
+<radialGradient id="sphere">
 
-<!-- ==========================
-     SPHERE
-========================== -->
+    <stop
+    offset="0%"
+    stop-color="#ffffff"/>
 
+    <stop
+    offset="35%"
+    stop-color="#d5e5ff"/>
 
-<radialGradient id="sphereGradient">
+    <stop
+    offset="75%"
+    stop-color="#6f86ad"/>
 
-
-<stop
-offset="0%"
-stop-color="#ffffff"/>
-
-
-<stop
-offset="35%"
-stop-color="#d9e8ff"/>
-
-
-<stop
-offset="70%"
-stop-color="#7f9bc4"/>
-
-
-<stop
-offset="100%"
-stop-color="#26364d"/>
-
+    <stop
+    offset="100%"
+    stop-color="#26334b"/>
 
 </radialGradient>
 
 
 
+<!-- SUN -->
+
+<radialGradient id="sun">
+
+    <stop
+    offset="0%"
+    stop-color="#fff8cf"/>
+
+    <stop
+    offset="50%"
+    stop-color="#ffd76a"/>
+
+    <stop
+    offset="100%"
+    stop-color="#e59b36"/>
+
+</radialGradient>
 
 
-<filter id="mythGlow">
 
+<!-- GLOW -->
 
-<feGaussianBlur
+<filter id="glow">
 
-stdDeviation="10"
-
-result="blur"/>
-
-
-<feMerge>
-
-
-<feMergeNode
-in="blur"/>
-
-
-<feMergeNode
-in="SourceGraphic"/>
-
-
-</feMerge>
-
+    <feGaussianBlur
+    stdDeviation="12"/>
 
 </filter>
 
@@ -181,71 +157,103 @@ in="SourceGraphic"/>
 
 
 
-
-<!-- ==========================
-     BACKGROUND
-========================== -->
+<!-- =========================
+     DEEP MAP BACKGROUND
+========================= -->
 
 
 <rect
 
 width="1200"
+height="1200"
 
-height="1000"
-
-fill="url(#mythBackground)"/>
-
+fill="url(#bg)"/>
 
 
 
 
 
+<!-- AIRPORT MAP LINES -->
 
-<!-- ==========================
-     MAP LINES
-========================== -->
+<g
+
+fill="none"
+
+stroke="#a9c7ff"
+
+stroke-opacity=".14"
+
+stroke-width="2">
 
 
-<g class="myth-map-lines">
+<path
+
+d="
+M80 300
+C300 160 420 260 600 180
+C820 80 980 260 1120 140"/>
 
 
 
 <path
 
 d="
-M80 180
-C260 90 420 160 620 120
-C850 80 1010 150 1140 90
-"/>
+M120 850
+C300 720 500 850 720 730
+C950 600 1080 760 1160 650"/>
 
 
 
 <path
 
 d="
-M60 760
-C250 680 440 780 640 700
-C850 620 1020 740 1160 650
-"/>
+M200 540
+C360 430 500 560 650 500
+C820 420 980 540 1100 430"/>
 
 
 
 <path
 
 d="
-M180 900
-C380 760 720 860 1030 740
-"/>
+M350 80
+C430 260 250 430 420 650
+C500 760 470 900 600 1080"/>
 
 
 
 <path
 
 d="
-M300 80
-C360 250 250 430 340 620
-"/>
+M900 100
+C820 300 1000 420 850 650
+C760 760 830 920 720 1080"/>
 
+
+
+</g>
+
+
+
+
+
+<!-- SMALL STARS -->
+
+
+<g fill="#ffffff">
+
+
+<circle cx="160" cy="180" r="3"/>
+
+<circle cx="320" cy="320" r="2"/>
+
+<circle cx="960" cy="190" r="3"/>
+
+<circle cx="1050" cy="520" r="2"/>
+
+<circle cx="220" cy="900" r="2"/>
+
+<circle cx="980" cy="850" r="3"/>
 
 
 </g>
@@ -257,42 +265,27 @@ C360 250 250 430 340 620
 
 
 
-<!-- ==========================
-     STARS
-========================== -->
-
-
-<g class="myth-stars">
-
-
-<circle cx="180" cy="150" r="3"/>
-
-<circle cx="320" cy="260" r="2"/>
-
-<circle cx="980" cy="170" r="3"/>
-
-<circle cx="1080" cy="420" r="2"/>
-
-<circle cx="850" cy="820" r="3"/>
-
-<circle cx="250" cy="760" r="2"/>
-
-
-</g>
-
-
-
-
-
-
-
-
-<!-- ==========================
+<!-- =========================
      CENTRAL WORLD
-========================== -->
+========================= -->
 
 
-<g class="io-sphere">
+<g>
+
+
+<circle
+
+cx="600"
+
+cy="600"
+
+r="170"
+
+fill="#9bc7ff"
+
+opacity=".25"
+
+filter="url(#glow)"/>
 
 
 
@@ -300,14 +293,11 @@ C360 250 250 430 340 620
 
 cx="600"
 
-cy="500"
+cy="600"
 
 r="120"
 
-fill="url(#sphereGradient)"
-
-filter="url(#mythGlow)"/>
-
+fill="url(#sphere)"/>
 
 
 
@@ -316,41 +306,166 @@ filter="url(#mythGlow)"/>
 <!-- chess surface -->
 
 
-<g class="sphere-grid">
-
-
-
-<path
-
-d="
-M500 500
-Q600 430 700 500
-Q600 570 500 500
-"
+<g
 
 fill="none"
 
-stroke="#ffffff"
+stroke="rgba(255,255,255,.35)"
 
-stroke-opacity=".35"
+stroke-width="3">
 
-stroke-width="3"/>
 
+<ellipse
+
+cx="600"
+
+cy="600"
+
+rx="120"
+
+ry="35"/>
+
+
+<ellipse
+
+cx="600"
+
+cy="600"
+
+rx="120"
+
+ry="75"/>
+
+
+<ellipse
+
+cx="600"
+
+cy="600"
+
+rx="120"
+
+ry="110"/>
 
 
 
 <path
 
 d="
-M530 445
-L670 555
+M480 600
+H720"/>
 
-M670 445
-L530 555
 
-"
+<path
 
-stroke="#ffffff"
+d="
+M600 480
+V720"/>
+
+
+<path
+
+d="
+M520 520
+L680 680"/>
+
+
+<path
+
+d="
+M680 520
+L520 680"/>
+
+
+</g>
+
+
+</g>
+
+
+
+
+
+
+<!-- =========================
+     PATH START
+========================= -->
+
+
+<g
+
+fill="none"
+
+stroke="#d8e7ff"
+
+stroke-opacity=".5"
+
+stroke-width="3">
+
+
+<path
+
+d="
+M260 600
+C390 500 470 560 600 600"/>
+
+
+<path
+
+d="
+M600 600
+C740 560 820 500 940 600"/>
+
+
+<path
+
+d="
+M600 600
+C600 760 600 820 600 930"/>
+
+
+<path
+
+d="
+M600 600
+C600 430 600 340 600 200"/>
+
+
+</g>
+
+<!-- =========================
+     THEO
+========================= -->
+
+
+<g>
+
+
+<!-- activation point -->
+
+
+<circle
+
+cx="260"
+
+cy="600"
+
+r="14"
+
+fill="#bcd8ff"/>
+
+
+<circle
+
+cx="260"
+
+cy="600"
+
+r="28"
+
+fill="none"
+
+stroke="#bcd8ff"
 
 stroke-opacity=".25"
 
@@ -359,53 +474,169 @@ stroke-width="2"/>
 
 
 
-</g>
 
-
-
-</g>
-
-
-
-
-
-
-
-
-
-<!-- ==========================
-     THEO FIRST STEP
-========================== -->
+<!-- scarecrow -->
 
 
 <g
 
-class="myth-stage stage-theo">
+transform="translate(260 390)"
 
+stroke="#dceaff"
+
+stroke-width="5"
+
+fill="none">
+
+
+
+<!-- hat -->
+
+
+<path
+
+d="
+M-65 10
+Q0 -55 65 10
+Z"/>
+
+
+
+<line
+
+x1="-80"
+
+y1="10"
+
+x2="80"
+
+y2="10"/>
+
+
+
+
+
+<!-- head -->
 
 
 <circle
 
-class="preview-point"
+cx="0"
 
-data-step="1"
+cy="60"
 
-cx="250"
+r="38"/>
 
-cy="500"
 
-r="14"/>
+
+
+
+<!-- eyes -->
+
+
+<circle
+
+cx="-12"
+
+cy="55"
+
+r="3"
+
+fill="#dceaff"/>
+
+
+<circle
+
+cx="12"
+
+cy="55"
+
+r="3"
+
+fill="#dceaff"/>
+
+
+
+
+
+<!-- body -->
+
+
+<path
+
+d="
+M0 100
+L0 240"/>
+
+
+
+
+
+<!-- arms -->
+
+
+<path
+
+d="
+M-100 150
+L100 150"/>
+
+
+
+
+
+<!-- coat -->
+
+
+<path
+
+d="
+M-60 120
+L60 120
+L90 240
+L-90 240
+Z"/>
+
+
+
+
+<!-- straw lines -->
+
+
+<path
+
+d="
+M-60 150
+L-95 190"/>
+
+
+<path
+
+d="
+M60 150
+L95 190"/>
+
+
+
+</g>
+
 
 
 
 
 <text
 
-class="myth-title"
+x="160"
 
-x="195"
+y="760"
 
-y="630">
+fill="#ffffff"
+
+font-family="Inter, sans-serif"
+
+font-size="46"
+
+letter-spacing="12">
 
 THEO
 
@@ -413,21 +644,23 @@ THEO
 
 
 
-
 <text
 
-class="myth-subtitle"
+x="105"
 
-x="150"
+y="820"
 
-y="675">
+fill="#bfd4ff"
+
+font-family="Inter, sans-serif"
+
+font-size="22">
 
 When you are alone
 
 </text>
 
 
-
 </g>
 
 
@@ -437,78 +670,456 @@ When you are alone
 
 
 
-<!-- ==========================
-     HIDDEN STEPS
-========================== -->
+
+<!-- =========================
+     DREAMER
+========================= -->
 
 
-<g
+<g>
 
-class="myth-stage hidden-stage stage-dreamer">
 
 
 <circle
 
-class="preview-point"
+cx="940"
 
-data-step="2"
+cy="600"
 
-cx="950"
+r="14"
 
-cy="400"
+fill="#bcd8ff"/>
 
-r="14"/>
+
+<circle
+
+cx="940"
+
+cy="600"
+
+r="28"
+
+fill="none"
+
+stroke="#bcd8ff"
+
+stroke-opacity=".25"
+
+stroke-width="2"/>
+
+
+
+
+
+
+
+<g
+
+transform="translate(940 390)"
+
+stroke="#dceaff"
+
+stroke-width="5"
+
+fill="none">
+
+
+
+<!-- head -->
+
+
+<circle
+
+cy="0"
+
+r="38"/>
+
+
+
+
+
+<!-- hair -->
+
+
+<path
+
+d="
+M-38 -5
+Q0 -55 38 -5"/>
+
+
+
+
+
+<!-- body -->
+
+
+<path
+
+d="
+M0 40
+L0 180"/>
+
+
+
+
+
+<!-- arms -->
+
+
+<path
+
+d="
+M-80 90
+L80 90"/>
+
+
+
+
+
+<!-- legs -->
+
+
+<path
+
+d="
+M0 180
+L-45 260"/>
+
+
+<path
+
+d="
+M0 180
+L45 260"/>
+
+
+</g>
+
+
+
 
 
 <text
 
-class="myth-title"
+x="790"
 
-x="830"
+y="760"
 
-y="530">
+fill="#ffffff"
+
+font-family="Inter, sans-serif"
+
+font-size="46"
+
+letter-spacing="12">
 
 DREAMER
 
 </text>
 
 
+
+<text
+
+x="730"
+
+y="820"
+
+fill="#bfd4ff"
+
+font-family="Inter, sans-serif"
+
+font-size="22">
+
+When you dream of connection
+
+</text>
+
+
+
 </g>
 
 
 
 
 
-<g
 
-class="myth-stage hidden-stage stage-dark">
+
+
+
+<!-- =========================
+     DARKEST HOUR
+========================= -->
+
+
+<g>
 
 
 <circle
 
-class="preview-point"
+cx="600"
 
-data-step="3"
+cy="930"
+
+r="14"
+
+fill="#bcd8ff"/>
+
+
+<circle
+
+cx="600"
+
+cy="930"
+
+r="28"
+
+fill="none"
+
+stroke="#bcd8ff"
+
+stroke-opacity=".25"
+
+stroke-width="2"/>
+
+
+
+
+
+
+
+<!-- stars -->
+
+
+<g
+
+fill="#ffffff">
+
+
+<circle
+
+cx="530"
+
+cy="850"
+
+r="7"/>
+
+
+<circle
 
 cx="600"
 
 cy="820"
 
-r="14"/>
+r="10"/>
+
+
+<circle
+
+cx="670"
+
+cy="850"
+
+r="7"/>
+
+
+</g>
+
+
 
 
 
 <text
 
-class="myth-title"
+x="320"
 
-x="390"
+y="1030"
 
-y="900">
+fill="#ffffff"
 
-THE DARKEST HOUR
+font-family="Inter, sans-serif"
+
+font-size="42"
+
+letter-spacing="8">
+
+THE DARKEST HOUR IS BEFORE THE DAWN
 
 </text>
+
+
+
+<text
+
+x="470"
+
+y="1080"
+
+fill="#bfd4ff"
+
+font-family="Inter, sans-serif"
+
+font-size="22">
+
+When you lost the way
+
+</text>
+
+
+
+</g>
+
+<!-- =========================
+     DAWN / IO
+========================= -->
+
+
+<g>
+
+
+
+<!-- activation point -->
+
+
+<circle
+
+cx="600"
+
+cy="200"
+
+r="14"
+
+fill="#ffe7a3"/>
+
+
+<circle
+
+cx="600"
+
+cy="200"
+
+r="30"
+
+fill="none"
+
+stroke="#ffe7a3"
+
+stroke-opacity=".35"
+
+stroke-width="2"/>
+
+
+
+
+
+
+
+<!-- sun glow -->
+
+
+<circle
+
+cx="600"
+
+cy="120"
+
+r="95"
+
+fill="#ffd86b"
+
+opacity=".18"
+
+filter="url(#glow)"/>
+
+
+
+
+
+<!-- sun -->
+
+
+<circle
+
+cx="600"
+
+cy="120"
+
+r="55"
+
+fill="url(#sun)"/>
+
+
+
+
+
+
+
+<!-- rays -->
+
+
+<g
+
+stroke="#ffd86b"
+
+stroke-width="5"
+
+stroke-linecap="round">
+
+
+<line
+
+x1="600"
+
+y1="35"
+
+x2="600"
+
+y2="0"/>
+
+
+<line
+
+x1="520"
+
+y1="70"
+
+x2="480"
+
+y2="35"/>
+
+
+<line
+
+x1="680"
+
+y1="70"
+
+x2="720"
+
+y2="35"/>
+
+
+<line
+
+x1="490"
+
+y1="120"
+
+x2="450"
+
+y2="120"/>
+
+
+<line
+
+x1="710"
+
+y1="120"
+
+x2="750"
+
+y2="120"/>
 
 
 </g>
@@ -518,47 +1129,166 @@ THE DARKEST HOUR
 
 
 
+
+<!-- road -->
+
+
+<path
+
+d="
+M600 200
+C600 350 600 430 600 520
+"
+
+fill="none"
+
+stroke="url(#sunRoad)"
+
+stroke-width="8"/>
+
+
+
+
+
+
+
+<!-- birds -->
+
+
 <g
 
-class="myth-stage hidden-stage stage-dawn">
+stroke="#ffffff"
+
+stroke-width="3"
+
+fill="none">
 
 
-<circle
+<path
 
-class="preview-point"
+d="
+M450 160
+Q470 140 490 160"/>
 
-data-step="4"
 
-cx="600"
+<path
 
-cy="140"
+d="
+M720 180
+Q740 160 760 180"/>
 
-r="14"/>
+
+<path
+
+d="
+M820 120
+Q840 100 860 120"/>
+
+
+</g>
+
+
+
+
+
 
 
 
 <text
 
-class="myth-title"
+x="500"
 
-x="550"
+y="320"
 
-y="240">
+fill="#ffffff"
+
+font-family="Inter, sans-serif"
+
+font-size="52"
+
+letter-spacing="16">
 
 IO
 
 </text>
 
 
+
+
+
+<text
+
+x="410"
+
+y="380"
+
+fill="#ffe7a3"
+
+font-family="Inter, sans-serif"
+
+font-size="22">
+
+When the dawn has come
+
+</text>
+
+
+
 </g>
 
 
 
 
+
+
+
+
+
+
+<!-- =========================
+     FINAL LABELS
+========================= -->
+
+
+<g
+
+fill="#ffffff"
+
+font-family="Inter, sans-serif"
+
+text-anchor="middle">
+
+
+<text
+
+x="600"
+
+y="760"
+
+font-size="18"
+
+opacity=".45"
+
+letter-spacing="6">
+
+THE JOURNEY
+
+</text>
+
+
+</g>
+
+
+
+
+
+
+<!-- =========================
+     END
+========================= -->
+
+
 </svg>
-
-
-`;
 
 
 
