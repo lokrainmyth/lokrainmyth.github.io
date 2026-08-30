@@ -30,8 +30,10 @@ const Myth = {
 
 this.viewport.innerHTML = `
 
-<svg class="myth-svg" viewBox="0 0 1200 800">
-
+<svg 
+class="myth-svg"
+viewBox="0 0 1000 800"
+preserveAspectRatio="xMidYMid meet">
 <style>
 
 .myth-svg text {
