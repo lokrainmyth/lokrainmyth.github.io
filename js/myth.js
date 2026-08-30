@@ -717,6 +717,17 @@ Listen on all streaming platforms
             .querySelector(".myth-dawn")
             ?.classList.add("reveal");
 
+        document
+.querySelector(".listen-platforms")
+?.classList.add("show");
+
+        .listen-platforms.show {
+
+    animation:
+    listenGlow 5s infinite;
+
+}
+
     },
 
     activateDawn() {
