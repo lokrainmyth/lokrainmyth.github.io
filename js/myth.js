@@ -202,6 +202,15 @@ preserveAspectRatio="xMidYMid meet">
 
 
 
+.sun circle {
+
+    fill:white;
+    opacity:.8;
+
+}
+
+
+
 .sun path {
 
     stroke:white;
@@ -552,7 +561,8 @@ M730 200L720 210
 
 <g class="myth-dawn"
 data-myth-action="dawn"
-transform="translate(-60 0)">
+transform="translate(-50 0)">
+
 
 <text x="810" y="170">
 
@@ -573,6 +583,7 @@ The Dawn has come
 
 
 <g class="birds"
+transform="translate(-180 20)">
 
 
 <path d="
