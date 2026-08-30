@@ -2200,6 +2200,26 @@ font-family:Inter,sans-serif;
 
 }
 
+.myth-svg {
+
+    width:100%;
+    height:100%;
+
+    max-width:100vw;
+    max-height:100vh;
+
+}
+
+@media(max-width:600px){
+
+    .myth-svg {
+
+        transform:scale(1.25);
+
+    }
+
+}
+
 /* ==========================================================
    PATH
 ========================================================== */
