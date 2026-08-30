@@ -202,14 +202,6 @@ preserveAspectRatio="xMidYMid meet">
 
 
 
-.sun circle {
-
-    fill:white;
-    opacity:.8;
-
-}
-
-
 
 .sun path {
 
