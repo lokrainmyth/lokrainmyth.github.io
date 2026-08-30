@@ -561,8 +561,7 @@ M730 200L720 210
 
 <g class="myth-dawn"
 data-myth-action="dawn"
-transform="translate(-50 0)">
-
+transform="translate(-60 0)">
 
 <text x="810" y="170">
 
