@@ -2244,6 +2244,57 @@ opacity:1;
 
 }
 
+.figure-theo,
+.figure-dreamer{
+
+    stroke:#eee7d5;
+
+    stroke-width:3;
+
+    fill:none;
+
+    opacity:.8;
+
+}
+
+
+.myth-subtitle{
+
+    fill:#c9d7ef;
+
+    font-size:18px;
+
+    letter-spacing:.25em;
+
+}
+
+
+.myth-point{
+
+    fill:#dcecff;
+
+    animation:
+    pointPulse 3s ease-in-out infinite;
+
+}
+
+
+@keyframes pointPulse{
+
+    0%,100%{
+
+        opacity:.5;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+}
+
 /* ==========================================================
    PATH
 ========================================================== */
