@@ -6,23 +6,11 @@ const Myth = {
 
     screen:null,
     viewport:null,
-    closeButton:null,
     audio:null,
-
-
-    step:0,
-    initialized:false,
-
+    closeButton:null,
 
 
     init(){
-
-
-        if(this.initialized) return;
-
-
-        this.initialized=true;
-
 
 
         this.screen =
@@ -33,12 +21,12 @@ const Myth = {
             document.getElementById("mythViewport");
 
 
-        this.closeButton =
-            document.getElementById("mythClose");
-
-
         this.audio =
             document.getElementById("mythAudio");
+
+
+        this.closeButton =
+            document.getElementById("mythClose");
 
 
 
@@ -52,16 +40,11 @@ const Myth = {
         }
 
 
-
         this.build();
-
-
         this.bind();
 
 
     },
-
-
 
 
 
@@ -77,88 +60,29 @@ viewBox="0 0 700 1200"
 xmlns="http://www.w3.org/2000/svg">
 
 
-
 <defs>
 
 
-
-<!-- background glow -->
-
-
-<radialGradient id="mythSky">
-
+<radialGradient id="sky">
 
 <stop
 offset="0%"
-stop-color="#182844"/>
-
-
-<stop
-offset="55%"
-stop-color="#09111f"/>
-
+stop-color="#172744"/>
 
 <stop
 offset="100%"
-stop-color="#03050a"/>
-
+stop-color="#050812"/>
 
 </radialGradient>
 
 
 
-
-<filter id="softGlow">
-
+<filter id="glow">
 
 <feGaussianBlur
-stdDeviation="7"
-result="blur"/>
-
-
-<feMerge>
-
-
-<feMergeNode
-in="blur"/>
-
-
-<feMergeNode
-in="SourceGraphic"/>
-
-
-</feMerge>
-
+stdDeviation="5"/>
 
 </filter>
-
-
-
-
-
-<linearGradient
-id="pathGradient"
-x1="0"
-x2="1">
-
-
-<stop
-offset="0%"
-stop-color="#d7c78d"/>
-
-
-<stop
-offset="50%"
-stop-color="#eef0ff"/>
-
-
-<stop
-offset="100%"
-stop-color="#f5d98a"/>
-
-
-</linearGradient>
-
 
 
 </defs>
@@ -166,157 +90,51 @@ stop-color="#f5d98a"/>
 
 
 
-
-<!-- ==================================================
-     ATMOSPHERE
-================================================== -->
-
-
 <rect
-x="0"
-y="0"
 width="700"
 height="1200"
-fill="url(#mythSky)"/>
+fill="url(#sky)"
+/>
 
 
 
 
-<!-- subtle map lines -->
+
+<!-- PATH -->
+
+
+<path
+class="myth-road"
+d="
+M180 1000
+C280 850 400 760 350 600
+C300 450 500 300 470 120
+"
+/>
+
+
+
+
+
+
+<!-- THEO -->
 
 
 <g
-class="myth-background-lines">
-
-
-<path
-d="
-M40 200
-C180 120 400 150 650 80
-"/>
-
-
-<path
-d="
-M20 900
-C220 780 430 850 680 760
-"/>
-
-
-<path
-d="
-M100 1100
-C300 980 500 1040 650 930
-"/>
-
+class="myth-place theo">
 
 
 <circle
-cx="120"
-cy="280"
-r="2"/>
-
-
-<circle
-cx="560"
-cy="420"
-r="2"/>
-
-
-<circle
+class="myth-dot"
 cx="180"
-cy="780"
-r="2"/>
-
-
-</g>
-
-
-
-
-
-
-
-<!-- ==================================================
-     PATH
-================================================== -->
-
-
-
-<g
-class="myth-paths">
-
-
-
-<path
-id="pathTheoDreamer"
-class="myth-line"
-d="
-M180 1020
-C250 900
-390 820
-430 680
-"/>
-
-
-
-
-<path
-id="pathDreamerDark"
-class="myth-line"
-d="
-M430 680
-C520 560
-260 470
-300 330
-"/>
-
-
-
-
-
-<path
-id="pathDarkIo"
-class="myth-line"
-d="
-M300 330
-C380 240
-520 190
-470 100
-"/>
-
-
-
-</g>
-
-
-
-
-
-<!-- ==================================================
-     THEO
-================================================== -->
-
-
-<g
-id="stageTheo"
-class="myth-stage active"
-data-step="1">
-
-
-
-<circle
-class="myth-point"
-cx="180"
-cy="1020"
+cy="1000"
 r="12"/>
 
 
 
 <text
-class="myth-title"
-x="80"
-y="1110">
+x="100"
+y="1080">
 
 THEO
 
@@ -324,62 +142,50 @@ THEO
 
 
 
-
 <!-- scarecrow -->
 
 
 <g
-class="figure-theo"
-transform="translate(180 860)">
+class="scarecrow"
+transform="translate(180 850)">
 
-
-
-<!-- hat -->
 
 
 <path
 d="
-M-55 -30
-Q0 -65 55 -30
-Z"/>
-
+M-45 -20
+Q0 -60 45 -20
+"/>
 
 
 <line
-x1="-65"
-y1="-25"
-x2="65"
-y2="-25"/>
+x1="-60"
+y1="-15"
+x2="60"
+y2="-15"/>
 
-
-
-
-
-<!-- head -->
 
 
 <circle
-cy="15"
-r="28"/>
-
-
-
-
-<!-- body -->
-
-
-<line
-y1="45"
-y2="150"/>
+cy="25"
+r="25"/>
 
 
 
 <line
-x1="-55"
+y1="50"
+y2="140"/>
+
+
+
+<line
+x1="-45"
 y1="80"
-x2="55"
+x2="45"
 y2="80"/>
 
+
+</g>
 
 
 
@@ -387,28 +193,27 @@ y2="80"/>
 
 
 
-// ==================================================
-// DREAMER
-// ==================================================
+
+
+
+<!-- DREAMER -->
 
 
 <g
-id="stageDreamer"
-class="myth-stage locked"
-data-step="2">
+class="myth-place dreamer">
 
 
 <circle
-class="myth-point"
-cx="430"
-cy="680"
+class="myth-dot"
+cx="350"
+cy="600"
 r="12"/>
 
 
+
 <text
-class="myth-title"
-x="340"
-y="770">
+x="260"
+y="700">
 
 DREAMER
 
@@ -416,64 +221,32 @@ DREAMER
 
 
 
-
-
-<!-- sitting dreamer -->
-
-
 <g
-class="figure-dreamer"
-transform="translate(430 570)">
+class="dreamer-figure"
+transform="translate(350 500)">
 
 
-
-<!-- head -->
 
 <circle
 cy="0"
-r="24"/>
+r="25"/>
 
 
-
-<!-- body -->
 
 <path
 d="
-M-35 35
-Q0 15 35 35
-L45 95
-L-45 95
+M-35 40
+Q0 15 35 40
+L50 110
+L-50 110
 Z"/>
 
 
 
-
-<!-- legs -->
-
-<line
-x1="-25"
-y1="95"
-x2="-50"
-y2="130"/>
-
-
-<line
-x1="25"
-y1="95"
-x2="50"
-y2="130"/>
-
-
-
-
 </g>
 
 
-
 </g>
-
-
-
 
 
 // ==================================================
@@ -482,24 +255,20 @@ y2="130"/>
 
 
 <g
-id="stageDark"
-class="myth-stage locked"
-data-step="3">
-
+class="myth-place darkest">
 
 
 <circle
-class="myth-point"
-cx="300"
-cy="330"
+class="myth-dot"
+cx="250"
+cy="360"
 r="12"/>
 
 
 
 <text
-class="myth-title"
-x="110"
-y="250">
+x="80"
+y="300">
 
 THE DARKEST HOUR
 
@@ -507,19 +276,13 @@ THE DARKEST HOUR
 
 
 
-
-
-<!-- stars -->
-
-
 <g
 class="stars">
 
 
-
 <path
 d="
-M240 290
+M180 350
 l8 18
 20 2
 -15 13
@@ -532,10 +295,9 @@ l8 18
 
 
 
-
 <path
 d="
-M300 260
+M250 320
 l8 18
 20 2
 -15 13
@@ -548,10 +310,9 @@ l8 18
 
 
 
-
 <path
 d="
-M360 290
+M320 350
 l8 18
 20 2
 -15 13
@@ -561,12 +322,9 @@ l8 18
 5-20
 -15-13
 20-2z"/>
-
 
 
 </g>
-
-
 
 
 </g>
@@ -576,35 +334,27 @@ l8 18
 
 
 
-
-
-// ==================================================
-// IO
-// ==================================================
+<!-- ==================================================
+     IO
+================================================== -->
 
 
 <g
-id="stageIo"
-class="myth-stage locked"
-data-step="4">
-
-
-
+class="myth-place io">
 
 
 <circle
-class="myth-point"
+class="myth-dot"
 cx="470"
-cy="100"
+cy="120"
 r="12"/>
 
 
 
 
 <text
-class="myth-title"
 x="430"
-y="190">
+y="230">
 
 IO
 
@@ -613,9 +363,9 @@ IO
 
 
 <text
-class="myth-subtitle"
-x="360"
-y="230">
+class="dawn-text"
+x="310"
+y="270">
 
 The Dawn has come
 
@@ -625,56 +375,39 @@ The Dawn has come
 
 
 
+
 <!-- SUN -->
 
 
 <g
-class="sun">
+class="sun"
+transform="translate(470 80)">
 
 
 
 <circle
-cx="470"
-cy="55"
-r="38"/>
+r="45"/>
 
-
-
-
-<g
-class="sun-rays">
 
 
 <line
-x1="470"
-y1="0"
-x2="470"
-y2="20"/>
+y1="-75"
+y2="-55"/>
 
 
 <line
-x1="470"
-y1="90"
-x2="470"
-y2="110"/>
-
-
-<line
-x1="415"
-y1="55"
-x2="435"
+y1="75"
 y2="55"/>
 
 
 <line
-x1="505"
-y1="55"
-x2="525"
-y2="55"/>
+x1="-75"
+x2="-55"/>
 
 
-</g>
-
+<line
+x1="75"
+x2="55"/>
 
 
 </g>
@@ -683,38 +416,32 @@ y2="55"/>
 
 
 
-<!-- birds -->
+<!-- BIRDS -->
 
 
 <g
 class="birds">
 
 
-
 <path
 d="
-M520 80
-Q535 65 550 80
-"/>
-
-
-<path
-d="
-M560 100
-Q575 85 590 100
-"/>
+M520 130
+Q540 110 560 130"/>
 
 
 <path
 d="
-M600 75
-Q615 60 630 75
-"/>
+M570 150
+Q590 130 610 150"/>
 
+
+<path
+d="
+M620 120
+Q640 100 660 120"/>
 
 
 </g>
-
 
 
 </g>
@@ -728,36 +455,15 @@ Q615 60 630 75
 
 `;
 
+
+
     },
 
 
+
+
+
     bind(){
-
-
-        this.viewport
-        .querySelectorAll(".myth-stage")
-        .forEach(stage=>{
-
-
-            stage.addEventListener(
-                "click",
-                ()=>{
-
-
-                    const step =
-                        Number(
-                            stage.dataset.step
-                        );
-
-
-                    this.activate(step);
-
-
-                }
-            );
-
-
-        });
 
 
 
@@ -772,13 +478,10 @@ Q615 60 630 75
 
         document.addEventListener(
             "keydown",
-            event=>{
+            e=>{
 
 
-                if(
-                    event.key==="Escape" &&
-                    !this.screen.classList.contains("hidden")
-                ){
+                if(e.key==="Escape"){
 
                     this.close();
 
@@ -789,196 +492,27 @@ Q615 60 630 75
         );
 
 
-    },
 
-
-
-
-
-    activate(step){
-
-
-        if(
-            step !== this.step + 1
-        ){
-
-            return;
-
-        }
-
-
-
-        this.step = step;
-
-
-
-        if(step===1){
-
-
-            this.reveal(
-                "stageDreamer"
-            );
-
-
-            this.draw(
-                "pathTheoDreamer"
-            );
-
-
-        }
-
-
-
-
-
-        if(step===2){
-
-
-            this.reveal(
-                "stageDark"
-            );
-
-
-            this.draw(
-                "pathDreamerDark"
-            );
-
-
-        }
-
-
-
-
-
-
-        if(step===3){
-
-
-            this.reveal(
-                "stageIo"
-            );
-
-
-            this.draw(
-                "pathDarkIo"
-            );
-
-
-        }
-
-
-
-
-
-        if(step===4){
-
-
-            this.showStreaming();
-
-
-
-        }
-
-
-    },
-
-
-
-
-
-
-    reveal(id){
-
-
-        const element =
-            document.getElementById(id);
-
-
-        element?.classList.remove(
-            "locked"
-        );
-
-
-        element?.classList.add(
-            "visible"
-        );
-
-
-    },
-
-
-
-
-
-
-
-    draw(id){
-
-
-        document
-        .getElementById(id)
-        ?.classList.add(
-            "visible"
-        );
-
-
-    },
-
-
-
-
-
-
-    showStreaming(){
-
-
-        const text =
-        document.createElement(
-            "div"
-        );
-
-
-        text.className =
-            "myth-streaming";
-
-
-
-        text.innerHTML =
-        `
-        Listen on all streaming platforms
-        `;
-
-
-
-        this.screen.appendChild(
-            text
-        );
-
-
-
-        setTimeout(
+        this.viewport
+        .querySelector(".io")
+        ?.addEventListener(
+            "click",
             ()=>{
 
                 this.close();
 
-            },
-            3000
+            }
         );
 
 
+
     },
-
-
 
 
 
 
 
     open(){
-
-
-        this.step=0;
-
 
 
         this.screen
@@ -988,32 +522,17 @@ Q615 60 630 75
 
 
 
-        this.screen
-        ?.setAttribute(
-            "aria-hidden",
-            "false"
-        );
-
-
-
         if(this.audio){
 
-
             this.audio.currentTime=0;
-
 
             this.audio.play()
             .catch(()=>{});
 
-
         }
 
 
-
     },
-
-
-
 
 
 
@@ -1029,31 +548,13 @@ Q615 60 630 75
 
 
 
-        this.screen
-        ?.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
-
-
         if(this.audio){
-
 
             this.audio.pause();
 
-
             this.audio.currentTime=0;
 
-
         }
-
-
-
-        document
-        .querySelector(".myth-streaming")
-        ?.remove();
-
 
 
     }
@@ -1069,10 +570,6 @@ document.addEventListener(
 "DOMContentLoaded",
 ()=>{
 
-
     Myth.init();
 
-
 });
-
-    
