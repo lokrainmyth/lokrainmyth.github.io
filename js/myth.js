@@ -6,13 +6,24 @@ const Myth = {
 
     screen:null,
     viewport:null,
+    closeButton:null,
     audio:null,
 
 
     step:0,
+    initialized:false,
+
 
 
     init(){
+
+
+        if(this.initialized) return;
+
+
+        this.initialized=true;
+
+
 
         this.screen =
             document.getElementById("mythScreen");
@@ -22,34 +33,35 @@ const Myth = {
             document.getElementById("mythViewport");
 
 
+        this.closeButton =
+            document.getElementById("mythClose");
+
+
         this.audio =
-            document.getElementById("mythSound");
+            document.getElementById("mythAudio");
 
 
-        if(!this.screen || !this.viewport)
+
+        if(
+            !this.screen ||
+            !this.viewport
+        ){
+
             return;
+
+        }
+
 
 
         this.build();
 
 
-        document.addEventListener(
-            "keydown",
-            e=>{
+        this.bind();
 
-                if(
-                    e.key==="Escape" &&
-                    !this.screen.classList.contains("hidden")
-                ){
-
-                    this.close();
-
-                }
-
-            }
-        );
 
     },
+
+
 
 
 
@@ -61,77 +73,250 @@ const Myth = {
 
 <svg
 class="myth-map"
-viewBox="0 0 600 1200"
+viewBox="0 0 700 1200"
 xmlns="http://www.w3.org/2000/svg">
+
 
 
 <defs>
 
 
-<filter id="glow">
+
+<!-- background glow -->
+
+
+<radialGradient id="mythSky">
+
+
+<stop
+offset="0%"
+stop-color="#182844"/>
+
+
+<stop
+offset="55%"
+stop-color="#09111f"/>
+
+
+<stop
+offset="100%"
+stop-color="#03050a"/>
+
+
+</radialGradient>
+
+
+
+
+<filter id="softGlow">
+
 
 <feGaussianBlur
-stdDeviation="6"/>
+stdDeviation="7"
+result="blur"/>
+
+
+<feMerge>
+
+
+<feMergeNode
+in="blur"/>
+
+
+<feMergeNode
+in="SourceGraphic"/>
+
+
+</feMerge>
+
 
 </filter>
+
+
+
+
+
+<linearGradient
+id="pathGradient"
+x1="0"
+x2="1">
+
+
+<stop
+offset="0%"
+stop-color="#d7c78d"/>
+
+
+<stop
+offset="50%"
+stop-color="#eef0ff"/>
+
+
+<stop
+offset="100%"
+stop-color="#f5d98a"/>
+
+
+</linearGradient>
+
 
 
 </defs>
 
 
 
-<!-- PATHS -->
 
 
-<path
-id="line1"
-class="myth-line"
-d="
-M300 980
-C250 820 350 700 300 560
-"/>
+<!-- ==================================================
+     ATMOSPHERE
+================================================== -->
 
 
-<path
-id="line2"
-class="myth-line"
-d="
-M300 560
-C450 450 250 350 300 250
-"/>
-
-
-<path
-id="line3"
-class="myth-line"
-d="
-M300 250
-C300 180 300 130 300 90
-"/>
+<rect
+x="0"
+y="0"
+width="700"
+height="1200"
+fill="url(#mythSky)"/>
 
 
 
 
-<!-- THEO -->
+<!-- subtle map lines -->
 
 
 <g
-id="theo"
+class="myth-background-lines">
+
+
+<path
+d="
+M40 200
+C180 120 400 150 650 80
+"/>
+
+
+<path
+d="
+M20 900
+C220 780 430 850 680 760
+"/>
+
+
+<path
+d="
+M100 1100
+C300 980 500 1040 650 930
+"/>
+
+
+
+<circle
+cx="120"
+cy="280"
+r="2"/>
+
+
+<circle
+cx="560"
+cy="420"
+r="2"/>
+
+
+<circle
+cx="180"
+cy="780"
+r="2"/>
+
+
+</g>
+
+
+
+
+
+
+
+<!-- ==================================================
+     PATH
+================================================== -->
+
+
+
+<g
+class="myth-paths">
+
+
+
+<path
+id="pathTheoDreamer"
+class="myth-line"
+d="
+M180 1020
+C250 900
+390 820
+430 680
+"/>
+
+
+
+
+<path
+id="pathDreamerDark"
+class="myth-line"
+d="
+M430 680
+C520 560
+260 470
+300 330
+"/>
+
+
+
+
+
+<path
+id="pathDarkIo"
+class="myth-line"
+d="
+M300 330
+C380 240
+520 190
+470 100
+"/>
+
+
+
+</g>
+
+
+
+
+
+<!-- ==================================================
+     THEO
+================================================== -->
+
+
+<g
+id="stageTheo"
 class="myth-stage active"
 data-step="1">
 
 
+
 <circle
 class="myth-point"
-cx="300"
-cy="980"
+cx="180"
+cy="1020"
 r="12"/>
 
 
 
 <text
-x="250"
-y="1050">
+class="myth-title"
+x="80"
+y="1110">
 
 THEO
 
@@ -139,66 +324,91 @@ THEO
 
 
 
+
 <!-- scarecrow -->
 
+
 <g
-class="figure"
-transform="translate(300 850)">
+class="figure-theo"
+transform="translate(180 860)">
+
+
+
+<!-- hat -->
 
 
 <path
 d="
-M-30 0
-Q0-35 30 0
-"/>
+M-55 -30
+Q0 -65 55 -30
+Z"/>
+
+
+
+<line
+x1="-65"
+y1="-25"
+x2="65"
+y2="-25"/>
+
+
+
+
+
+<!-- head -->
 
 
 <circle
-cy="35"
-r="18"/>
+cy="15"
+r="28"/>
+
+
+
+
+<!-- body -->
 
 
 <line
-y1="55"
-y2="120"/>
+y1="45"
+y2="150"/>
+
 
 
 <line
-x1="-35"
-x2="35"
+x1="-55"
 y1="80"
+x2="55"
 y2="80"/>
 
 
-</g>
 
 
 </g>
 
 
 
-
-
-<!-- DREAMER -->
+// ==================================================
+// DREAMER
+// ==================================================
 
 
 <g
-id="dreamer"
-class="myth-stage"
+id="stageDreamer"
+class="myth-stage locked"
 data-step="2">
 
 
 <circle
 class="myth-point"
-cx="300"
-cy="560"
+cx="430"
+cy="680"
 r="12"/>
 
 
-
 <text
-x="190"
-y="630">
+class="myth-title"
+x="340"
+y="770">
 
 DREAMER
 
@@ -206,117 +416,195 @@ DREAMER
 
 
 
-<g
-class="figure"
-transform="translate(300 440)">
 
+
+<!-- sitting dreamer -->
+
+
+<g
+class="figure-dreamer"
+transform="translate(430 570)">
+
+
+
+<!-- head -->
 
 <circle
-r="18"/>
+cy="0"
+r="24"/>
 
+
+
+<!-- body -->
 
 <path
 d="
-M-25 30
-L25 30
-L35 100
-L-35 100
+M-35 35
+Q0 15 35 35
+L45 95
+L-45 95
 Z"/>
 
 
-</g>
+
+
+<!-- legs -->
+
+<line
+x1="-25"
+y1="95"
+x2="-50"
+y2="130"/>
+
+
+<line
+x1="25"
+y1="95"
+x2="50"
+y2="130"/>
+
+
 
 
 </g>
 
 
 
+</g>
 
 
 
-<!-- DARK -->
+
+
+// ==================================================
+// DARKEST HOUR
+// ==================================================
 
 
 <g
-id="dark"
-class="myth-stage"
+id="stageDark"
+class="myth-stage locked"
 data-step="3">
+
 
 
 <circle
 class="myth-point"
 cx="300"
-cy="250"
+cy="330"
 r="12"/>
 
 
 
 <text
-x="90"
-y="320">
+class="myth-title"
+x="110"
+y="250">
 
 THE DARKEST HOUR
 
 </text>
 
 
-<text
-x="170"
-y="360">
-
-BEFORE THE DAWN
-
-</text>
 
 
 
-<g class="stars">
-
-
-<circle cx="260" cy="180" r="5"/>
-<circle cx="300" cy="150" r="6"/>
-<circle cx="340" cy="180" r="5"/>
-
-
-</g>
-
-
-</g>
-
-
-
-
-
-
-
-<!-- IO -->
+<!-- stars -->
 
 
 <g
-id="io"
-class="myth-stage"
+class="stars">
+
+
+
+<path
+d="
+M240 290
+l8 18
+20 2
+-15 13
+5 20
+-18-10
+-18 10
+5-20
+-15-13
+20-2z"/>
+
+
+
+
+<path
+d="
+M300 260
+l8 18
+20 2
+-15 13
+5 20
+-18-10
+-18 10
+5-20
+-15-13
+20-2z"/>
+
+
+
+
+<path
+d="
+M360 290
+l8 18
+20 2
+-15 13
+5 20
+-18-10
+-18 10
+5-20
+-15-13
+20-2z"/>
+
+
+
+</g>
+
+
+
+
+</g>
+
+
+
+
+
+
+
+
+// ==================================================
+// IO
+// ==================================================
+
+
+<g
+id="stageIo"
+class="myth-stage locked"
 data-step="4">
+
+
+
 
 
 <circle
 class="myth-point"
-cx="300"
-cy="90"
+cx="470"
+cy="100"
 r="12"/>
 
 
 
-<circle
-class="sun"
-cx="300"
-cy="50"
-r="30"/>
-
-
 
 <text
-x="270"
-y="170">
+class="myth-title"
+x="430"
+y="190">
 
 IO
 
@@ -325,16 +613,113 @@ IO
 
 
 <text
-class="dawn-text"
-x="120"
-y="220">
+class="myth-subtitle"
+x="360"
+y="230">
 
 The Dawn has come
 
 </text>
 
 
+
+
+
+<!-- SUN -->
+
+
+<g
+class="sun">
+
+
+
+<circle
+cx="470"
+cy="55"
+r="38"/>
+
+
+
+
+<g
+class="sun-rays">
+
+
+<line
+x1="470"
+y1="0"
+x2="470"
+y2="20"/>
+
+
+<line
+x1="470"
+y1="90"
+x2="470"
+y2="110"/>
+
+
+<line
+x1="415"
+y1="55"
+x2="435"
+y2="55"/>
+
+
+<line
+x1="505"
+y1="55"
+x2="525"
+y2="55"/>
+
+
 </g>
+
+
+
+</g>
+
+
+
+
+
+<!-- birds -->
+
+
+<g
+class="birds">
+
+
+
+<path
+d="
+M520 80
+Q535 65 550 80
+"/>
+
+
+<path
+d="
+M560 100
+Q575 85 590 100
+"/>
+
+
+<path
+d="
+M600 75
+Q615 60 630 75
+"/>
+
+
+
+</g>
+
+
+
+</g>
+
+
 
 
 
@@ -343,12 +728,7 @@ The Dawn has come
 
 `;
 
-
-        this.bind();
-
     },
-
-
 
 
     bind(){
@@ -365,7 +745,9 @@ The Dawn has come
 
 
                     const step =
-                    Number(stage.dataset.step);
+                        Number(
+                            stage.dataset.step
+                        );
 
 
                     this.activate(step);
@@ -378,7 +760,37 @@ The Dawn has come
         });
 
 
+
+        this.closeButton?.addEventListener(
+            "click",
+            ()=>{
+                this.close();
+            }
+        );
+
+
+
+        document.addEventListener(
+            "keydown",
+            event=>{
+
+
+                if(
+                    event.key==="Escape" &&
+                    !this.screen.classList.contains("hidden")
+                ){
+
+                    this.close();
+
+                }
+
+
+            }
+        );
+
+
     },
+
 
 
 
@@ -386,63 +798,177 @@ The Dawn has come
     activate(step){
 
 
-        if(step!==this.step+1)
+        if(
+            step !== this.step + 1
+        ){
+
             return;
 
+        }
 
-        this.step=step;
+
+
+        this.step = step;
 
 
 
         if(step===1){
 
 
-            this.show("line1");
+            this.reveal(
+                "stageDreamer"
+            );
 
-            this.show("dreamer");
+
+            this.draw(
+                "pathTheoDreamer"
+            );
 
 
         }
+
+
+
 
 
         if(step===2){
 
 
-            this.show("line2");
+            this.reveal(
+                "stageDark"
+            );
 
-            this.show("dark");
+
+            this.draw(
+                "pathDreamerDark"
+            );
 
 
         }
+
+
+
 
 
 
         if(step===3){
 
 
-            this.show("line3");
+            this.reveal(
+                "stageIo"
+            );
 
-            this.show("io");
+
+            this.draw(
+                "pathDarkIo"
+            );
 
 
         }
 
 
 
+
+
+        if(step===4){
+
+
+            this.showStreaming();
+
+
+
+        }
+
+
     },
 
 
 
 
-    show(id){
+
+
+    reveal(id){
+
+
+        const element =
+            document.getElementById(id);
+
+
+        element?.classList.remove(
+            "locked"
+        );
+
+
+        element?.classList.add(
+            "visible"
+        );
+
+
+    },
+
+
+
+
+
+
+
+    draw(id){
 
 
         document
         .getElementById(id)
-        ?.classList.add("visible");
+        ?.classList.add(
+            "visible"
+        );
 
 
     },
+
+
+
+
+
+
+    showStreaming(){
+
+
+        const text =
+        document.createElement(
+            "div"
+        );
+
+
+        text.className =
+            "myth-streaming";
+
+
+
+        text.innerHTML =
+        `
+        Listen on all streaming platforms
+        `;
+
+
+
+        this.screen.appendChild(
+            text
+        );
+
+
+
+        setTimeout(
+            ()=>{
+
+                this.close();
+
+            },
+            3000
+        );
+
+
+    },
+
+
 
 
 
@@ -454,26 +980,41 @@ The Dawn has come
         this.step=0;
 
 
-        this.screen
-        .classList.remove("hidden");
-
 
         this.screen
-        .setAttribute(
+        ?.classList.remove(
+            "hidden"
+        );
+
+
+
+        this.screen
+        ?.setAttribute(
             "aria-hidden",
             "false"
         );
 
 
+
         if(this.audio){
 
+
             this.audio.currentTime=0;
-            this.audio.play();
+
+
+            this.audio.play()
+            .catch(()=>{});
+
 
         }
 
 
+
     },
+
+
+
+
 
 
 
@@ -482,28 +1023,45 @@ The Dawn has come
 
 
         this.screen
-        .classList.add("hidden");
+        ?.classList.add(
+            "hidden"
+        );
+
 
 
         this.screen
-        .setAttribute(
+        ?.setAttribute(
             "aria-hidden",
             "true"
         );
 
 
+
         if(this.audio){
 
+
             this.audio.pause();
+
+
             this.audio.currentTime=0;
 
+
         }
+
+
+
+        document
+        .querySelector(".myth-streaming")
+        ?.remove();
+
 
 
     }
 
 
+
 };
+
 
 
 
@@ -511,6 +1069,10 @@ document.addEventListener(
 "DOMContentLoaded",
 ()=>{
 
+
     Myth.init();
 
+
 });
+
+    
