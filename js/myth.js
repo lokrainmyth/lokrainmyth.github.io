@@ -721,8 +721,6 @@ Listen on all streaming platforms
 .querySelector(".listen-platforms")
 ?.classList.add("show");
 
-}
-
     },
 
     activateDawn() {
