@@ -1955,7 +1955,7 @@ body{
     inset: 0;
     z-index: 1000;
 
-    background: #050505;
+    background:#090d18;
 
     overflow: hidden;
 }
@@ -2170,9 +2170,10 @@ transform:rotate(360deg);
 
 .myth-figure{
 
-stroke:#dbe8ff;
-
-stroke-width:3;
+stroke:#d8c78f;
+stroke-opacity:.55;
+   
+stroke-width:2;
 
 fill:none;
 
@@ -2197,6 +2198,49 @@ letter-spacing:.45em;
 opacity:.85;
 
 font-family:Inter,sans-serif;
+
+}
+
+.hidden-stage{
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:
+    opacity 1.5s ease;
+
+}
+
+
+.stage-visible{
+
+    opacity:1;
+    pointer-events:auto;
+
+}
+
+.myth-point{
+
+animation:
+pointPulse 3s ease-in-out infinite;
+
+}
+
+
+@keyframes pointPulse{
+
+0%,100%{
+
+opacity:.5;
+r:10px;
+
+}
+
+50%{
+
+opacity:1;
+
+}
 
 }
 
