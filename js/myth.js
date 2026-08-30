@@ -581,7 +581,7 @@ The Dawn has come
 
 
 <g class="birds"
-transform="translate(-100 0)">
+transform="translate(-180 20)">
 
 
 <path d="
