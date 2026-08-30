@@ -525,7 +525,7 @@ class="myth-stage hidden-stage stage-dawn">
 
 <circle
 
-class="myth-point"
+class="preview-point"
 
 data-step="4"
 
