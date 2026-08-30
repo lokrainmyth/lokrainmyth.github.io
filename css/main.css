@@ -2147,11 +2147,6 @@ transform:rotate(360deg);
 
 }
 
-.sun circle {
-
-    fill:white;
-
-}
 
 .road{
 
@@ -2243,10 +2238,33 @@ font-family:Inter,sans-serif;
 
 .subtitle {
 
-    font-size:11px;
+    font-size:14px;
+    letter-spacing:3px;
+
+    fill:#d8b56a;
+
+    animation:
+    dawnGlow 5s infinite;
 
 }
 
+
+@keyframes dawnGlow {
+
+    0%,100% {
+
+        fill:#b88a35;
+        opacity:.55;
+
+    }
+
+
+    50% {
+
+        fill:#ffe9a6;
+        opacity:1;
+
+    }
 
 }
    
