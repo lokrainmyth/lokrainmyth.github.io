@@ -2063,3 +2063,30 @@ this.addFigures();
 
 
 };
+
+<g id="theoStage">
+
+...
+
+</g>
+
+
+<g id="dreamerStage" class="hidden-stage">
+
+...
+
+</g>
+
+
+<g id="darkStage" class="hidden-stage">
+
+...
+
+</g>
+
+
+<g id="ioStage" class="hidden-stage">
+
+...
+
+</g>
