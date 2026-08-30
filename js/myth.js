@@ -1290,7 +1290,7 @@ THE JOURNEY
 
 </svg>
 
-
+`;
 
     },
 
@@ -1308,7 +1308,6 @@ THE JOURNEY
         svg.insertAdjacentHTML(
             "beforeend",
             `
-TEST
 
 
 <!-- THEO -->
