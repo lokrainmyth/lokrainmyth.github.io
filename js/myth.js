@@ -501,7 +501,7 @@ M1000 190L985 205
 
 
 
-<text x="1090" y="150">
+<text x="900" y="160">
 
 IO
 
@@ -510,11 +510,9 @@ IO
 
 
 <text class="subtitle"
-x="1090"
-y="185">
-
+x="900"
+y="195">
 The Dawn has come
-
 </text>
 
 
