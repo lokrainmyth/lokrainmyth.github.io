@@ -1736,6 +1736,33 @@ C580 600 590 350 600 140
 
 </g>
 
+<g id="theoStage">
+
+...
+
+</g>
+
+
+<g id="dreamerStage" class="hidden-stage">
+
+...
+
+</g>
+
+
+<g id="darkStage" class="hidden-stage">
+
+...
+
+</g>
+
+
+<g id="ioStage" class="hidden-stage">
+
+...
+
+</g>
+
 
 
 `
@@ -2063,30 +2090,3 @@ this.addFigures();
 
 
 };
-
-<g id="theoStage">
-
-...
-
-</g>
-
-
-<g id="dreamerStage" class="hidden-stage">
-
-...
-
-</g>
-
-
-<g id="darkStage" class="hidden-stage">
-
-...
-
-</g>
-
-
-<g id="ioStage" class="hidden-stage">
-
-...
-
-</g>
