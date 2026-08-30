@@ -1,169 +1,188 @@
 "use strict";
 
+
 const Myth = {
 
-    initialized: false,
 
-    viewport: null,
-    screen: null,
+    initialized:false,
 
-    step: 0,
+    screen:null,
 
-    init() {
+    viewport:null,
 
-        if (this.initialized) return;
+    step:0,
 
-        this.initialized = true;
+    sound:null,
+
+
+    init(){
+
+
+        if(this.initialized)
+            return;
+
+
+        this.initialized=true;
+
 
         this.screen =
             document.getElementById("mythScreen");
 
+
         this.viewport =
             document.getElementById("mythViewport");
 
-        if (!this.screen || !this.viewport) return;
+
+        this.sound =
+            document.getElementById("mythSound");
+
+
+
+        if(!this.screen || !this.viewport)
+            return;
+
+
 
         this.build();
+
+        this.bind();
+
+
+
     },
 
-    build() {
+
+
+    build(){
+
 
         this.viewport.innerHTML = `
 
+
 <svg
 class="myth-map"
-viewBox="0 0 1200 1200"
-xmlns="http://www.w3.org/2000/svg"
-aria-label="Lo.Krain Myth">
+viewBox="0 0 1200 1000"
+xmlns="http://www.w3.org/2000/svg">
 
 
 <defs>
 
 
-<radialGradient id="sphereLight">
 
-    <stop offset="0%" stop-color="#ffffff"/>
-    <stop offset="45%" stop-color="#bcd8ff"/>
-    <stop offset="100%" stop-color="#304060"/>
+<!-- глубокий фон -->
+
+<radialGradient id="mythSky">
+
+
+<stop
+offset="0%"
+stop-color="#182b48"/>
+
+
+<stop
+offset="50%"
+stop-color="#09111f"/>
+
+
+<stop
+offset="100%"
+stop-color="#020305"/>
+
 
 </radialGradient>
 
 
-<filter id="blueGlow">
 
-    <feGaussianBlur
-        stdDeviation="8"
-        result="blur"/>
+<!-- сфера -->
 
-    <feMerge>
+<radialGradient id="ioSphere">
 
-        <feMergeNode in="blur"/>
-
-        <feMergeNode in="SourceGraphic"/>
-
-    </feMerge>
-
-</filter>
-
-
-<linearGradient
-id="dawnRoad"
-x1="0"
-x2="1">
 
 <stop
 offset="0%"
-stop-color="#6d8cff"/>
+stop-color="#ffffff"/>
+
 
 <stop
-offset="50%"
-stop-color="#fff0b0"/>
+offset="40%"
+stop-color="#bfdcff"/>
+
 
 <stop
 offset="100%"
-stop-color="#ffffff"/>
+stop-color="#31425d"/>
 
-</linearGradient>
+
+</radialGradient>
+
+
+
+
+<filter id="softGlow">
+
+
+<feGaussianBlur
+stdDeviation="12"
+result="blur"/>
+
+
+<feMerge>
+
+<feMergeNode
+in="blur"/>
+
+<feMergeNode
+in="SourceGraphic"/>
+
+
+</feMerge>
+
+
+</filter>
+
 
 
 </defs>
 
 
-<!-- =========================
-     PATH
-========================= -->
 
 
-<g class="myth-paths">
+
+<!-- ==================================================
+     BACKGROUND MAP
+================================================== -->
 
 
-<path
-id="pathHorizontal"
-class="myth-path"
-d="
-M300 600
-C420 600 470 600 600 600
-C730 600 780 600 900 600
-"/>
+<rect
+width="1200"
+height="1000"
+fill="url(#mythSky)"/>
 
 
-<path
-id="pathDown"
-class="myth-path"
-d="
-M600 600
-C600 760 600 820 600 950
-"/>
+
+<g class="map-lines">
 
 
 <path
-id="pathVertical"
-class="myth-path"
 d="
-M600 600
-C600 430 600 350 600 200
-"/>
-
-
-</g>
-
-
-
-<!-- =========================
-     CENTRAL IO SPHERE
-========================= -->
-
-
-<g class="io-sphere">
-
-
-<circle
-cx="600"
-cy="600"
-r="90"
-fill="url(#sphereLight)"
-filter="url(#blueGlow)"
-/>
-
-
-<circle
-cx="600"
-cy="600"
-r="110"
-fill="none"
-stroke="rgba(200,220,255,.35)"
-stroke-width="2"
+M100 200
+C300 80 500 160 720 100
+S1050 180 1150 80"
 />
 
 
 <path
 d="
-M530 600
-Q600 560 670 600
-Q600 640 530 600
-"
-fill="none"
-stroke="rgba(255,255,255,.4)"
+M80 700
+C300 620 500 760 760 680
+S1050 720 1150 600"
+/>
+
+
+<path
+d="
+M200 900
+C400 760 700 850 1000 760"
 />
 
 
@@ -171,28 +190,144 @@ stroke="rgba(255,255,255,.4)"
 
 
 
-<!-- =========================
-     THEO
-========================= -->
+
+
+
+<!-- ==================================================
+     STARS
+================================================== -->
+
+
+<g class="myth-stars">
+
+
+<circle cx="170" cy="140" r="3"/>
+
+<circle cx="340" cy="220" r="2"/>
+
+<circle cx="900" cy="160" r="3"/>
+
+<circle cx="1040" cy="330" r="2"/>
+
+<circle cx="780" cy="850" r="3"/>
+
+
+</g>
+
+
+
+
+
+<!-- ==================================================
+     CENTER SPHERE
+================================================== -->
+
+
+<g class="io-world">
+
+
+<circle
+
+cx="600"
+
+cy="500"
+
+r="120"
+
+fill="url(#ioSphere)"
+
+filter="url(#softGlow)" />
+
+
+
+
+
+<!-- шахматная поверхность -->
 
 
 <g
-class="myth-node myth-theo"
-data-myth-action="expulsion">
+class="sphere-grid">
 
 
-<circle
-class="myth-point"
-cx="300"
-cy="600"
-r="12"
+<path
+
+d="
+
+M500 500
+
+Q600 430 700 500
+
+Q600 570 500 500
+
+"
+
+
 />
 
 
+
+<path
+
+d="
+
+M530 450
+
+L670 550
+
+
+M530 550
+
+L670 450
+
+
+"
+
+ />
+
+
+
+</g>
+
+
+
+
+</g>
+
+
+
+
+
+
+<!-- ==================================================
+     FIRST POINT ONLY
+================================================== -->
+
+
+<g
+class="myth-stage stage-theo">
+
+
+<circle
+
+class="myth-point"
+
+data-step="1"
+
+cx="260"
+
+cy="500"
+
+r="14"/>
+
+
+
 <text
-class="myth-label"
-x="250"
-y="700">
+
+class="myth-title"
+
+x="210"
+
+y="620">
 
 THEO
 
@@ -200,41 +335,17 @@ THEO
 
 
 
-<!-- scarecrow -->
+<text
 
-<g class="myth-figure">
+class="myth-subtitle"
 
+x="170"
 
-<circle
-cx="300"
-cy="500"
-r="28"/>
+y="670">
 
+When you are alone
 
-<line
-x1="300"
-y1="530"
-x2="300"
-y2="620"/>
-
-
-<line
-x1="250"
-y1="560"
-x2="350"
-y2="560"/>
-
-
-<path
-d="
-M260 470
-Q300 430
-340 470
-"
-/>
-
-
-</g>
+</text>
 
 
 </g>
@@ -242,172 +353,153 @@ Q300 430
 
 
 
-<!-- =========================
-     DREAMER
-========================= -->
+
+
+
+<!-- ==================================================
+     HIDDEN FUTURE POINTS
+================================================== -->
 
 
 <g
-class="myth-node myth-dreamer"
-data-myth-action="dreamer">
+class="myth-stage hidden-stage stage-dreamer">
 
 
 <circle
+
 class="myth-point"
-cx="900"
-cy="600"
-r="12"
-/>
+
+data-step="2"
+
+cx="940"
+
+cy="400"
+
+r="14"/>
 
 
 <text
-class="myth-label"
-x="780"
-y="700">
+
+class="myth-title"
+
+x="820"
+
+y="520">
 
 DREAMER
 
 </text>
 
 
-
-<g class="myth-figure">
-
-
-<circle
-cx="900"
-cy="500"
-r="24"
-/>
-
-
-<path
-d="
-M875 540
-L925 540
-L940 620
-L860 620
-Z
-"
-/>
-
-
-</g>
-
-
-</g>
-
-
-
-
-<!-- =========================
-     NIGHT
-========================= -->
-
-
-<g
-class="myth-node myth-darkest"
-data-myth-action="darkest">
-
-
-<circle
-class="myth-point"
-cx="600"
-cy="950"
-r="12"
-/>
-
-
 <text
-class="myth-label"
-x="520"
-y="1080">
 
-NIGHT
+class="myth-subtitle"
+
+x="770"
+
+y="570">
+
+When you dream of connection
 
 </text>
 
 
-<g class="stars">
-
-
-<circle cx="540" cy="850" r="5"/>
-<circle cx="600" cy="820" r="5"/>
-<circle cx="660" cy="850" r="5"/>
-
-
-</g>
-
-
 </g>
 
 
 
 
-<!-- =========================
-     DAWN
-========================= -->
+
 
 
 <g
-class="myth-node myth-dawn"
-data-myth-action="dawn">
+class="myth-stage hidden-stage stage-dark">
 
 
 <circle
+
 class="myth-point"
-cx="600"
-cy="200"
-r="12"
-/>
 
+data-step="3"
+
+cx="600"
+
+cy="820"
+
+r="14"/>
+
+
+
+<text
+
+class="myth-title"
+
+x="350"
+
+y="900">
+
+
+THE DARKEST HOUR
+
+
+</text>
+
+
+</g>
+
+
+
+
+
+
+<g
+class="myth-stage hidden-stage stage-dawn">
 
 
 <circle
-class="sun"
+
+class="myth-point"
+
+data-step="4"
+
 cx="600"
+
 cy="120"
-r="45"
-filter="url(#blueGlow)"
-/>
 
-
-<path
-class="road"
-d="
-M600 200
-L600 350
-"
-stroke="url(#dawnRoad)"
-/>
+r="14"/>
 
 
 
 <text
-class="myth-label"
-x="520"
-y="320">
 
-DAWN
+class="myth-title"
+
+x="540"
+
+y="230">
+
+
+IO
+
 
 </text>
 
 
 
-<g class="birds">
-
-<path d="M500 160 Q520 140 540 160"/>
-<path d="M660 160 Q680 140 700 160"/>
-
 </g>
 
 
-</g>
+
 
 
 </svg>
 
+
 `;
+
+
+
+    },
 
         this.bind();
     },
