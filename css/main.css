@@ -2220,6 +2220,13 @@ font-family:Inter,sans-serif;
 
 }
 
+    .listen-platforms.show {
+
+    animation:
+    listenGlow 5s infinite;
+
+}
+
 /* ==========================================================
    PATH
 ========================================================== */
