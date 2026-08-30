@@ -4,27 +4,15 @@
 const Myth = {
 
 
-    initialized:false,
-
     screen:null,
-
     viewport:null,
+    audio:null,
 
-    sound:null,
 
     step:0,
 
 
-
     init(){
-
-
-        if(this.initialized)
-            return;
-
-
-        this.initialized = true;
-
 
         this.screen =
             document.getElementById("mythScreen");
@@ -34,1699 +22,20 @@ const Myth = {
             document.getElementById("mythViewport");
 
 
-        this.sound =
+        this.audio =
             document.getElementById("mythSound");
 
 
-
-        if(
-            !this.screen ||
-            !this.viewport
-        ){
-
+        if(!this.screen || !this.viewport)
             return;
-
-        }
-
 
 
         this.build();
-
-        this.bind();
-
-
-    },
-
-
-
-
-
-    build(){
-
-
-        this.viewport.innerHTML = `
-
-
-
-<svg
-xmlns="http://www.w3.org/2000/svg"
-viewBox="0 0 1200 1200">
-
-
-<defs>
-
-
-<!-- BACKGROUND -->
-
-<radialGradient id="bg">
-
-    <stop
-    offset="0%"
-    stop-color="#253858"/>
-
-    <stop
-    offset="55%"
-    stop-color="#101827"/>
-
-    <stop
-    offset="100%"
-    stop-color="#050812"/>
-
-</radialGradient>
-
-
-
-<!-- SPHERE LIGHT -->
-
-<radialGradient id="sphere">
-
-    <stop
-    offset="0%"
-    stop-color="#ffffff"/>
-
-    <stop
-    offset="35%"
-    stop-color="#d5e5ff"/>
-
-    <stop
-    offset="75%"
-    stop-color="#6f86ad"/>
-
-    <stop
-    offset="100%"
-    stop-color="#26334b"/>
-
-</radialGradient>
-
-
-
-<!-- SUN -->
-
-<radialGradient id="sun">
-
-    <stop
-    offset="0%"
-    stop-color="#fff8cf"/>
-
-    <stop
-    offset="50%"
-    stop-color="#ffd76a"/>
-
-    <stop
-    offset="100%"
-    stop-color="#e59b36"/>
-
-</radialGradient>
-
-
-
-<!-- GLOW -->
-
-<filter id="glow">
-
-    <feGaussianBlur
-    stdDeviation="12"/>
-
-</filter>
-
-
-
-</defs>
-
-
-
-
-
-<!-- =========================
-     DEEP MAP BACKGROUND
-========================= -->
-
-
-<rect
-
-width="1200"
-height="1200"
-
-fill="url(#bg)"/>
-
-
-
-
-
-<!-- AIRPORT MAP LINES -->
-
-<g
-
-fill="none"
-
-stroke="#a9c7ff"
-
-stroke-opacity=".14"
-
-stroke-width="2">
-
-
-<path
-
-d="
-M80 300
-C300 160 420 260 600 180
-C820 80 980 260 1120 140"/>
-
-
-
-<path
-
-d="
-M120 850
-C300 720 500 850 720 730
-C950 600 1080 760 1160 650"/>
-
-
-
-<path
-
-d="
-M200 540
-C360 430 500 560 650 500
-C820 420 980 540 1100 430"/>
-
-
-
-<path
-
-d="
-M350 80
-C430 260 250 430 420 650
-C500 760 470 900 600 1080"/>
-
-
-
-<path
-
-d="
-M900 100
-C820 300 1000 420 850 650
-C760 760 830 920 720 1080"/>
-
-
-
-</g>
-
-
-
-
-
-<!-- SMALL STARS -->
-
-
-<g fill="#ffffff">
-
-
-<circle cx="160" cy="180" r="3"/>
-
-<circle cx="320" cy="320" r="2"/>
-
-<circle cx="960" cy="190" r="3"/>
-
-<circle cx="1050" cy="520" r="2"/>
-
-<circle cx="220" cy="900" r="2"/>
-
-<circle cx="980" cy="850" r="3"/>
-
-
-</g>
-
-
-
-
-
-
-
-
-<!-- =========================
-     CENTRAL WORLD
-========================= -->
-
-
-<g>
-
-
-<circle
-
-cx="600"
-
-cy="600"
-
-r="170"
-
-fill="#9bc7ff"
-
-opacity=".25"
-
-filter="url(#glow)"/>
-
-
-
-<circle
-
-cx="600"
-
-cy="600"
-
-r="120"
-
-fill="url(#sphere)"/>
-
-
-
-
-
-<!-- chess surface -->
-
-
-<g
-
-fill="none"
-
-stroke="rgba(255,255,255,.35)"
-
-stroke-width="3">
-
-
-<ellipse
-
-cx="600"
-
-cy="600"
-
-rx="120"
-
-ry="35"/>
-
-
-<ellipse
-
-cx="600"
-
-cy="600"
-
-rx="120"
-
-ry="75"/>
-
-
-<ellipse
-
-cx="600"
-
-cy="600"
-
-rx="120"
-
-ry="110"/>
-
-
-
-<path
-
-d="
-M480 600
-H720"/>
-
-
-<path
-
-d="
-M600 480
-V720"/>
-
-
-<path
-
-d="
-M520 520
-L680 680"/>
-
-
-<path
-
-d="
-M680 520
-L520 680"/>
-
-
-</g>
-
-
-</g>
-
-
-
-
-
-
-<!-- =========================
-     PATH START
-========================= -->
-
-
-<g
-
-fill="none"
-
-stroke="#d8e7ff"
-
-stroke-opacity=".5"
-
-stroke-width="3">
-
-
-<path
-
-d="
-M260 600
-C390 500 470 560 600 600"/>
-
-
-<path
-
-d="
-M600 600
-C740 560 820 500 940 600"/>
-
-
-<path
-
-d="
-M600 600
-C600 760 600 820 600 930"/>
-
-
-<path
-
-d="
-M600 600
-C600 430 600 340 600 200"/>
-
-
-</g>
-
-<!-- =========================
-     THEO
-========================= -->
-
-
-<g>
-
-
-<!-- activation point -->
-
-
-<circle
-
-cx="260"
-
-cy="600"
-
-r="14"
-
-fill="#bcd8ff"/>
-
-
-<circle
-
-cx="260"
-
-cy="600"
-
-r="28"
-
-fill="none"
-
-stroke="#bcd8ff"
-
-stroke-opacity=".25"
-
-stroke-width="2"/>
-
-
-
-
-
-<!-- scarecrow -->
-
-
-<g
-
-transform="translate(260 390)"
-
-stroke="#dceaff"
-
-stroke-width="5"
-
-fill="none">
-
-
-
-<!-- hat -->
-
-
-<path
-
-d="
-M-65 10
-Q0 -55 65 10
-Z"/>
-
-
-
-<line
-
-x1="-80"
-
-y1="10"
-
-x2="80"
-
-y2="10"/>
-
-
-
-
-
-<!-- head -->
-
-
-<circle
-
-cx="0"
-
-cy="60"
-
-r="38"/>
-
-
-
-
-
-<!-- eyes -->
-
-
-<circle
-
-cx="-12"
-
-cy="55"
-
-r="3"
-
-fill="#dceaff"/>
-
-
-<circle
-
-cx="12"
-
-cy="55"
-
-r="3"
-
-fill="#dceaff"/>
-
-
-
-
-
-<!-- body -->
-
-
-<path
-
-d="
-M0 100
-L0 240"/>
-
-
-
-
-
-<!-- arms -->
-
-
-<path
-
-d="
-M-100 150
-L100 150"/>
-
-
-
-
-
-<!-- coat -->
-
-
-<path
-
-d="
-M-60 120
-L60 120
-L90 240
-L-90 240
-Z"/>
-
-
-
-
-<!-- straw lines -->
-
-
-<path
-
-d="
-M-60 150
-L-95 190"/>
-
-
-<path
-
-d="
-M60 150
-L95 190"/>
-
-
-
-</g>
-
-
-
-
-
-<text
-
-x="160"
-
-y="760"
-
-fill="#ffffff"
-
-font-family="Inter, sans-serif"
-
-font-size="46"
-
-letter-spacing="12">
-
-THEO
-
-</text>
-
-
-
-<text
-
-x="105"
-
-y="820"
-
-fill="#bfd4ff"
-
-font-family="Inter, sans-serif"
-
-font-size="22">
-
-When you are alone
-
-</text>
-
-
-</g>
-
-
-
-
-
-
-
-
-
-<!-- =========================
-     DREAMER
-========================= -->
-
-
-<g>
-
-
-
-<circle
-
-cx="940"
-
-cy="600"
-
-r="14"
-
-fill="#bcd8ff"/>
-
-
-<circle
-
-cx="940"
-
-cy="600"
-
-r="28"
-
-fill="none"
-
-stroke="#bcd8ff"
-
-stroke-opacity=".25"
-
-stroke-width="2"/>
-
-
-
-
-
-
-
-<g
-
-transform="translate(940 390)"
-
-stroke="#dceaff"
-
-stroke-width="5"
-
-fill="none">
-
-
-
-<!-- head -->
-
-
-<circle
-
-cy="0"
-
-r="38"/>
-
-
-
-
-
-<!-- hair -->
-
-
-<path
-
-d="
-M-38 -5
-Q0 -55 38 -5"/>
-
-
-
-
-
-<!-- body -->
-
-
-<path
-
-d="
-M0 40
-L0 180"/>
-
-
-
-
-
-<!-- arms -->
-
-
-<path
-
-d="
-M-80 90
-L80 90"/>
-
-
-
-
-
-<!-- legs -->
-
-
-<path
-
-d="
-M0 180
-L-45 260"/>
-
-
-<path
-
-d="
-M0 180
-L45 260"/>
-
-
-</g>
-
-
-
-
-
-<text
-
-x="790"
-
-y="760"
-
-fill="#ffffff"
-
-font-family="Inter, sans-serif"
-
-font-size="46"
-
-letter-spacing="12">
-
-DREAMER
-
-</text>
-
-
-
-<text
-
-x="730"
-
-y="820"
-
-fill="#bfd4ff"
-
-font-family="Inter, sans-serif"
-
-font-size="22">
-
-When you dream of connection
-
-</text>
-
-
-
-</g>
-
-
-
-
-
-
-
-
-
-<!-- =========================
-     DARKEST HOUR
-========================= -->
-
-
-<g>
-
-
-<circle
-
-cx="600"
-
-cy="930"
-
-r="14"
-
-fill="#bcd8ff"/>
-
-
-<circle
-
-cx="600"
-
-cy="930"
-
-r="28"
-
-fill="none"
-
-stroke="#bcd8ff"
-
-stroke-opacity=".25"
-
-stroke-width="2"/>
-
-
-
-
-
-
-
-<!-- stars -->
-
-
-<g
-
-fill="#ffffff">
-
-
-<circle
-
-cx="530"
-
-cy="850"
-
-r="7"/>
-
-
-<circle
-
-cx="600"
-
-cy="820"
-
-r="10"/>
-
-
-<circle
-
-cx="670"
-
-cy="850"
-
-r="7"/>
-
-
-</g>
-
-
-
-
-
-<text
-
-x="320"
-
-y="1030"
-
-fill="#ffffff"
-
-font-family="Inter, sans-serif"
-
-font-size="42"
-
-letter-spacing="8">
-
-THE DARKEST HOUR IS BEFORE THE DAWN
-
-</text>
-
-
-
-<text
-
-x="470"
-
-y="1080"
-
-fill="#bfd4ff"
-
-font-family="Inter, sans-serif"
-
-font-size="22">
-
-When you lost the way
-
-</text>
-
-
-
-</g>
-
-<!-- =========================
-     DAWN / IO
-========================= -->
-
-
-<g>
-
-
-
-<!-- activation point -->
-
-
-<circle
-
-cx="600"
-
-cy="200"
-
-r="14"
-
-fill="#ffe7a3"/>
-
-
-<circle
-
-cx="600"
-
-cy="200"
-
-r="30"
-
-fill="none"
-
-stroke="#ffe7a3"
-
-stroke-opacity=".35"
-
-stroke-width="2"/>
-
-
-
-
-
-
-
-<!-- sun glow -->
-
-
-<circle
-
-cx="600"
-
-cy="120"
-
-r="95"
-
-fill="#ffd86b"
-
-opacity=".18"
-
-filter="url(#glow)"/>
-
-
-
-
-
-<!-- sun -->
-
-
-<circle
-
-cx="600"
-
-cy="120"
-
-r="55"
-
-fill="url(#sun)"/>
-
-
-
-
-
-
-
-<!-- rays -->
-
-
-<g
-
-stroke="#ffd86b"
-
-stroke-width="5"
-
-stroke-linecap="round">
-
-
-<line
-
-x1="600"
-
-y1="35"
-
-x2="600"
-
-y2="0"/>
-
-
-<line
-
-x1="520"
-
-y1="70"
-
-x2="480"
-
-y2="35"/>
-
-
-<line
-
-x1="680"
-
-y1="70"
-
-x2="720"
-
-y2="35"/>
-
-
-<line
-
-x1="490"
-
-y1="120"
-
-x2="450"
-
-y2="120"/>
-
-
-<line
-
-x1="710"
-
-y1="120"
-
-x2="750"
-
-y2="120"/>
-
-
-</g>
-
-
-
-
-
-
-
-<!-- road -->
-
-
-<path
-
-d="
-M600 200
-C600 350 600 430 600 520
-"
-
-fill="none"
-
-stroke="url(#sunRoad)"
-
-stroke-width="8"/>
-
-
-
-
-
-
-
-<!-- birds -->
-
-
-<g
-
-stroke="#ffffff"
-
-stroke-width="3"
-
-fill="none">
-
-
-<path
-
-d="
-M450 160
-Q470 140 490 160"/>
-
-
-<path
-
-d="
-M720 180
-Q740 160 760 180"/>
-
-
-<path
-
-d="
-M820 120
-Q840 100 860 120"/>
-
-
-</g>
-
-
-
-
-
-
-
-
-<text
-
-x="500"
-
-y="320"
-
-fill="#ffffff"
-
-font-family="Inter, sans-serif"
-
-font-size="52"
-
-letter-spacing="16">
-
-IO
-
-</text>
-
-
-
-
-
-<text
-
-x="410"
-
-y="380"
-
-fill="#ffe7a3"
-
-font-family="Inter, sans-serif"
-
-font-size="22">
-
-When the dawn has come
-
-</text>
-
-
-
-</g>
-
-
-
-
-
-
-
-
-
-
-<!-- =========================
-     FINAL LABELS
-========================= -->
-
-
-<g
-
-fill="#ffffff"
-
-font-family="Inter, sans-serif"
-
-text-anchor="middle">
-
-
-<text
-
-x="600"
-
-y="760"
-
-font-size="18"
-
-opacity=".45"
-
-letter-spacing="6">
-
-THE JOURNEY
-
-</text>
-
-
-</g>
-
-
-
-
-
-
-<!-- =========================
-     END
-========================= -->
-
-
-</svg>
-
-`;
-
-    },
-
-        addFigures(){
-
-
-    const svg =
-        this.viewport.querySelector("svg");
-
-
-    if(!svg) return;
-
-
-
-    svg.insertAdjacentHTML(
-        "beforeend",
-        `
-
-
-<!-- =========================
-     THEO STAGE
-========================= -->
-
-
-<g
-id="theoStage">
-
-
-    <circle
-        class="myth-point"
-        cx="250"
-        cy="700"
-        r="10"/>
-
-
-
-    <!-- small scarecrow -->
-
-
-    <g
-    class="figure-theo"
-    transform="translate(250 520)">
-
-
-
-        <!-- hat -->
-
-        <path
-        d="
-        M-35 0
-        Q0 -35 35 0
-        "
-        />
-
-        <line
-        x1="-45"
-        y1="0"
-        x2="45"
-        y2="0"/>
-
-
-
-        <!-- head -->
-
-        <circle
-        cx="0"
-        cy="30"
-        r="20"/>
-
-
-
-        <!-- body -->
-
-        <line
-        x1="0"
-        y1="50"
-        x2="0"
-        y2="120"/>
-
-
-
-        <!-- arms -->
-
-        <line
-        x1="-45"
-        y1="75"
-        x2="45"
-        y2="75"/>
-
-
-
-    </g>
-
-
-
-    <text
-    class="myth-label"
-    x="180"
-    y="800">
-
-    THEO
-
-    </text>
-
-
-    <text
-    class="myth-subtitle"
-    x="110"
-    y="840">
-
-    When you are alone
-
-    </text>
-
-
-</g>
-
-
-
-
-
-
-
-<!-- =========================
-     DREAMER STAGE
-========================= -->
-
-
-<g
-id="dreamerStage"
-class="hidden-stage">
-
-
-    <circle
-    class="myth-point"
-    cx="760"
-    cy="520"
-    r="10"/>
-
-
-
-
-    <g
-    class="figure-dreamer"
-    transform="translate(760 360)">
-
-
-
-        <!-- head -->
-
-        <circle
-        cx="0"
-        cy="0"
-        r="18"/>
-
-
-
-        <!-- body -->
-
-        <path
-        d="
-        M-25 25
-        L25 25
-        L35 100
-        L-35 100
-        Z"/>
-
-
-
-        <!-- legs -->
-
-        <line
-        x1="-10"
-        y1="100"
-        x2="-25"
-        y2="145"/>
-
-
-        <line
-        x1="10"
-        y1="100"
-        x2="25"
-        y2="145"/>
-
-
-
-    </g>
-
-
-
-    <text
-    class="myth-label"
-    x="650"
-    y="650">
-
-    DREAMER
-
-    </text>
-
-
-
-    <text
-    class="myth-subtitle"
-    x="600"
-    y="690">
-
-    When you dream of connection
-
-    </text>
-
-
-</g>
-
-
-
-
-
-
-
-<!-- =========================
-     DARKEST HOUR
-========================= -->
-
-
-<g
-id="darkStage"
-class="hidden-stage">
-
-
-    <circle
-    class="myth-point"
-    cx="500"
-    cy="1000"
-    r="10"/>
-
-
-
-
-    <g
-    class="stars">
-
-
-        <circle
-        cx="450"
-        cy="900"
-        r="4"/>
-
-
-        <circle
-        cx="500"
-        cy="870"
-        r="6"/>
-
-
-        <circle
-        cx="550"
-        cy="900"
-        r="4"/>
-
-
-    </g>
-
-
-
-
-    <text
-    class="myth-label"
-    x="180"
-    y="1080">
-
-    THE DARKEST HOUR
-
-    </text>
-
-
-    <text
-    class="myth-label"
-    x="270"
-    y="1140">
-
-    IS BEFORE THE DAWN
-
-    </text>
-
-
-
-    <text
-    class="myth-subtitle"
-    x="350"
-    y="1180">
-
-    When you lost the way
-
-    </text>
-
-
-
-</g>
-
-
-
-
-
-
-
-
-<!-- =========================
-     IO STAGE
-========================= -->
-
-
-<g
-id="ioStage"
-class="hidden-stage">
-
-
-    <circle
-    class="myth-point dawn-point"
-    cx="500"
-    cy="170"
-    r="10"/>
-
-
-
-    <!-- sun -->
-
-
-    <circle
-    class="sun"
-    cx="500"
-    cy="90"
-    r="40"/>
-
-
-
-
-    <!-- rays -->
-
-
-    <g
-    class="sun-rays">
-
-
-        <line
-        x1="500"
-        y1="25"
-        x2="500"
-        y2="0"/>
-
-
-        <line
-        x1="440"
-        y1="50"
-        x2="420"
-        y2="30"/>
-
-
-        <line
-        x1="560"
-        y1="50"
-        x2="580"
-        y2="30"/>
-
-
-    </g>
-
-
-
-
-    <text
-    class="myth-label"
-    x="460"
-    y="260">
-
-    IO
-
-    </text>
-
-
-
-    <text
-    class="myth-subtitle"
-    x="330"
-    y="310">
-
-    When the dawn has come
-
-    </text>
-
-
-
-</g>
-
-
-
-        `
-    );
-
-this.addFigures();
-
-    },
-
-        bind(){
-
-
-        this.viewport
-            .querySelectorAll(".myth-point")
-            .forEach(point=>{
-
-
-                point.addEventListener(
-                    "click",
-                    ()=>{
-
-
-                        const step =
-                            Number(
-                                point.dataset.step
-                            );
-
-
-                        this.activate(step);
-
-
-                    }
-                );
-
-
-            });
-
 
 
         document.addEventListener(
             "keydown",
             e=>{
-
 
                 if(
                     e.key==="Escape" &&
@@ -1737,15 +46,339 @@ this.addFigures();
 
                 }
 
-
             }
         );
-
-
 
     },
 
 
+
+    build(){
+
+
+        this.viewport.innerHTML = `
+
+
+<svg
+class="myth-map"
+viewBox="0 0 600 1200"
+xmlns="http://www.w3.org/2000/svg">
+
+
+<defs>
+
+
+<filter id="glow">
+
+<feGaussianBlur
+stdDeviation="6"/>
+
+</filter>
+
+
+</defs>
+
+
+
+<!-- PATHS -->
+
+
+<path
+id="line1"
+class="myth-line"
+d="
+M300 980
+C250 820 350 700 300 560
+"/>
+
+
+<path
+id="line2"
+class="myth-line"
+d="
+M300 560
+C450 450 250 350 300 250
+"/>
+
+
+<path
+id="line3"
+class="myth-line"
+d="
+M300 250
+C300 180 300 130 300 90
+"/>
+
+
+
+
+<!-- THEO -->
+
+
+<g
+id="theo"
+class="myth-stage active"
+data-step="1">
+
+
+<circle
+class="myth-point"
+cx="300"
+cy="980"
+r="12"/>
+
+
+
+<text
+x="250"
+y="1050">
+
+THEO
+
+</text>
+
+
+
+<!-- scarecrow -->
+
+<g
+class="figure"
+transform="translate(300 850)">
+
+
+<path
+d="
+M-30 0
+Q0-35 30 0
+"/>
+
+
+<circle
+cy="35"
+r="18"/>
+
+
+<line
+y1="55"
+y2="120"/>
+
+
+<line
+x1="-35"
+x2="35"
+y1="80"
+y2="80"/>
+
+
+</g>
+
+
+</g>
+
+
+
+
+
+<!-- DREAMER -->
+
+
+<g
+id="dreamer"
+class="myth-stage"
+data-step="2">
+
+
+<circle
+class="myth-point"
+cx="300"
+cy="560"
+r="12"/>
+
+
+
+<text
+x="190"
+y="630">
+
+DREAMER
+
+</text>
+
+
+
+<g
+class="figure"
+transform="translate(300 440)">
+
+
+<circle
+r="18"/>
+
+
+<path
+d="
+M-25 30
+L25 30
+L35 100
+L-35 100
+Z"/>
+
+
+</g>
+
+
+</g>
+
+
+
+
+
+
+<!-- DARK -->
+
+
+<g
+id="dark"
+class="myth-stage"
+data-step="3">
+
+
+<circle
+class="myth-point"
+cx="300"
+cy="250"
+r="12"/>
+
+
+
+<text
+x="90"
+y="320">
+
+THE DARKEST HOUR
+
+</text>
+
+
+<text
+x="170"
+y="360">
+
+BEFORE THE DAWN
+
+</text>
+
+
+
+<g class="stars">
+
+
+<circle cx="260" cy="180" r="5"/>
+<circle cx="300" cy="150" r="6"/>
+<circle cx="340" cy="180" r="5"/>
+
+
+</g>
+
+
+</g>
+
+
+
+
+
+
+
+<!-- IO -->
+
+
+<g
+id="io"
+class="myth-stage"
+data-step="4">
+
+
+<circle
+class="myth-point"
+cx="300"
+cy="90"
+r="12"/>
+
+
+
+<circle
+class="sun"
+cx="300"
+cy="50"
+r="30"/>
+
+
+
+<text
+x="270"
+y="170">
+
+IO
+
+</text>
+
+
+
+<text
+class="dawn-text"
+x="120"
+y="220">
+
+The Dawn has come
+
+</text>
+
+
+</g>
+
+
+
+</svg>
+
+
+`;
+
+
+        this.bind();
+
+    },
+
+
+
+
+    bind(){
+
+
+        this.viewport
+        .querySelectorAll(".myth-stage")
+        .forEach(stage=>{
+
+
+            stage.addEventListener(
+                "click",
+                ()=>{
+
+
+                    const step =
+                    Number(stage.dataset.step);
+
+
+                    this.activate(step);
+
+
+                }
+            );
+
+
+        });
+
+
+    },
 
 
 
@@ -1753,183 +386,63 @@ this.addFigures();
     activate(step){
 
 
-        if(
-            step !== this.step + 1
-        ){
-
+        if(step!==this.step+1)
             return;
 
-        }
 
-
-
-        this.step = step;
+        this.step=step;
 
 
 
         if(step===1){
 
-            this.showTheo();
+
+            this.show("line1");
+
+            this.show("dreamer");
+
 
         }
 
 
         if(step===2){
 
-            this.showDreamer();
+
+            this.show("line2");
+
+            this.show("dark");
+
 
         }
+
 
 
         if(step===3){
 
-            this.showNight();
+
+            this.show("line3");
+
+            this.show("io");
+
 
         }
 
 
-        if(step===4){
-
-            this.showDawn();
-
-        }
-
 
     },
 
 
 
 
-
-
-    showTheo(){
+    show(id){
 
 
         document
-        .querySelector(".figure-theo")
+        .getElementById(id)
         ?.classList.add("visible");
 
 
-
-        document
-        .querySelector(".stage-dreamer")
-        ?.classList.remove("hidden-stage");
-
-
-
     },
-
-
-
-
-
-
-    showDreamer(){
-
-
-
-        document
-        .querySelector(".figure-dreamer")
-        ?.classList.add("visible");
-
-
-
-        this.drawLine(
-            "lineTheo"
-        );
-
-
-
-        document
-        .querySelector(".stage-dark")
-        ?.classList.remove("hidden-stage");
-
-
-
-    },
-
-
-
-
-
-
-    showNight(){
-
-
-
-        document
-        .querySelector(".figure-night")
-        ?.classList.add("visible");
-
-
-
-        this.drawLine(
-            "lineDreamer"
-        );
-
-
-
-        document
-        .querySelector(".stage-dawn")
-        ?.classList.remove("hidden-stage");
-
-
-
-    },
-
-
-
-
-
-
-
-
-    showDawn(){
-
-
-
-        document
-        .querySelector(".figure-dawn")
-        ?.classList.add("visible");
-
-
-
-        this.drawLine(
-            "lineDawn"
-        );
-
-
-
-    },
-
-
-
-
-
-
-
-    drawLine(id){
-
-
-        const line =
-            document.getElementById(id);
-
-
-
-        if(!line)
-            return;
-
-
-
-        line.classList.add(
-            "draw"
-        );
-
-
-    },
-
-
-
 
 
 
@@ -1941,30 +454,23 @@ this.addFigures();
         this.step=0;
 
 
-
         this.screen
-        ?.classList.remove(
-            "hidden"
-        );
-
+        .classList.remove("hidden");
 
 
         this.screen
-        ?.setAttribute(
+        .setAttribute(
             "aria-hidden",
             "false"
         );
 
 
+        if(this.audio){
 
-        this.build();
+            this.audio.currentTime=0;
+            this.audio.play();
 
-
-
-        this.sound
-        ?.play()
-        .catch(()=>{});
-
+        }
 
 
     },
@@ -1972,42 +478,39 @@ this.addFigures();
 
 
 
-
-
     close(){
 
 
-
         this.screen
-        ?.classList.add(
-            "hidden"
-        );
-
+        .classList.add("hidden");
 
 
         this.screen
-        ?.setAttribute(
+        .setAttribute(
             "aria-hidden",
             "true"
         );
 
 
+        if(this.audio){
 
-        this.sound
-        ?.pause();
-
-
-
-        if(this.sound){
-
-            this.sound.currentTime=0;
+            this.audio.pause();
+            this.audio.currentTime=0;
 
         }
-
 
 
     }
 
 
-
 };
+
+
+
+document.addEventListener(
+"DOMContentLoaded",
+()=>{
+
+    Myth.init();
+
+});
