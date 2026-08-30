@@ -486,7 +486,7 @@ class="myth-stage hidden-stage stage-dark">
 
 <circle
 
-class="myth-point"
+class="preview-point"
 
 data-step="3"
 
