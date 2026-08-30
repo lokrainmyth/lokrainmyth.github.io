@@ -560,6 +560,15 @@ q20 -20 40 0
 
 </g>
 
+<text
+class="listen-platforms"
+x="500"
+y="740">
+
+Listen on all streaming platforms
+
+</text>
+
 
 
 
