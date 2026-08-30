@@ -26,20 +26,23 @@ const Myth = {
         this.build();
     },
 
-    build() {
+   build() {
 
-        this.viewport.innerHTML = `
+this.viewport.innerHTML = `
 
-   <svg class="myth-svg" viewBox="0 0 1200 800">
+<svg class="myth-svg" viewBox="0 0 1200 800">
 
-   <style>
+<style>
 
 .myth-svg text {
-    fill: #ffffff;
-    font-family: Arial, sans-serif;
-    font-size: 22px;
-    letter-spacing: 4px;
+
+    fill:#ffffff;
+    font-family:Arial, sans-serif;
+    font-size:22px;
+    letter-spacing:4px;
+
 }
+
 
 .paths path {
 
@@ -48,34 +51,163 @@ const Myth = {
     stroke-width:2;
     opacity:.5;
 
+    stroke-dasharray:900;
+    stroke-dashoffset:900;
+
 }
 
-.node {
+
+.paths path.draw {
+
+    animation:
+    drawPath 2.5s ease forwards;
+
+}
+
+
+@keyframes drawPath {
+
+    to {
+
+        stroke-dashoffset:0;
+
+    }
+
+}
+
+
+
+.myth-theo {
 
     opacity:1;
 
 }
 
+
+
+.myth-dreamer,
+.myth-darkest,
+.myth-dawn {
+
+    opacity:0;
+
+    transition:
+    opacity 2s ease;
+
+}
+
+
+
+.myth-dreamer.reveal,
+.myth-darkest.reveal,
+.myth-dawn.reveal {
+
+    opacity:1;
+
+}
+
+
+
 .ghost {
 
     fill:none;
-    stroke:#ffffff;
+    stroke:white;
     stroke-width:2;
     opacity:.4;
 
 }
 
+
+
 .pulse {
 
     fill:white;
 
+    animation:
+    pulse 2s infinite;
+
 }
+
+
+
+@keyframes pulse {
+
+    0%,100% {
+
+        opacity:.3;
+
+        r:6;
+
+    }
+
+
+    50% {
+
+        opacity:1;
+
+        r:10;
+
+    }
+
+}
+
+
+
+.stars text {
+
+    fill:white;
+    font-size:35px;
+
+    animation:
+    starPulse 6s infinite;
+
+}
+
+
+
+.stars text:nth-child(2) {
+
+    animation-delay:2s;
+
+}
+
+
+
+.stars text:nth-child(3) {
+
+    animation-delay:4s;
+
+}
+
+
+
+@keyframes starPulse {
+
+    0%,100% {
+
+        opacity:.4;
+
+    }
+
+
+    50% {
+
+        opacity:1;
+
+    }
+
+}
+
+
 
 .sun circle {
 
     fill:white;
+    opacity:.8;
 
 }
+
+
 
 .sun path {
 
@@ -83,6 +215,8 @@ const Myth = {
     stroke-width:2;
 
 }
+
+
 
 .birds path {
 
@@ -92,278 +226,334 @@ const Myth = {
 
 }
 
-.stars text {
 
-    fill:white;
-    font-size:35px;
+
+.subtitle {
+
+    font-size:14px;
 
 }
 
+
+
 </style>
 
-    <!-- paths -->
-    <g class="paths">
 
-        <path id="pathHorizontal"
-            d="M120 650 C260 560 390 500 520 410"/>
 
-        <path id="pathDown"
-            d="M520 410 C650 330 720 350 790 420"/>
 
-        <path id="pathVertical"
-            d="M790 420 C900 300 960 210 1040 150"/>
+<!-- PATHS -->
 
-    </g>
+<g class="paths">
 
 
+<path id="pathHorizontal"
+d="M120 650 C260 560 390 500 520 410"/>
 
-    <!-- THEO -->
 
-    <g class="node theo"
-       data-myth-action="expulsion">
+<path id="pathDown"
+d="M520 410 C650 330 720 350 790 420"/>
 
-        <circle class="pulse"
-            cx="120"
-            cy="650"
-            r="7"/>
 
+<path id="pathVertical"
+d="M790 420 C900 300 960 210 1040 150"/>
 
-        <text x="145" y="660">
-            THEO
-        </text>
 
+</g>
 
-        <!-- scarecrow -->
 
-        <g class="ghost scarecrow">
 
-            <path d="
-                M90 520
-                Q120 500 150 520
-                L145 535
-                L95 535 Z"/>
 
 
-            <circle
-                cx="120"
-                cy="550"
-                r="14"/>
+<!-- THEO -->
 
+<g class="myth-theo"
+data-myth-action="expulsion">
 
-            <line
-                x1="120"
-                y1="565"
-                x2="120"
-                y2="620"/>
 
+<circle class="pulse"
+cx="120"
+cy="650"
+r="7"/>
 
-            <line
-                x1="90"
-                y1="585"
-                x2="150"
-                y2="585"/>
 
-        </g>
 
-    </g>
+<text x="150" y="660">
 
+THEO
 
+</text>
 
 
 
-    <!-- DREAMER -->
 
-    <g class="node dreamer hidden"
-       data-myth-action="dreamer">
+<g class="ghost scarecrow">
 
 
-        <circle class="dot"
-            cx="520"
-            cy="410"
-            r="6"/>
+<path d="
+M90 520
+Q120 500 150 520
+L145 535
+L95 535 Z
+"/>
 
 
-        <text x="545" y="420">
-            DREAMER
-        </text>
 
+<circle
+cx="120"
+cy="550"
+r="14"/>
 
 
-        <!-- sitting boy -->
 
-        <g class="ghost boy">
+<line
+x1="120"
+y1="565"
+x2="120"
+y2="620"/>
 
 
-            <circle
-                cx="520"
-                cy="465"
-                r="12"/>
 
+<line
+x1="90"
+y1="585"
+x2="150"
+y2="585"/>
 
-            <path d="
-                M520 478
-                C500 500 510 535 550 545
-                M510 520
-                L470 555
-                M540 525
-                L590 555
-            "/>
 
+</g>
 
-            <path d="
-                M520 455
-                Q540 445 550 455
-            "/>
 
+</g>
 
-        </g>
 
 
-    </g>
 
 
 
 
 
+<!-- DREAMER -->
 
-    <!-- THE DARKEST HOUR -->
+<g class="myth-dreamer"
+data-myth-action="dreamer">
 
-    <g class="node darkest hidden"
-       data-myth-action="darkest">
 
+<circle class="pulse"
+cx="520"
+cy="410"
+r="6"/>
 
-        <circle class="dot"
-            cx="790"
-            cy="420"
-            r="6"/>
 
 
-        <text x="815" y="430">
-            THE DARKEST HOUR
-        </text>
+<text x="550" y="420">
 
+DREAMER
 
+</text>
 
-        <g class="stars">
 
-            <text x="760" y="500">
-                ★
-            </text>
 
 
-            <text x="820" y="550">
-                ★
-            </text>
+<g class="ghost boy">
 
 
-            <text x="900" y="510">
-                ★
-            </text>
+<circle
+cx="520"
+cy="465"
+r="12"/>
 
 
-        </g>
 
+<path d="
+M520 478
+C500 500 510 535 550 545
 
-    </g>
+M510 520
+L470 555
 
+M540 525
+L590 555
+"/>
 
 
 
+<path d="
+M520 455
+Q540 445 550 455
+"/>
 
 
+</g>
 
-    <!-- IO -->
 
-    <g class="node io hidden"
-       data-myth-action="dawn">
+</g>
 
 
-        <circle class="pulse io-dot"
-            cx="1040"
-            cy="150"
-            r="7"/>
 
 
 
-        <!-- SUN -->
 
-        <g class="sun">
 
-            <circle
-                cx="1040"
-                cy="150"
-                r="35"/>
 
+<!-- DARKEST -->
 
-            <path d="
-                M1040 95V75
-                M1040 205V225
+<g class="myth-darkest"
+data-myth-action="darkest">
 
-                M985 150H965
-                M1095 150H1115
 
-                M1000 110L985 95
-                M1080 190L1095 205
+<circle class="pulse"
+cx="790"
+cy="420"
+r="6"/>
 
-                M1080 110L1095 95
-                M1000 190L985 205
-            "/>
 
 
-        </g>
+<text x="820" y="430">
 
+THE DARKEST HOUR
 
+</text>
 
 
 
-        <text x="1090" y="150">
-            IO
-        </text>
 
+<g class="stars">
 
-        <text class="subtitle"
-              x="1090"
-              y="185">
-            The Dawn has come
-        </text>
 
+<text x="760" y="500">
 
+★
 
+</text>
 
 
-        <!-- birds -->
+<text x="830" y="550">
 
-        <g class="birds">
+★
 
+</text>
 
-            <path d="
-                M1110 90
-                q20 -20 40 0
-                q20 -20 40 0
-            "/>
 
+<text x="900" y="510">
 
-            <path d="
-                M1140 120
-                q20 -20 40 0
-                q20 -20 40 0
-            "/>
+★
 
+</text>
 
-            <path d="
-                M1170 150
-                q20 -20 40 0
-                q20 -20 40 0
-            "/>
 
+</g>
 
-        </g>
 
+</g>
 
-    </g>
+
+
+
+
+
+
+
+<!-- IO -->
+
+<g class="myth-dawn"
+data-myth-action="dawn">
+
+
+<circle class="pulse"
+cx="1040"
+cy="150"
+r="7"/>
+
+
+
+
+<g class="sun">
+
+
+<circle
+cx="1040"
+cy="150"
+r="35"/>
+
+
+
+<path d="
+M1040 95V75
+M1040 205V225
+
+M985 150H965
+M1095 150H1115
+
+M1000 110L985 95
+M1080 190L1095 205
+
+M1080 110L1095 95
+M1000 190L985 205
+"/>
+
+
+
+</g>
+
+
+
+
+
+<text x="1090" y="150">
+
+IO
+
+</text>
+
+
+
+<text class="subtitle"
+x="1090"
+y="185">
+
+The Dawn has come
+
+</text>
+
+
+
+
+
+<g class="birds">
+
+
+<path d="
+M1110 90
+q20 -20 40 0
+q20 -20 40 0
+"/>
+
+
+<path d="
+M1140 120
+q20 -20 40 0
+q20 -20 40 0
+"/>
+
+
+<path d="
+M1170 150
+q20 -20 40 0
+q20 -20 40 0
+"/>
+
+
+</g>
+
+
+
+</g>
+
+
 
 
 </svg>
+
 
 `;
 
