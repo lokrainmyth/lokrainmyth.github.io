@@ -2147,6 +2147,20 @@ transform:rotate(360deg);
 
 }
 
+.sun circle {
+
+    fill:#fff2c4;
+    opacity:.85;
+
+}
+
+
+.sun path {
+
+    stroke:#e8c878;
+    stroke-width:2;
+
+}
 
 .road{
 
