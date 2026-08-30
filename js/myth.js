@@ -462,8 +462,8 @@ data-myth-action="dawn">
 
 
 <circle class="pulse"
-cx="1040"
-cy="150"
+cx="850"
+cy="160"
 r="7"/>
 
 
@@ -473,8 +473,8 @@ r="7"/>
 
 
 <circle
-cx="1040"
-cy="150"
+cx="850"
+cy="160"
 r="35"/>
 
 
