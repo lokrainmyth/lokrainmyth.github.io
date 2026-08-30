@@ -721,11 +721,6 @@ Listen on all streaming platforms
 .querySelector(".listen-platforms")
 ?.classList.add("show");
 
-        .listen-platforms.show {
-
-    animation:
-    listenGlow 5s infinite;
-
 }
 
     },
