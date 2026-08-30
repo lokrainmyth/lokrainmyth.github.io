@@ -271,6 +271,16 @@ d="M790 420 C900 300 960 210 1040 150"/>
 <g class="myth-theo"
 data-myth-action="expulsion">
 
+.myth-theo,
+.myth-dreamer,
+.myth-darkest,
+.myth-dawn {
+
+    cursor:pointer;
+
+    pointer-events:all;
+
+}
 
 <circle class="pulse"
 cx="120"
