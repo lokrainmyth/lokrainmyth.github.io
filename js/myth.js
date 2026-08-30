@@ -1297,140 +1297,113 @@ THE JOURNEY
         addFigures(){
 
 
-        const svg =
-            this.viewport.querySelector("svg");
+    const svg =
+        this.viewport.querySelector("svg");
 
 
-        if(!svg) return;
+    if(!svg) return;
 
 
 
-        svg.insertAdjacentHTML(
-            "beforeend",
-            `
+    svg.insertAdjacentHTML(
+        "beforeend",
+        `
 
 
-<!-- THEO -->
-
-<g
-class="figure-theo"
-opacity="0">
+<!-- =========================
+     THEO STAGE
+========================= -->
 
 
 <g
-transform="translate(250 350)">
+id="theoStage">
+
+
+    <circle
+        class="myth-point"
+        cx="250"
+        cy="700"
+        r="10"/>
 
 
 
-<!-- hat -->
-
-<path
-
-d="
-M-55 -30
-Q0 -75 55 -30
-"
-
-fill="none"
-
-stroke="#dbe8ff"
-
-stroke-width="5"/>
+    <!-- small scarecrow -->
 
 
-<line
-
-x1="-65"
-y1="-30"
-x2="65"
-y2="-30"
-
-stroke="#dbe8ff"
-
-stroke-width="8"/>
+    <g
+    class="figure-theo"
+    transform="translate(250 520)">
 
 
 
+        <!-- hat -->
 
+        <path
+        d="
+        M-35 0
+        Q0 -35 35 0
+        "
+        />
 
-<!-- head -->
-
-
-<circle
-
-cx="0"
-
-cy="10"
-
-r="35"
-
-fill="none"
-
-stroke="#dbe8ff"
-
-stroke-width="4"/>
+        <line
+        x1="-45"
+        y1="0"
+        x2="45"
+        y2="0"/>
 
 
 
+        <!-- head -->
 
-
-<!-- body -->
-
-
-<path
-
-d="
-M0 45
-L0 180
-"
-
-stroke="#dbe8ff"
-
-stroke-width="5"/>
+        <circle
+        cx="0"
+        cy="30"
+        r="20"/>
 
 
 
-<!-- arms -->
+        <!-- body -->
 
-
-<path
-
-d="
-M-80 85
-L80 85
-"
-
-stroke="#dbe8ff"
-
-stroke-width="5"/>
+        <line
+        x1="0"
+        y1="50"
+        x2="0"
+        y2="120"/>
 
 
 
+        <!-- arms -->
 
-
-<!-- coat -->
-
-
-<path
-
-d="
-M-45 70
-L45 70
-L65 170
-L-65 170
-Z
-"
-
-fill="none"
-
-stroke="#dbe8ff"
-
-stroke-width="4"/>
+        <line
+        x1="-45"
+        y1="75"
+        x2="45"
+        y2="75"/>
 
 
 
+    </g>
 
-</g>
+
+
+    <text
+    class="myth-label"
+    x="180"
+    y="800">
+
+    THEO
+
+    </text>
+
+
+    <text
+    class="myth-subtitle"
+    x="110"
+    y="840">
+
+    When you are alone
+
+    </text>
 
 
 </g>
@@ -1441,332 +1414,280 @@ stroke-width="4"/>
 
 
 
-<!-- ==================================================
-     DREAMER BOY
-================================================== -->
+<!-- =========================
+     DREAMER STAGE
+========================= -->
 
 
 <g
-
-class="figure-dreamer"
-
-opacity="0">
+id="dreamerStage"
+class="hidden-stage">
 
 
-<g
-
-transform="translate(950 260)">
-
-
-
-<!-- head -->
-
-
-<circle
-
-cx="0"
-
-cy="0"
-
-r="30"
-
-fill="none"
-
-stroke="#dbe8ff"
-
-stroke-width="4"/>
+    <circle
+    class="myth-point"
+    cx="760"
+    cy="520"
+    r="10"/>
 
 
 
 
-
-<!-- body -->
-
-
-<path
-
-d="
-M0 35
-L0 150
-
-M-55 80
-L55 80
-"
-
-stroke="#dbe8ff"
-
-stroke-width="5"
-
-fill="none"/>
+    <g
+    class="figure-dreamer"
+    transform="translate(760 360)">
 
 
 
+        <!-- head -->
+
+        <circle
+        cx="0"
+        cy="0"
+        r="18"/>
 
 
-<!-- legs -->
+
+        <!-- body -->
+
+        <path
+        d="
+        M-25 25
+        L25 25
+        L35 100
+        L-35 100
+        Z"/>
 
 
-<path
 
-d="
-M0 150
-L-35 220
+        <!-- legs -->
 
-M0 150
-L35 220
-"
+        <line
+        x1="-10"
+        y1="100"
+        x2="-25"
+        y2="145"/>
 
-stroke="#dbe8ff"
 
-stroke-width="5"
+        <line
+        x1="10"
+        y1="100"
+        x2="25"
+        y2="145"/>
 
-fill="none"/>
 
+
+    </g>
+
+
+
+    <text
+    class="myth-label"
+    x="650"
+    y="650">
+
+    DREAMER
+
+    </text>
+
+
+
+    <text
+    class="myth-subtitle"
+    x="600"
+    y="690">
+
+    When you dream of connection
+
+    </text>
 
 
 </g>
 
 
-</g>
 
 
 
 
 
-
-
-
-
-<!-- ==================================================
+<!-- =========================
      DARKEST HOUR
-================================================== -->
+========================= -->
 
 
 <g
+id="darkStage"
+class="hidden-stage">
 
-class="figure-night"
 
-opacity="0">
+    <circle
+    class="myth-point"
+    cx="500"
+    cy="1000"
+    r="10"/>
+
+
+
+
+    <g
+    class="stars">
+
+
+        <circle
+        cx="450"
+        cy="900"
+        r="4"/>
+
+
+        <circle
+        cx="500"
+        cy="870"
+        r="6"/>
+
+
+        <circle
+        cx="550"
+        cy="900"
+        r="4"/>
+
+
+    </g>
+
+
+
+
+    <text
+    class="myth-label"
+    x="180"
+    y="1080">
+
+    THE DARKEST HOUR
+
+    </text>
+
+
+    <text
+    class="myth-label"
+    x="270"
+    y="1140">
+
+    IS BEFORE THE DAWN
+
+    </text>
+
+
+
+    <text
+    class="myth-subtitle"
+    x="350"
+    y="1180">
+
+    When you lost the way
+
+    </text>
+
+
+
+</g>
+
+
+
+
+
+
+
+
+<!-- =========================
+     IO STAGE
+========================= -->
 
 
 <g
-
-transform="translate(600 760)">
-
-
-
-<!-- three stars -->
+id="ioStage"
+class="hidden-stage">
 
 
-<circle
-
-cx="-70"
-
-cy="0"
-
-r="8"/>
+    <circle
+    class="myth-point dawn-point"
+    cx="500"
+    cy="170"
+    r="10"/>
 
 
-<circle
 
-cx="0"
-
-cy="-35"
-
-r="8"/>
+    <!-- sun -->
 
 
-<circle
+    <circle
+    class="sun"
+    cx="500"
+    cy="90"
+    r="40"/>
 
-cx="70"
 
-cy="0"
 
-r="8"/>
+
+    <!-- rays -->
+
+
+    <g
+    class="sun-rays">
+
+
+        <line
+        x1="500"
+        y1="25"
+        x2="500"
+        y2="0"/>
+
+
+        <line
+        x1="440"
+        y1="50"
+        x2="420"
+        y2="30"/>
+
+
+        <line
+        x1="560"
+        y1="50"
+        x2="580"
+        y2="30"/>
+
+
+    </g>
+
+
+
+
+    <text
+    class="myth-label"
+    x="460"
+    y="260">
+
+    IO
+
+    </text>
+
+
+
+    <text
+    class="myth-subtitle"
+    x="330"
+    y="310">
+
+    When the dawn has come
+
+    </text>
 
 
 
 </g>
 
 
-</g>
 
-
-
-
-
-
-
-
-<!-- ==================================================
-     DAWN / IO
-================================================== -->
-
-
-<g
-
-class="figure-dawn"
-
-opacity="0">
-
-
-<g
-
-transform="translate(600 120)">
-
-
-
-<!-- sun -->
-
-
-<circle
-
-r="55"
-
-fill="#f5d98b"
-
-filter="url(#mythGlow)"/>
-
-
-
-
-
-<!-- rays -->
-
-
-<g
-
-class="sun-rays"
-
-stroke="#f5d98b"
-
-stroke-width="5">
-
-
-<line
-x1="0"
-y1="-90"
-x2="0"
-y2="-130"/>
-
-
-<line
-x1="0"
-y1="90"
-x2="0"
-y2="130"/>
-
-
-<line
-x1="-90"
-y1="0"
-x2="-130"
-y2="0"/>
-
-
-<line
-x1="90"
-y1="0"
-x2="130"
-y2="0"/>
-
-
-
-</g>
-
-
-</g>
-
-
-</g>
-
-
-
-
-
-
-
-<!-- ==================================================
-     PATHS
-================================================== -->
-
-
-<g class="journey-lines">
-
-
-
-<path
-
-id="lineTheo"
-
-d="
-M250 500
-C400 430 650 420 950 400
-"
-
- />
-
-
-
-<path
-
-id="lineDreamer"
-
-d="
-M950 400
-C820 600 720 730 600 820
-"
-
- />
-
-
-
-<path
-
-id="lineDawn"
-
-d="
-M600 820
-C580 600 590 350 600 140
-"
-
- />
-
-
-
-</g>
-
-<g id="theoStage">
-
-...
-
-</g>
-
-
-<g id="dreamerStage" class="hidden-stage">
-
-...
-
-</g>
-
-
-<g id="darkStage" class="hidden-stage">
-
-...
-
-</g>
-
-
-<g id="ioStage" class="hidden-stage">
-
-...
-
-</g>
-
-
-
-`
-        );
+        `
+    );
 
 this.addFigures();
 
