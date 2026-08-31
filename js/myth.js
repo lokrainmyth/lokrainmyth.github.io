@@ -26,6 +26,8 @@ const Myth = {
         if (!this.screen || !this.viewport) return;
 
         this.build();
+
+        this.playMythSound();
     },
 
    build() {
