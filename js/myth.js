@@ -651,38 +651,32 @@ LO.KRAIN
 
         // выход через IO
 this.viewport
-    .querySelector(".myth-dawn")
-    ?.addEventListener("click", () => {
+.querySelector(".myth-dawn")
+?.addEventListener("click", () => {
 
-        this.close();
+    this.exit();
 
-        unlockAfterMyth();
-
-    });
+});
 
 
 // выход через солнце
 this.viewport
-    .querySelector(".sun-disc")
-    ?.addEventListener("click", () => {
+.querySelector(".sun-disc")
+?.addEventListener("click", () => {
 
-        this.close();
+    this.exit();
 
-        unlockAfterMyth();
-
-    });
+});
 
 
 // выход через LO.KRAIN
 this.viewport
-    .querySelector(".artist")
-    ?.addEventListener("click", () => {
+.querySelector(".artist")
+?.addEventListener("click", () => {
 
-        this.close();
+    this.exit();
 
-        unlockAfterMyth();
-
-    });
+});
 
         this.viewport
             .querySelectorAll("[data-myth-action]")
