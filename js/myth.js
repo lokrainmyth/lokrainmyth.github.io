@@ -860,14 +860,27 @@ document
 
     },
 
-    close() {
+  close(){
 
-        this.screen
-            ?.classList.add("hidden");
+    if(this.audio){
 
-        this.screen
-            ?.setAttribute("aria-hidden", "true");
+        this.audio.pause();
+
+        this.audio.currentTime = 0;
 
     }
+
+
+    this.screen
+        ?.classList.add("hidden");
+
+
+    this.screen
+        ?.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+},
 
 };
