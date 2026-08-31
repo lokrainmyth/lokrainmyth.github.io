@@ -2271,38 +2271,87 @@ opacity:.95;
 
 }
 
-.sun-disc{
+.sun-disc {
 
-fill:none;
+    fill:none;
 
-stroke:white;
+    stroke:white;
 
-stroke-width:2;
+    stroke-width:2;
 
-opacity:.65;
+    opacity:.65;
 
-animation:
-sunGlow 8s ease-in-out infinite;
-
-}
-
-@keyframes sunGlow{
-
-0%,100%{
-
-opacity:.45;
-
-transform:scale(1);
+    animation:
+    sunPulse 7s ease-in-out infinite;
 
 }
 
-50%{
 
-opacity:.9;
+.sun-rays {
 
-transform:scale(1.08);
+    fill:none;
+
+    stroke:white;
+
+    stroke-width:2;
+
+    opacity:.45;
+
+    animation:
+    rayGlow 7s ease-in-out infinite;
 
 }
+
+
+
+@keyframes sunPulse {
+
+
+0%,100% {
+
+    opacity:.45;
+
+    transform:scale(1);
+
+}
+
+
+50% {
+
+    opacity:.9;
+
+    transform:scale(1.08);
+
+}
+
+}
+
+
+
+@keyframes rayGlow {
+
+
+0%,100% {
+
+    opacity:.25;
+
+}
+
+
+50% {
+
+    opacity:.8;
+
+}
+
+}
+
+.sun-disc,
+.sun-rays {
+
+    transform-box:fill-box;
+
+    transform-origin:center;
 
 }
 
