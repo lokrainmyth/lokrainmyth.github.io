@@ -2354,6 +2354,35 @@ opacity:.95;
     transform-origin:center;
 
 }
+.birds path {
+
+    fill:none;
+    stroke:white;
+    stroke-width:2;
+    opacity:.5;
+
+    animation:
+    birdGlow 8s ease-in-out infinite;
+
+}
+
+
+@keyframes birdGlow {
+
+0%,100% {
+
+    opacity:.35;
+
+}
+
+
+50% {
+
+    opacity:.8;
+
+}
+
+}
 
 /* ==========================================================
    PATH
