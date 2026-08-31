@@ -557,7 +557,7 @@ IO
 
 
 <g class="birds"
-transform="translate(-60 10) scale(.55)">
+transform="translate(-20 15) scale(.45)">
 
 
 <path d="
