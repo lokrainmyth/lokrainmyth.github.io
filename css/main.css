@@ -2286,23 +2286,32 @@ opacity:.95;
 
 }
 
-
 .sun-rays {
 
-    fill:none;
+stroke:white;
+stroke-width:1.5;
+opacity:.25;
 
-    stroke:white;
-
-    stroke-width:2;
-
-    opacity:.45;
-
-    animation:
-    rayGlow 7s ease-in-out infinite;
+animation:
+rayGlow 6s ease-in-out infinite;
 
 }
 
+@keyframes rayGlow {
 
+0%,100% {
+
+opacity:.15;
+
+}
+
+50% {
+
+opacity:.65;
+
+}
+
+}
 
 @keyframes sunPulse {
 
