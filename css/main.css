@@ -2146,15 +2146,6 @@ transform:rotate(360deg);
 }
 
 
-.sun{
-
-    fill:#f5d98b;
-
-    filter:url(#blueGlow);
-
-}
-
-
 .road{
 
     stroke:#f5d98b;
