@@ -831,9 +831,22 @@ document
 
     }
 
+    this.audio.currentTime = 0;
 
-    this.audio.play()
-    .catch(()=>{});
+    const promise = this.audio.play();
+
+    if(promise !== undefined){
+
+        promise.catch(error => {
+
+            console.log(
+                "Myth audio was blocked:",
+                error
+            );
+
+        });
+
+    }
 
 },
 
