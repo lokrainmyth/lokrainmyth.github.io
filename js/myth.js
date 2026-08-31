@@ -282,7 +282,7 @@ preserveAspectRatio="xMidYMid meet">
 
 
 <path id="pathHorizontal"
-d="M120 650 C260 560 390 500 520 410"/>
+d="M120 650 C230 570 330 500 440 410"/>
 
 
 <path id="pathDown"
