@@ -883,4 +883,20 @@ document
 
 },
 
+    exit(){
+
+    unlockAfterMyth();
+
+    document
+    .querySelector(".world")
+    ?.classList.remove("hidden");
+
+    document
+    .querySelector(".world")
+    ?.classList.remove("outro-active");
+
+    this.close();
+
+},
+
 };
