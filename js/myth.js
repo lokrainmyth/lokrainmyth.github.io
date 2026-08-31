@@ -825,6 +825,25 @@ document
 
 },
 
+    playMythSound(){
+
+    if(!this.audio){
+
+        this.audio = new Audio(
+            "assets/sounds/lokrainmyth.mp3"
+        );
+
+        this.audio.loop = true;
+        this.audio.volume = 0.45;
+
+    }
+
+
+    this.audio.play()
+    .catch(()=>{});
+
+},
+
     open() {
 
         this.step = 0;
@@ -836,6 +855,8 @@ document
             ?.setAttribute("aria-hidden", "false");
 
         this.build();
+
+        this.playMythSound();
 
     },
 
