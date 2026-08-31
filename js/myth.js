@@ -458,9 +458,17 @@ r="6"/>
 
 
 
-<text x="820" y="430">
+<text x="700" y="430">
 
-THE DARKEST HOUR
+THE DARKEST
+
+<tspan
+x="700"
+dy="28">
+
+HOUR
+
+</tspan>
 
 </text>
 
