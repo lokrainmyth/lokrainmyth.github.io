@@ -381,7 +381,8 @@ y2="585"/>
 <!-- DREAMER -->
 
 <g class="myth-dreamer"
-data-myth-action="dreamer">
+data-myth-action="dreamer"
+transform="translate(-80 0)">
 
 
 <circle class="pulse"
@@ -444,7 +445,8 @@ Q540 445 550 455
 <!-- DARKEST -->
 
 <g class="myth-darkest"
-data-myth-action="darkest">
+data-myth-action="darkest"
+transform="translate(-120 0)">
 
 
 <circle class="pulse"
@@ -502,7 +504,8 @@ THE DARKEST HOUR
 <!-- IO -->
 
 <g class="myth-dawn"
-data-myth-action="dawn">
+data-myth-action="dawn"
+transform="translate(-170 0)">
 
 
 <circle class="pulse"
