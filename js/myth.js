@@ -834,9 +834,6 @@ document
     this.audio.play();
 
     console.log("PLAY CALLED");
-},
-
-        });
 
 },
 
