@@ -2279,12 +2279,13 @@ opacity:.95;
 
 .sun-rays {
 
-stroke:white;
-stroke-width:1.5;
-opacity:.25;
+    fill:none;
+    stroke:white;
+    stroke-width:1.5;
+    opacity:.25;
 
-animation:
-rayGlow 6s ease-in-out infinite;
+    animation:
+    rayGlow 8s ease-in-out infinite;
 
 }
 
@@ -2292,13 +2293,13 @@ rayGlow 6s ease-in-out infinite;
 
 0%,100% {
 
-opacity:.15;
+    opacity:.15;
 
 }
 
 50% {
 
-opacity:.65;
+    opacity:.65;
 
 }
 
