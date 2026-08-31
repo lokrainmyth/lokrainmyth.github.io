@@ -2305,7 +2305,7 @@ opacity:.95;
 
 }
 
-@keyframes sunPulse {
+/* @keyframes sunPulse {
 
 
 0%,100% {
@@ -2314,7 +2314,7 @@ opacity:.95;
 
     transform:scale(1);
 
-}
+} */
 
 
 50% {
