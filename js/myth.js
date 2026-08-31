@@ -27,7 +27,6 @@ const Myth = {
 
         this.build();
 
-        this.playMythSound();
     },
 
    build() {
