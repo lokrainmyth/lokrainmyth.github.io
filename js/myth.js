@@ -7,6 +7,8 @@ const Myth = {
     viewport: null,
     screen: null,
 
+    audio:null,
+
     step: 0,
 
     init() {
