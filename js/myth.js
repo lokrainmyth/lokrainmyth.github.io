@@ -823,20 +823,18 @@ document
     this.audio =
         document.getElementById("mythSound");
 
+    console.log("MYTH SOUND", this.audio);
+
     if(!this.audio) return;
 
     this.audio.volume = 0.45;
     this.audio.loop = true;
-
     this.audio.currentTime = 0;
 
-    this.audio.play()
-        .catch(error => {
+    this.audio.play();
 
-            console.log(
-                "Myth audio blocked:",
-                error
-            );
+    console.log("PLAY CALLED");
+},
 
         });
 
