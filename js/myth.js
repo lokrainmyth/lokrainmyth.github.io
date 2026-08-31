@@ -733,6 +733,10 @@ LO.KRAIN
 .querySelector(".listen-platforms")
 ?.classList.add("show");
 
+        document
+.querySelector(".artist")
+?.classList.add("show");
+
     },
 
     activateDawn() {
