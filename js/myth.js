@@ -558,24 +558,6 @@ IO
 
 
 
-<text class="subtitle"
-x="735"
-y="198">
-
-When the dawn has come
-
-<tspan
-x="735"
-dy="18">
-
-and you see the path
-
-</tspan>
-
-</text>
-
-
-
 
 
 <g class="birds"
