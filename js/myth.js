@@ -505,7 +505,7 @@ THE DARKEST HOUR
 
 <g class="myth-dawn"
 data-myth-action="dawn"
-transform="translate(-170 0)">
+transform="translate(-110 0)">
 
 
 <circle class="pulse"
