@@ -506,8 +506,8 @@ data-myth-action="dawn">
 
 
 <circle class="pulse"
-cx="850"
-cy="160"
+cx="820"
+cy="190"
 r="7"/>
 
 
@@ -520,7 +520,7 @@ r="7"/>
 class="sun-disc"
 cx="930"
 cy="105"
-r="28"/>
+r="34"/>
 
 
 <path
@@ -550,7 +550,7 @@ M902 133L892 143
 
 
 
-<text x="900" y="160">
+<text x="855" y="200">
 
 IO
 
