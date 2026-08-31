@@ -2271,6 +2271,21 @@ opacity:.95;
 
 }
 
+.sun-disc{
+
+fill:none;
+
+stroke:white;
+
+stroke-width:2;
+
+opacity:.65;
+
+animation:
+sunGlow 8s ease-in-out infinite;
+
+}
+
 /* ==========================================================
    PATH
 ========================================================== */
