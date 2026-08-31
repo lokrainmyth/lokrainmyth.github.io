@@ -820,33 +820,25 @@ document
 
     playMythSound(){
 
-    if(!this.audio){
+    this.audio =
+        document.getElementById("mythSound");
 
-        this.audio = new Audio(
-            "assets/sounds/lokrainmyth.mp3"
-        );
+    if(!this.audio) return;
 
-        this.audio.loop = true;
-        this.audio.volume = 0.45;
-
-    }
+    this.audio.volume = 0.45;
+    this.audio.loop = true;
 
     this.audio.currentTime = 0;
 
-    const promise = this.audio.play();
-
-    if(promise !== undefined){
-
-        promise.catch(error => {
+    this.audio.play()
+        .catch(error => {
 
             console.log(
-                "Myth audio was blocked:",
+                "Myth audio blocked:",
                 error
             );
 
         });
-
-    }
 
 },
 
