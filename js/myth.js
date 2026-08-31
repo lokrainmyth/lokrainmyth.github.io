@@ -458,12 +458,12 @@ r="6"/>
 
 
 
-<text x="700" y="430">
+<text x="820" y="430">
 
 THE DARKEST
 
 <tspan
-x="700"
+x="820"
 dy="28">
 
 HOUR
