@@ -645,6 +645,41 @@ LO.KRAIN
 
     bind() {
 
+        // выход через IO
+this.viewport
+    .querySelector(".myth-dawn")
+    ?.addEventListener("click", () => {
+
+        this.close();
+
+        unlockAfterMyth();
+
+    });
+
+
+// выход через солнце
+this.viewport
+    .querySelector(".sun-disc")
+    ?.addEventListener("click", () => {
+
+        this.close();
+
+        unlockAfterMyth();
+
+    });
+
+
+// выход через LO.KRAIN
+this.viewport
+    .querySelector(".artist")
+    ?.addEventListener("click", () => {
+
+        this.close();
+
+        unlockAfterMyth();
+
+    });
+
         this.viewport
             .querySelectorAll("[data-myth-action]")
             .forEach(node => {
