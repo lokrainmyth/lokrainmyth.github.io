@@ -612,6 +612,16 @@ Listen on all streaming platforms
 
 </text>
 
+<text
+class="artist"
+
+x="120"
+y="70">
+
+LO.KRAIN
+
+</text>
+
 
 
 
