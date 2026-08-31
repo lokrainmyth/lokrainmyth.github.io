@@ -513,7 +513,7 @@ r="7"/>
 
 
 
-<g class="sun">
+<g>
 
     <circle
     cx="850"
