@@ -2234,6 +2234,43 @@ font-family:Inter,sans-serif;
 
 }
 
+.artist{
+
+opacity:0;
+
+fill:#ffffff;
+
+font-size:28px;
+
+letter-spacing:10px;
+
+font-weight:300;
+
+}
+
+.artist.show{
+
+animation:
+artistFade 2.5s forwards;
+
+}
+
+@keyframes artistFade{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:.95;
+
+}
+
+}
+
 /* ==========================================================
    PATH
 ========================================================== */
