@@ -516,11 +516,10 @@ r="7"/>
 <g>
 
     <circle
-    cx="850"
-    cy="160"
-    r="18"
-    fill="#f5d98b"
-    opacity=".85"/>
+class="sun-disc"
+cx="930"
+cy="105"
+r="28"/>
 
 <path
     stroke="#f5d98b"
