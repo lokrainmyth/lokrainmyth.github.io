@@ -518,8 +518,8 @@ r="7"/>
 
 <circle
 class="sun-disc"
-cx="900"
-cy="90"
+cx="850"
+cy="110"
 r="34"/>
 
 
