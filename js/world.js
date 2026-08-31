@@ -486,6 +486,8 @@ function openMyth() {
     mythScreen.classList.remove("hidden");
     mythScreen.setAttribute("aria-hidden", "false");
 
+   Myth.playMythSound();
+
 }
 
 function closeMyth(){
