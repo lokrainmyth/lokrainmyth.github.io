@@ -2326,26 +2326,6 @@ opacity:.65;
 
 }
 
-
-
-@keyframes rayGlow {
-
-
-0%,100% {
-
-    opacity:.25;
-
-}
-
-
-50% {
-
-    opacity:.8;
-
-}
-
-}
-
 .sun-disc,
 .sun-rays {
 
