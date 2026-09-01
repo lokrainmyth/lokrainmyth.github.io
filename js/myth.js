@@ -799,6 +799,20 @@ this.viewport
     this.screen
         ?.classList.add("myth-complete");
 
+        setTimeout(() => {
+
+        document
+        .querySelector(".listen-platforms")
+        ?.classList.add("show");
+
+
+        document
+        .querySelector(".explore-story")
+        ?.classList.add("show");
+
+
+    }, 2500);
+
     setTimeout(() => {
 
         this.close();
