@@ -793,7 +793,7 @@ this.viewport
     ?.classList.add("show");
 
 
-},2500);
+},3700);
 
         document
 .querySelector(".listen-platforms")
