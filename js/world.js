@@ -471,22 +471,26 @@ function closeTheo(){
 
 function openMyth() {
 
-    const mythScreen =
-        document.getElementById("mythScreen");
+    fadeOutTrack(() => {
 
-    if (!mythScreen) return;
+        const mythScreen =
+            document.getElementById("mythScreen");
 
-    World.elements.outro?.classList.remove("visible");
-    World.elements.outro?.classList.add("hidden");
+        if (!mythScreen) return;
 
-    document
-        .querySelector(".world")
-        ?.classList.add("hidden");
+        World.elements.outro?.classList.remove("visible");
+        World.elements.outro?.classList.add("hidden");
 
-    mythScreen.classList.remove("hidden");
-    mythScreen.setAttribute("aria-hidden", "false");
+        document
+            .querySelector(".world")
+            ?.classList.add("hidden");
 
-   Myth.playMythSound();
+        mythScreen.classList.remove("hidden");
+        mythScreen.setAttribute("aria-hidden", "false");
+
+        Myth.playMythSound();
+
+    });
 
 }
 
