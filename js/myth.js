@@ -780,6 +780,20 @@ this.viewport
             .querySelector(".myth-dawn")
             ?.classList.add("reveal");
 
+        setTimeout(()=>{
+
+    document
+    .querySelector(".listen-platforms")
+    ?.classList.add("show");
+
+
+    document
+    .querySelector(".explore-story")
+    ?.classList.add("show");
+
+
+},2500);
+
         document
 .querySelector(".listen-platforms")
 ?.classList.add("show");
@@ -798,21 +812,6 @@ this.viewport
 
     this.screen
         ?.classList.add("myth-complete");
-
-        setTimeout(() => {
-
-        document
-        .querySelector(".listen-platforms")
-        ?.classList.add("show");
-
-
-        document
-        .querySelector(".explore-story")
-        ?.classList.add("show");
-
-            console.log("EXPLORE SHOW");
-
-    }, 2500);
 
     setTimeout(() => {
 
