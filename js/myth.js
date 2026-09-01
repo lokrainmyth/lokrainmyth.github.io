@@ -810,6 +810,7 @@ this.viewport
         .querySelector(".explore-story")
         ?.classList.add("show");
 
+            console.log("EXPLORE SHOW");
 
     }, 2500);
 
