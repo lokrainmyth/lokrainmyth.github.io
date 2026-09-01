@@ -602,6 +602,44 @@ function pauseTrack(){
 
 }
 
+function fadeOutTrack(callback){
+
+    if(audio.paused){
+
+        callback?.();
+
+        return;
+
+    }
+
+    const startVolume = audio.volume;
+
+    const step = startVolume / 20;
+
+    const fade = setInterval(()=>{
+
+        audio.volume -= step;
+
+        if(audio.volume <= 0){
+
+            clearInterval(fade);
+
+            audio.pause();
+
+            audio.currentTime = audio.currentTime;
+
+            audio.volume = startVolume;
+
+            isPlaying = false;
+
+            callback?.();
+
+        }
+
+    },50);
+
+}
+
 /* ==========================================================
    PROGRESS
 ========================================================== */
