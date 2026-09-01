@@ -5,7 +5,7 @@ const translations = {
     en: {
 
         albumDescription:
-        "An album completing a fifteen-year journey from night to dawn. Listen from beginning to end. The path changes after a few tracks.",
+        "An album completing a fifteen-year journey from night to dawn. Listen from beginning to end. After the first few tracks, the hidden story begins to unfold.",
 
         about:
         "About",
@@ -46,7 +46,7 @@ const translations = {
     ru: {
 
         albumDescription:
-        "Альбом, завершающий пятнадцатилетний путь от ночи к рассвету. Слушайте от начала до конца. Путь меняется через несколько треков.",
+        "Альбом, завершающий пятнадцатилетний путь от ночи к рассвету. Слушайте от начала до конца. После первых нескольких треков начнёт раскрываться скрытая история.",
 
         about:
         "О проекте",
