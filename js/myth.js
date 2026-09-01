@@ -639,7 +639,6 @@ LO.KRAIN
 class="explore-story"
 x="500"
 y="780">
-style="font-size:11px">
 
 Explore the story
 
