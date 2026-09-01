@@ -604,7 +604,7 @@ function pauseTrack(){
 
 function fadeOutTrack(callback){
 
-    if(audio.paused){
+    if(!audio || audio.paused){
 
         callback?.();
 
@@ -612,21 +612,25 @@ function fadeOutTrack(callback){
 
     }
 
-    const startVolume = audio.volume;
 
-    const step = startVolume / 20;
+    const fadeTime = 1000;
+    const startVolume = audio.volume;
+    const startTime = Date.now();
+
 
     const fade = setInterval(()=>{
 
-        audio.volume -= step;
+        const elapsed = Date.now() - startTime;
 
-        if(audio.volume <= 0){
+        audio.volume =
+            startVolume * (1 - elapsed / fadeTime);
+
+
+        if(elapsed >= fadeTime){
 
             clearInterval(fade);
 
             audio.pause();
-
-            audio.currentTime = audio.currentTime;
 
             audio.volume = startVolume;
 
