@@ -638,7 +638,7 @@ LO.KRAIN
 <text
 class="explore-story"
 x="500"
-y="720">
+y="780">
 
 Explore the story
 
