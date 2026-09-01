@@ -623,22 +623,26 @@ function fadeOutTrack(callback){
         const elapsed = Date.now() - startTime;
 
         audio.volume =
-            startVolume * (1 - elapsed / fadeTime);
+    Math.max(0, Math.min(1,
+        startVolume * (1 - elapsed / fadeTime)
+    ));
 
 
         if(elapsed >= fadeTime){
 
-            clearInterval(fade);
+    clearInterval(fade);
 
-            audio.pause();
+    audio.pause();
 
-            audio.volume = startVolume;
+    audio.currentTime = 0;
 
-            isPlaying = false;
+    audio.volume = startVolume;
 
-            callback?.();
+    isPlaying = false;
 
-        }
+    callback?.();
+
+}
 
     },50);
 
