@@ -62,8 +62,38 @@ body{
 
     align-items:center;
 
-    background:var(--bg);
+    background:
+    radial-gradient(
+        circle at 50% 65%,
+        rgba(255,220,140,.08) 0%,
+        rgba(110,150,255,.05) 35%,
+        transparent 70%
+    ),
+    linear-gradient(
+        180deg,
+        var(--bg-2),
+        var(--bg)
+    );
 
+background-size:140% 140%;
+animation:introGlow 35s ease-in-out infinite alternate;
+
+   @keyframes introGlow{
+
+    0%{
+
+        background-position:45% 60%;
+
+    }
+
+    100%{
+
+        background-position:55% 40%;
+
+    }
+
+}
+   
     cursor:pointer;
 
     transition:
