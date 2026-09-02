@@ -133,7 +133,7 @@ isolation:isolate;
     filter:blur(90px);
 
     animation:
-        introLight 30s ease-in-out infinite alternate;
+        introLight 7s ease-in-out infinite alternate;
 
     z-index:-1;
 
