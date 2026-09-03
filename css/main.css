@@ -183,6 +183,77 @@ isolation:isolate;
 
 }
 
+.intro::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-10%;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    opacity:.18;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(255,255,255,.03),
+            transparent 12%
+        ),
+
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(255,255,255,.025),
+            transparent 14%
+        ),
+
+        radial-gradient(
+            circle at 60% 80%,
+            rgba(255,255,255,.03),
+            transparent 10%
+        ),
+
+        radial-gradient(
+            circle at 40% 55%,
+            rgba(255,255,255,.02),
+            transparent 18%
+        );
+
+    filter:blur(35px);
+
+    mix-blend-mode:soft-light;
+
+    animation:
+        introTexture 45s ease-in-out infinite alternate;
+
+}
+
+@keyframes introTexture{
+
+    0%{
+
+        transform:
+            scale(1)
+            translate(0%,0%)
+            rotate(0deg);
+
+    }
+
+    100%{
+
+        transform:
+            scale(1.08)
+            translate(-2%,2%)
+            rotate(1deg);
+
+    }
+
+}
+
 .intro.hidden{
 
     opacity:0;
