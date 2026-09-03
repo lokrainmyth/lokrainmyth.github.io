@@ -124,12 +124,6 @@ isolation:isolate;
             transparent 35%
         ),
 
-        radial-gradient(
-            ellipse at 75% 30%,
-            rgba(90,140,255,.12),
-            transparent 40%
-        ),
-
         repeating-radial-gradient(
             ellipse at 50% 50%,
             rgba(255,255,255,.025) 0px,
