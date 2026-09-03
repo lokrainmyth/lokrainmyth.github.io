@@ -121,7 +121,7 @@ isolation:isolate;
         radial-gradient(
             ellipse at 30% 70%,
             rgba(255,220,140,.12),
-            transparent 35%
+            transparent 55%
         ),
 
 
@@ -130,7 +130,7 @@ isolation:isolate;
     opacity:.7;
 
     animation:
-        surfaceMove 35s ease-in-out infinite alternate;
+        surfaceMove 5s ease-in-out infinite alternate;
 
 }
 
