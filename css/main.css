@@ -124,14 +124,6 @@ isolation:isolate;
             transparent 35%
         ),
 
-        repeating-radial-gradient(
-            ellipse at 50% 50%,
-            rgba(255,255,255,.025) 0px,
-            rgba(255,255,255,.025) 1px,
-            transparent 4px,
-            transparent 60px
-        );
-
 
     filter:blur(35px);
 
