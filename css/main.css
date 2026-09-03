@@ -173,7 +173,7 @@ isolation:isolate;
 
     pointer-events:none;
 
-    opacity:.12;
+    opacity:.22;
 
     background-image:
         url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
@@ -243,6 +243,9 @@ isolation:isolate;
 
     padding:40px;
 
+   position:relative;
+z-index:2;
+
 }
 
 .intro-logo{
@@ -253,9 +256,13 @@ isolation:isolate;
 
     font-weight:700;
 
+   text-shadow:
+    0 0 30px rgba(255,255,255,.08),
+    0 0 80px rgba(255,220,140,.06);
+
     letter-spacing:.18em;
 
-    color:var(--paper);
+    color:#f5f0e6;
 
     text-transform:uppercase;
 
