@@ -106,6 +106,69 @@ isolation:isolate;
 
 }
 
+.intro::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-30%;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+            ellipse at 30% 70%,
+            rgba(255,220,140,.12),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            ellipse at 75% 30%,
+            rgba(90,140,255,.12),
+            transparent 40%
+        ),
+
+        repeating-radial-gradient(
+            ellipse at 50% 50%,
+            rgba(255,255,255,.025) 0px,
+            rgba(255,255,255,.025) 1px,
+            transparent 4px,
+            transparent 60px
+        );
+
+
+    filter:blur(35px);
+
+    opacity:.7;
+
+    animation:
+        surfaceMove 35s ease-in-out infinite alternate;
+
+}
+
+@keyframes surfaceMove{
+
+    0%{
+
+        transform:
+        translate(-3%,-2%)
+        scale(1);
+
+    }
+
+
+    100%{
+
+        transform:
+        translate(3%,2%)
+        scale(1.08);
+
+    }
+
+}
+
 .intro.hidden{
 
     opacity:0;
