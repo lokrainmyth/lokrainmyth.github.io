@@ -63,20 +63,13 @@ body{
     align-items:center;
 
     background:
-    radial-gradient(
-        circle at 50% 65%,
-        rgba(255,220,140,.08) 0%,
-        rgba(110,150,255,.05) 35%,
-        transparent 70%
-    ),
-    linear-gradient(
-        180deg,
-        var(--bg-2),
-        var(--bg)
-    );
 
-background-size:140% 140%;
-animation:introGlow 10s ease-in-out infinite alternate;
+linear-gradient(
+    180deg,
+    #080a10 0%,
+    #10151d 55%,
+    #171711 100%
+);
 
    @keyframes introGlow{
 
@@ -106,64 +99,6 @@ isolation:isolate;
 
 }
 
-.intro::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:-15%;
-
-    pointer-events:none;
-
-    background:
-
-    radial-gradient(
-        ellipse at 50% 85%,
-
-        rgba(255,220,140,.07) 0%,
-
-        rgba(190,170,120,.035) 20%,
-
-        rgba(40,40,45,.02) 45%,
-
-        rgba(5,6,8,.95) 75%,
-
-        #040507 100%
-
-    );
-
-
-    filter:blur(55px);
-
-    opacity:.7;
-
-    animation:
-    surfaceMove 25s ease-in-out infinite alternate;
-
-}
-
-@keyframes surfaceMove{
-
-    0%{
-
-        transform:
-        translate(-3%,-2%)
-        scale(1);
-
-    }
-
-
-    100%{
-
-        transform:
-        translate(3%,2%)
-        scale(1.08);
-
-    }
-
-}
-
 .intro::after{
 
     content:"";
@@ -174,12 +109,12 @@ isolation:isolate;
 
     pointer-events:none;
 
-    opacity:.09;
+    opacity:.14;
 
     background-image:
         url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
 
-    mix-blend-mode:soft-light;
+    mix-blend-mode:overlay;
 
     animation:
         noiseMove 8s steps(4) infinite;
