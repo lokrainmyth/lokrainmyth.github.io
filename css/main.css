@@ -552,11 +552,13 @@ z-index:2;
 
     transition:
 
-        filter 4s ease,
+    opacity 2.8s ease,
 
-        transform 4s ease,
+    filter 4s ease,
 
-        box-shadow 4s ease;
+    transform 4s ease,
+
+    box-shadow 4s ease;
 
 }
 
