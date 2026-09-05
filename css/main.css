@@ -554,7 +554,7 @@ z-index:2;
 
     transition:
 
-        opacity 2.8s ease,
+        opacity 2.8s cubic-bezier(.22,.61,.36,1),
         filter 4s ease,
         transform 4s ease,
         box-shadow 4s ease;
