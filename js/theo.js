@@ -46,6 +46,10 @@ window.Theo = (function () {
         .getElementById("theoScene")
         .style.display = "block";
 
+        window.addEventListener(
+        "keydown",
+        theoEscape
+
         document
 .querySelector(".myth-screen")
 ?.classList.add("sleep");
