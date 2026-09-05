@@ -140,7 +140,7 @@ const World = {
 
         this.elements.intro?.classList.add("hidden");
 
-        await this.wait(900);
+        await this.wait(500);
 
         this.elements.world?.classList.add(
 
