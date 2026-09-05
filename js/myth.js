@@ -341,14 +341,6 @@ THEO
 class="ghost scarecrow"
 style="cursor:pointer">
 
-<rect
-x="75"
-y="500"
-width="90"
-height="150"
-fill="transparent"
-/>
-
 <!-- hat -->
 
 <path d="
@@ -732,22 +724,22 @@ this.viewport
 
 });
 
-        const scarecrow =
-    this.viewport.querySelector("#theoScarecrow");
+//         const scarecrow =
+//     this.viewport.querySelector("#theoScarecrow");
         
-scarecrow?.addEventListener(
+// scarecrow?.addEventListener(
 
-    "click",
+//     "click",
 
-    (event)=>{
+//     (event)=>{
 
-        event.stopPropagation();
+//         event.stopPropagation();
 
-        Theo.open();
+//         Theo.open();
 
-    }
+//     }
 
-);
+// );
 
         this.viewport
             .querySelectorAll("[data-myth-action]")
