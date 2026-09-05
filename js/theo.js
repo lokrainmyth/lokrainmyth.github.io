@@ -550,6 +550,14 @@ function createDustTexture() {
 
         if (!renderer) return;
 
+        document
+.querySelector(".myth-screen")
+?.classList.remove("sleep");
+
+document
+.getElementById("theoViewport")
+?.classList.remove("active");
+
         cancelAnimationFrame(frame);
 
         renderer.domElement.style.display = "none";
