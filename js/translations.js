@@ -43,6 +43,9 @@ sent:
 messageSent:
 "Your words have reached Lo.Krain."
 
+    error:
+"Something went wrong."
+
         journey:
         "Journey to the Dawn",
 
@@ -92,6 +95,9 @@ sent:
 
 messageSent:
 "Ваши слова достигли Lo.Krain."
+
+        error:
+"Что-то пошло не так."
 
         journey:
         "Путь к рассвету",
