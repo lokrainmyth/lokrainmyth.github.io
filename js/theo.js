@@ -163,6 +163,16 @@ bounce.position.set(
 
 scene.add(bounce);
 
+function theoEscape(e){
+
+    if(e.key === "Escape"){
+
+        close();
+
+    }
+
+}
+        
         // ---------- MUSEUM ENVIRONMENT ----------
 
 const room = new THREE.Group();
