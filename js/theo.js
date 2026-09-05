@@ -1,3 +1,5 @@
+console.log("THEO NEW FILE LOADED");
+
 const MODEL_OFFSET = {
 
     x: -4.7,
