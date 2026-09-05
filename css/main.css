@@ -2697,3 +2697,51 @@ body.myth-completed .track:hover .track-title{
     filter:blur(5px);
 
 }
+
+/* ==========================================================
+   THEO TRANSITION
+========================================================== */
+
+.myth-screen.sleep{
+
+    opacity:0;
+
+    pointer-events:none;
+
+    filter:blur(8px);
+
+    transform:scale(.985);
+
+    transition:
+        opacity .7s ease,
+        filter .7s ease,
+        transform .7s ease;
+
+}
+
+#theoViewport{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:6000;
+
+    background:#050505;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:
+        opacity .7s ease;
+
+}
+
+#theoViewport.active{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
