@@ -337,7 +337,9 @@ THEO
 
 
 
-<g class="ghost scarecrow">
+<g
+class="ghost scarecrow"
+id="theoScarecrow">
 
 
 <!-- hat -->
@@ -417,57 +419,59 @@ DREAMER
     <!-- head -->
 
     <circle
-    cx="512"
-    cy="472"
+    cx="520"
+    cy="465"
     r="18"/>
 
     <!-- neck -->
 
     <line
-    x1="512"
-    y1="490"
-    x2="512"
-    y2="498"/>
+    x1="520"
+    y1="483"
+    x2="520"
+    y2="491"/>
 
     <!-- back -->
 
     <path d="
-    M512 498
-    Q498 520 508 542
-    Q520 558 544 554
+    M520 491
+    Q502 515 512 539
+    Q524 553 548 549
     "/>
 
-    <!-- folded legs -->
+    <!-- knees -->
+
+    <circle
+    cx="552"
+    cy="547"
+    r="2.5"/>
+
+    <!-- left arm -->
 
     <path d="
-    M522 554
-    Q542 558 562 548
+    M514 511
+    Q530 529 552 547
     "/>
 
+    <!-- right arm -->
+
     <path d="
-    M562 548
-    L582 566
+    M526 509
+    Q540 527 552 547
     "/>
 
+    <!-- folded shin -->
+
     <path d="
-    M540 556
-    L568 574
+    M552 547
+    Q570 555 585 567
     "/>
 
-    <!-- arm -->
+    <!-- hidden second leg -->
 
     <path d="
-    M518 518
-    Q542 522 570 516
-    "/>
-
-    <!-- paper bird -->
-
-    <path d="
-    M578 514
-    l10 -5
-    l-3 8
-    l8 2
+    M544 549
+    Q560 562 572 573
     "/>
 
 </g>
@@ -719,6 +723,23 @@ this.viewport
     this.exit();
 
 });
+
+        const scarecrow =
+    document.getElementById("theoScarecrow");
+
+scarecrow?.addEventListener(
+
+    "click",
+
+    (event)=>{
+
+        event.stopPropagation();
+
+        Theo.open();
+
+    }
+
+);
 
         this.viewport
             .querySelectorAll("[data-myth-action]")
