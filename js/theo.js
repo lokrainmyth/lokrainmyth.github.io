@@ -43,6 +43,10 @@ window.Theo = (function () {
     function open() {
 
         document
+        .getElementById("theoScene")
+        .style.display = "block";
+
+        document
 .querySelector(".myth-screen")
 ?.classList.add("sleep");
 
@@ -562,6 +566,10 @@ document
         cancelAnimationFrame(frame);
 
         renderer.domElement.style.display = "none";
+
+        document
+        .getElementById("theoScene")
+        .style.display = "none";
 
     }
 
