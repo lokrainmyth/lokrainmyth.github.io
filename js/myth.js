@@ -414,7 +414,8 @@ DREAMER
 
 
 
-<g class="ghost boy">
+<g class="ghost boy"
+transform="translate(26 24) scale(.88)">
 
     <!-- head -->
 
