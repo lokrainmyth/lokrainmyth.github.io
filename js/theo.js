@@ -571,6 +571,12 @@ document
         .getElementById("theoScene")
         .style.display = "none";
 
+        window.removeEventListener(
+    "keydown",
+    theoEscape
+            
+);
+
     }
 
     return {
