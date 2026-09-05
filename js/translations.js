@@ -41,10 +41,10 @@ sent:
 "Sent",
 
 messageSent:
-"Your words have reached Lo.Krain."
+"Your words have reached Lo.Krain.",
 
     error:
-"Something went wrong."
+"Something went wrong.",
 
         journey:
         "Journey to the Dawn",
@@ -94,10 +94,10 @@ sent:
 "Отправлено",
 
 messageSent:
-"Ваши слова достигли Lo.Krain."
+"Ваши слова достигли Lo.Krain.",
 
         error:
-"Что-то пошло не так."
+"Что-то пошло не так.",
 
         journey:
         "Путь к рассвету",
