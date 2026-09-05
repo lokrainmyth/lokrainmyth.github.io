@@ -337,8 +337,7 @@ THEO
 
 
 
-<g
-class="ghost scarecrow"
+<g class="ghost scarecrow"
 id="theoScarecrow">
 
 
