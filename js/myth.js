@@ -339,7 +339,6 @@ THEO
 
 <g id="theoScarecrow"
 class="ghost scarecrow"
-style="cursor:pointer">
 
 <!-- hat -->
 
