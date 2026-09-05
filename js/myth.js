@@ -735,7 +735,7 @@ scarecrow?.addEventListener(
 
         event.stopPropagation();
 
-        Theo.open();
+        window.Theo?.open();
 
     }
 
