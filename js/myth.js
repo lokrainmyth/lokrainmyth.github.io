@@ -337,9 +337,17 @@ THEO
 
 
 
-<g class="ghost scarecrow"
-id="theoScarecrow">
+<g id="theoScarecrow"
+class="ghost scarecrow"
+style="cursor:pointer">
 
+<rect
+x="75"
+y="500"
+width="90"
+height="150"
+fill="transparent"
+/>
 
 <!-- hat -->
 
