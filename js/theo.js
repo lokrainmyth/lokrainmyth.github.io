@@ -48,7 +48,7 @@ window.Theo = (function () {
 
         window.addEventListener(
         "keydown",
-        theoEscape;
+        theoEscape)
 
         document
 .querySelector(".myth-screen")
