@@ -122,7 +122,7 @@ const World = {
 
             this.elements.cover.style.transition=
 
-                "opacity 5s ease";
+                "opacity 2.8s ease";
 
         }
 
