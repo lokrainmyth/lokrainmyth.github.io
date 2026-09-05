@@ -40,7 +40,9 @@ function(event){
 
 
     button.textContent =
-        "Sending...";
+    translations[
+        document.documentElement.lang
+    ].sending;
 
 
     button.disabled = true;
@@ -57,7 +59,9 @@ function(event){
     setTimeout(()=>{
 
     button.textContent =
-        "Sent";
+    translations[
+        document.documentElement.lang
+    ].sent;
 
 },2000);
 
@@ -69,8 +73,9 @@ function(event){
 
 
         status.textContent =
-            "Your words have reached Lo.Krain.";
-
+        translations[
+            document.documentElement.lang
+        ].messageSent;
 
         status.style.opacity =
             "1";
@@ -144,7 +149,9 @@ document.getElementById("contactMessage").value
     setTimeout(()=>{
 
         status.textContent =
-        "Your words have reached Lo.Krain.";
+translations[
+    document.documentElement.lang
+].messageSent;
 
 
         status.style.opacity = "1";
@@ -171,7 +178,9 @@ document.getElementById("contactMessage").value
 
 
         status.textContent =
-            "Something went wrong.";
+translations[
+    document.documentElement.lang
+].error;
 
 
         button.disabled =
@@ -179,7 +188,9 @@ document.getElementById("contactMessage").value
 
 
         button.textContent =
-            "Send";
+translations[
+    document.documentElement.lang
+].send;
 
 
     });
