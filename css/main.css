@@ -534,6 +534,8 @@ z-index:2;
 
     object-fit:cover;
 
+    opacity:0;
+
     filter:
 
         brightness(var(--cover-brightness))
@@ -552,13 +554,10 @@ z-index:2;
 
     transition:
 
-    opacity 2.8s ease,
-
-    filter 4s ease,
-
-    transform 4s ease,
-
-    box-shadow 4s ease;
+        opacity 2.8s ease,
+        filter 4s ease,
+        transform 4s ease,
+        box-shadow 4s ease;
 
 }
 
