@@ -41,6 +41,14 @@ window.Theo = (function () {
 
     function open() {
 
+        document
+.querySelector(".myth-screen")
+?.classList.add("sleep");
+
+document
+.getElementById("theoViewport")
+?.classList.add("active");
+
         if (renderer) {
             renderer.domElement.style.display = "block";
             animate();
