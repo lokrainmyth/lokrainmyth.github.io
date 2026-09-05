@@ -143,15 +143,18 @@ document.getElementById("contactMessage").value
     )
     .then(()=>{
 
-    button.textContent = "Sent";
+    button.textContent =
+        translations[
+            document.documentElement.lang
+        ].sent;
 
 
     setTimeout(()=>{
 
         status.textContent =
-translations[
-    document.documentElement.lang
-].messageSent;
+            translations[
+                document.documentElement.lang
+            ].messageSent;
 
 
         status.style.opacity = "1";
