@@ -725,8 +725,8 @@ this.viewport
 });
 
         const scarecrow =
-    this.viewport.querySelector("#theoScarecrow");
-
+    document.getElementById("theoScarecrow");
+        
 scarecrow?.addEventListener(
 
     "click",
