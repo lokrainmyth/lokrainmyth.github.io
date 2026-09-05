@@ -22,11 +22,9 @@ let targetY = 0;
 let currentX = 0;
 let currentY = 0;
 
-import * as THREE from 
-"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js";
+import * as THREE from "./vendor/three.module.js";
 
-import { GLTFLoader } from
-"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/loaders/GLTFLoader.js";
+import { GLTFLoader } from "./vendor/GLTFLoader.js";
 
 console.log("THEO ENGINE READY");
 
