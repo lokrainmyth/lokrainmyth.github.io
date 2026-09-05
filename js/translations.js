@@ -34,6 +34,15 @@ const translations = {
         send:
         "Send",
 
+        sending:
+"Sending...",
+
+sent:
+"Sent",
+
+messageSent:
+"Your words have reached Lo.Krain."
+
         journey:
         "Journey to the Dawn",
 
@@ -74,6 +83,15 @@ const translations = {
 
         send:
         "Отправить",
+
+        sending:
+"Отправляется...",
+
+sent:
+"Отправлено",
+
+messageSent:
+"Ваши слова достигли Lo.Krain."
 
         journey:
         "Путь к рассвету",
