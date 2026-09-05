@@ -204,3 +204,15 @@
     cursor:pointer;
 
 }
+
+@media (max-width:768px){
+
+    #theoViewport canvas{
+
+        transform:scale(.82);
+
+        transform-origin:center center;
+
+    }
+
+}
