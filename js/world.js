@@ -116,16 +116,6 @@ const World = {
 
         }
 
-        if(this.elements.cover){
-
-            this.elements.cover.style.opacity="0";
-
-            this.elements.cover.style.transition=
-
-                "opacity 2.8s ease";
-
-        }
-
     },
 
 /* ====================================================== */
@@ -150,9 +140,13 @@ const World = {
 
         if(this.elements.cover){
 
-            this.elements.cover.style.opacity="1";
+    requestAnimationFrame(()=>{
 
-        }
+        this.elements.cover.style.opacity="1";
+
+    });
+
+}
 
     },
 
