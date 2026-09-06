@@ -21,9 +21,6 @@ function(event){
     event.preventDefault();
 
 
-    console.log("SEND PRESSED");
-
-
     const form = event.target;
 
 
@@ -97,38 +94,6 @@ function(event){
     document.getElementById("contactMessage").value
 
 };
-
-
-
-    console.log(
-        "PARAMS:",
-        params
-    );
-
-console.log(
-    "CONTACT FIELD:",
-    document.getElementById("contactContact").value
-);
-
-console.log(
-    "MESSAGE FIELD:",
-    document.getElementById("contactMessage").value
-);
-
-console.log(
-    "TEXTAREA:",
-    document.getElementById("contactMessage")
-);
-
-console.log(
-    "TEXT VALUE:",
-    document.getElementById("contactMessage").value
-);
-
-console.log(
-"BEFORE SEND:",
-document.getElementById("contactMessage").value
-);
     
     emailjs.send(
 
