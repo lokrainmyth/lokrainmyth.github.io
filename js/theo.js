@@ -1,5 +1,3 @@
-console.log("THEO NEW FILE LOADED");
-
 const MODEL_OFFSET = {
 
     x: -4.7,
@@ -35,8 +33,6 @@ function theoEscape(e){
 import * as THREE from "./vendor/three.module.js";
 
 import { GLTFLoader } from "./vendor/GLTFLoader.js";
-
-console.log("THEO ENGINE READY");
 
 window.Theo = (function () {
 
