@@ -188,5 +188,13 @@ document.addEventListener(
 
     setLanguage(saved);
 
+    document
+.querySelectorAll(".lang-btn")
+.forEach(btn=>{
+
+    btn.classList.toggle(
+        "active",
+        btn.dataset.lang === saved
+    );
 
 });
