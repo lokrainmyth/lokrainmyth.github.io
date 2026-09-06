@@ -1,7 +1,5 @@
 "use strict";
 
-console.log("COMMUNICATION ACTIVE");
-
 
 emailjs.init(
     "ERryTDaq2vefa_Fop"
