@@ -523,60 +523,58 @@ function loadTrack(index){
 
     if ("mediaSession" in navigator) {
 
-        navigator.mediaSession.metadata =
-            new MediaMetadata({
+    navigator.mediaSession.metadata =
+        new MediaMetadata({
 
-               navigator.mediaSession.setActionHandler(
-    "play",
-    playTrack
-);
+            title: track.title,
 
-navigator.mediaSession.setActionHandler(
-    "pause",
-    pauseTrack
-);
+            artist: "Lo.Krain",
 
-navigator.mediaSession.setActionHandler(
-    "previoustrack",
-    () => requestTrack(currentTrack - 1)
-);
+            album: "Io",
 
-navigator.mediaSession.setActionHandler(
-    "nexttrack",
-    () => requestTrack(currentTrack + 1)
-);
+            artwork: [
 
-                title: track.title,
-
-                artist: "Lo.Krain",
-
-                album: "Io",
-
-                artwork: [
-
-{
-    src:"assets/images/cover-96.jpg",
-    sizes:"96x96",
-    type:"image/jpeg"
+                {
+    src: "assets/images/cover.jpeg",
+    sizes: "96x96",
+    type: "image/jpeg"
 },
-
 {
-    src:"assets/images/cover-192.jpg",
-    sizes:"192x192",
-    type:"image/jpeg"
+    src: "assets/images/cover.jpeg",
+    sizes: "192x192",
+    type: "image/jpeg"
 },
-
 {
-    src:"assets/images/cover-512.jpg",
-    sizes:"512x512",
-    type:"image/jpeg"
+    src: "assets/images/cover.jpeg",
+    sizes: "512x512",
+    type: "image/jpeg"
 }
 
-]
+            ]
 
-            });
+        });
 
-    }
+    navigator.mediaSession.setActionHandler(
+        "play",
+        playTrack
+    );
+
+    navigator.mediaSession.setActionHandler(
+        "pause",
+        pauseTrack
+    );
+
+    navigator.mediaSession.setActionHandler(
+        "previoustrack",
+        () => requestTrack(currentTrack - 1)
+    );
+
+    navigator.mediaSession.setActionHandler(
+        "nexttrack",
+        () => requestTrack(currentTrack + 1)
+    );
+
+}
    
     audio.load();
 
