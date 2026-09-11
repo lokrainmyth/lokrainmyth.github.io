@@ -134,6 +134,48 @@ translations[lang][key];
 
     });
 
+    function animatePathLetters(){
+
+    document
+    .querySelectorAll(".path-reveal")
+    .forEach(element=>{
+
+        const text = element.textContent;
+
+        element.innerHTML =
+        [...text]
+        .map((letter,index)=>{
+
+            const rotations = [
+                -2,
+                1,
+                -1,
+                2,
+                -3,
+                1.5,
+                -1.5,
+                3
+            ];
+
+            const rotate =
+            rotations[index % rotations.length];
+
+
+            return `
+            <span
+            class="letter"
+            style="transform:rotate(${rotate}deg)"
+            >
+            ${letter}
+            </span>
+            `;
+
+        })
+        .join("");
+
+    });
+
+}
 
     localStorage.setItem(
         "dawn_language",
@@ -187,6 +229,7 @@ document.addEventListener(
 
 
     setLanguage(saved);
+animatePathLetters();
 
     document
 .querySelectorAll(".lang-btn")
