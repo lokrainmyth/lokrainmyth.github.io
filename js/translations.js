@@ -63,12 +63,12 @@ messageSent:
 
     ru: {
 
-        albumDescription:
+     albumDescription:
 `Альбом, завершающий пятнадцатилетний путь от ночи к рассвету. Начни слушать и отправляйся в ночь — трек за треком, <span class="pathReveal">
 <span>п</span><span>о</span><span>к</span><span>а</span><span>&nbsp;</span>
 <span>п</span><span>у</span><span>т</span><span>ь</span><span>&nbsp;</span>
 <span>н</span><span>е</span><span>&nbsp;</span>
-<span>о</span><span>т</span><span>к</span><span>р</span><span>о</span><span>е</span><span>т</span><span>&nbsp;</span>
+<span>о</span><span>т</span><span>к</span><span>р</span><span>о</span><span>е</span><span>т</span><span>с</span><span>я</span><span>&nbsp;</span>
 <span>с</span><span>а</span><span>м</span><span class="pathDot">.</span>
 </span>`,
 
