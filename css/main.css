@@ -2747,64 +2747,54 @@ body.myth-completed .track:hover .track-title{
 
 }
 
-.hiddenClear{
+/* ==========================================================
+   PATH REVEAL TEXT
+========================================================== */
 
-    display:inline-flex;
-
-    flex-wrap:wrap;
-
-}
-
-.hiddenClear span{
+.path-reveal {
 
     display:inline-block;
 
-    font:inherit;
+    background:
+    linear-gradient(
+        90deg,
+        #d7bf87,
+        #b4c7e9,
+        #d7a6a6,
+        #b7c9a6,
+        #f1eee6
+    );
 
-    transition:
-        color .6s ease,
-        transform .6s ease;
+    background-size:200% auto;
 
-}
+    -webkit-background-clip:text;
+    background-clip:text;
 
-.hiddenClear span:nth-child(5n+1){
+    color:transparent;
 
-    color:#d7b36a;
-
-}
-
-.hiddenClear span:nth-child(5n+2){
-
-    color:#9cb7ff;
-
-}
-
-.hiddenClear span:nth-child(5n+3){
-
-    color:#d99898;
+    animation:
+    pathReveal 3s ease forwards;
 
 }
 
-.hiddenClear span:nth-child(5n+4){
 
-    color:#95b596;
+@keyframes pathReveal {
 
-}
+    from {
 
-.hiddenClear span:nth-child(5n){
+        opacity:0;
 
-    color:#f5f0e6;
+        background-position:100% center;
 
-}
+    }
 
-.hiddenClear span:nth-child(odd){
 
-    transform:rotate(-2deg);
+    to {
 
-}
+        opacity:1;
 
-.hiddenClear span:nth-child(even){
+        background-position:0 center;
 
-    transform:rotate(2deg);
+    }
 
 }
