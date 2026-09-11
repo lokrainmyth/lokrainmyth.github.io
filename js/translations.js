@@ -5,7 +5,13 @@ const translations = {
     en: {
 
         albumDescription:
-'An album completing a fifteen-year journey from night to dawn. Start listening and head into the night, track by track, <span class="path-reveal">until the path reveals itself.</span>',
+`An album completing a fifteen-year journey from night to dawn. Start listening and head into the night, track by track, <span class="hiddenClear">
+<span>u</span><span>n</span><span>t</span><span>i</span><span>l</span><span>&nbsp;</span>
+<span>t</span><span>h</span><span>e</span><span>&nbsp;</span>
+<span>h</span><span>i</span><span>d</span><span>d</span><span>e</span><span>n</span><span>&nbsp;</span>
+<span>b</span><span>e</span><span>c</span><span>o</span><span>m</span><span>e</span><span>s</span><span>&nbsp;</span>
+<span>c</span><span>l</span><span>e</span><span>a</span><span>r</span>
+</span>.`,
 
         about:
         "About",
@@ -58,7 +64,7 @@ messageSent:
     ru: {
 
         albumDescription:
-'Альбом, завершающий пятнадцатилетний путь от ночи к рассвету. Начни слушать и отправляйся в ночь — трек за треком, — <span class="path-reveal">пока путь не откроется сам.</span>',
+        "Альбом, завершающий пятнадцатилетний путь от ночи к рассвету. Начни слушать и отправляйся в ночь — трек за треком, — пока скрытое не станет явным.",
 
         about:
         "О проекте",
@@ -134,48 +140,6 @@ translations[lang][key];
 
     });
 
-    function animatePathLetters(){
-
-    document
-    .querySelectorAll(".path-reveal")
-    .forEach(element=>{
-
-        const text = element.textContent;
-
-        element.innerHTML =
-        [...text]
-        .map((letter,index)=>{
-
-            const rotations = [
-                -2,
-                1,
-                -1,
-                2,
-                -3,
-                1.5,
-                -1.5,
-                3
-            ];
-
-            const rotate =
-            rotations[index % rotations.length];
-
-
-            return `
-            <span
-            class="letter"
-            style="transform:rotate(${rotate}deg)"
-            >
-            ${letter}
-            </span>
-            `;
-
-        })
-        .join("");
-
-    });
-
-}
 
     localStorage.setItem(
         "dawn_language",
@@ -229,7 +193,6 @@ document.addEventListener(
 
 
     setLanguage(saved);
-animatePathLetters();
 
     document
 .querySelectorAll(".lang-btn")
