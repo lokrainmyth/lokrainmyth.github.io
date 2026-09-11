@@ -2753,6 +2753,15 @@ body.myth-completed .track:hover .track-title{
 
 .path-reveal {
 
+    display:inline;
+
+    color:#d7bf87;
+
+}
+
+
+.path-reveal .letter {
+
     display:inline-block;
 
     background:
@@ -2765,36 +2774,9 @@ body.myth-completed .track:hover .track-title{
         #f1eee6
     );
 
-    background-size:200% auto;
-
     -webkit-background-clip:text;
     background-clip:text;
 
     color:transparent;
-
-    animation:
-    pathReveal 3s ease forwards;
-
-}
-
-
-@keyframes pathReveal {
-
-    from {
-
-        opacity:0;
-
-        background-position:100% center;
-
-    }
-
-
-    to {
-
-        opacity:1;
-
-        background-position:0 center;
-
-    }
 
 }
