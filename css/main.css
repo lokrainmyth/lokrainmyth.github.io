@@ -2747,15 +2747,20 @@ body.myth-completed .track:hover .track-title{
 
 }
 
-.hiddenClear{
+.pathReveal{
 
     display:inline-flex;
 
-    flex-wrap:wrap;
+    flex-wrap:nowrap;
+
+    white-space:nowrap;
+
+    vertical-align:baseline;
 
 }
 
-.hiddenClear span{
+
+.pathReveal span{
 
     display:inline-block;
 
@@ -2767,44 +2772,63 @@ body.myth-completed .track:hover .track-title{
 
 }
 
-.hiddenClear span:nth-child(5n+1){
+
+.pathReveal span:nth-child(5n+1){
 
     color:#d7b36a;
 
 }
 
-.hiddenClear span:nth-child(5n+2){
+
+.pathReveal span:nth-child(5n+2){
 
     color:#9cb7ff;
 
 }
 
-.hiddenClear span:nth-child(5n+3){
+
+.pathReveal span:nth-child(5n+3){
 
     color:#d99898;
 
 }
 
-.hiddenClear span:nth-child(5n+4){
+
+.pathReveal span:nth-child(5n+4){
 
     color:#95b596;
 
 }
 
-.hiddenClear span:nth-child(5n){
+
+.pathReveal span:nth-child(5n){
 
     color:#f5f0e6;
 
 }
 
-.hiddenClear span:nth-child(odd){
+
+.pathReveal span:nth-child(odd){
 
     transform:rotate(-2deg);
 
 }
 
-.hiddenClear span:nth-child(even){
+
+.pathReveal span:nth-child(even){
 
     transform:rotate(2deg);
+
+}
+
+.pathReveal{
+
+    max-width:100%;
+
+}
+
+.pathDot{
+
+    color:#d7b36a !important;
 
 }
