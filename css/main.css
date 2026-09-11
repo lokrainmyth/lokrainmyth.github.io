@@ -2780,3 +2780,24 @@ body.myth-completed .track:hover .track-title{
     color:transparent;
 
 }
+
+@keyframes pathReveal {
+
+    from {
+
+        opacity:0;
+
+        background-position:100% center;
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        background-position:0 center;
+
+    }
+
+}
