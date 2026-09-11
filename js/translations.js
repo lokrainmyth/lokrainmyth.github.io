@@ -10,7 +10,7 @@ const translations = {
 <span>t</span><span>h</span><span>e</span><span>&nbsp;</span>
 <span>p</span><span>a</span><span>t</span><span>h</span><span>&nbsp;</span>
 <span>r</span><span>e</span><span>v</span><span>e</span><span>a</span><span>l</span><span>s</span><span>&nbsp;</span>
-<span>i</span><span>t</span><span>s</span><span>e</span><span>l</span><span>f</span><span>.</span>
+<span>i</span><span>t</span><span>s</span><span>e</span><span>l</span><span>f</span><span class="pathDot">.</span>
 </span>` ,
 
         about:
@@ -69,7 +69,7 @@ messageSent:
 <span>п</span><span>у</span><span>т</span><span>ь</span><span>&nbsp;</span>
 <span>н</span><span>е</span><span>&nbsp;</span>
 <span>о</span><span>т</span><span>к</span><span>р</span><span>о</span><span>е</span><span>т</span><span>&nbsp;</span>
-<span>с</span><span>а</span><span>м</span><span>.</span>
+<span>с</span><span>а</span><span>м</span><span class="pathDot">.</span>
 </span>`,
 
         about:
