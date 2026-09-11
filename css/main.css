@@ -2746,3 +2746,65 @@ body.myth-completed .track:hover .track-title{
     pointer-events:auto;
 
 }
+
+.hiddenClear{
+
+    display:inline-flex;
+
+    flex-wrap:wrap;
+
+}
+
+.hiddenClear span{
+
+    display:inline-block;
+
+    font:inherit;
+
+    transition:
+        color .6s ease,
+        transform .6s ease;
+
+}
+
+.hiddenClear span:nth-child(5n+1){
+
+    color:#d7b36a;
+
+}
+
+.hiddenClear span:nth-child(5n+2){
+
+    color:#9cb7ff;
+
+}
+
+.hiddenClear span:nth-child(5n+3){
+
+    color:#d99898;
+
+}
+
+.hiddenClear span:nth-child(5n+4){
+
+    color:#95b596;
+
+}
+
+.hiddenClear span:nth-child(5n){
+
+    color:#f5f0e6;
+
+}
+
+.hiddenClear span:nth-child(odd){
+
+    transform:rotate(-2deg);
+
+}
+
+.hiddenClear span:nth-child(even){
+
+    transform:rotate(2deg);
+
+}
