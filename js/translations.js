@@ -64,7 +64,7 @@ messageSent:
     ru: {
 
      albumDescription:
-`Альбом, завершающий пятнадцатилетний путь от ночи к рассвету. Начни слушать и отправляйся в ночь — трек за треком, <span class="pathReveal">
+`Альбом, завершающий пятнадцатилетнее путешествие от ночи к рассвету. Начни слушать и отправляйся в ночь — трек за треком, <span class="pathReveal">
 <span>п</span><span>о</span><span>к</span><span>а</span><span>&nbsp;</span>
 <span>п</span><span>у</span><span>т</span><span>ь</span><span>&nbsp;</span>
 <span>н</span><span>е</span><span>&nbsp;</span>
