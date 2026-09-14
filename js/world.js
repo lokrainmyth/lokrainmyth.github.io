@@ -114,6 +114,10 @@ const World = {
 
             this.elements.wind.loop=false;
 
+           document.body.classList.add(
+    "intro-open"
+);
+
         }
 
     },
@@ -128,6 +132,10 @@ const World = {
 
         this.playWind();
 
+       document.body.classList.remove(
+    "intro-open"
+);
+       
         this.elements.intro?.classList.add("hidden");
 
         this.elements.world?.classList.add(
