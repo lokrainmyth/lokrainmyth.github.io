@@ -2840,3 +2840,11 @@ body.myth-completed .track:hover .track-title{
     color:#d7b36a !important;
 
 }
+
+body.intro-open{
+
+    overflow:hidden;
+
+    touch-action:none;
+
+}
