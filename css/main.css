@@ -2848,3 +2848,31 @@ body.intro-open{
     touch-action:none;
 
 }
+
+.intro-action{
+
+    ...
+
+    animation:introPulse 2.8s ease-in-out infinite;
+
+}
+
+@keyframes introPulse{
+
+    0%,100%{
+
+        opacity:.55;
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:translateY(2px);
+
+    }
+
+}
