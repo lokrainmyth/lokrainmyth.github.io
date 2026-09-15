@@ -324,7 +324,7 @@ z-index:2;
 
 
 .language-switch{
-    margin-top:0px;
+    margin-top:50px;
 }
 
 
@@ -628,7 +628,7 @@ z-index:2;
 
     gap:110px;
 
-   align-items:flex-start;
+    align-items:start;
 
     padding:
         70px
@@ -3040,17 +3040,5 @@ body.intro-open{
 .welcome-language button:hover{
 
     color:var(--gold);
-
-}
-
-.cover-wrapper{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    width:100%;
 
 }
