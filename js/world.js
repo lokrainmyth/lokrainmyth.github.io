@@ -177,6 +177,12 @@ setTimeout(()=>{
 
         );
 
+       setTimeout(()=>{
+
+    document.body.classList.remove("lock-scroll");
+
+},2600);
+
         if(this.elements.cover){
 
     requestAnimationFrame(()=>{
