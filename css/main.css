@@ -709,7 +709,7 @@ z-index:2;
 
     justify-content:flex-start;
 
-    gap:28px;
+    gap:0 !important;
 
     min-width:0;
 
