@@ -175,39 +175,69 @@ content="en_US">
     class="welcome-screen"
     id="welcomeScreen">
 
-    <div class="welcome-content">
+    <h1 class="welcome-title">
+        Welcome to Io
+    </h1>
 
-        <h2>
-            Welcome to IO
-        </h2>
 
-        <p>
-            This is not just an album.
-            <br><br>
-            Begin with the first track
-            and continue the journey.
-            <br><br>
-            The path will reveal itself.
+    <div class="welcome-description">
+
+        <p data-i18n="welcomeLine1">
+            This is not a regular music album.
         </p>
 
+        <p data-i18n="welcomeLine2">
+            Io is an interactive journey from night to dawn.
+        </p>
 
-        <div class="welcome-language">
+        <p data-i18n="welcomeLine3">
+            Press Play and listen to the first few tracks without skipping.
+        </p>
 
-            <button data-lang="en">
-                EN
-            </button>
+        <p data-i18n="welcomeLine4">
+            As the journey unfolds, the hidden path will reveal itself.
+        </p>
 
-            <button data-lang="ru">
-                RU
-            </button>
+        <p data-i18n="welcomeLine5">
+            Discover the story behind the album, meet the creator, and share your thoughts.
+        </p>
 
-        </div>
+    </div>
 
 
-        <button class="welcome-start">
-            BEGIN
+    <button
+        class="welcome-start"
+        data-i18n="begin">
+
+        Begin
+
+    </button>
+
+
+    <div class="welcome-divider"></div>
+
+
+    <div class="welcome-language">
+
+        <button
+            class="lang-btn active"
+            data-lang="en">
+
+            EN
+
         </button>
 
+
+        <span>/</span>
+
+
+        <button
+            class="lang-btn"
+            data-lang="ru">
+
+            RU
+
+        </button>
 
     </div>
 
