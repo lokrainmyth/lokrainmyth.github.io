@@ -628,7 +628,7 @@ z-index:2;
 
     gap:110px;
 
-    align-items:start;
+   align-items:flex-start;
 
     padding:
         70px
