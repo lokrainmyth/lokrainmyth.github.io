@@ -3044,11 +3044,9 @@ body.intro-open{
 
     align-items:center;
 
-    gap:22px;
+    gap:14px;
 
-    margin-top:42px;
-
-    margin-bottom:42px;
+    margin:48px 0;
 
 }
 
@@ -3058,18 +3056,62 @@ body.intro-open{
 
     border:none;
 
-    color:var(--paper);
+    padding:0;
+
+    cursor:pointer;
 
     font:inherit;
 
-    letter-spacing:.25em;
+    font-size:.95rem;
 
-    cursor:pointer;
+    font-weight:600;
+
+    letter-spacing:.28em;
+
+    text-transform:uppercase;
+
+    color:var(--muted);
+
+    transition:
+        color .5s ease;
+
+}
+
+.welcome-language button.active{
+
+    color:var(--paper);
 
 }
 
 .welcome-language button:hover{
 
     color:var(--gold);
+
+}
+
+.welcome-language span{
+
+    color:var(--muted);
+
+}
+
+.welcome-content{
+
+    max-width:620px;
+
+    width:min(90vw,620px);
+
+    padding:40px;
+
+    text-align:center;
+
+    overflow:hidden;
+
+}
+
+html,
+body{
+
+    overscroll-behavior:none;
 
 }
