@@ -36,6 +36,9 @@ const World = {
 
             intro:document.getElementById("intro"),
 
+           welcome:
+document.getElementById("welcomeScreen")
+
             outro:document.getElementById("outro"),
 
             world:document.querySelector(".world"),
