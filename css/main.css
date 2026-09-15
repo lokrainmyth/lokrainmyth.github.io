@@ -238,6 +238,136 @@ z-index:2;
 }
 
 /* ==========================================================
+   WELCOME SCREEN
+========================================================== */
+
+.welcome-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9998;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#080a10;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:
+        opacity 1.8s ease,
+        visibility 1.8s ease;
+
+}
+
+
+.welcome-screen.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+
+
+.welcome-content{
+
+    max-width:600px;
+
+    padding:40px;
+
+    text-align:center;
+
+    color:#f5f0e6;
+
+}
+
+
+.welcome-content h2{
+
+    font-size:clamp(2rem,5vw,4rem);
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    margin-bottom:50px;
+
+}
+
+
+
+.welcome-content p{
+
+    color:#b8b3a8;
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+    letter-spacing:.08em;
+
+}
+
+
+
+.language-switch{
+
+    margin-top:50px;
+
+}
+
+
+
+.language-switch button,
+.welcome-start{
+
+    background:none;
+
+    border:none;
+
+    color:#f5f0e6;
+
+    cursor:pointer;
+
+    letter-spacing:.35em;
+
+    text-transform:uppercase;
+
+}
+
+
+
+.language-switch button:hover,
+.welcome-start:hover{
+
+    color:var(--gold);
+
+}
+
+
+
+.welcome-start{
+
+    margin-top:45px;
+
+    font-size:1rem;
+
+}
+
+/* ==========================================================
    WORLD
 ========================================================== */
 
