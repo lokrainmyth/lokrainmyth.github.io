@@ -243,10 +243,6 @@ event=>{
 
         button.classList.add("active");
 
-
-    });
-
-
 });
 
 document.addEventListener(
