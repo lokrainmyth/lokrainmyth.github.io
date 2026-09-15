@@ -221,6 +221,8 @@ setTimeout(()=>{
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    document.body.classList.add("lock-scroll");
+
     World.init();
 
     Myth.init();
