@@ -3054,15 +3054,3 @@ body.intro-open{
     width:100%;
 
 }
-
-.edition{
-    outline:2px solid red;
-}
-
-.cover-area{
-    outline:2px solid lime;
-}
-
-.meta-area{
-    outline:2px solid cyan;
-}
