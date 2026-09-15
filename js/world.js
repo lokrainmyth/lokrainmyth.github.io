@@ -152,6 +152,8 @@ document.getElementById("welcomeScreen"),
 
         this.introOpen=false;
 
+       document.body.classList.add("lock-scroll");
+
         this.playWind();
 
        document.body.classList.remove(
