@@ -255,7 +255,17 @@ z-index:2;
 
     align-items:center;
 
-    background:#080a10;
+    background:
+        linear-gradient(
+            180deg,
+            #080a10 0%,
+            #10151d 55%,
+            #171711 100%
+        );
+
+    overflow:hidden;
+
+    isolation:isolate;
 
     opacity:0;
 
@@ -268,7 +278,6 @@ z-index:2;
         visibility 1.8s ease;
 
 }
-
 
 .welcome-screen.active{
 
