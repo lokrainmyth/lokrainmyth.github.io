@@ -63,6 +63,25 @@ document.getElementById("welcomeScreen")
 
     bind(){
 
+   document
+.querySelector(".welcome-start")
+?.addEventListener(
+"click",
+()=>{
+
+    this.elements.welcome
+    ?.classList.remove("active");
+
+
+    setTimeout(()=>{
+
+        this.elements.world
+        ?.classList.add("world-awake");
+
+    },1200);
+
+});
+
         this.elements.intro?.addEventListener(
 
             "click",
