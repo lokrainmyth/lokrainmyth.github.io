@@ -72,6 +72,7 @@ document.getElementById("welcomeScreen"),
     this.elements.welcome
     ?.classList.remove("active");
 
+   document.body.classList.remove("lock-scroll");
 
     setTimeout(()=>{
 
