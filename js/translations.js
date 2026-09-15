@@ -59,6 +59,12 @@ messageSent:
         "Go Deeper?",
 
         welcomeTitle:
+{
+    en:"Welcome to IO",
+    ru:"Добро пожаловать в IO"
+},
+
+        welcomeTitle:
 "Welcome to IO",
 
 welcomeDescription:
@@ -246,13 +252,6 @@ document.addEventListener(
 });
 
 });
-
-welcomeTitle:
-{
-    en:"Welcome to IO",
-    ru:"Добро пожаловать в IO"
-},
-
 
 welcomeText:
 {
