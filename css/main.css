@@ -3135,3 +3135,31 @@ body.lock-scroll{
     touch-action:none;
 
 }
+
+.welcome-description{
+
+    max-width:620px;
+
+    margin:0 auto;
+
+}
+
+
+.welcome-description p{
+
+    margin:0 0 22px;
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+    color:var(--ink);
+
+}
+
+
+.welcome-description p:last-child{
+
+    margin-bottom:0;
+
+}
