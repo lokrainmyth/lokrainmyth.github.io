@@ -3136,30 +3136,98 @@ body.lock-scroll{
 
 }
 
-.welcome-description{
+/* ==========================================================
+   WELCOME DESCRIPTION
+========================================================== */
+
+.welcome-content p{
 
     max-width:620px;
 
-    margin:0 auto;
+    margin-left:auto;
 
-}
-
-
-.welcome-description p{
-
-    margin:0 0 22px;
-
-    font-size:1.1rem;
+    margin-right:auto;
 
     line-height:1.8;
+
+    font-size:1.12rem;
+
+    letter-spacing:.02em;
 
     color:var(--ink);
 
 }
 
 
-.welcome-description p:last-child{
+/* ==========================================================
+   WELCOME DIVIDER
+========================================================== */
 
-    margin-bottom:0;
+.welcome-divider{
+
+    width:90px;
+
+    height:1px;
+
+    margin:45px auto 25px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
+
+}
+
+
+/* ==========================================================
+   WELCOME LANGUAGE
+========================================================== */
+
+.welcome-language{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+
+.welcome-language button{
+
+    background:none;
+
+    border:none;
+
+    padding:0;
+
+    color:var(--muted);
+
+    font-size:.85rem;
+
+    letter-spacing:.25em;
+
+    cursor:pointer;
+
+}
+
+
+.welcome-language button.active{
+
+    color:var(--paper);
+
+}
+
+
+.welcome-language span{
+
+    color:var(--muted);
 
 }
