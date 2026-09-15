@@ -3004,3 +3004,41 @@ body.intro-open{
     }
 
 }
+
+.welcome-language{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:22px;
+
+    margin-top:42px;
+
+    margin-bottom:42px;
+
+}
+
+.welcome-language button{
+
+    background:none;
+
+    border:none;
+
+    color:var(--paper);
+
+    font:inherit;
+
+    letter-spacing:.25em;
+
+    cursor:pointer;
+
+}
+
+.welcome-language button:hover{
+
+    color:var(--gold);
+
+}
