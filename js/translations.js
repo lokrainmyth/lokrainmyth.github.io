@@ -73,7 +73,7 @@ As the journey unfolds, the hidden path will reveal itself.
 Discover the story behind the album, meet the creator, and share your thoughts.`,
 
 begin:
-"BEGIN"
+"BEGIN",
 
     },
 
