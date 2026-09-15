@@ -709,7 +709,7 @@ z-index:2;
 
     justify-content:flex-start;
 
-    gap:0 !important;
+    gap:28px;
 
     min-width:0;
 
@@ -791,7 +791,7 @@ z-index:2;
 
 .album-title{
 
-    margin:0 !important;
+    margin:0;
 
     font-size:clamp(3.4rem,7vw,6.8rem);
 
@@ -847,7 +847,7 @@ z-index:2;
 
 .artist-name{
 
-    margin:0 !important;
+    margin:0;
 
     font-size:clamp(2rem,3vw,3rem);
 
