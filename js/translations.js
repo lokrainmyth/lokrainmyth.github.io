@@ -246,3 +246,46 @@ document.addEventListener(
 });
 
 });
+
+welcomeTitle:
+{
+    en:"Welcome to IO",
+    ru:"Добро пожаловать в IO"
+},
+
+
+welcomeText:
+{
+    en:
+    `
+    This is not a regular music album.
+
+    Io is an interactive journey from night to dawn.
+
+    Press Play and listen to the first few tracks without skipping.
+
+    As the journey unfolds, the hidden path will reveal itself.
+
+    Discover the story behind the album, meet the creator, and share your thoughts.
+    `,
+
+    ru:
+    `
+    Это не обычный музыкальный альбом.
+
+    Io — интерактивное путешествие от ночи к рассвету.
+
+    Нажмите Play и слушайте первые несколько треков без переключения.
+
+    По мере путешествия откроется скрытый путь.
+
+    Познакомьтесь с историей альбома, автором и поделитесь своими мыслями.
+    `
+},
+
+
+begin:
+{
+    en:"BEGIN",
+    ru:"НАЧАТЬ"
+}
