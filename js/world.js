@@ -141,6 +141,14 @@ document.getElementById("welcomeScreen")
        
         this.elements.intro?.classList.add("hidden");
 
+
+setTimeout(()=>{
+
+    this.elements.welcome
+    ?.classList.add("active");
+
+},1200);
+
         this.elements.world?.classList.add(
 
             "world-awake"
