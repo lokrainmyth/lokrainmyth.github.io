@@ -324,17 +324,7 @@ z-index:2;
 
 
 .language-switch{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:28px;
-
     margin-top:50px;
-
 }
 
 
