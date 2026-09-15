@@ -3142,19 +3142,15 @@ body.lock-scroll{
 
 .welcome-content p{
 
+    white-space:pre-line;
+
     max-width:620px;
-
-    margin-left:auto;
-
-    margin-right:auto;
 
     line-height:1.8;
 
     font-size:1.12rem;
 
     letter-spacing:.02em;
-
-    color:var(--ink);
 
 }
 
