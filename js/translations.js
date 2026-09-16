@@ -196,11 +196,19 @@ document.addEventListener("click", (event)=>{
 
     setLanguage(button.dataset.lang);
 
-    document
-    .querySelectorAll(".lang-btn")
-    .forEach(btn=>{
-        btn.classList.remove("active");
-    });
+    const group = button.classList.contains("welcome-lang")
+    ? ".welcome-lang"
+    : ".main-lang";
+
+
+document
+.querySelectorAll(group)
+.forEach(btn=>{
+    btn.classList.remove("active");
+});
+
+
+button.classList.add("active");
 
     button.classList.add("active");
 
