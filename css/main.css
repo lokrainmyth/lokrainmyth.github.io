@@ -282,7 +282,7 @@ z-index:2;
 
 }
 
-.welcome-screen::after{
+/* .welcome-screen::after{
 
     content:"";
 
@@ -302,7 +302,7 @@ z-index:2;
     animation:
         noiseMove 8s steps(4) infinite;
 
-}
+} */
 
 .welcome-screen.active{
 
