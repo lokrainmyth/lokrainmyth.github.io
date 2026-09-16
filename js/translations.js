@@ -188,35 +188,21 @@ translations[lang][key];
 
 }
 
-document
-.querySelectorAll(".lang-btn")
-.forEach(button=>{
+document.addEventListener("click", (event)=>{
 
+    const button = event.target.closest(".lang-btn");
 
-    button.addEventListener(
-    "click",
-    ()=>{
+    if(!button) return;
 
+    setLanguage(button.dataset.lang);
 
-        setLanguage(
-            button.dataset.lang
-        );
-
-
-        document
-        .querySelectorAll(".lang-btn")
-        .forEach(btn=>{
-
-            btn.classList.remove("active");
-
-        });
-
-
-        button.classList.add("active");
-
-
+    document
+    .querySelectorAll(".lang-btn")
+    .forEach(btn=>{
+        btn.classList.remove("active");
     });
 
+    button.classList.add("active");
 
 });
 
