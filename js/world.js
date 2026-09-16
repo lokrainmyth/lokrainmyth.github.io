@@ -153,7 +153,7 @@ document.getElementById("welcomeScreen"),
 
         this.introOpen=false;
 
-       document.body.classList.add("lock-scroll");
+       // document.body.classList.add("lock-scroll");
 
         this.playWind();
 
@@ -221,7 +221,7 @@ setTimeout(()=>{
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    document.body.classList.add("lock-scroll");
+    // document.body.classList.add("lock-scroll");
 
     World.init();
 
