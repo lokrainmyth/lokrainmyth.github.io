@@ -253,7 +253,9 @@ z-index:2;
 
     justify-content:center;
 
-    align-items:center;
+    align-items:flex-start;
+
+   padding:70px 0;
 
     background:
         linear-gradient(
@@ -325,6 +327,10 @@ z-index:2;
     text-align:center;
 
     color:#f5f0e6;
+
+   width:min(620px,92vw);
+
+    margin:auto;
 
 }
 
