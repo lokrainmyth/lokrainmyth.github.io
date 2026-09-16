@@ -196,21 +196,29 @@ document.addEventListener("click", (event)=>{
 
     setLanguage(button.dataset.lang);
 
-    const group = button.classList.contains("welcome-lang")
-    ? ".welcome-lang"
-    : ".main-lang";
+   document.addEventListener("click", (event)=>{
+
+    const button = event.target.closest(".lang-btn");
+
+    if(!button) return;
+
+    const lang = button.dataset.lang;
+
+    setLanguage(lang);
 
 
-document
-.querySelectorAll(group)
-.forEach(btn=>{
-    btn.classList.remove("active");
+    document
+    .querySelectorAll(".lang-btn")
+    .forEach(btn=>{
+
+        btn.classList.toggle(
+            "active",
+            btn.dataset.lang === lang
+        );
+
+    });
+
 });
-
-
-button.classList.add("active");
-
-    button.classList.add("active");
 
 });
 
