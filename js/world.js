@@ -244,6 +244,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     Myth.init();
 
+    WelcomePanel.init();
+
 });
 
 /* ==========================================================
@@ -672,41 +674,39 @@ const WelcomePanel = {
 
     open(){
 
-        const panel =
-        document.getElementById(
-            "welcomePanel"
-        );
-
-        panel?.classList.add("active");
+        document
+        .getElementById("welcomePanel")
+        ?.classList.add("active");
 
     },
 
 
     close(){
 
-        const panel =
-        document.getElementById(
-            "welcomePanel"
+        document
+        .getElementById("welcomePanel")
+        ?.classList.remove("active");
+
+    },
+
+
+    init(){
+
+        document
+        .getElementById("welcomeClose")
+        ?.addEventListener(
+            "click",
+            ()=>this.close()
         );
 
-        panel?.classList.remove("active");
+
+        document
+        .getElementById("welcomeBegin")
+        ?.addEventListener(
+            "click",
+            ()=>this.close()
+        );
 
     }
 
 };
-
-
-document
-.getElementById("welcomeClose")
-?.addEventListener(
-    "click",
-    ()=>WelcomePanel.close()
-);
-
-
-document
-.getElementById("welcomeBegin")
-?.addEventListener(
-    "click",
-    ()=>WelcomePanel.close()
-);
