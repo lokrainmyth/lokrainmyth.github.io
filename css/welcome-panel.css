@@ -132,3 +132,37 @@
     margin-top:35px;
 
 }
+
+.welcome-close{
+
+    position:absolute;
+
+    top:18px;
+
+    right:22px;
+
+    border:none;
+
+    background:none;
+
+    color:var(--muted);
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    transition:
+
+        color .4s ease,
+
+        transform .45s ease;
+
+}
+
+.welcome-close:hover{
+
+    color:var(--gold);
+
+    transform:rotate(90deg);
+
+}
