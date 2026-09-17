@@ -93,50 +93,47 @@ document.getElementById("welcomeScreen"),
 
         window.addEventListener(
 
-            "keydown",
+    "keydown",
 
-            e=>{
+    e=>{
 
-                if(this.introOpen){
+        if(this.introOpen){
 
-                    if(
+            if(
+                e.code==="Enter" ||
+                e.code==="Space"
+            ){
 
-                        e.code==="Enter" ||
+                e.preventDefault();
 
-                        e.code==="Space"
-
-                    ){
-
-                        e.preventDefault();
-
-                        this.enter();
-
-                    }
-
-if(
-    e.key === "Escape" &&
-    document
-        .getElementById("welcomePanel")
-        ?.classList.contains("active")
-){
-
-    WelcomePanel.close();
-
-}
-                   
-                }
-
-                if(e.key==="Escape"){
-
-                    this.escape();
-
-                }
+                this.enter();
 
             }
 
-        );
+        }
 
-    },
+
+        if(
+            e.key === "Escape" &&
+            document
+            .getElementById("welcomePanel")
+            ?.classList.contains("active")
+        ){
+
+            WelcomePanel.close();
+
+        }
+
+
+        if(e.key==="Escape"){
+
+            this.escape();
+
+        }
+
+    }
+
+);
 
 /* ====================================================== */
 
