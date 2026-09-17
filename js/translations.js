@@ -164,8 +164,7 @@ function setLanguage(lang){
     .querySelectorAll("[data-i18n]")
     .forEach(element=>{
 
-        const key =
-        element.dataset.i18n;
+        const key = element.dataset.i18n;
 
 
         if(
@@ -174,7 +173,7 @@ function setLanguage(lang){
         ){
 
             element.innerHTML =
-translations[lang][key];
+            translations[lang][key];
 
         }
 
@@ -188,15 +187,9 @@ translations[lang][key];
 
 }
 
-document.addEventListener("click", (event)=>{
-
-    const button = event.target.closest(".lang-btn");
-
-    if(!button) return;
 
 
-    const lang = button.dataset.lang;
-
+function updateLanguageButtons(lang){
 
     document
     .querySelectorAll(".lang-btn")
@@ -209,10 +202,27 @@ document.addEventListener("click", (event)=>{
 
     });
 
+}
+
+
+
+document.addEventListener("click", (event)=>{
+
+    const button = event.target.closest(".lang-btn");
+
+    if(!button) return;
+
+
+    const lang = button.dataset.lang;
+
+
+    updateLanguageButtons(lang);
 
     setLanguage(lang);
 
 });
+
+
 
 document.addEventListener(
 "DOMContentLoaded",
@@ -228,17 +238,6 @@ document.addEventListener(
 
     setLanguage(saved);
 
-    function updateLanguageButtons(lang){
+    updateLanguageButtons(saved);
 
-    document
-    .querySelectorAll(".lang-btn")
-    .forEach(btn=>{
-
-        btn.classList.toggle(
-            "active",
-            btn.dataset.lang === lang
-        );
-
-    });
-
-}
+});
