@@ -83,58 +83,67 @@ document.getElementById("welcomeScreen"),
 
 });
 
-        this.elements.intro?.addEventListener(
+         this.elements.intro?.addEventListener(
+        "click",
+        ()=>this.enter()
+    );
 
-            "click",
 
-            ()=>this.enter()
+    window.addEventListener(
+        "keydown",
+        e=>{
 
-        );
 
-        window.addEventListener(
+            // INTRO
+            if(this.introOpen){
 
-    "keydown",
+                if(
+                    e.code === "Enter" ||
+                    e.code === "Space"
+                ){
 
-    e=>{
+                    e.preventDefault();
 
-        if(this.introOpen){
+                    this.enter();
 
-            if(
-                e.code==="Enter" ||
-                e.code==="Space"
-            ){
+                    return;
 
-                e.preventDefault();
-
-                this.enter();
+                }
 
             }
 
+
+            // WELCOME PANEL CLOSE
+            if(
+                e.key === "Escape" &&
+                document
+                .getElementById("welcomePanel")
+                ?.classList.contains("active")
+            ){
+
+                WelcomePanel.close();
+
+                return;
+
+            }
+
+
+            // OTHER ESC ACTIONS
+            if(e.key === "Escape"){
+
+                if(typeof this.escape === "function"){
+
+                    this.escape();
+
+                }
+
+            }
+
+
         }
+    );
 
-
-       if(
-    e.key === "Escape" &&
-    document
-    .getElementById("welcomePanel")
-    ?.classList.contains("active")
-){
-
-    WelcomePanel.close();
-    return;
-
-}
-
-
-if(e.key==="Escape"){
-
-    this.escape();
-
-}
-
-    }
-
-);
+},
 
 /* ====================================================== */
 
