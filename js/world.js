@@ -244,6 +244,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     Myth.init();
 
+    WelcomePanel.init();
+
 });
 
 /* ==========================================================
