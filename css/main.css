@@ -306,56 +306,6 @@ z-index:2;
 
 } */
 
-.welcome-screen::before{
-
-    content:"";
-
-    position:fixed;
-
-    top:0;
-    left:0;
-    right:0;
-
-    height:90px;
-
-    pointer-events:none;
-
-    z-index:5;
-
-    background:
-        linear-gradient(
-            180deg,
-            #080a10 0%,
-            transparent 100%
-        );
-
-}
-
-.welcome-screen::after{
-
-    content:"";
-
-    position:fixed;
-
-    bottom:0;
-    left:0;
-    right:0;
-
-    height:110px;
-
-    pointer-events:none;
-
-    z-index:5;
-
-    background:
-        linear-gradient(
-            0deg,
-            #171711 0%,
-            transparent 100%
-        );
-
-}
-
 .welcome-screen.active{
 
     opacity:1;
@@ -381,10 +331,6 @@ z-index:2;
    width:min(620px,92vw);
 
     margin:auto;
-
-   position:relative;
-
-    z-index:2;
 
 }
 
