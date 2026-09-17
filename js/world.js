@@ -667,3 +667,45 @@ document.addEventListener("keydown", e => {
     }
 
 });
+
+const WelcomePanel = {
+
+    open(){
+
+        const panel =
+        document.getElementById(
+            "welcomePanel"
+        );
+
+        panel?.classList.add("active");
+
+    },
+
+
+    close(){
+
+        const panel =
+        document.getElementById(
+            "welcomePanel"
+        );
+
+        panel?.classList.remove("active");
+
+    }
+
+};
+
+document
+.getElementById("welcomeClose")
+?.addEventListener(
+"click",
+()=>WelcomePanel.close()
+);
+
+
+document
+.getElementById("welcomeBegin")
+?.addEventListener(
+"click",
+()=>WelcomePanel.close()
+);
