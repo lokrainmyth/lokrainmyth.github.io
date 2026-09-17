@@ -921,23 +921,3 @@ document
 "click",
 ()=>WelcomePanel.close()
 );
-
-const WelcomePanel = {
-
-    open(){
-
-        document
-        .getElementById("welcomePanel")
-        ?.classList.add("active");
-
-    },
-
-    close(){
-
-        document
-        .getElementById("welcomePanel")
-        ?.classList.remove("active");
-
-    }
-
-};
