@@ -113,6 +113,17 @@ document.getElementById("welcomeScreen"),
 
                     }
 
+if(
+    e.key === "Escape" &&
+    document
+        .getElementById("welcomePanel")
+        ?.classList.contains("active")
+){
+
+    WelcomePanel.close();
+
+}
+                   
                 }
 
                 if(e.key==="Escape"){
