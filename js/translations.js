@@ -194,28 +194,23 @@ document.addEventListener("click", (event)=>{
 
     if(!button) return;
 
-    setLanguage(button.dataset.lang);
-
-   document.addEventListener("click", (event)=>{
-
-    const button = event.target.closest(".lang-btn");
-
-    if(!button) return;
 
     const lang = button.dataset.lang;
 
-   document
-.querySelectorAll(".lang-btn")
-.forEach(btn=>{
-    btn.classList.toggle(
-        "active",
-        btn.dataset.lang === button.dataset.lang
-    );
-});
 
-setLanguage(button.dataset.lang);
+    document
+    .querySelectorAll(".lang-btn")
+    .forEach(btn=>{
 
-});
+        btn.classList.toggle(
+            "active",
+            btn.dataset.lang === lang
+        );
+
+    });
+
+
+    setLanguage(lang);
 
 });
 
@@ -233,15 +228,17 @@ document.addEventListener(
 
     setLanguage(saved);
 
+    function updateLanguageButtons(lang){
+
     document
-.querySelectorAll(".lang-btn")
-.forEach(btn=>{
+    .querySelectorAll(".lang-btn")
+    .forEach(btn=>{
 
-    btn.classList.toggle(
-        "active",
-        btn.dataset.lang === saved
-    );
+        btn.classList.toggle(
+            "active",
+            btn.dataset.lang === lang
+        );
 
-});
+    });
 
-});
+}
