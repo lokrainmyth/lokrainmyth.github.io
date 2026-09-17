@@ -16,6 +16,13 @@
 
     align-items:center;
 
+    background:
+
+    rgba(5,6,10,.72);
+
+    backdrop-filter:
+    blur(18px);
+
     opacity:0;
 
     visibility:hidden;
@@ -23,8 +30,8 @@
     pointer-events:none;
 
     transition:
-        opacity 1.4s ease,
-        visibility 1.4s ease;
+    opacity 1s ease,
+    visibility 1s ease;
 
 }
 
@@ -38,6 +45,7 @@
     pointer-events:auto;
 
 }
+
 
 
 .welcome-panel-inner{
