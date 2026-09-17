@@ -113,23 +113,24 @@ document.getElementById("welcomeScreen"),
         }
 
 
-        if(
-            e.key === "Escape" &&
-            document
-            .getElementById("welcomePanel")
-            ?.classList.contains("active")
-        ){
+       if(
+    e.key === "Escape" &&
+    document
+    .getElementById("welcomePanel")
+    ?.classList.contains("active")
+){
 
-            WelcomePanel.close();
+    WelcomePanel.close();
+    return;
 
-        }
+}
 
 
-        if(e.key==="Escape"){
+if(e.key==="Escape"){
 
-            this.escape();
+    this.escape();
 
-        }
+}
 
     }
 
