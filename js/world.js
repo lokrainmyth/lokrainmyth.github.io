@@ -695,17 +695,18 @@ const WelcomePanel = {
 
 };
 
+
 document
 .getElementById("welcomeClose")
 ?.addEventListener(
-"click",
-()=>WelcomePanel.close()
+    "click",
+    ()=>WelcomePanel.close()
 );
 
 
 document
 .getElementById("welcomeBegin")
 ?.addEventListener(
-"click",
-()=>WelcomePanel.close()
+    "click",
+    ()=>WelcomePanel.close()
 );
