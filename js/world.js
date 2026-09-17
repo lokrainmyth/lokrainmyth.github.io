@@ -177,6 +177,12 @@ document.getElementById("welcomeScreen"),
 
         );
 
+       setTimeout(()=>{
+
+    WelcomePanel.open();
+
+},1200);
+
         if(this.elements.cover){
 
     requestAnimationFrame(()=>{
@@ -650,3 +656,30 @@ document.addEventListener("keydown", e => {
     }
 
 });
+
+const WelcomePanel = {
+
+    open(){
+
+        const panel =
+        document.getElementById(
+            "welcomePanel"
+        );
+
+        panel?.classList.add("active");
+
+    },
+
+
+    close(){
+
+        const panel =
+        document.getElementById(
+            "welcomePanel"
+        );
+
+        panel?.classList.remove("active");
+
+    }
+
+};
