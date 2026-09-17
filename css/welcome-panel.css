@@ -1,0 +1,134 @@
+/* ======================================================
+   WELCOME PANEL
+====================================================== */
+
+.welcome-panel{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:10000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+    rgba(5,6,10,.72);
+
+    backdrop-filter:
+    blur(18px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:
+    opacity 1s ease,
+    visibility 1s ease;
+
+}
+
+
+.welcome-panel.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+
+
+.welcome-panel-inner{
+
+    position:relative;
+
+    width:min(620px,90vw);
+
+    padding:55px 45px;
+
+    text-align:center;
+
+    background:
+
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,.04),
+        rgba(255,255,255,.015)
+    );
+
+
+    border:
+
+    1px solid rgba(255,255,255,.08);
+
+
+    box-shadow:
+
+    0 40px 120px rgba(0,0,0,.55);
+
+}
+
+
+
+.welcome-panel-inner h2{
+
+    margin-bottom:35px;
+
+    font-size:
+    clamp(2rem,5vw,3.8rem);
+
+    letter-spacing:.15em;
+
+}
+
+
+
+.welcome-panel-inner p{
+
+    color:var(--muted);
+
+    font-size:1.1rem;
+
+    line-height:1.9;
+
+    white-space:pre-line;
+
+}
+
+
+
+.welcome-close{
+
+    position:absolute;
+
+    top:18px;
+
+    right:22px;
+
+    background:none;
+
+    border:0;
+
+    color:var(--muted);
+
+    font-size:2rem;
+
+}
+
+
+
+.welcome-start{
+
+    margin-top:35px;
+
+}
