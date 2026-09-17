@@ -196,29 +196,6 @@ document.addEventListener("click", (event)=>{
 
     setLanguage(button.dataset.lang);
 
-   document.addEventListener("click", (event)=>{
-
-    const button = event.target.closest(".lang-btn");
-
-    if(!button) return;
-
-    const lang = button.dataset.lang;
-
-   document
-.querySelectorAll(".lang-btn")
-.forEach(btn=>{
-    btn.classList.toggle(
-        "active",
-        btn.dataset.lang === button.dataset.lang
-    );
-});
-
-setLanguage(button.dataset.lang);
-
-});
-
-});
-
 document.addEventListener(
 "DOMContentLoaded",
 ()=>{
