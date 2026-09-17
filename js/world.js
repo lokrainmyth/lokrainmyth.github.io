@@ -164,12 +164,12 @@ document.getElementById("welcomeScreen"),
         this.elements.intro?.classList.add("hidden");
 
 
-setTimeout(()=>{
+// setTimeout(()=>{
 
-    this.elements.welcome
-    ?.classList.add("active");
+//     this.elements.welcome
+//     ?.classList.add("active");
 
-},1200);
+// },1200);
 
         this.elements.world?.classList.add(
 
