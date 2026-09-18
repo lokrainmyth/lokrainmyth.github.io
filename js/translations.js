@@ -62,7 +62,7 @@ messageSent:
 "Welcome to IO",
 
 welcomeDescription:
-`You are on the page of an unusual music album. Io is an interactive journey from night to dawn. Press Play and listen to the first few tracks without skipping. Until something opens up...
+`You are on the page of an unusual music album. Io is an interactive journey from night to dawn. Press Play and listen to the first few tracks without skipping, until the path reveals itself...
 
 Discover the story behind the album, meet the creator, and share your thoughts.`,
 
@@ -132,7 +132,7 @@ messageSent:
 // "Добро пожаловать в IO",
 
 welcomeDescription:
-`Вы на странице необычного музыкального альбома. Ио это интерактивное путешествие от ночи к рассвету. Нажмите "Слушать" и слушайте первые несколько треков без пропусков. Пока что-то не откроется...
+`Вы на странице необычного музыкального альбома. Ио это интерактивное путешествие от ночи к рассвету. Нажмите "Слушать" и слушайте первые несколько треков без пропусков, пока путь не откроется...
 
 Познакомьтесь с историей альбома, автором и поделитесь своими мыслями.`,
 
