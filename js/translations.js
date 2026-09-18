@@ -62,11 +62,8 @@ messageSent:
 "Welcome to IO",
 
 welcomeDescription:
-`This is music album. Not not a regular one... 
-Io is an interactive journey from night to dawn. 
-Press Play and listen to the first few tracks without skipping. 
+`You are on the page of an unusual music album. Io is an interactive journey from night to dawn. Press Play and listen to the first few tracks without skipping. Until something opens up...
 
-As the journey unfolds, the hidden path will reveal itself.
 Discover the story behind the album, meet the creator, and share your thoughts.`,
 
 begin:
@@ -131,15 +128,12 @@ messageSent:
         goDeeper: 
         "Продолжить путь?",
 
-    welcomeTitle:
-"Добро пожаловать в IO",
+//     welcomeTitle:
+// "Добро пожаловать в IO",
 
 welcomeDescription:
-`Это музыкальный альбом. Но не совсем обычный...
-Io — интерактивное путешествие от ночи к рассвету.
-Нажми Play и слушай первые несколько треков без переключения.
+`Вы на странице необычного музыкального альбома. Ио это интерактивное путешествие от ночи к рассвету. Нажмите "Слушать" и слушайте первые несколько треков без пропусков. Пока что-то не откроется...
 
-По мере путешествия откроется скрытый путь.
 Познакомьтесь с историей альбома, автором и поделитесь своими мыслями.`,
 
 begin:
