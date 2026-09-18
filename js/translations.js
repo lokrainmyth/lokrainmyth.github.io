@@ -70,17 +70,23 @@ welcomeLine3:
 "Press Play and listen to the first few tracks without skipping.",
 
 welcomeLine4:
-`<span class="pathReveal">
+<span class="pathReveal">
+
 <span>T</span><span>h</span><span>e</span>
 <span>&nbsp;</span>
+
 <span>p</span><span>a</span><span>t</span><span>h</span>
 <span>&nbsp;</span>
+
 <span>w</span><span>i</span><span>l</span><span>l</span>
 <span>&nbsp;</span>
+
 <span>r</span><span>e</span><span>v</span><span>e</span><span>a</span><span>l</span>
 <span>&nbsp;</span>
+
 <span>i</span><span>t</span><span>s</span><span>e</span><span>l</span><span>f</span><span class="pathDot">.</span>
-</span>`,
+
+</span>,
 
 begin:
 "BEGIN",
