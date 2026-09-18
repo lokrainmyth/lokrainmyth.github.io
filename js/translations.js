@@ -60,7 +60,6 @@ messageSent:
 
         welcomeTitle:
 "Welcome to IO",
-
 welcomeLine1:
 "You are on the page of an unusual music album.",
 
@@ -80,9 +79,6 @@ welcomeLine4:
 <span>&nbsp;</span>
 <span>i</span><span>t</span><span>s</span><span>e</span><span>l</span><span>f</span><span class="pathDot">.</span>
 </span>`,
-
-welcomeLine5:
-"Discover the story behind the album, meet the creator, and share your thoughts.",
 
 begin:
 "BEGIN",
@@ -164,15 +160,8 @@ welcomeLine4:
 <span>&nbsp;</span>
 <span>о</span><span>т</span><span>к</span><span>р</span><span>о</span><span>е</span><span>т</span><span>с</span><span>я</span>
 <span>&nbsp;</span>
-<span>с</span><span>а</span><span>м</span><span>&nbsp;</span>
-<span>п</span><span>о</span><span>&nbsp;</span>
-<span>м</span><span>е</span><span>р</span><span>е</span>
-<span>&nbsp;</span>
-<span>п</span><span>у</span><span>т</span><span>е</span><span>ш</span><span>е</span><span>с</span><span>т</span><span>в</span><span>и</span><span>я</span><span class="pathDot">.</span>
+<span>с</span><span>а</span><span>м</span><span class="pathDot">.</span>
 </span>`,
-
-welcomeLine5:
-"Познакомьтесь с историей альбома, автором и поделитесь своими мыслями.",
 
 begin:
 "НАЧАТЬ"
