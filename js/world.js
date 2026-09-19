@@ -259,7 +259,7 @@ document
 .getElementById("mythClose")
 ?.addEventListener(
     "click",
-    ()=>hideMyth()
+    ()=>closeMyth()
 );
 
 /* ==========================================================
