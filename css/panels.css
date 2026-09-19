@@ -722,7 +722,7 @@ max-height:80vh;
 
     width:min(560px,90vw);
 
-    margin:0 auto 18px;
+    margin:0 auto 8px;
 
     text-align:center;
 
@@ -763,6 +763,8 @@ max-height:80vh;
     border-radius:4px;
 
     user-select:none;
+
+    margin-top:0;
 
 }
 
