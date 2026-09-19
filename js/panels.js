@@ -484,7 +484,7 @@ Leave a message and a contact for connection.
     </button>
 
     <div class="creator-number">
-        02
+        01
     </div>
 
     <button class="creator-next">
