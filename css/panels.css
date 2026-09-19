@@ -648,6 +648,12 @@ max-height:80vh;
 
     user-select:none;
 
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
 }
 
 
