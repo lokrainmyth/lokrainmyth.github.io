@@ -1214,7 +1214,8 @@ document.addEventListener(
 
         Panels.init();
 
-
+CreatorGallery.init();
+       
         document
             .querySelectorAll("[data-panel]")
             .forEach(button=>{
