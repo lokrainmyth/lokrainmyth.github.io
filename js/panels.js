@@ -477,9 +477,21 @@ Leave a message and a contact for connection.
 
         <div class="creator-text">
 
+    <div class="creator-header">
+
+    <button class="creator-prev">
+        ←
+    </button>
+
     <div class="creator-number">
-        01
+        02
     </div>
+
+    <button class="creator-next">
+        →
+    </button>
+
+</div>
 
     <p>
         Everything started with a simple idea —
