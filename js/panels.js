@@ -517,9 +517,6 @@ Leave a message and a contact for connection.
 
 </div>
 
-<div class="creator-slide active">
-        <img src="assets/photos/001.jpeg">
-
 
         <!-- остальные 7 слайдов добавим после -->
 
@@ -541,6 +538,9 @@ Leave a message and a contact for connection.
     </div>
 
 </div>
+
+<div class="creator-slide active">
+        <img src="assets/photos/001.jpeg">
 
 `,
 
