@@ -255,6 +255,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+document
+.getElementById("mythClose")
+?.addEventListener(
+    "click",
+    ()=>hideMyth()
+);
+
 /* ==========================================================
    WORLD STATES
 ========================================================== */
