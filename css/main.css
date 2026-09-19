@@ -3247,3 +3247,55 @@ body.lock-scroll{
     color:var(--muted);
 
 }
+
+.myth-close{
+
+    position:absolute;
+
+    top:24px;
+
+    right:24px;
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    background:none;
+
+    color:rgba(255,255,255,.82);
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    z-index:10001;
+
+    transition:
+        color .4s ease,
+        transform .5s ease;
+
+}
+
+.myth-close:hover{
+
+    color:var(--gold);
+
+    transform:rotate(90deg);
+
+}
+
+@media (max-width:768px){
+
+    .myth-close{
+
+        top:14px;
+
+        right:14px;
+
+        font-size:2.2rem;
+
+    }
+
+}
