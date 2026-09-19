@@ -874,3 +874,10 @@ max-height:80vh;
     transform:translateX(4px);
 
 }
+
+.creator-slide img,
+.creator-header{
+
+    outline:1px solid red;
+
+}
