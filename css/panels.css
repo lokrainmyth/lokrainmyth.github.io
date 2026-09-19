@@ -621,34 +621,22 @@ max-height:80vh;
 
     width:min(560px,90vw);
 
-    margin-left:auto;
+    height:42px;
 
-    margin-right:auto;
+    position:relative;
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
 
-    margin:0 auto 18px;
+    justify-content:center;
 
-    position:relative;
+    margin:0 auto 18px;
 
 }
 
 
 .creator-number{
-
-    font-family:"Inter",sans-serif;
-
-    font-size:.95rem;
-
-    letter-spacing:.35em;
-
-    color:rgba(255,255,255,.75);
-
-    user-select:none;
 
     position:absolute;
 
@@ -661,6 +649,10 @@ max-height:80vh;
 
 .creator-prev,
 .creator-next{
+
+    position:absolute;
+
+    top:0;
 
     width:42px;
 
@@ -676,32 +668,19 @@ max-height:80vh;
 
     cursor:pointer;
 
-    transition:
-        color .3s ease,
-        transform .3s ease,
-        opacity .3s ease;
+}
+
+
+.creator-prev{
+
+    left:0;
 
 }
 
 
-.creator-prev:hover,
-.creator-next:hover{
+.creator-next{
 
-    color:#fff;
-
-}
-
-
-.creator-prev:hover{
-
-    transform:translateX(-4px);
-
-}
-
-
-.creator-next:hover{
-
-    transform:translateX(4px);
+    right:0;
 
 }
 
@@ -709,15 +688,9 @@ max-height:80vh;
 .creator-prev.hidden,
 .creator-next.hidden{
 
-    visibility:hidden;
+    opacity:0;
 
     pointer-events:none;
-
-}
-
-.creator-header button{
-
-    flex:0 0 42px;
 
 }
 
