@@ -476,18 +476,14 @@ Leave a message and a contact for connection.
     <div class="creator-track">
 
         <img src="assets/photos/001.jpeg">
-        <img src="assets/photos/002.jpeg">
         <img src="assets/photos/003.jpeg">
         <img src="assets/photos/004.jpeg">
         <img src="assets/photos/005.jpeg">
         <img src="assets/photos/006.jpeg">
-        <img src="assets/photos/007.jpeg">
-        <img src="assets/photos/008.jpeg">
         <img src="assets/photos/009.jpeg">
         <img src="assets/photos/010.jpeg">
         <img src="assets/photos/011.jpeg">
         <img src="assets/photos/012.jpeg">
-        <img src="assets/photos/013.jpeg">
         <img src="assets/photos/014.jpeg">
 
     </div>
