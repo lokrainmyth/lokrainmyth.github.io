@@ -475,72 +475,409 @@ Leave a message and a contact for connection.
 
     <div class="creator-track">
 
-        <div class="creator-text">
 
-    <div class="creator-header">
+        <!-- ====================================================== -->
+        <!-- 01 -->
+        <!-- ====================================================== -->
 
-    <button class="creator-prev">
-        ←
-    </button>
+        <div class="creator-slide active">
 
-    <div class="creator-number">
-        01
-    </div>
+            <div class="creator-header">
 
-    <button class="creator-next">
-        →
-    </button>
+                <button class="creator-prev hidden">
+                    ←
+                </button>
 
-</div>
+                <div class="creator-number">
+                    01
+                </div>
 
-    <p>
-        Everything started with a simple idea —
-        to create not only music, but a world around it.
-    </p>
+                <button class="creator-next">
+                    →
+                </button>
 
-</div>
-    </div>
+            </div>
 
+            <div class="creator-text">
 
-    <div class="creator-slide">
-        <img src="assets/photos/003.jpeg">
+                <p>
+                    Everything began with a simple idea:
+                    to share the world that exists behind my music.
+                </p>
 
-        <div class="creator-text">
-            <h3>A Different Way To Listen</h3>
-            <p>
-                Io was created as an interactive journey,
-                where listening becomes an experience.
-            </p>
+            </div>
+
+            <img src="assets/photos/001.jpeg">
+
         </div>
-    </div>
 
 
-    <div class="creator-slide">
-        <img src="assets/photos/004.jpeg">
 
-        <div class="creator-text">
-            <h3>Fifteen Years Journey</h3>
-            <p>
-                This album carries the story of a long personal path,
-                moving from night toward dawn.
-            </p>
+        <!-- ====================================================== -->
+        <!-- 02 -->
+        <!-- ====================================================== -->
+
+        <div class="creator-slide">
+
+            <div class="creator-header">
+
+                <button class="creator-prev">
+                    ←
+                </button>
+
+                <div class="creator-number">
+                    02
+                </div>
+
+                <button class="creator-next">
+                    →
+                </button>
+
+            </div>
+
+            <div class="creator-text">
+
+                <p>
+                    As the new album took shape,
+                    I realized it followed the same hidden pattern
+                    as every previous release.
+                </p>
+
+            </div>
+
+            <img src="assets/photos/003.jpeg">
+
         </div>
+
+
+
+        <!-- ====================================================== -->
+        <!-- 03 -->
+        <!-- ====================================================== -->
+
+        <div class="creator-slide">
+
+            <div class="creator-header">
+
+                <button class="creator-prev">
+                    ←
+                </button>
+
+                <div class="creator-number">
+                    03
+                </div>
+
+                <button class="creator-next">
+                    →
+                </button>
+
+            </div>
+
+            <div class="creator-text">
+
+                <p>
+                    That journey began in November 2011
+                    with the first album —
+                    the story of a scarecrow choosing
+                    to walk toward the dawn.
+                </p>
+
+            </div>
+
+            <img src="assets/photos/004.jpeg">
+
+        </div>
+
+
+
+        <!-- ====================================================== -->
+        <!-- 04 -->
+        <!-- ====================================================== -->
+
+        <div class="creator-slide">
+
+            <div class="creator-header">
+
+                <button class="creator-prev">
+                    ←
+                </button>
+
+                <div class="creator-number">
+                    04
+                </div>
+
+                <button class="creator-next">
+                    →
+                </button>
+
+            </div>
+
+            <div class="creator-text">
+
+                <p>
+                    Night became a symbol of the unknown.
+                    Dawn became the moment
+                    when the meaning of that journey
+                    finally reveals itself.
+                </p>
+
+            </div>
+
+            <img src="assets/photos/005.jpeg">
+
+        </div>
+
+
+
+        <!-- ====================================================== -->
+        <!-- 05 -->
+        <!-- ====================================================== -->
+
+        <div class="creator-slide">
+
+            <div class="creator-header">
+
+                <button class="creator-prev">
+                    ←
+                </button>
+
+                <div class="creator-number">
+                    05
+                </div>
+
+                <button class="creator-next">
+                    →
+                </button>
+
+            </div>
+
+            <div class="creator-text">
+
+                <p>
+                    IO has always remained
+                    an independent project —
+                    one person,
+                    a DIY approach,
+                    and a commitment
+                    to finding its own direction.
+                </p>
+
+            </div>
+
+            <img src="assets/photos/006.jpeg">
+
+        </div>
+
+
+
+        <!-- ====================================================== -->
+        <!-- 06 -->
+        <!-- ====================================================== -->
+
+        <div class="creator-slide">
+
+            <div class="creator-header">
+
+                <button class="creator-prev">
+                    ←
+                </button>
+
+                <div class="creator-number">
+                    06
+                </div>
+
+                <button class="creator-next">
+                    →
+                </button>
+
+            </div>
+
+            <div class="creator-text">
+
+                <p>
+                    This interactive website
+                    shows what one independent creator
+                    can build today
+                    together with artificial intelligence.
+                </p>
+
+            </div>
+
+            <img src="assets/photos/009.jpeg">
+
+        </div>
+
+
+
+        <!-- ====================================================== -->
+        <!-- 07 -->
+        <!-- ====================================================== -->
+
+        <div class="creator-slide">
+
+            <div class="creator-header">
+
+                <button class="creator-prev">
+                    ←
+                </button>
+
+                <div class="creator-number">
+                    07
+                </div>
+
+                <button class="creator-next">
+                    →
+                </button>
+
+            </div>
+
+            <div class="creator-text">
+
+                <p>
+                    Behind what you see
+                    are more than a thousand
+                    small revisions,
+                    each bringing the project
+                    closer to its final form.
+                </p>
+
+            </div>
+
+            <img src="assets/photos/010.jpeg">
+
+        </div>
+
+
+
+        <!-- ====================================================== -->
+        <!-- 08 -->
+        <!-- ====================================================== -->
+
+        <div class="creator-slide">
+
+            <div class="creator-header">
+
+                <button class="creator-prev">
+                    ←
+                </button>
+
+                <div class="creator-number">
+                    08
+                </div>
+
+                <button class="creator-next">
+                    →
+                </button>
+
+            </div>
+
+            <div class="creator-text">
+
+                <p>
+                    Keeping the project open
+                    is my way of showing
+                    that creative ideas
+                    no longer need gatekeepers
+                    to reach people.
+                </p>
+
+            </div>
+
+            <img src="assets/photos/011.jpeg">
+
+        </div>
+
+
+
+        <!-- ====================================================== -->
+        <!-- 09 -->
+        <!-- ====================================================== -->
+
+        <div class="creator-slide">
+
+            <div class="creator-header">
+
+                <button class="creator-prev">
+                    ←
+                </button>
+
+                <div class="creator-number">
+                    09
+                </div>
+
+                <button class="creator-next">
+                    →
+                </button>
+
+            </div>
+
+            <div class="creator-text">
+
+                <p>
+                    As a listener,
+                    you are invited
+                    to experience this mythology
+                    and witness
+                    the symbolic dawn
+                    at its center.
+                </p>
+
+            </div>
+
+            <img src="assets/photos/012.jpeg">
+
+        </div>
+
+
+
+        <!-- ====================================================== -->
+        <!-- 10 -->
+        <!-- ====================================================== -->
+
+        <div class="creator-slide">
+
+            <div class="creator-header">
+
+                <button class="creator-prev">
+                    ←
+                </button>
+
+                <div class="creator-number">
+                    10
+                </div>
+
+                <button class="creator-next hidden">
+                    →
+                </button>
+
+            </div>
+
+            <div class="creator-text">
+
+                <p>
+                    The journey continues with you.
+                    If this project leaves
+                    a thought,
+                    a feeling,
+                    or a question,
+                    I'd be glad
+                    to hear it
+                    in the Communication section.
+                </p>
+
+            </div>
+
+            <img src="assets/photos/014.jpeg">
+
+        </div>
+
+
     </div>
 
 </div>
-
-
-        <!-- остальные 7 слайдов добавим после -->
-
-    </div>
-
-</div>
-
-<div class="creator-slide active">
-        <img src="assets/photos/001.jpeg">
 
 `,
-
+   
 };
 
 const PANEL_CONTENT_RU = {
