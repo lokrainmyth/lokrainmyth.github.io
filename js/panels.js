@@ -522,22 +522,11 @@ Leave a message and a contact for connection.
 
     </div>
 
-    <div class="creator-dots">
-
-        <span class="active"></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-
-    </div>
-
 </div>
+
+<button class="creator-next">
+    →
+</button>
 
 <div class="creator-slide active">
         <img src="assets/photos/001.jpeg">
