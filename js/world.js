@@ -578,6 +578,14 @@ function closeMyth(){
 
     document.body.classList.remove("myth-mode");
 
+
+    if(typeof unlockAfterMyth === "function"){
+
+        unlockAfterMyth();
+
+    }
+
+
     World.elements.mythSound?.pause();
 
 }
