@@ -88,6 +88,17 @@ const Panels = {
             "visible"
         );
 
+       if(
+    content.includes("creator-gallery")
+){
+
+    setTimeout(()=>{
+
+        CreatorGallery.init();
+
+    },50);
+
+}
 
         this.panel.setAttribute(
             "aria-hidden",
@@ -1247,15 +1258,6 @@ Panels.open(
     }
 );
 
-if(name==="creator"){
-
-    setTimeout(()=>{
-
-        CreatorGallery.init();
-
-    },100);
-
-}
 
 document
 .getElementById("mythInfoButton")
