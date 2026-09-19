@@ -602,7 +602,13 @@ function loadTrack(index){
 
 function playTrack(){
 
-    if(!audio.src) return;
+    if(!audio.src){
+
+        requestTrack(0);
+
+        return;
+
+    }
 
     audio.play().then(()=>{
 
@@ -610,7 +616,7 @@ function playTrack(){
 
         introFinished = true;
 
-       saveJourney();
+        saveJourney();
 
         startAirportMasks();
 
