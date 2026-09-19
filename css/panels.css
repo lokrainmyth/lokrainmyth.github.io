@@ -823,3 +823,48 @@ max-height:80vh;
     }
 
 }
+
+/* ==========================================================
+   CREATOR MOBILE LOCK
+========================================================== */
+
+@media(max-width:768px){
+
+    .creator-panel{
+
+        overflow:hidden;
+
+    }
+
+
+    .creator-gallery{
+
+        height:100%;
+
+        overflow:hidden;
+
+        touch-action:none;
+
+    }
+
+
+    .creator-track{
+
+        height:100%;
+
+        overflow:hidden;
+
+    }
+
+
+    .creator-slide{
+
+        height:100%;
+
+        overflow:hidden;
+
+        justify-content:flex-start;
+
+    }
+
+}
