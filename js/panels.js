@@ -476,12 +476,17 @@ Leave a message and a contact for connection.
     <div class="creator-track">
 
         <div class="creator-text">
-            <h3>The Beginning</h3>
-            <p>
-                Everything started with a simple idea —
-                to create not only music, but a world around it.
-            </p>
-        </div>
+
+    <div class="creator-number">
+        01
+    </div>
+
+    <p>
+        Everything started with a simple idea —
+        to create not only music, but a world around it.
+    </p>
+
+</div>
     </div>
 
 
@@ -512,6 +517,9 @@ Leave a message and a contact for connection.
 
 </div>
 
+<div class="creator-slide active">
+        <img src="assets/photos/001.jpeg">
+
 
         <!-- остальные 7 слайдов добавим после -->
 
@@ -533,9 +541,6 @@ Leave a message and a contact for connection.
     </div>
 
 </div>
-
-<div class="creator-slide active">
-        <img src="assets/photos/001.jpeg">
 
 `,
 
