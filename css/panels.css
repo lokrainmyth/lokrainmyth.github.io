@@ -793,3 +793,9 @@ max-height:80vh;
     color:var(--paper);
 
 }
+
+.global-panel-content .creator-gallery{
+
+    padding-top:20px;
+
+}
