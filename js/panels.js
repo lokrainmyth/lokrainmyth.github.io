@@ -536,10 +536,6 @@ Leave a message and a contact for connection.
 
 </div>
 
-<button class="creator-next">
-    →
-</button>
-
 <div class="creator-slide active">
         <img src="assets/photos/001.jpeg">
 
