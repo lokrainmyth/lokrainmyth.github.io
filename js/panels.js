@@ -1213,8 +1213,6 @@ document.addEventListener(
     ()=>{
 
         Panels.init();
-
-CreatorGallery.init();
        
         document
             .querySelectorAll("[data-panel]")
@@ -1248,6 +1246,16 @@ Panels.open(
 
     }
 );
+
+if(name==="creator"){
+
+    setTimeout(()=>{
+
+        CreatorGallery.init();
+
+    },100);
+
+}
 
 document
 .getElementById("mythInfoButton")
