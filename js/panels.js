@@ -754,7 +754,7 @@ Leave a message and a contact for connection.
 
             </div>
 
-            <img src="assets/photos/010.jpeg">
+            <img src="assets/photos/011.jpeg">
 
         </div>
 
@@ -794,7 +794,7 @@ Leave a message and a contact for connection.
 
             </div>
 
-            <img src="assets/photos/011.jpeg">
+            <img src="assets/photos/010.jpeg">
 
         </div>
 
