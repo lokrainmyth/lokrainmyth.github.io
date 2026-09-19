@@ -3264,7 +3264,7 @@ body.lock-scroll{
 
     background:none;
 
-    color:rgba(255,255,255,.82);
+    color:rgba(255,255,255,.55);
 
     font-size:2rem;
 
@@ -3273,16 +3273,17 @@ body.lock-scroll{
     z-index:10001;
 
     transition:
-        color .4s ease,
-        transform .5s ease;
+        color .35s ease,
+        transform .45s ease,
+        opacity .35s ease;
 
 }
 
 .myth-close:hover{
 
-    color:var(--gold);
+   color:#ffffff;
 
-    transform:rotate(90deg);
+   transform:rotate(90deg);
 
 }
 
