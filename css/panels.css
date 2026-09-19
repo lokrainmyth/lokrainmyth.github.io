@@ -756,14 +756,14 @@ max-height:80vh;
 @media(max-width:768px){
 
     .creator-header,
-    .creator-text,
-    .creator-slide img{
+.creator-text,
+.creator-slide img{
 
-        width:88vw;
+    width:84vw;
 
-        max-width:88vw;
+    max-width:84vw;
 
-    }
+}
 
 
     .creator-header{
