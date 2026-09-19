@@ -628,3 +628,16 @@ max-height:80vh;
     }
 
 }
+
+.creator-track .creator-slide{
+
+    display:none !important;
+
+}
+
+
+.creator-track .creator-slide.active{
+
+    display:block !important;
+
+}
