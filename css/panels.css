@@ -692,6 +692,8 @@ max-height:80vh;
 
     display:block;
 
+    margin-top:0;
+
 }
 
 
@@ -701,7 +703,7 @@ max-height:80vh;
 
     text-align:center;
 
-    margin:0 auto 35px;
+    margin:0 auto 15px;
 
 }
 
