@@ -1250,8 +1250,14 @@ const CreatorGallery = {
 
     slides:[],
 
+   initialized:false,
+
     init(){
 
+if(this.initialized)return;
+
+    this.initialized=true;
+       
         this.slides =
         document.querySelectorAll(
             ".creator-slide"
