@@ -83,6 +83,29 @@ const Panels = {
 
         this.content.innerHTML = content;
 
+       const currentLang =
+document.documentElement.lang || "en";
+
+
+document
+.querySelectorAll("[data-i18n]")
+.forEach(element=>{
+
+    const key =
+    element.dataset.i18n;
+
+
+    if(
+        translations[currentLang] &&
+        translations[currentLang][key]
+    ){
+
+        element.innerHTML =
+        translations[currentLang][key];
+
+    }
+
+});
 
         this.panel.classList.add(
             "visible"
