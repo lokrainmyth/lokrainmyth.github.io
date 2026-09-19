@@ -471,7 +471,9 @@ Leave a message and a contact for connection.
 
     creator: `
 
-<div class="creator-track">
+<div class="creator-gallery">
+
+    <div class="creator-track">
 
     <div class="creator-slide active">
         <img src="assets/photos/001.jpeg">
@@ -516,6 +518,7 @@ Leave a message and a contact for connection.
 
         <!-- остальные 7 слайдов добавим после -->
 
+    </div>
 
     <div class="creator-dots">
 
