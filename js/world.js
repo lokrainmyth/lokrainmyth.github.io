@@ -571,13 +571,6 @@ function closeMyth(){
 
     document.body.classList.remove("myth-mode");
 
-   document
-.getElementById("mythClose")
-?.addEventListener(
-    "click",
-    ()=>hideMyth()
-);
-
     World.elements.mythSound?.pause();
 
 }
