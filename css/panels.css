@@ -709,7 +709,7 @@ max-height:80vh;
 .creator-prev.hidden,
 .creator-next.hidden{
 
-    opacity:0;
+    visibility:hidden;
 
     pointer-events:none;
 
