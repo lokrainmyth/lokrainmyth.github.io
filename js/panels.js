@@ -471,68 +471,47 @@ Leave a message and a contact for connection.
 
     creator: `
 
-<div class="creator-gallery">
+<div class="creator-track">
 
-    <div class="creator-track">
+    <div class="creator-slide active">
+        <img src="assets/photos/001.jpeg">
 
-        <div class="creator-slide">
-
-            <img src="assets/photos/001.jpeg">
-
-            <div class="creator-text">
-
-                <h3>
-                    The Beginning
-                </h3>
-
-                <p>
-                    Everything started with a simple idea —
-                    to create not only music, but a world around it.
-                </p>
-
-            </div>
-
+        <div class="creator-text">
+            <h3>The Beginning</h3>
+            <p>
+                Everything started with a simple idea —
+                to create not only music, but a world around it.
+            </p>
         </div>
+    </div>
 
 
-        <div class="creator-slide">
+    <div class="creator-slide">
+        <img src="assets/photos/003.jpeg">
 
-            <img src="assets/photos/003.jpeg">
-
-            <div class="creator-text">
-
-                <h3>
-                    A Different Way To Listen
-                </h3>
-
-                <p>
-                    Io was created as an interactive journey,
-                    where listening becomes an experience.
-                </p>
-
-            </div>
-
+        <div class="creator-text">
+            <h3>A Different Way To Listen</h3>
+            <p>
+                Io was created as an interactive journey,
+                where listening becomes an experience.
+            </p>
         </div>
+    </div>
 
 
-        <div class="creator-slide">
+    <div class="creator-slide">
+        <img src="assets/photos/004.jpeg">
 
-            <img src="assets/photos/004.jpeg">
-
-            <div class="creator-text">
-
-                <h3>
-                    Fifteen Years Journey
-                </h3>
-
-                <p>
-                    This album carries the story of a long personal path,
-                    moving from night toward dawn.
-                </p>
-
-            </div>
-
+        <div class="creator-text">
+            <h3>Fifteen Years Journey</h3>
+            <p>
+                This album carries the story of a long personal path,
+                moving from night toward dawn.
+            </p>
         </div>
+    </div>
+
+</div>
 
 
         <!-- остальные 7 слайдов добавим после -->
@@ -554,20 +533,6 @@ Leave a message and a contact for connection.
         <span></span>
 
     </div>
-
-
-    <div class="creator-controls">
-
-        <button class="creator-prev">
-            ←
-        </button>
-
-        <button class="creator-next">
-            →
-        </button>
-
-    </div>
-
 
 </div>
 
