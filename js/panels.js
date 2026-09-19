@@ -475,18 +475,99 @@ Leave a message and a contact for connection.
 
     <div class="creator-track">
 
-        <img src="assets/photos/001.jpeg">
-        <img src="assets/photos/003.jpeg">
-        <img src="assets/photos/004.jpeg">
-        <img src="assets/photos/005.jpeg">
-        <img src="assets/photos/006.jpeg">
-        <img src="assets/photos/009.jpeg">
-        <img src="assets/photos/010.jpeg">
-        <img src="assets/photos/011.jpeg">
-        <img src="assets/photos/012.jpeg">
-        <img src="assets/photos/014.jpeg">
+        <div class="creator-slide">
+
+            <img src="assets/photos/001.jpeg">
+
+            <div class="creator-text">
+
+                <h3>
+                    The Beginning
+                </h3>
+
+                <p>
+                    Everything started with a simple idea —
+                    to create not only music, but a world around it.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="creator-slide">
+
+            <img src="assets/photos/003.jpeg">
+
+            <div class="creator-text">
+
+                <h3>
+                    A Different Way To Listen
+                </h3>
+
+                <p>
+                    Io was created as an interactive journey,
+                    where listening becomes an experience.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="creator-slide">
+
+            <img src="assets/photos/004.jpeg">
+
+            <div class="creator-text">
+
+                <h3>
+                    Fifteen Years Journey
+                </h3>
+
+                <p>
+                    This album carries the story of a long personal path,
+                    moving from night toward dawn.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- остальные 7 слайдов добавим после -->
 
     </div>
+
+
+    <div class="creator-dots">
+
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+
+    <div class="creator-controls">
+
+        <button class="creator-prev">
+            ←
+        </button>
+
+        <button class="creator-next">
+            →
+        </button>
+
+    </div>
+
 
 </div>
 
