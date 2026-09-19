@@ -516,8 +516,6 @@ Leave a message and a contact for connection.
 
         <!-- остальные 7 слайдов добавим после -->
 
-    </div>
-
 
     <div class="creator-dots">
 
