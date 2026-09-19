@@ -1460,14 +1460,18 @@ if(this.initialized)return;
 
 
                 const diff =
-                startX - endX;
+startX - endX;
+
+
+if(Math.abs(diff)<60)
+    return;
 
 
 
                 if(Math.abs(diff)<50)
                     return;
 
-
+e.preventDefault();
 
                 if(diff>0){
 
