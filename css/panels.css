@@ -684,11 +684,11 @@ max-height:80vh;
 
 .creator-slide img{
 
-    width:min(420px,80vw);
+    width:min(520px,80vw);
 
-    aspect-ratio:1/1;
+    max-height:620px;
 
-    object-fit:cover;
+    object-fit:contain;
 
     display:block;
 
