@@ -697,11 +697,11 @@ max-height:80vh;
 
 .creator-text{
 
-    max-width:520px;
-
-    margin-top:30px;
+    width:min(520px,85vw);
 
     text-align:center;
+
+    margin:0 auto 35px;
 
 }
 
@@ -766,5 +766,30 @@ max-height:80vh;
 .creator-slide.active{
 
     display:flex;
+
+}
+
+.creator-number{
+
+    font-size:.9rem;
+
+    letter-spacing:.3em;
+
+    color:var(--muted);
+
+    margin-bottom:18px;
+
+}
+
+
+.creator-text p{
+
+    margin:0;
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+    color:var(--paper);
 
 }
