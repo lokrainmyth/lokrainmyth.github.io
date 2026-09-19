@@ -511,10 +511,8 @@ Leave a message and a contact for connection.
 
             <div class="creator-text">
 
-                <p>
-                    Everything began with a simple idea:
-                    to share the world that exists behind my music.
-                </p>
+                <p data-i18n="creator01">
+</p>
 
             </div>
 
@@ -548,11 +546,7 @@ Leave a message and a contact for connection.
 
             <div class="creator-text">
 
-                <p>
-                    As the new album took shape,
-                    I realized it followed the same hidden pattern
-                    as every previous release.
-                </p>
+                <p data-i18n="creator02"></p>
 
             </div>
 
@@ -586,12 +580,7 @@ Leave a message and a contact for connection.
 
             <div class="creator-text">
 
-                <p>
-                    That journey began in November 2011
-                    with the first album —
-                    the story of a scarecrow choosing
-                    to walk toward the dawn.
-                </p>
+                <p data-i18n="creator03"></p>
 
             </div>
 
@@ -625,12 +614,7 @@ Leave a message and a contact for connection.
 
             <div class="creator-text">
 
-                <p>
-                    Night became a symbol of the unknown.
-                    Dawn became the moment
-                    when the meaning of that journey
-                    finally reveals itself.
-                </p>
+                <p data-i18n="creator04"></p>
 
             </div>
 
@@ -664,14 +648,7 @@ Leave a message and a contact for connection.
 
             <div class="creator-text">
 
-                <p>
-                    IO has always remained
-                    an independent project —
-                    one person,
-                    a DIY approach,
-                    and a commitment
-                    to finding its own direction.
-                </p>
+                <p data-i18n="creator05"></p>
 
             </div>
 
@@ -705,12 +682,7 @@ Leave a message and a contact for connection.
 
             <div class="creator-text">
 
-                <p>
-                    This interactive website
-                    shows what one independent creator
-                    can build today
-                    together with artificial intelligence.
-                </p>
+                <p data-i18n="creator06"></p>
 
             </div>
 
@@ -744,13 +716,7 @@ Leave a message and a contact for connection.
 
             <div class="creator-text">
 
-                <p>
-                    Behind what you see
-                    are more than a thousand
-                    small revisions,
-                    each bringing the project
-                    closer to its final form.
-                </p>
+                <p data-i18n="creator07"></p>
 
             </div>
 
@@ -784,13 +750,7 @@ Leave a message and a contact for connection.
 
             <div class="creator-text">
 
-                <p>
-                    Keeping the project open
-                    is my way of showing
-                    that creative ideas
-                    no longer need gatekeepers
-                    to reach people.
-                </p>
+                <p data-i18n="creator08"></p>
 
             </div>
 
@@ -824,14 +784,7 @@ Leave a message and a contact for connection.
 
             <div class="creator-text">
 
-                <p>
-                    As a listener,
-                    you are invited
-                    to experience this mythology
-                    and witness
-                    the symbolic dawn
-                    at its center.
-                </p>
+                <p data-i18n="creator09"></p>
 
             </div>
 
@@ -865,16 +818,7 @@ Leave a message and a contact for connection.
 
             <div class="creator-text">
 
-                <p>
-                    The journey continues with you.
-                    If this project leaves
-                    a thought,
-                    a feeling,
-                    or a question,
-                    I'd be glad
-                    to hear it
-                    in the Communication section.
-                </p>
+                <p data-i18n="creator10"></p>
 
             </div>
 
