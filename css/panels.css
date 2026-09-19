@@ -868,3 +868,20 @@ max-height:80vh;
     }
 
 }
+
+@media(max-width:768px){
+
+    .creator-prev{
+
+        left:-6px;
+
+    }
+
+
+    .creator-next{
+
+        right:-6px;
+
+    }
+
+}
