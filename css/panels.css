@@ -621,6 +621,10 @@ max-height:80vh;
 
     width:min(560px,90vw);
 
+    margin-left:auto;
+
+    margin-right:auto;
+
     display:flex;
 
     justify-content:space-between;
