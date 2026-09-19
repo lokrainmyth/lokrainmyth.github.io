@@ -475,9 +475,6 @@ Leave a message and a contact for connection.
 
     <div class="creator-track">
 
-    <div class="creator-slide active">
-        <img src="assets/photos/001.jpeg">
-
         <div class="creator-text">
             <h3>The Beginning</h3>
             <p>
@@ -536,6 +533,9 @@ Leave a message and a contact for connection.
     </div>
 
 </div>
+
+<div class="creator-slide active">
+        <img src="assets/photos/001.jpeg">
 
 `,
 
