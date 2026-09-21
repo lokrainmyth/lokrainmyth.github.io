@@ -574,6 +574,14 @@ function closeMyth(){
 
     Myth.close();
 
+   document
+.getElementById("world")
+?.classList.remove("hidden");
+
+document
+.getElementById("world")
+?.classList.add("world-awake");
+
     document.body.classList.remove(
         "myth-mode"
     );
