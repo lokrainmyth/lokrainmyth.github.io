@@ -574,9 +574,9 @@ function closeMyth(){
 
     Myth.close();
 
-    switchLayer("dawn");
-
-    document.body.classList.remove("myth-mode");
+    document.body.classList.remove(
+        "myth-mode"
+    );
 
 
     if(typeof unlockAfterMyth === "function"){
