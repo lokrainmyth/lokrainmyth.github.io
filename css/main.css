@@ -3300,3 +3300,19 @@ body.lock-scroll{
     }
 
 }
+
+#mythClose{
+
+    transition:
+        transform .25s ease,
+        opacity .25s ease;
+
+}
+
+#mythClose:hover,
+#mythClose:active,
+#mythClose.closing{
+
+    transform:rotate(90deg);
+
+}
