@@ -574,25 +574,19 @@ function closeMyth(){
 
     Myth.close();
 
-   document
-.getElementById("world")
-?.classList.remove("hidden");
+    document
+        .querySelector(".world")
+        ?.classList.remove("hidden");
 
-document
-.getElementById("world")
-?.classList.add("world-awake");
+    document
+        .querySelector(".world")
+        ?.classList.remove("outro-active");
 
-    document.body.classList.remove(
-        "myth-mode"
-    );
+    switchLayer("dawn");
 
+    document.body.classList.remove("myth-mode");
 
-    if(typeof unlockAfterMyth === "function"){
-
-        unlockAfterMyth();
-
-    }
-
+    unlockAfterMyth();
 
     World.elements.mythSound?.pause();
 
