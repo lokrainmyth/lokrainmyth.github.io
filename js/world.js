@@ -257,17 +257,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document
 .getElementById("mythClose")
-?.addEventListener(
-"click",
-(event)=>{
+?.addEventListener("click",(e)=>{
 
-    event.currentTarget.classList.add("closing");
+    const button = e.currentTarget;
+
+    button.classList.add("closing");
 
     setTimeout(()=>{
 
         closeMyth();
 
-        event.currentTarget.classList.remove("closing");
+        button.classList.remove("closing");
 
     },250);
 
