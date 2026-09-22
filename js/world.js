@@ -255,28 +255,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-// document
-// .getElementById("mythClose")
-// ?.addEventListener(
-//     "click",
-//     ()=>closeMyth()
-// );
-
 document
 .getElementById("mythClose")
 ?.addEventListener(
-"click",
-(e)=>{
-
-    e.currentTarget.classList.add("pressed");
-
-    setTimeout(()=>{
-
-        closeMyth();
-
-    },120);
-
-});
+    "click",
+    ()=>closeMyth()
+);
 
 /* ==========================================================
    WORLD STATES
