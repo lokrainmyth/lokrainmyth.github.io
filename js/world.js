@@ -257,21 +257,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document
 .getElementById("mythClose")
-?.addEventListener("click",(e)=>{
-
-    const button = e.currentTarget;
-
-    button.classList.add("closing");
-
-    setTimeout(()=>{
-
-        closeMyth();
-
-        button.classList.remove("closing");
-
-    },250);
-
-});
+?.addEventListener(
+    "click",
+    ()=>closeMyth()
+);
 
 /* ==========================================================
    WORLD STATES
