@@ -3264,7 +3264,7 @@ body.lock-scroll{
 
     background:none;
 
-    color:rgba(255,255,255,.55);
+    color:rgba(255,255,255,.45);
 
     font-size:2rem;
 
@@ -3274,18 +3274,24 @@ body.lock-scroll{
 
     transition:
         color .35s ease,
-        transform .45s ease,
         opacity .35s ease;
 
 }
 
+
 .myth-close:hover{
 
-   color:#ffffff;
-
-   transform:rotate(90deg);
+    color:#ffffff;
 
 }
+
+
+.myth-close:active{
+
+    color:#ffffff;
+
+}
+
 
 @media (max-width:768px){
 
@@ -3298,28 +3304,5 @@ body.lock-scroll{
         font-size:2.2rem;
 
     }
-
-}
-
-#mythClose{
-
-    color:rgba(255,255,255,.45);
-
-    transition:
-        color .25s ease;
-
-}
-
-
-#mythClose:hover{
-
-    color:#ffffff;
-
-}
-
-
-#mythClose:active{
-
-    color:#ffffff;
 
 }
