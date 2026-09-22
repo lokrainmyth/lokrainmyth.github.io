@@ -3303,18 +3303,14 @@ body.lock-scroll{
 
 #mythClose{
 
-    transition:transform .25s ease;
+    transition:
+        color .25s ease,
+        opacity .25s ease;
 
 }
 
 #mythClose:hover{
 
-    transform:rotate(90deg);
-
-}
-
-#mythClose.closing{
-
-    transform:rotate(90deg);
+    color:#d7b77b;
 
 }
