@@ -3303,14 +3303,23 @@ body.lock-scroll{
 
 #mythClose{
 
+    color:rgba(255,255,255,.45);
+
     transition:
-        color .25s ease,
-        opacity .25s ease;
+        color .25s ease;
 
 }
 
+
 #mythClose:hover{
 
-    color:#d7b77b;
+    color:#ffffff;
+
+}
+
+
+#mythClose:active{
+
+    color:#ffffff;
 
 }
