@@ -314,12 +314,6 @@ function setWorldProgress(progress){
 
     updateWorldClass(progress);
 
-   document.body.style.filter =
-`
-brightness(${0.75 + progress * 0.25})
-saturate(${0.75 + progress * 0.25})
-`;
-
 }
 
 /* ==========================================================
