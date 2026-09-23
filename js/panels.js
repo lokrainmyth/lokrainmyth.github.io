@@ -1250,29 +1250,28 @@ const CreatorGallery = {
 
     slides:[],
 
-   initialized:false,
-
     init(){
 
-if(this.initialized)return;
+    this.current = 0;
 
-    this.initialized=true;
-       
-        this.slides =
-        document.querySelectorAll(
-            ".creator-slide"
-        );
+    this.slides =
+    document.querySelectorAll(
+        ".creator-slide"
+    );
 
+    if(!this.slides.length) return;
 
-        if(!this.slides.length)return;
-
+    if(!this.bound){
 
         this.bind();
 
-        this.show(0);
+        this.bound = true;
 
-    },
+    }
 
+    this.show(0);
+
+},
 
     show(index){
 
