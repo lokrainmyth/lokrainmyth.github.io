@@ -519,6 +519,8 @@ function loadTrack(index){
 
     currentTrack = index;
 
+    updateAlbumLight();
+
     audio.src = "assets/music/" + track.file;
 
     if ("mediaSession" in navigator) {
@@ -1191,3 +1193,19 @@ document.addEventListener("keydown",(event)=>{
     }
 
 });
+
+/* ==========================================================
+   ALBUM LIGHT
+========================================================== */
+
+function updateAlbumLight(){
+
+    if(typeof setWorldProgress !== "function") return;
+
+    const progress =
+        currentTrack /
+        (journey.length - 1);
+
+    setWorldProgress(progress);
+
+}
