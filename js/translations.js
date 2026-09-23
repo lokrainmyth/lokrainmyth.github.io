@@ -110,7 +110,7 @@ creator08:
 "Keeping the project open is my way of showing that creative ideas no longer need gatekeepers to reach people.",
 
 creator09:
-"As a listener, you are invited to experience this mythology and witness the symbolic dawn at its center.",
+"As a listener, you are invited to experience this mythology, witness the symbolic dawn, and even get a behind-the-scenes look at how the project was built from scratch—line by line—on GitHub.",
 
 creator10:
 "The journey continues with you. If this project leaves a thought, a feeling, or a question, I'd be glad to hear it in the Communication section.",
@@ -223,7 +223,7 @@ creator08:
 "Открытость проекта — это способ показать, что творческой идее больше не нужны посредники, чтобы найти своего слушателя.",
 
 creator09:
-"Как слушатель, вы можете самостоятельно пройти эту мифологию и увидеть символический рассвет в центре этой истории.",
+"Как слушатель, вы можете самостоятельно пройти эту мифологию, увидеть символический рассвет и даже подпосмотреть как этот проект создавался с нуля в строчках кода на Github.",
 
 creator10:
 "Теперь путь продолжается вместе с вами. Если проект оставил мысль, чувство или вопрос — буду рад услышать ваши слова в разделе Communication.",
