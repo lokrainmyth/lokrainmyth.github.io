@@ -682,15 +682,15 @@ document.addEventListener("click", (e) => {
    
 });
 
-document.addEventListener("keydown", e => {
+// document.addEventListener("keydown", e => {
 
-    if (e.key.toLowerCase() === "m") {
+//     if (e.key.toLowerCase() === "m") {
 
-        showOutro();
+//         showOutro();
 
-    }
+//     }
 
-});
+// });
 
 const WelcomePanel = {
 
