@@ -1178,16 +1178,16 @@ if (navigation) {
 
 }
 
-/* ==========================================================
-   DEBUG HOTKEY
-========================================================== */
+// /* ==========================================================
+//    DEBUG HOTKEY
+// ========================================================== */
 
-document.addEventListener("keydown",(event)=>{
+// document.addEventListener("keydown",(event)=>{
 
-    if(event.key.toLowerCase()==="m"){
+//     if(event.key.toLowerCase()==="m"){
 
-        triggerGoDeeper();
+//         triggerGoDeeper();
 
-    }
+//     }
 
-});
+// });
