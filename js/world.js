@@ -443,8 +443,6 @@ document.addEventListener("click", (event)=>{
 
     if(event.target.id === "outroGoDeeper"){
 
-        console.log("GO DEEPER CLICK");
-
         openMyth();
 
     }
