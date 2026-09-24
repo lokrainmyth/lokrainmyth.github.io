@@ -1095,7 +1095,7 @@ albumCover?.addEventListener("pointerup", (event) => {
 
     clearTimeout(coverTapTimer);
 
-    if (coverTapCount >= 3) {
+    if (coverTapCount >= 7) {
 
         coverTapCount = 0;
 
