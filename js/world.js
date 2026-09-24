@@ -665,7 +665,7 @@ document.addEventListener("click", (e) => {
 
     clearTimeout(theoTapTimer);
 
-    if (theoTapCount >= 3) {
+    if (theoTapCount >= 7) {
 
         theoTapCount = 0;
 
