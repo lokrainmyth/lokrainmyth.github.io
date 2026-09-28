@@ -89,7 +89,7 @@ creator01:
 "Everything began with a simple idea: to share the world that exists behind my music.",
 
 creator02:
-"As the new album took shape, I realized it followed the same hidden pattern as every previous release.",
+"As the new album took shape, I realized it followed the same pattern as every previous release.",
 
 creator03:
 "That journey began in November 2011 with the first album — the story of a scarecrow choosing to walk toward the dawn.",
@@ -202,7 +202,7 @@ creator01:
 "Все началось с простой идеи — показать мир, который существует за моей музыкой.",
 
 creator02:
-"Когда новый альбом начал складываться, стало ясно, что он продолжает тот же скрытый путь, что и предыдущие работы проекта.",
+"Когда новый альбом начал складываться, стало ясно, что он продолжает тот же путь, что и предыдущие работы проекта.",
 
 creator03:
 "Этот путь начался в ноябре 2011 года с первого альбома — истории о Пугале, решившем пройти свой путь к рассвету.",
