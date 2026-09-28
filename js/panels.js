@@ -161,7 +161,7 @@ const PANEL_CONTENT = {
 <p>
 Lo.Krain is a project that has been forming intuitively for 15 years.
 I never knew in advance what the next song or album would be about.
-First came a feeling, a piece of music, a phrase, an image — and only years later I realized that the same myth had been repeating all along: exile, night, empty cities, a long search for connection, and dawn.
+First came a feeling, a piece of music, a phrase, an image — and only years later I realized that the same myth had been repeating all along.
 </p>
 
 <p>
@@ -867,7 +867,7 @@ const PANEL_CONTENT_RU = {
 <div class="panel-text">
 
 <p>
-Lo.Krain — это проект, который 15 лет складывался интуитивно. Я никогда не знал заранее, о чём будет следующая песня или альбом. Сначала приходили чувство, музыка, отдельные фразы, образы — и только спустя годы я увидел, что всё это время повторялся один и тот же миф: изгнание, ночь, пустые города, долгий поиск связи и рассвет.
+Lo.Krain — это проект, который 15 лет складывался интуитивно. Я никогда не знал заранее, о чём будет следующая песня или альбом. Сначала приходили чувство, музыка, отдельные фразы, образы — и только спустя годы я увидел, что всё это время повторялся один и тот же миф.
 </p>
 <p>
 Новый альбом — это точка, в которой этот путь впервые осознаётся целиком. Он о том, что даже если ты не понимаешь свой путь сейчас, это не значит, что в нём нет смысла. Иногда смысл приходит только на рассвете.
