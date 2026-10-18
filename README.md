@@ -1,4 +1,4 @@
-# Lo.Krain - Io
+# LO.KRAIN - IO
 
 > The interface exists only to guide the journey.
 
